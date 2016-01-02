@@ -8,4 +8,4 @@
 <!--end libs-->
 
 <script src="resources/js/ng/app.js"></script>
-<script src="js/ng/controllers/mainController.js"></script>
+<script src="resources/js/ng/controllers/mainController.js"></script>

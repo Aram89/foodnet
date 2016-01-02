@@ -3,7 +3,7 @@
     <title>FoodNET</title>
     <%@include file="WEB-INF/widgets/styles.jsp" %>
 </head>
-<body>
+<body ng-app="app">
 <div class="main" ng-controller="MainController">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
