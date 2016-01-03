@@ -33,11 +33,12 @@
         </div>
     </nav>
     <div class="header">
-        <div class="col-sm-4">
-            <h3>FoodNET</h3>
+        <div class="col-sm-3">
+            <h3>{{translation.food}}</h3>
         </div>
         <div class="col-sm-4">Email: info@foodenet.am</div>
         <div class="col-sm-4">Address: Yerevan Armenia</div>
+        <div class="col-sm-1"><button ng-click="setLang('am')">AM</button><button ng-click="setLang('en')">EN</button></div>
     </div>
     <div style="height: 1550px"></div>
 </div>
