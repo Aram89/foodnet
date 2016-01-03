@@ -1,6 +1,9 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>FoodNET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <%@include file="WEB-INF/widgets/styles.jsp" %>
 </head>
 <body ng-app="app">
@@ -34,7 +37,8 @@
     </nav>
     <div class="header">
         <div class="col-sm-3">
-            <h3>{{translation.food}}</h3>
+            <h3>{{tr.food}}</h3>
+        ;կյհ
         </div>
         <div class="col-sm-4">Email: info@foodenet.am</div>
         <div class="col-sm-4">Address: Yerevan Armenia</div>
