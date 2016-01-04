@@ -55,7 +55,7 @@
         </div>
         <div class="nweFood">
             <h1 class="text-center text-warning">{{tr.new_arrivals}}</h1>
-            <div class="boxes row"><div ng-repeat="a in popular track by $index" class="col-sm-4"><offer-box></offer-box></div></div>
+            <div class="boxes row"><div ng-repeat="a in arrivals track by $index" class="col-sm-4"><offer-box></offer-box></div></div>
             <div ng-click="showMore('arrivals')" class="text-center"><span>{{tr.show_more}}</span><span class="caret"></span></div>
         </div>
     </div>
