@@ -10,7 +10,7 @@ app.controller('MainController',['$scope','translationService',function($scope,t
     $scope.becomeChief = function(){};
     $scope.sections = [
         {title:'Home',href:'#home'},
-        {title:'About us',href:'#aboutus'},
+        {title:'About_us',href:'#aboutus'},
         {title:'Shop',list:[{title:'Fish',href:'#fish'},{title:'Meat',href:'#meat'},{title:'Fruit',href:'#fruit'}]}
     ]
 }]);

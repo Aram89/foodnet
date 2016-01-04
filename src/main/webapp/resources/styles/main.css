@@ -1,7 +1,13 @@
 body{
     padding-top: 70px;
 }
-
+.header{
+    height: 65px;
+}
+.mid{
+    height: 550px;
+    background-color: green;
+}
 .right-inner-addon i {
     position: absolute;
     right: 10px;

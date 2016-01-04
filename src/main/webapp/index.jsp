@@ -13,14 +13,14 @@
             <div class="col-sm-8">
                 <div class="col-sm-2" ng-repeat="s in sections">
                     <div ng-if="s.href">
-                        <a href="{{s.href}}">{{s.title}}</a>
+                        <a href="{{s.href}}">{{tr[s.title]}}</a>
                     </div>
                     <div ng-if='s.list' class="dropdown">
-                            <span class="dropdown-toggle" data-toggle="dropdown">{{s.title}}
+                            <span class="dropdown-toggle" data-toggle="dropdown">{{tr[s.title]}}
                                 <span ng-show="s.list.length" class="caret"></span>
                             </span>
                         <ul ng-show="s.list.length" class="dropdown-menu">
-                            <li ng-repeat="l in s.list"><a href="{{l.href}}">{{l.title}}</a></li>
+                            <li ng-repeat="l in s.list"><a href="{{l.href}}">{{tr[l.title]}}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -44,7 +44,10 @@
         <div class="col-sm-1"><a href="#becomeChief">Become Chief</a></div>
         <div class="col-sm-1"><button ng-click="setLang('hy')">AM</button><button ng-click="setLang('en')">EN</button></div>
     </div>
-    <div style="height: 1550px"></div>
+    <div class="mid">
+        <div class="text-center"><h2>{{tr.todays_offer}}</h2></div>
+    </div>
+    <div style="height: 1000px"></div>
 </div>
 <%@include file="WEB-INF/widgets/scripts.jsp" %>
 </body>

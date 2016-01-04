@@ -1,3 +1,10 @@
 {
-  "food":"food"
+  "food":"food",
+  "todays_offer":"Todays offer",
+  "Meat":"Meat",
+  "Home":"Home",
+  "Fish":"Fish",
+  "Fruit":"Fruit",
+  "About_us":"About Us",
+  "Shop":"Shop"
 }
