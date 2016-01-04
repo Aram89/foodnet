@@ -12,5 +12,8 @@
 
 <!--services-->
 <script src="resources/js/ng/services/translationService.js"></script>
+<!--directives--->
+<script src="resources/js/ng/directives/offerBox.js"></script>
+<!--end directives--->
 <!--end services-->
 <script src="resources/js/ng/controllers/mainController.js"></script>

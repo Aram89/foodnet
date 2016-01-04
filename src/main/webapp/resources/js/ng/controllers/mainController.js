@@ -6,7 +6,11 @@ app.controller('MainController',['$scope','translationService',function($scope,t
         translationService.getTranslation($scope,lang);
     };
     $scope.setLang('en');
-
+    $scope.popular = [1,2,3,4,5,6,7,8];
+    $scope.arrivals = [1,2,3,4];
+    $scope.showMore = function(param){
+        $scope[param].push(1,2,3,5);
+    };
     $scope.becomeChief = function(){};
     $scope.sections = [
         {title:'Home',href:'#home'},

@@ -1,12 +1,20 @@
 body{
     padding-top: 70px;
+    overflow-x: hidden;
+}
+.navbar{
 }
 .header{
     height: 65px;
 }
 .mid{
     height: 550px;
-    background-color: green;
+    background-image: url("/resources/multimedia/images/1.jpg");
+}
+.foodBox{
+    margin-top: 20px;
+    max-width: 330px;
+    height: 200px;
 }
 .right-inner-addon i {
     position: absolute;
