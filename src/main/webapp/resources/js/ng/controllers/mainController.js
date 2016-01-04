@@ -6,6 +6,8 @@ app.controller('MainController',['$scope','translationService',function($scope,t
         translationService.getTranslation($scope,lang);
     };
     $scope.setLang('en');
+
+    $scope.becomeChief = function(){};
     $scope.sections = [
         {title:'Home',href:'#home'},
         {title:'About us',href:'#aboutus'},

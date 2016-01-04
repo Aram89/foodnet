@@ -38,10 +38,10 @@
     <div class="header">
         <div class="col-sm-3">
             <h3>{{tr.food}}</h3>
-        ;կյհ
         </div>
         <div class="col-sm-4">Email: info@foodenet.am</div>
-        <div class="col-sm-4">Address: Yerevan Armenia</div>
+        <div class="col-sm-3">Address: Yerevan Armenia</div>
+        <div class="col-sm-1"><a href="#becomeChief">Become Chief</a></div>
         <div class="col-sm-1"><button ng-click="setLang('hy')">AM</button><button ng-click="setLang('en')">EN</button></div>
     </div>
     <div style="height: 1550px"></div>
