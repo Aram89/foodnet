@@ -22,11 +22,8 @@ public class ChefController {
     @Autowired
     ChefService service;
 
-    @RequestMapping(value = RequestMappings.CREATE_CHEF, method = RequestMethod.GET)
-    public ResponseEntity create(/*@RequestBody Chef chef*/) throws IOException, SQLException {
-        Chef chef = new Chef();
-        chef.setChefId(1);
-        chef.setName("Gago");
+    @RequestMapping(value = RequestMappings.CREATE_CHEF, method = RequestMethod.POST)
+    public ResponseEntity create(@RequestBody Chef chef) throws IOException, SQLException {
         service.createChef(chef);
         return new ResponseEntity(HttpStatus.OK);
     }
