@@ -17,3 +17,5 @@
 <!--end directives--->
 <!--end services-->
 <script src="resources/js/ng/controllers/mainController.js"></script>
+<script src="resources/js/ng/controllers/homeController.js"></script>
+<script src="resources/js/ng/controllers/becomeChiefController.js"></script>

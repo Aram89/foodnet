@@ -5,13 +5,17 @@ app.controller('MainController',['$scope','translationService',function($scope,t
     $scope.setLang =function(lang){
         translationService.getTranslation($scope,lang);
     };
+    $scope.navTop=false;
+    angular.element(window).bind('scroll',function(evt){
+        if(window.scrollY>65){
+            $scope.navTop=true;
+            $scope.$apply();
+        }else{
+            $scope.navTop = false;
+            $scope.$apply();
+        }
+    });
     $scope.setLang('en');
-    $scope.popular = [1,2,3];
-    $scope.arrivals = [1,2,3];
-    $scope.showMore = function(param){
-        $scope[param].push(1,3,5);
-    };
-    $scope.becomeChief = function(){};
     $scope.sections = [
         {title:'Home',href:'#home'},
         {title:'About_us',href:'#aboutus'},
