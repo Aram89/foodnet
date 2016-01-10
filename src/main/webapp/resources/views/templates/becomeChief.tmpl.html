@@ -1,1 +1,30 @@
-<div></div>
+<div class="becomeChef">
+    <div class="regForm">
+        <form name="registerForm" ng-submit="becomeChef()" novalidate>
+            <div class="reg_name">
+                <label>{{tr.name}}</label>
+                <input required name="name" type="text" ng-model="regChef.name"/>
+                <div class="has-error" ng-show="!registerForm.name.$valid">
+                    <span>{{tr.name_required}}</span>
+                </div>
+            </div>
+            <div class="reg_surName">
+                <label>{{tr.surname}}</label>
+                <input required name="surname" type="text" ng-model="regChef.surName"/>
+                <div class="has-error" ng-show="!registerForm.surname.$valid">
+                    <span>{{tr.surname_required}}</span>
+                </div>
+            </div>
+            <div class="reg_phone">
+                <label>{{tr.phone}}</label>
+                <input required ng-remote-check="chef/check-phone" name="phone" type="number"
+                       ng-model="regChef.phone"/>
+                <div class="has-error" ng-show="!registerForm.phone.$valid">
+                    <div ng-show="registerForm.phone.$error.required">{{tr.phone_required}}</div>
+                    <div ng-show="registerForm.phone.$error.remote">{{tr.phone_exists}}</div>
+                </div>
+            </div>
+            <button>{{tr.submit}}</button>
+        </form>
+    </div>
+</div>

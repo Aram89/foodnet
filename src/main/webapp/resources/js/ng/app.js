@@ -6,7 +6,7 @@ var app = angular.module('app',['ngResource','ngRoute']);
 
 app.config(function($routeProvider){
     $routeProvider
-        .when('/becomeChief',{
+        .when('/becomeChef',{
             templateUrl:'../resources/views/templates/becomeChief.tmpl.html',
             controller:'BecomeChiefController'
         })

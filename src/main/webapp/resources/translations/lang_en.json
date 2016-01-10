@@ -1,4 +1,13 @@
 {
+  "submit":"Submit",
+  "name":"Name",
+  "name_required":"name required",
+  "surname":"Surname",
+  "surname_required":"Surname Required",
+  "phone":"Phone",
+  "phone_required":"phone required",
+  "phone_exists":"phone exists",
+  "become_chef":"Become Chef",
   "new_arrivals":"New Arrivals",
   "popular_products":"Popular Products",
   "show_more": "Show More",

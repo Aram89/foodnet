@@ -1,4 +1,13 @@
 {
+  "submit":"Ընդունել",
+  "name":"Անուն",
+  "name_required":"Անունը պարտադիրա ",
+  "surname":"Ազգանուն",
+  "surname_required":"Անզագնունը գրի",
+  "phone":"Հեռ.",
+  "phone_required":"Հեռ.ը պարտադիրա",
+  "phone_exists":"Արդեն կա",
+  "become_chef":"դառնալ խոհարար",
   "new_arrivals":"Նորությոոււններ",
   "popular_products":"Ամենա ժողովրդական :Ճ",
   "show_more": "Ավելին",
