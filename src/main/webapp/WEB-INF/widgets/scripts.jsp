@@ -10,8 +10,11 @@
 
 <script src="resources/js/ng/app.js"></script>
 
+<!--factories-->
+<script src="resources/js/ng/factory/serverConnetctor.js"></script>
 <!--services-->
 <script src="resources/js/ng/services/translationService.js"></script>
+<script src="resources/js/ng/services/requestsService.js"></script>
 <!--directives--->
 <script src="resources/js/ng/directives/offerBox.js"></script>
 <script src="resources/js/ng/directives/remoteCheck.js"></script>

@@ -1,7 +1,7 @@
 /**
  * Created by pr on 01/10/2016.
  */
-app.directive('ngRemoteCheck',['$http', function($http) {
+app.directive('ngRemoteCheck',['serverConnector', function(serverConnector) {
     return {
         restrict: "A",
         require: "ngModel",
@@ -15,10 +15,10 @@ app.directive('ngRemoteCheck',['$http', function($http) {
                 if (timeoutID) clearTimeout(timeoutID);
                 timeoutID = setTimeout(function () {
                     params[propName] = ctrl.$modelValue;
-                    $http({
+                    serverConnector.send({
                         method: "GET",
                         url: checkUrl,
-                        params: params
+                        data: params
                     }).success(function (data) {
                         ctrl.$setValidity('remote', true);
                     })

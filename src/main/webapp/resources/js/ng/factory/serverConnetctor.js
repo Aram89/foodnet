@@ -5,6 +5,7 @@
 app.factory('serverConnector',['$http',function($http){
     'use strict';
 
+    var host='resources/api/';
     var req = {
         method: 'POST',
         url: '/' /*,
@@ -13,6 +14,7 @@ app.factory('serverConnector',['$http',function($http){
          }*/
     };
     function send (request) {
+        request.url = host+request.url;
         var promise = $http(angular.merge(req, request));
         promise.then(
             function() {},
