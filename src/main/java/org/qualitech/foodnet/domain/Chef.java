@@ -17,7 +17,6 @@ public class Chef {
     private String name;
     private String surName;
     private String phone;
-    private String email;
     private String status;
     private List <Dish> dishes;
 
@@ -75,15 +74,6 @@ public class Chef {
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    @Column
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     @Column

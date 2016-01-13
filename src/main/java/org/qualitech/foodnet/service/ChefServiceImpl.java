@@ -20,4 +20,11 @@ public class ChefServiceImpl implements ChefService {
     public void createChef(Chef chef) {
         repository.save(chef);
     }
+
+    @Override
+    public boolean phoneExists(String phone) {
+        boolean phoneExists = !repository.findByPhone(phone).isEmpty();
+        System.out.println(phoneExists);
+        return !repository.findByPhone(phone).isEmpty();
+    }
 }

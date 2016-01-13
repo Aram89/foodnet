@@ -8,4 +8,6 @@ import org.qualitech.foodnet.domain.Chef;
 public interface ChefService {
 
     void createChef(Chef chef);
+    boolean phoneExists(String phone);
+
 }
