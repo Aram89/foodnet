@@ -116,32 +116,32 @@
 
     <div class="navbar-collapse collapse navbar-rj-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li class="page-scroll">
+        <%--<li class="page-scroll">
           <a href="#who-we-are">About</a>
         </li>
-
-        <li class="page-scroll">
+--%>
+<%--        <li class="page-scroll">
           <a href="#our-main-skills">Skills</a>
+        </li>--%>
+
+
+        <li class="page-scroll">
+          <a href="#dishes">Ուտեստներ</a>
+        </li>
+        <li class="page-scroll">
+          <a href="#chefs">Խոհարարներ</a>
         </li>
 
         <li class="page-scroll">
-          <a href="#our-services">Services</a>
+          <a href="#why-us">Ի՞նչու օգտվել</a>
         </li>
 
         <li class="page-scroll">
-          <a href="#our-latest-work">Portfolio</a>
+          <a href="#how-works">Ինչպե՞ս է աշխատում</a>
         </li>
 
         <li class="page-scroll">
-          <a href="#meet-the-team">Team</a>
-        </li>
-
-        <li class="page-scroll">
-          <a href="#our-pricing">Pricing</a>
-        </li>
-
-        <li class="page-scroll">
-          <a href="#contact-us">Contact</a>
+          <a href="#contact-us">Կապ</a>
         </li>
       </ul>
     </div>
@@ -151,7 +151,7 @@
 </nav>
 <!-- //End Navbar -->
 
-
+<%--
 <!-- Begin Who We Are Section -->
 <section id="who-we-are" class="section">
   <div class="section-inner">
@@ -214,465 +214,16 @@
   </div>
   <!-- //.section-inner -->
 </section>
-<!-- //End Who We Are Section -->
+<!-- //End Who We Are Section -->--%>
 
-
-<!-- Begin Fun Fact Section -->
-<section id="fun-fact" class="section section-bgimage-yes">
-  <div class="section-inner">
-    <div class="section-overlay"></div>
-
-    <div class="container section-content">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-title text-center">
-            <h2 class="main-title">Fun Facts</h2>
-
-            <h3 class="sub-title">Some Of The Cool Facts About Us That Will Blow Your Mind</h3>
-
-            <span class="section-line"></span>
-          </div>
-          <!-- //.section-title -->
-        </div>
-        <!-- //.col-md-12 -->
-      </div>
-      <!-- //.row -->
-
-      <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-3 text-center">
-          <div class="counter-item not-right-column top-column">
-            <i class="fa fa-thumbs-o-up"></i>
-
-            <div class="inner-content">
-                                <span class="number" data-from="2200" data-to="2780" data-refresh-interval="10">
-                                    2200
-                                </span>
-            </div>
-            <!-- //.inner-content -->
-
-            <p>Projects</p>
-          </div>
-          <!-- //.counter-item -->
-        </div>
-        <!-- //.col-xs-6 col-sm-6 col-md-3 -->
-
-        <div class="col-xs-6 col-sm-6 col-md-3 text-center">
-          <div class="counter-item not-right-column top-column">
-            <i class="fa fa-smile-o"></i>
-
-            <div class="inner-content">
-                                <span class="number" data-from="330" data-to="487" data-refresh-interval="10">
-                                    330
-                                </span>
-            </div>
-            <!-- //.inner-content -->
-
-            <p>Clients</p>
-          </div>
-          <!-- //.counter-item -->
-        </div>
-        <!-- //.col-xs-6 col-sm-6 col-md-3 -->
-
-        <div class="col-xs-6 col-sm-6 col-md-3 text-center">
-          <div class="counter-item not-right-column">
-            <i class="fa fa-coffee"></i>
-
-            <div class="inner-content">
-                                <span class="number" data-from="13300" data-to="13730" data-refresh-interval="10">
-                                    13300
-                                </span>
-            </div>
-            <!-- //.inner-content -->
-
-            <p>Coffee</p>
-          </div>
-          <!-- //.counter-item -->
-        </div>
-        <!-- //.col-xs-6 col-sm-6 col-md-3 -->
-
-        <div class="col-xs-6 col-sm-6 col-md-3 text-center">
-          <div class="counter-item">
-            <i class="fa fa-gift"></i>
-
-            <div class="inner-content">
-                                <span class="number" data-from="10" data-to="154" data-refresh-interval="10">
-                                    23
-                                </span>
-            </div>
-            <!-- //.inner-content -->
-
-            <p>Awards</p>
-          </div>
-          <!-- //.counter-item -->
-        </div>
-        <!-- //.col-xs-6 col-sm-6 col-md-3 -->
-      </div>
-      <!-- //.row -->
-    </div>
-    <!-- //.section-content -->
-  </div>
-  <!-- //.section-inner -->
-</section>
-<!-- //End Fun Fact Section -->
-
-
-<!-- Begin Why Us Section -->
-<section id="why-us" class="section">
+<!-- Begin Dishes Section -->
+<section id="dishes" class="section">
   <div class="section-inner">
     <div class="container section-content">
       <div class="row">
         <div class="col-md-12">
           <div class="section-title text-center">
-            <h2 class="main-title">Why Choose Us?</h2>
-
-            <h3 class="sub-title">6 Reasons Why We Are The Best</h3>
-
-            <span class="section-line"></span>
-          </div>
-          <!-- //.section-title -->
-        </div>
-        <!-- //.col-md-12 -->
-      </div>
-      <!-- //.row -->
-
-      <!-- Begin Content Boxes -->
-      <div class="row">
-        <div class="col-sm-4 col-md-4">
-          <div class="content-boxes style-two top-column clearfix">
-                            <span class="content-boxes-icon">
-                                <i class="fa fa-rocket"></i>
-                            </span>
-
-            <div class="content-boxes-text">
-              <h4>Speed</h4>
-
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-            </div>
-            <!-- //.content-boxes-text -->
-          </div>
-          <!-- //.content-boxes -->
-        </div>
-        <!-- //.col-sm-4 col-md-4 -->
-
-        <div class="col-sm-4 col-md-4">
-          <div class="content-boxes style-two top-column clearfix">
-                            <span class="content-boxes-icon">
-                                <i class="fa fa-thumbs-o-up"></i>
-                            </span>
-
-            <div class="content-boxes-text">
-              <h4>Quality</h4>
-
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-            </div>
-            <!-- //.content-boxes-text -->
-          </div>
-          <!-- //.content-boxes -->
-        </div>
-        <!-- //.col-sm-4 col-md-4 -->
-
-        <div class="col-sm-4 col-md-4">
-          <div class="content-boxes style-two top-column clearfix">
-                            <span class="content-boxes-icon">
-                                <i class="fa fa-star-o"></i>
-                            </span>
-
-            <div class="content-boxes-text">
-              <h4>Expertise</h4>
-
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-            </div>
-            <!-- //.content-boxes-text -->
-          </div>
-          <!-- //.content-boxes -->
-        </div>
-        <!-- //.col-sm-4 col-md-4 -->
-      </div>
-      <!-- //.row -->
-
-      <div class="row">
-        <div class="col-sm-4 col-md-4">
-          <div class="content-boxes style-two bottom-column not-right-column clearfix">
-                            <span class="content-boxes-icon">
-                                <i class="fa fa-shield"></i>
-                            </span>
-            <div class="content-boxes-text">
-              <h4>Security</h4>
-
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-            </div>
-            <!-- //.content-boxes-text -->
-          </div>
-          <!-- //.content-boxes -->
-        </div>
-        <!-- //.col-sm-4 col-md-4 -->
-
-        <div class="col-sm-4 col-md-4">
-          <div class="content-boxes style-two bottom-column not-right-column clearfix">
-                            <span class="content-boxes-icon">
-                                <i class="fa fa-send-o"></i>
-                            </span>
-            <div class="content-boxes-text">
-              <h4>Reliability</h4>
-
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-            </div>
-            <!-- //.content-boxes-text -->
-          </div>
-          <!-- //.content-boxes -->
-        </div>
-        <!-- //.col-sm-4 col-md-4 -->
-
-        <div class="col-sm-4 col-md-4">
-          <div class="content-boxes style-two bottom-column clearfix">
-                            <span class="content-boxes-icon">
-                                <i class="fa fa-support"></i>
-                            </span>
-
-            <div class="content-boxes-text">
-              <h4>Price</h4>
-
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-            </div>
-            <!-- //.content-boxes-text -->
-          </div>
-          <!-- //.content-boxes -->
-        </div>
-        <!-- //.col-sm-4 col-md-4 -->
-      </div>
-      <!-- //End Content Boxes -->
-    </div>
-    <!-- //.section-content -->
-  </div>
-  <!-- //.section-inner -->
-</section>
-<!-- //End Why Us Section -->
-
-
-<!-- Begin Our Main Skills Section -->
-<section id="our-main-skills" class="section section-bgimage-yes">
-  <div class="section-inner">
-    <div class="section-overlay"></div>
-
-    <div class="container section-content">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-title text-center">
-            <h3 class="main-title">Our Main Skills</h3>
-
-            <h3 class="sub-title">We Have Creativity And Knowledge To Development</h3>
-
-            <span class="section-line"></span>
-          </div>
-          <!-- //.section-title -->
-        </div>
-        <!-- //.col-md-12 -->
-      </div>
-      <!-- //.row -->
-
-      <div class="row">
-        <div class="col-md-5">
-          <div class="bar-chart-text">
-            <p class="lead">
-              Gunung Rinjani merupakan gunung favorit bagi pendaki Indonesia karena keindahan pemandangannya. Gunung ini merupakan bagian dari Taman Nasional Gunung Rinjani yang memiliki luas sekitar 41.330 ha dan ini akan diusulkan penambahannya sehingga menjadi 76.000 ha ke arah barat.
-            </p>
-
-            <p>
-              Secara administratif gunung ini berada dalam wilayah 3 kabupaten: Lombok Timur, Lombok Tengah dan Lombok Barat. Gunung Rinjani dengan titik tertinggi 3.726 m dpl, mendominasi sebagian besar pemandangan Pulau Lombok bagian utara.
-            </p>
-          </div>
-          <!-- //.bar-chart-text -->
-        </div>
-        <!-- //.col-md-5 -->
-
-        <div class="col-md-7">
-
-          <!-- Begin Bar Chart -->
-          <div class="bar-chart">
-            <div class="bar-chart-item" data-percent="85">
-              <p>User Experience</p>
-            </div>
-            <!-- //.bar-chart-item -->
-
-            <div class="bar-chart-item" data-percent="75">
-              <p>Web & Mobile Design</p>
-            </div>
-            <!-- //.bar-chart-item -->
-
-            <div class="bar-chart-item" data-percent="100">
-              <p>Graphic Design</p>
-            </div>
-            <!-- //.bar-chart-item -->
-
-            <div class="bar-chart-item" data-percent="90">
-              <p>Identity & Branding</p>
-            </div>
-            <!-- //.bar-chart-item -->
-
-            <div class="bar-chart-item" data-percent="60">
-              <p>3D Design</p>
-            </div>
-            <!-- //.bar-chart-item -->
-
-            <div class="bar-chart-item" data-percent="75">
-              <p>Icon & Illustrations</p>
-            </div>
-            <!-- //.bar-chart-item -->
-
-            <div class="bar-chart-legend clearfix">
-              <div class="legend legend-left">
-                <p>Newbie</p>
-              </div>
-              <!-- //.legend -->
-
-              <div class="legend legend-left">
-                <p>Decent</p>
-              </div>
-              <!-- //.legend -->
-
-              <div class="legend legend-right">
-                <p>Pretty Good</p>
-              </div>
-              <!-- //.legend -->
-
-              <div class="legend legend-right">
-                <p>Super Hero</p>
-              </div>
-              <!-- //.legend -->
-            </div>
-            <!-- //.bar-chart-legend -->
-          </div>
-          <!-- //End Bar Chart -->
-        </div>
-        <!-- //.col-md-7 -->
-      </div>
-      <!-- //.row -->
-    </div>
-    <!-- //.section-content -->
-  </div>
-  <!-- //.section-inner -->
-</section>
-<!-- //End Our Main Skills Section -->
-
-
-<!-- Begin Our Services Section -->
-<section id="our-services" class="section">
-  <div class="section-inner">
-    <div class="container section-content">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-title text-center">
-            <h3 class="main-title">Our Services</h3>
-
-            <h4 class="sub-title">We Are Experts In Developing Your Business</h4>
-
-            <span class="section-line"></span>
-          </div>
-          <!-- //.section-title -->
-        </div>
-        <!-- //.col-md-12 -->
-      </div>
-      <!-- //.row -->
-
-      <div class="row">
-        <div class="col-sm-4 col-md-4">
-          <div class="funny-boxes float-shadow not-right-column text-center">
-                            <span class="funny-boxes-icon">
-                                <i class="fa fa-lightbulb-o"></i>
-                            </span>
-
-            <div class="funny-boxes-text">
-              <h4>Web Design</h4>
-
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-            </div>
-            <!-- //.funny-boxes-text -->
-          </div>
-          <!-- //.funny-boxes -->
-        </div>
-        <!-- //.col-sm-4 col-md-4 -->
-
-        <div class="col-sm-4 col-md-4">
-          <div class="funny-boxes float-shadow not-right-column text-center">
-                            <span class="funny-boxes-icon">
-                                <i class="fa fa-heart-o"></i>
-                            </span>
-
-            <div class="funny-boxes-text">
-              <h4>Graphic Design</h4>
-
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-            </div>
-            <!-- //.funny-boxes-text -->
-          </div>
-          <!-- //.funny-boxes -->
-        </div>
-        <!-- //.col-sm-4 col-md-4 -->
-
-        <div class="col-sm-4 col-md-4">
-          <div class="funny-boxes float-shadow text-center">
-                            <span class="funny-boxes-icon">
-                                <i class="fa fa-flask"></i>
-                            </span>
-
-            <div class="funny-boxes-text">
-              <h4>Branding</h4>
-
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-            </div>
-            <!-- //.funny-boxes-text -->
-          </div>
-          <!-- //.funny-boxes -->
-        </div>
-        <!-- //.col-sm-4 col-md-4 -->
-      </div>
-      <!-- //.row -->
-    </div>
-    <!-- //.section-content -->
-  </div>
-  <!-- //.section-inner -->
-</section>
-<!-- //End Our Services Section -->
-
-
-<!-- Begin Quote Section -->
-<section id="quote" class="section section-bgimage-yes">
-  <div class="section-inner">
-    <div class="section-overlay"></div>
-
-    <div class="container section-content">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="quote-text text-center">
-                            <span class="quote-icon">
-                                <i class="fa fa-quote-right fa-4x"></i>
-                            </span>
-
-            <h2>"The business schools reward difficult complex behavior more than simple behavior, but simple behavior is more effective".</h2>
-
-            <h2 class="lead quote-by">(Warren Buffet)</h2>
-          </div>
-          <!-- //.quote-text -->
-        </div>
-        <!-- //.col-md-12 -->
-      </div>
-      <!-- //.row -->
-    </div>
-    <!-- //.section-content -->
-  </div>
-  <!-- //.section-inner -->
-</section>
-<!-- //End Quote Section -->
-
-
-<!-- Begin Our Latest Work Section -->
-<section id="our-latest-work" class="section">
-  <div class="section-inner">
-    <div class="container section-content">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-title text-center">
-            <h2 class="main-title">Our Latest Work</h2>
+            <h2 class="main-title">Ուտեստներ</h2>
 
             <h3 class="sub-title">You Can Judge Us By The Work We Have Done</h3>
 
@@ -931,132 +482,16 @@
   </div>
   <!-- //.section-inner -->
 </section>
-<!-- //End Our Latest Work Section -->
+<!-- //End Dishes Section -->
 
-
-<!-- Begin Keep In Touch Section -->
-<section id="keep-in-touch" class="section section-bgimage-yes">
-  <div class="section-inner">
-    <div class="section-overlay"></div>
-
-    <div class="container section-content">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-title text-center">
-            <h3 class="main-title">Keep In Touch With Us</h3>
-
-            <h4 class="sub-title">We Would Love to Know From You</h4>
-
-            <span class="section-line"></span>
-          </div>
-          <!-- //.section-title -->
-        </div>
-        <!-- //.col-md-12 -->
-      </div>
-      <!-- //.row -->
-
-      <div class="row">
-        <div class="col-xs-6 col-sm-4 col-md-2">
-          <div class="social-icon-item text-center not-right-column top-column">
-            <a href="#facebook">
-                                <span class="social-icon">
-                                    <i class="fa fa-facebook"></i>
-                                </span>
-
-              <h4>Facebook</h4>
-            </a>
-          </div>
-          <!-- //.social-icon-item -->
-        </div>
-        <!-- //.col-xs-6 col-sm-4 col-md-2 -->
-
-        <div class="col-xs-6 col-sm-4 col-md-2">
-          <div class="social-icon-item text-center not-right-column top-column">
-            <a href="#twitter">
-                                <span class="social-icon">
-                                    <i class="fa fa-twitter"></i>
-                                </span>
-
-              <h4>Twitter</h4>
-            </a>
-          </div>
-          <!-- //.social-icon-item -->
-        </div>
-        <!-- //.col-xs-6 col-sm-4 col-md-2 -->
-
-        <div class="col-xs-6 col-sm-4 col-md-2">
-          <div class="social-icon-item text-center not-right-column top-column">
-            <a href="#google+">
-                                <span class="social-icon">
-                                    <i class="fa fa-google-plus fa-5x"></i>
-                                </span>
-
-              <h4>Google +</h4>
-            </a>
-          </div>
-          <!-- //.social-icon-item -->
-        </div>
-        <!-- //.col-xs-6 col-sm-4 col-md-2 -->
-
-        <div class="col-xs-6 col-sm-4 col-md-2">
-          <div class="social-icon-item text-center not-right-column">
-            <a href="#youtube">
-                                <span class="social-icon">
-                                    <i class="fa fa-youtube fa-5x"></i>
-                                </span>
-
-              <h4>Youtube</h4>
-            </a>
-          </div>
-          <!-- //.social-icon-item -->
-        </div>
-        <!-- //.col-xs-6 col-sm-4 col-md-2 -->
-
-        <div class="col-xs-6 col-sm-4 col-md-2">
-          <div class="social-icon-item text-center not-right-column">
-            <a href="#pinterest">
-                                <span class="social-icon">
-                                    <i class="fa fa-pinterest fa-5x"></i>
-                                </span>
-
-              <h4>Pinterest</h4>
-            </a>
-          </div>
-          <!-- //.social-icon-item -->
-        </div>
-        <!-- //.col-xs-6 col-sm-4 col-md-2 -->
-
-        <div class="col-xs-6 col-sm-4 col-md-2">
-          <div class="social-icon-item text-center">
-            <a href="#instagram">
-                                <span class="social-icon">
-                                    <i class="fa fa-instagram fa-5x"></i>
-                                </span>
-
-              <h4>Instagram</h4>
-            </a>
-          </div>
-          <!-- //.social-icon-item -->
-        </div>
-        <!-- //.col-xs-6 col-sm-4 col-md-2 -->
-      </div>
-      <!-- //.row -->
-    </div>
-    <!-- //.section-content -->
-  </div>
-  <!-- //.section-inner -->
-</section>
-<!-- //End Keep In Touch Section -->
-
-
-<!-- Begin Meet The Team Section -->
-<section id="meet-the-team" class="section">
+<!-- Begin Chefs Section -->
+<section id="chefs" class="section">
   <div class="section-inner">
     <div class="container section-content">
       <div class="row">
         <div class="col-md-12">
           <div class="section-title text-center">
-            <h3 class="main-title">Meet The Team</h3>
+            <h3 class="main-title">Խոհարարներ</h3>
 
             <h4 class="sub-title">We Are Here For You</h4>
 
@@ -1159,11 +594,11 @@
   </div>
   <!-- //.section-inner -->
 </section>
-<!-- //End Meet The Team Section -->
+<!-- //End Dishes Section -->
 
 
-<!-- Begin Testimonials Section -->
-<section id="testimonials" class="section section-bgimage-yes">
+<!-- Begin Fun Fact Section -->
+<section id="fun-fact" class="section section-bgimage-yes">
   <div class="section-inner">
     <div class="section-overlay"></div>
 
@@ -1171,9 +606,9 @@
       <div class="row">
         <div class="col-md-12">
           <div class="section-title text-center">
-            <h2 class="main-title">Testimonials</h2>
+            <h2 class="main-title">Fun Facts</h2>
 
-            <h3 class="sub-title">We Make Our Customers Happy</h3>
+            <h3 class="sub-title">Some Of The Cool Facts About Us That Will Blow Your Mind</h3>
 
             <span class="section-line"></span>
           </div>
@@ -1184,174 +619,408 @@
       <!-- //.row -->
 
       <div class="row">
-        <div class="col-md-4">
-          <div class="testimonial-item not-right-column not-bottom-column">
-            <div class="testimonial-content">
-              <p class="testimonial-title">Lorem Ipsum Title</p>
+        <div class="col-xs-6 col-sm-6 col-md-3 text-center">
+          <div class="counter-item not-right-column top-column">
+            <i class="fa fa-thumbs-o-up"></i>
 
-              <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-              </blockquote>
+            <div class="inner-content">
+                                <span class="number" data-from="2200" data-to="2780" data-refresh-interval="10">
+                                    2200
+                                </span>
             </div>
-            <!-- //.testimonial-content -->
+            <!-- //.inner-content -->
 
-            <div class="testimonial-info clearfix">
-              <img width="100" src="assets/img/testimonial-image-1.jpg" alt="" class="img-circle img-thumbnail"/>
-
-              <p class="testimonial-author">
-                @Jane Doe, Jakarta
-                <br>
-                <em>Co-Founder at Cisco</em>
-              </p>
-            </div>
-            <!-- //.testimonial-info -->
+            <p>Projects</p>
           </div>
-          <!-- //.testimonial-item -->
+          <!-- //.counter-item -->
         </div>
-        <!-- //.col-md-4 -->
+        <!-- //.col-xs-6 col-sm-6 col-md-3 -->
 
-        <div class="col-md-4">
-          <div class="testimonial-item not-right-column not-bottom-column">
-            <div class="testimonial-content">
-              <p class="testimonial-title">Lorem Ipsum Title</p>
+        <div class="col-xs-6 col-sm-6 col-md-3 text-center">
+          <div class="counter-item not-right-column top-column">
+            <i class="fa fa-smile-o"></i>
 
-              <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-              </blockquote>
+            <div class="inner-content">
+                                <span class="number" data-from="330" data-to="487" data-refresh-interval="10">
+                                    330
+                                </span>
             </div>
-            <!-- //.testimonial-content -->
+            <!-- //.inner-content -->
 
-            <div class="testimonial-info clearfix">
-              <img width="100" src="assets/img/testimonial-image-2.jpg" alt="" class="img-circle img-thumbnail"/>
-
-              <p class="testimonial-author">
-                @John Doe, Jakarta
-                <br>
-                <em>Creative Director at Apple</em>
-              </p>
-            </div>
-            <!-- //.testimonial-info -->
+            <p>Clients</p>
           </div>
-          <!-- //.testimonial-item -->
+          <!-- //.counter-item -->
         </div>
-        <!-- //.col-md-4 -->
+        <!-- //.col-xs-6 col-sm-6 col-md-3 -->
 
-        <div class="col-md-4">
-          <div class="testimonial-item not-bottom-column">
-            <div class="testimonial-content">
-              <p class="testimonial-title">Lorem Ipsum Title</p>
+        <div class="col-xs-6 col-sm-6 col-md-3 text-center">
+          <div class="counter-item not-right-column">
+            <i class="fa fa-coffee"></i>
 
-              <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-              </blockquote>
+            <div class="inner-content">
+                                <span class="number" data-from="13300" data-to="13730" data-refresh-interval="10">
+                                    13300
+                                </span>
             </div>
-            <!-- //.testimonial-content -->
+            <!-- //.inner-content -->
 
-            <div class="testimonial-info clearfix">
-              <img width="100" src="assets/img/testimonial-image-3.jpg" alt="" class="img-circle img-thumbnail"/>
-
-              <p class="testimonial-author">
-                @John Doe, Jakarta
-                <br>
-                <em>Managet at Microsoft</em>
-              </p>
-            </div>
-            <!-- //.testimonial-info -->
+            <p>Coffee</p>
           </div>
-          <!-- //.testimonial-item -->
+          <!-- //.counter-item -->
         </div>
-        <!-- //.col-md-4 -->
+        <!-- //.col-xs-6 col-sm-6 col-md-3 -->
+
+        <div class="col-xs-6 col-sm-6 col-md-3 text-center">
+          <div class="counter-item">
+            <i class="fa fa-gift"></i>
+
+            <div class="inner-content">
+                                <span class="number" data-from="10" data-to="154" data-refresh-interval="10">
+                                    23
+                                </span>
+            </div>
+            <!-- //.inner-content -->
+
+            <p>Awards</p>
+          </div>
+          <!-- //.counter-item -->
+        </div>
+        <!-- //.col-xs-6 col-sm-6 col-md-3 -->
+      </div>
+      <!-- //.row -->
+    </div>
+    <!-- //.section-content -->
+  </div>
+  <!-- //.section-inner -->
+</section>
+<!-- //End Fun Fact Section -->
+
+<%--
+
+<!-- Begin Why Us Section -->
+<section id="why-us" class="section">
+  <div class="section-inner">
+    <div class="container section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title text-center">
+            <h2 class="main-title">Why Choose Us?</h2>
+
+            <h3 class="sub-title">6 Reasons Why We Are The Best</h3>
+
+            <span class="section-line"></span>
+          </div>
+          <!-- //.section-title -->
+        </div>
+        <!-- //.col-md-12 -->
+      </div>
+      <!-- //.row -->
+
+      <!-- Begin Content Boxes -->
+      <div class="row">
+        <div class="col-sm-4 col-md-4">
+          <div class="content-boxes style-two top-column clearfix">
+                            <span class="content-boxes-icon">
+                                <i class="fa fa-rocket"></i>
+                            </span>
+
+            <div class="content-boxes-text">
+              <h4>Speed</h4>
+
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            </div>
+            <!-- //.content-boxes-text -->
+          </div>
+          <!-- //.content-boxes -->
+        </div>
+        <!-- //.col-sm-4 col-md-4 -->
+
+        <div class="col-sm-4 col-md-4">
+          <div class="content-boxes style-two top-column clearfix">
+                            <span class="content-boxes-icon">
+                                <i class="fa fa-thumbs-o-up"></i>
+                            </span>
+
+            <div class="content-boxes-text">
+              <h4>Quality</h4>
+
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            </div>
+            <!-- //.content-boxes-text -->
+          </div>
+          <!-- //.content-boxes -->
+        </div>
+        <!-- //.col-sm-4 col-md-4 -->
+
+        <div class="col-sm-4 col-md-4">
+          <div class="content-boxes style-two top-column clearfix">
+                            <span class="content-boxes-icon">
+                                <i class="fa fa-star-o"></i>
+                            </span>
+
+            <div class="content-boxes-text">
+              <h4>Expertise</h4>
+
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            </div>
+            <!-- //.content-boxes-text -->
+          </div>
+          <!-- //.content-boxes -->
+        </div>
+        <!-- //.col-sm-4 col-md-4 -->
       </div>
       <!-- //.row -->
 
       <div class="row">
-        <div class="col-md-4">
-          <div class="testimonial-item not-right-column">
-            <div class="testimonial-content">
-              <p class="testimonial-title">Lorem Ipsum Title</p>
+        <div class="col-sm-4 col-md-4">
+          <div class="content-boxes style-two bottom-column not-right-column clearfix">
+                            <span class="content-boxes-icon">
+                                <i class="fa fa-shield"></i>
+                            </span>
+            <div class="content-boxes-text">
+              <h4>Security</h4>
 
-              <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-              </blockquote>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
             </div>
-            <!-- //.testimonial-content -->
-
-            <div class="testimonial-info clearfix">
-              <img width="100" src="assets/img/testimonial-image-4.jpg" alt="" class="img-circle img-thumbnail"/>
-
-              <p class="testimonial-author">
-                @John Doe, Jakarta
-                <br>
-                <em>Co-Founder at Cisco</em>
-              </p>
-            </div>
-            <!-- //.testimonial-info -->
+            <!-- //.content-boxes-text -->
           </div>
-          <!-- //.testimonial-item -->
+          <!-- //.content-boxes -->
         </div>
-        <!-- //.col-md-4 -->
+        <!-- //.col-sm-4 col-md-4 -->
 
-        <div class="col-md-4">
-          <div class="testimonial-item not-right-column">
-            <div class="testimonial-content">
-              <p class="testimonial-title">Lorem Ipsum Title</p>
+        <div class="col-sm-4 col-md-4">
+          <div class="content-boxes style-two bottom-column not-right-column clearfix">
+                            <span class="content-boxes-icon">
+                                <i class="fa fa-send-o"></i>
+                            </span>
+            <div class="content-boxes-text">
+              <h4>Reliability</h4>
 
-              <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-              </blockquote>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
             </div>
-            <!-- //.testimonial-content -->
-
-            <div class="testimonial-info clearfix">
-              <img width="100" src="assets/img/testimonial-image-5.jpg" alt="" class="img-circle img-thumbnail"/>
-
-              <p class="testimonial-author">
-                @Jane Doe, Jakarta
-                <br>
-                <em>Creative Director at Apple</em>
-              </p>
-            </div>
-            <!-- //.testimonial-info -->
+            <!-- //.content-boxes-text -->
           </div>
-          <!-- //.testimonial-item -->
+          <!-- //.content-boxes -->
         </div>
-        <!-- //.col-md-4 -->
+        <!-- //.col-sm-4 col-md-4 -->
 
-        <div class="col-md-4">
-          <div class="testimonial-item">
-            <div class="testimonial-content">
-              <p class="testimonial-title">Lorem Ipsum Title</p>
+        <div class="col-sm-4 col-md-4">
+          <div class="content-boxes style-two bottom-column clearfix">
+                            <span class="content-boxes-icon">
+                                <i class="fa fa-support"></i>
+                            </span>
 
-              <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-              </blockquote>
+            <div class="content-boxes-text">
+              <h4>Price</h4>
+
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
             </div>
-            <!-- //.testimonial-content -->
-
-            <div class="testimonial-info clearfix">
-              <img width="100" src="assets/img/testimonial-image-6.jpg" alt="" class="img-circle img-thumbnail"/>
-
-              <p class="testimonial-author">
-                @Jane Doe, Jakarta
-                <br>
-                <em>Managet at Microsoft</em>
-              </p>
-            </div>
-            <!-- //.testimonial-info -->
+            <!-- //.content-boxes-text -->
           </div>
-          <!-- //.testimonial-item -->
+          <!-- //.content-boxes -->
         </div>
-        <!-- //.col-md-4 -->
+        <!-- //.col-sm-4 col-md-4 -->
       </div>
-      <!-- //.row -->
+      <!-- //End Content Boxes -->
     </div>
-    <!-- //.section-container -->
+    <!-- //.section-content -->
   </div>
   <!-- //.section-inner -->
 </section>
-<!-- //End Testimonials Section -->
+<!-- //End Why Us Section -->
+--%>
 
 
+<%--
+<!-- Begin Our Main Skills Section -->
+<section id="our-main-skills" class="section section-bgimage-yes">
+  <div class="section-inner">
+    <div class="section-overlay"></div>
+
+    <div class="container section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title text-center">
+            <h3 class="main-title">Our Main Skills</h3>
+
+            <h3 class="sub-title">We Have Creativity And Knowledge To Development</h3>
+
+            <span class="section-line"></span>
+          </div>
+          <!-- //.section-title -->
+        </div>
+        <!-- //.col-md-12 -->
+      </div>
+      <!-- //.row -->
+
+      <div class="row">
+        <div class="col-md-5">
+          <div class="bar-chart-text">
+            <p class="lead">
+              Gunung Rinjani merupakan gunung favorit bagi pendaki Indonesia karena keindahan pemandangannya. Gunung ini merupakan bagian dari Taman Nasional Gunung Rinjani yang memiliki luas sekitar 41.330 ha dan ini akan diusulkan penambahannya sehingga menjadi 76.000 ha ke arah barat.
+            </p>
+
+            <p>
+              Secara administratif gunung ini berada dalam wilayah 3 kabupaten: Lombok Timur, Lombok Tengah dan Lombok Barat. Gunung Rinjani dengan titik tertinggi 3.726 m dpl, mendominasi sebagian besar pemandangan Pulau Lombok bagian utara.
+            </p>
+          </div>
+          <!-- //.bar-chart-text -->
+        </div>
+        <!-- //.col-md-5 -->
+
+        <div class="col-md-7">
+
+          <!-- Begin Bar Chart -->
+          <div class="bar-chart">
+            <div class="bar-chart-item" data-percent="85">
+              <p>User Experience</p>
+            </div>
+            <!-- //.bar-chart-item -->
+
+            <div class="bar-chart-item" data-percent="75">
+              <p>Web & Mobile Design</p>
+            </div>
+            <!-- //.bar-chart-item -->
+
+            <div class="bar-chart-item" data-percent="100">
+              <p>Graphic Design</p>
+            </div>
+            <!-- //.bar-chart-item -->
+
+            <div class="bar-chart-item" data-percent="90">
+              <p>Identity & Branding</p>
+            </div>
+            <!-- //.bar-chart-item -->
+
+            <div class="bar-chart-item" data-percent="60">
+              <p>3D Design</p>
+            </div>
+            <!-- //.bar-chart-item -->
+
+            <div class="bar-chart-item" data-percent="75">
+              <p>Icon & Illustrations</p>
+            </div>
+            <!-- //.bar-chart-item -->
+
+            <div class="bar-chart-legend clearfix">
+              <div class="legend legend-left">
+                <p>Newbie</p>
+              </div>
+              <!-- //.legend -->
+
+              <div class="legend legend-left">
+                <p>Decent</p>
+              </div>
+              <!-- //.legend -->
+
+              <div class="legend legend-right">
+                <p>Pretty Good</p>
+              </div>
+              <!-- //.legend -->
+
+              <div class="legend legend-right">
+                <p>Super Hero</p>
+              </div>
+              <!-- //.legend -->
+            </div>
+            <!-- //.bar-chart-legend -->
+          </div>
+          <!-- //End Bar Chart -->
+        </div>
+        <!-- //.col-md-7 -->
+      </div>
+      <!-- //.row -->
+    </div>
+    <!-- //.section-content -->
+  </div>
+  <!-- //.section-inner -->
+</section>
+<!-- //End Our Main Skills Section -->
+--%>
+
+
+<!-- Begin Why-us Section -->
+<section id="why-us" class="section">
+  <div class="section-inner">
+    <div class="container section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title text-center">
+            <h3 class="main-title">Ի՞նչու օգտվել</h3>
+
+            <h4 class="sub-title">We Are Experts In Developing Your Business</h4>
+
+            <span class="section-line"></span>
+          </div>
+          <!-- //.section-title -->
+        </div>
+        <!-- //.col-md-12 -->
+      </div>
+      <!-- //.row -->
+
+      <div class="row">
+        <div class="col-sm-4 col-md-4">
+          <div class="funny-boxes float-shadow not-right-column text-center">
+                            <span class="funny-boxes-icon">
+                                <i class="fa fa-lightbulb-o"></i>
+                            </span>
+
+            <div class="funny-boxes-text">
+              <h4>Web Design</h4>
+
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            </div>
+            <!-- //.funny-boxes-text -->
+          </div>
+          <!-- //.funny-boxes -->
+        </div>
+        <!-- //.col-sm-4 col-md-4 -->
+
+        <div class="col-sm-4 col-md-4">
+          <div class="funny-boxes float-shadow not-right-column text-center">
+                            <span class="funny-boxes-icon">
+                                <i class="fa fa-heart-o"></i>
+                            </span>
+
+            <div class="funny-boxes-text">
+              <h4>Graphic Design</h4>
+
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            </div>
+            <!-- //.funny-boxes-text -->
+          </div>
+          <!-- //.funny-boxes -->
+        </div>
+        <!-- //.col-sm-4 col-md-4 -->
+
+        <div class="col-sm-4 col-md-4">
+          <div class="funny-boxes float-shadow text-center">
+                            <span class="funny-boxes-icon">
+                                <i class="fa fa-flask"></i>
+                            </span>
+
+            <div class="funny-boxes-text">
+              <h4>Branding</h4>
+
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            </div>
+            <!-- //.funny-boxes-text -->
+          </div>
+          <!-- //.funny-boxes -->
+        </div>
+        <!-- //.col-sm-4 col-md-4 -->
+      </div>
+      <!-- //.row -->
+    </div>
+    <!-- //.section-content -->
+  </div>
+  <!-- //.section-inner -->
+</section>
+<!-- //End Our Services Section -->
+
+
+
+<%--
 <!-- Begin Our Pricing Section -->
 <section id="our-pricing" class="section">
   <div class="section-inner">
@@ -1531,86 +1200,16 @@
   <!-- //.section-inner -->
 </section>
 <!-- //End Our Pricing Section -->
+--%>
 
-
-<!-- Begin Coming Soon Section -->
-<section id="coming-soon" class="section section-bgimage-yes">
-  <div class="section-inner">
-    <div class="section-overlay"></div>
-
-    <div class="container section-content">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-title text-center">
-            <h3 class="main-title">Coming Soon</h3>
-
-            <h3 class="sub-title">We're Making Something Interesting and Awesome Products Amazing</h3>
-
-            <span class="section-line"></span>
-          </div>
-          <!-- //.section-title -->
-        </div>
-        <!-- //.col-md-12 -->
-      </div>
-      <!-- //.row -->
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="countdown text-center">
-            <div class="cd-content" data-year="2020" data-month="1" data-day="1"></div>
-          </div>
-          <!-- /.countdown -->
-        </div>
-        <!-- //.col-md-12 -->
-      </div>
-      <!-- //.row -->
-
-      <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-          <div class="countdown-form">
-            <form role="form">
-              <div class="input-group">
-                <input type="text" class="form-control input-lg" placeholder="example@rinjani.com">
-
-                                    <span class="input-group-btn">
-                                        <button type="submit" class="btn btn-lg btn-rj">Notify Me</button>
-                                    </span>
-              </div>
-              <!-- //.input-group -->
-            </form>
-          </div>
-          <!-- //.countdown-form -->
-        </div>
-        <!-- //.col-md-4 col-md-offset-4 -->
-      </div>
-      <!-- //.row -->
-
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <div class="countdown-text text-center">
-            <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-          </div>
-          <!-- //.countdown-text -->
-        </div>
-        <!-- //.col-md-8 col-md-offset-2 -->
-      </div>
-      <!-- //.row -->
-    </div>
-    <!-- //.section-content -->
-  </div>
-  <!-- //.section-inner -->
-</section>
-<!-- //End Coming Soon Section -->
-
-
-<!-- Begin Our History Section -->
-<section id="our-history" class="section">
+<!-- Begin how-works Section -->
+<section id="how-works" class="section">
   <div class="section-inner">
     <div class="container section-content">
       <div class="row">
         <div class="col-md-12">
           <div class="section-title text-center">
-            <h2 class="main-title">Our History</h2>
+            <h2 class="main-title">Ինչպե՞ս է աշխատում</h2>
 
             <h3 class="sub-title">Travel Through Time With Us!</h3>
 
@@ -1727,6 +1326,194 @@
 </section>
 <!-- //End Our History Section -->
 
+<!-- Begin Testimonials Section -->
+<section id="testimonials" class="section section-bgimage-yes">
+  <div class="section-inner">
+    <div class="section-overlay"></div>
+
+    <div class="container section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title text-center">
+            <h2 class="main-title">Կարծիքներ</h2>
+
+            <h3 class="sub-title">We Make Our Customers Happy</h3>
+
+            <span class="section-line"></span>
+          </div>
+          <!-- //.section-title -->
+        </div>
+        <!-- //.col-md-12 -->
+      </div>
+      <!-- //.row -->
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="testimonial-item not-right-column not-bottom-column">
+            <div class="testimonial-content">
+              <p class="testimonial-title">Lorem Ipsum Title</p>
+
+              <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+              </blockquote>
+            </div>
+            <!-- //.testimonial-content -->
+
+            <div class="testimonial-info clearfix">
+              <img width="100" src="assets/img/testimonial-image-1.jpg" alt="" class="img-circle img-thumbnail"/>
+
+              <p class="testimonial-author">
+                @Jane Doe, Jakarta
+                <br>
+                <em>Co-Founder at Cisco</em>
+              </p>
+            </div>
+            <!-- //.testimonial-info -->
+          </div>
+          <!-- //.testimonial-item -->
+        </div>
+        <!-- //.col-md-4 -->
+
+        <div class="col-md-4">
+          <div class="testimonial-item not-right-column not-bottom-column">
+            <div class="testimonial-content">
+              <p class="testimonial-title">Lorem Ipsum Title</p>
+
+              <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+              </blockquote>
+            </div>
+            <!-- //.testimonial-content -->
+
+            <div class="testimonial-info clearfix">
+              <img width="100" src="assets/img/testimonial-image-2.jpg" alt="" class="img-circle img-thumbnail"/>
+
+              <p class="testimonial-author">
+                @John Doe, Jakarta
+                <br>
+                <em>Creative Director at Apple</em>
+              </p>
+            </div>
+            <!-- //.testimonial-info -->
+          </div>
+          <!-- //.testimonial-item -->
+        </div>
+        <!-- //.col-md-4 -->
+
+        <div class="col-md-4">
+          <div class="testimonial-item not-bottom-column">
+            <div class="testimonial-content">
+              <p class="testimonial-title">Lorem Ipsum Title</p>
+
+              <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+              </blockquote>
+            </div>
+            <!-- //.testimonial-content -->
+
+            <div class="testimonial-info clearfix">
+              <img width="100" src="assets/img/testimonial-image-3.jpg" alt="" class="img-circle img-thumbnail"/>
+
+              <p class="testimonial-author">
+                @John Doe, Jakarta
+                <br>
+                <em>Managet at Microsoft</em>
+              </p>
+            </div>
+            <!-- //.testimonial-info -->
+          </div>
+          <!-- //.testimonial-item -->
+        </div>
+        <!-- //.col-md-4 -->
+      </div>
+      <!-- //.row -->
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="testimonial-item not-right-column">
+            <div class="testimonial-content">
+              <p class="testimonial-title">Lorem Ipsum Title</p>
+
+              <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+              </blockquote>
+            </div>
+            <!-- //.testimonial-content -->
+
+            <div class="testimonial-info clearfix">
+              <img width="100" src="assets/img/testimonial-image-4.jpg" alt="" class="img-circle img-thumbnail"/>
+
+              <p class="testimonial-author">
+                @John Doe, Jakarta
+                <br>
+                <em>Co-Founder at Cisco</em>
+              </p>
+            </div>
+            <!-- //.testimonial-info -->
+          </div>
+          <!-- //.testimonial-item -->
+        </div>
+        <!-- //.col-md-4 -->
+
+        <div class="col-md-4">
+          <div class="testimonial-item not-right-column">
+            <div class="testimonial-content">
+              <p class="testimonial-title">Lorem Ipsum Title</p>
+
+              <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+              </blockquote>
+            </div>
+            <!-- //.testimonial-content -->
+
+            <div class="testimonial-info clearfix">
+              <img width="100" src="assets/img/testimonial-image-5.jpg" alt="" class="img-circle img-thumbnail"/>
+
+              <p class="testimonial-author">
+                @Jane Doe, Jakarta
+                <br>
+                <em>Creative Director at Apple</em>
+              </p>
+            </div>
+            <!-- //.testimonial-info -->
+          </div>
+          <!-- //.testimonial-item -->
+        </div>
+        <!-- //.col-md-4 -->
+
+        <div class="col-md-4">
+          <div class="testimonial-item">
+            <div class="testimonial-content">
+              <p class="testimonial-title">Lorem Ipsum Title</p>
+
+              <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+              </blockquote>
+            </div>
+            <!-- //.testimonial-content -->
+
+            <div class="testimonial-info clearfix">
+              <img width="100" src="assets/img/testimonial-image-6.jpg" alt="" class="img-circle img-thumbnail"/>
+
+              <p class="testimonial-author">
+                @Jane Doe, Jakarta
+                <br>
+                <em>Managet at Microsoft</em>
+              </p>
+            </div>
+            <!-- //.testimonial-info -->
+          </div>
+          <!-- //.testimonial-item -->
+        </div>
+        <!-- //.col-md-4 -->
+      </div>
+      <!-- //.row -->
+    </div>
+    <!-- //.section-container -->
+  </div>
+  <!-- //.section-inner -->
+</section>
+<!-- //End Testimonials Section -->
 
 <!-- Begin Contact Us Section -->
 <section id="contact-us" class="section section-bgimage-yes">
@@ -1737,9 +1524,9 @@
       <div class="row">
         <div class="col-md-12">
           <div class="section-title text-center">
-            <h3 class="main-title">Contact Us</h3>
+            <h3 class="main-title">Կապ</h3>
 
-            <h4 class="sub-title">Don't Hesitate To Contact Us</h4>
+            <h4 class="sub-title">dont hasitate contact us</h4>
 
             <span class="section-line"></span>
           </div>
