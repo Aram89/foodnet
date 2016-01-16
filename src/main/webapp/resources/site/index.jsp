@@ -84,7 +84,7 @@
           <!-- //.intro-text -->
 
           <div class="page-scroll">
-            <a href="#who-we-are" class="btn btn-lg btn-rj">Learn More</a>
+            <a href="#dishes" class="btn btn-lg btn-rj">Learn More</a>
           </div>
           <!-- //.page-scroll -->
         </div>
@@ -110,12 +110,13 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brand" href="#page-top">Rinjani</a>
+      <!--a class="navbar-brand" href="#page-top">Rinjani</a-->
+
     </div>
     <!-- //.navbar-header -->
 
     <div class="navbar-collapse collapse navbar-rj-collapse">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-left">
         <%--<li class="page-scroll">
           <a href="#who-we-are">About</a>
         </li>
