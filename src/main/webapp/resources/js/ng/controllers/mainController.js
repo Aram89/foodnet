@@ -15,6 +15,7 @@ app.controller('MainController',['$scope','translationService',function($scope,t
             $scope.$apply();
         }
     });
+    $scope.test="test";
     $scope.setLang('en');
     $scope.sections = [
         {title:'Home',href:'#home'},

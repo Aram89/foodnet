@@ -49,7 +49,7 @@
 </head>
 
 <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="51">
+<body ng-app="app" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="51">
 
 <!--[if lt IE 8]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -154,7 +154,7 @@
 
 <!-- Begin Dishes Section -->
 <section id="dishes" class="section">
-  <div class="section-inner">
+  <div ng-controller="DishesController" class="section-inner">
     <div class="container section-content">
       <div class="row">
         <div class="col-md-12">
@@ -338,75 +338,7 @@
               <!-- //.inner-content -->
             </div>
             <!-- //.portfolio-item -->
-
-            <div class="portfolio-item grow logo">
-              <div class="inner-content">
-                <div class="portfolio-content">
-                  <div class="portfolio-detail">
-                    <a href="assets/img/portfolio/portfolio-image-7.jpg" title="Project Title 7 - Lorem Ipsum">
-                      <div class="portfolio-text">
-                        <h4>Project Title 7</h4>
-
-                        <p>Lorem Ipsum</p>
-                      </div>
-                      <!-- //.portfolio-text -->
-                    </a>
-                  </div>
-                  <!-- //.portfolio-detail -->
-                </div>
-                <!-- //.portfolio-content -->
-
-                <img src="assets/img/portfolio/portfolio-image-7.jpg" alt="" class="img-responsive"/>
-              </div>
-              <!-- //.inner-content -->
-            </div>
-            <!-- //.portfolio-item -->
-
-            <div class="portfolio-item grow illustration">
-              <div class="inner-content">
-                <div class="portfolio-content">
-                  <div class="portfolio-detail">
-                    <a href="assets/img/portfolio/portfolio-image-8.jpg" title="Project Title 8 - Lorem Ipsum">
-                      <div class="portfolio-text">
-                        <h4>Project Title 8</h4>
-
-                        <p>Lorem Ipsum</p>
-                      </div>
-                      <!-- //.portfolio-text -->
-                    </a>
-                  </div>
-                  <!-- //.portfolio-detail -->
-                </div>
-                <!-- //.portfolio-content -->
-
-                <img src="assets/img/portfolio/portfolio-image-8.jpg" alt="" class="img-responsive"/>
-              </div>
-              <!-- //.inner-content -->
-            </div>
-            <!-- //.portfolio-item -->
-
-            <div class="portfolio-item grow illustration">
-              <div class="inner-content">
-                <div class="portfolio-content">
-                  <div class="portfolio-detail">
-                    <a href="assets/img/portfolio/portfolio-image-9.jpg" title="Project Title 9 - Lorem Ipsum">
-                      <div class="portfolio-text">
-                        <h4>Project Title 9</h4>
-
-                        <p>Lorem Ipsum</p>
-                      </div>
-                      <!-- //.portfolio-text -->
-                    </a>
-                  </div>
-                  <!-- //.portfolio-detail -->
-                </div>
-                <!-- //.portfolio-content -->
-
-                <img src="assets/img/portfolio/portfolio-image-9.jpg" alt="" class="img-responsive"/>
-              </div>
-              <!-- //.inner-content -->
-            </div>
-            <!-- //.portfolio-item -->
+            <offer-box></offer-box>
           </div>
           <!-- //.popup-portfolio -->
         </div>
@@ -421,7 +353,7 @@
 <!-- //End Dishes Section -->
 
 <!-- Begin Chefs Section -->
-<section id="chefs" class="section">
+<section  id="chefs" class="section">
   <div class="section-inner">
     <div class="container section-content">
       <div class="row">

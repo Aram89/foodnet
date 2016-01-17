@@ -18,7 +18,8 @@
 <script src="/resources/js/ng/directives/offerBox.js"></script>
 <script src="/resources/js/ng/directives/remoteCheck.js"></script>
 <!--end directives--->
-<!--end services-->
+<!--controllers-->
 <script src="/resources/js/ng/controllers/mainController.js"></script>
 <script src="/resources/js/ng/controllers/homeController.js"></script>
 <script src="/resources/js/ng/controllers/becomeChiefController.js"></script>
+<script src="/resources/js/ng/controllers/dishesController.js"></script>
