@@ -10,5 +10,14 @@ app.service('requestsService',['serverConnector',function(serverConnector){
                 data: data
             }
         )
+    };
+    this.loadDishes = function(data){
+        return serverConnector.send(
+            {
+                method : "get",
+                url : "dishes-load",
+                data : data
+            }
+        )
     }
 }]);

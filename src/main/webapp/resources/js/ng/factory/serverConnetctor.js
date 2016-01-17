@@ -5,7 +5,7 @@
 app.factory('serverConnector',['$http',function($http){
     'use strict';
 
-    var host='resources/api/';
+    var host='/resources/api/';
     var req = {
         method: 'POST',
         url: '/' /*,

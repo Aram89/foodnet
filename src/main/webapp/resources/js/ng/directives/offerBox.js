@@ -5,10 +5,11 @@
 app.directive('offerBox',[function(){
     return{
         scope:{
-            options:'=options'
+            opt:'=options'
         },
         replace: true,
         controller:function($scope){
+
             $scope.img='/resources/multimedia/images/1.jpg';
             $scope.belongsTo = ["logo","identity"];
             $scope.title = "dish 1";

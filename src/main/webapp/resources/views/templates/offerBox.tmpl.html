@@ -1,12 +1,12 @@
-<div ng-class="belongsTo" class="portfolio-item grow illustration logo">
+<div class="portfolio-item grow col-sm-4">
     <div class="inner-content">
         <div class="portfolio-content">
             <div class="portfolio-detail">
-                <a href="assets/img/portfolio/portfolio-image-7.jpg" title="Project Title 1 - Lorem Ipsum">
+                <a href="{{opt.href}}" title="Project Title 1 - Lorem Ipsum">
                     <div class="portfolio-text">
-                        <h4>{{title}}</h4>
+                        <h4>{{opt.title}}</h4>
 
-                        <p>{{description}}</p>
+                        <p>{{opt.desc}}</p>
                     </div>
                     <!-- //.portfolio-text -->
                 </a>
@@ -15,7 +15,7 @@
         </div>
         <!-- //.portfolio-content -->
 
-        <img src="assets/img/portfolio/portfolio-image-7.jpg" alt="" class="img-responsive"/>
+        <img src="{{opt.href}}" alt="" class="img-responsive"/>
     </div>
     <!-- //.inner-content -->
 </div>

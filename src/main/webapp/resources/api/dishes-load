@@ -1,0 +1,11 @@
+[
+  {"title":"Dish 1","belongsTo":["salads","lunch"],"desc":"dish1 is dish 1","href":"assets/img/portfolio/portfolio-image-1.jpg"},
+  {"title":"Dish 2","belongsTo":["soup"],"desc":"dish2 is dish 2","href":"assets/img/portfolio/portfolio-image-2.jpg"},
+  {"title":"Dish 3","belongsTo":["soup"],"desc":"dish3 is dish 3","href":"assets/img/portfolio/portfolio-image-3.jpg"},
+  {"title":"Dish 4","belongsTo":["hotDishes"],"desc":"dish4 is dish 4","href":"assets/img/portfolio/portfolio-image-4.jpg"},
+  {"title":"Dish 5","belongsTo":["garnish","hotDishes"],"desc":"dish5 is dish 5","href":"assets/img/portfolio/portfolio-image-5.jpg"},
+  {"title":"Dish 6","belongsTo":["hotDishes"],"desc":"dish6 is dish 6","href":"assets/img/portfolio/portfolio-image-6.jpg"},
+  {"title":"Dish 7","belongsTo":["cake"],"desc":"dish7 is dish 7","href":"assets/img/portfolio/portfolio-image-7.jpg"},
+  {"title":"Dish 8","belongsTo":["cake"],"desc":"dish8 is dish 8","href":"assets/img/portfolio/portfolio-image-8.jpg"},
+  {"title":"Dish 9","belongsTo":["lunch","hotDishes"],"desc":"dish9 is dish 9","href":"assets/img/portfolio/portfolio-image-9.jpg"}
+]

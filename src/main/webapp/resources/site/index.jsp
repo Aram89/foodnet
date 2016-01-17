@@ -159,7 +159,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="section-title text-center">
-            <h2 class="main-title">Ուտեստներ</h2>
+            <h2 class="main-title" ng-click="loadDishes()">Ուտեստներ</h2>
 
             <h3 class="sub-title">You Can Judge Us By The Work We Have Done</h3>
 
@@ -175,20 +175,10 @@
         <div class="col-md-12">
           <div class="filter-portfolio">
             <ul class="list-unstyled">
-              <li class="active">
-                <a href="#" data-filter="*" class="btn btn-rj disabled">All</a>
-              </li>
-
-              <li>
-                <a href="#" data-filter=".identity" class="btn btn-rj">Identity</a>
-              </li>
-
-              <li>
-                <a href="#" data-filter=".logo" class="btn btn-rj">Logo</a>
-              </li>
-
-              <li>
-                <a href="#" data-filter=".illustration" class="btn btn-rj">Illustration</a>
+              <li ng-repeat="c in categories">
+                <label class="btn btn-primary">
+                  <input type="button" ng-click="selectCategory(c.name)">{{c.title}}
+                </label>
               </li>
             </ul>
           </div>
@@ -200,122 +190,8 @@
 
       <div class="row">
         <div class="col-md-12">
-          <div class="popup-portfolio">
-            <div class="portfolio-item grow illustration logo">
-              <div class="inner-content">
-                <div class="portfolio-content">
-                  <div class="portfolio-detail">
-                    <a href="assets/img/portfolio/portfolio-image-1.jpg" title="Project Title 1 - Lorem Ipsum">
-                      <div class="portfolio-text">
-                        <h4>Project Title 1</h4>
-
-                        <p>Lorem Ipsum</p>
-                      </div>
-                      <!-- //.portfolio-text -->
-                    </a>
-                  </div>
-                  <!-- //.portfolio-detail -->
-                </div>
-                <!-- //.portfolio-content -->
-
-                <img src="assets/img/portfolio/portfolio-image-1.jpg" alt="" class="img-responsive"/>
-              </div>
-              <!-- //.inner-content -->
-            </div>
-            <!-- //.portfolio-item -->
-
-            <div class="portfolio-item grow identity">
-              <div class="inner-content">
-                <div class="portfolio-content">
-                  <div class="portfolio-detail">
-                    <a href="assets/img/portfolio/portfolio-image-2.jpg" title="Project Title 2 - Lorem Ipsum">
-                      <div class="portfolio-text">
-                        <h4>Project Title 2</h4>
-
-                        <p>Lorem Ipsum</p>
-                      </div>
-                      <!-- //.portfolio-text -->
-                    </a>
-                  </div>
-                  <!-- //.portfolio-detail -->
-                </div>
-                <!-- //.portfolio-content -->
-
-                <img src="assets/img/portfolio/portfolio-image-2.jpg" alt="" class="img-responsive"/>
-              </div>
-              <!-- //.inner-content -->
-            </div>
-            <!-- //.portfolio-item -->
-
-            <div class="portfolio-item grow logo identity">
-              <div class="inner-content">
-                <div class="portfolio-content">
-                  <div class="portfolio-detail">
-                    <a href="assets/img/portfolio/portfolio-image-3.jpg" title="Project Title 3 - Lorem Ipsum">
-                      <div class="portfolio-text">
-                        <h4>Project Title 3</h4>
-
-                        <p>Lorem Ipsum</p>
-                      </div>
-                      <!-- //.portfolio-text -->
-                    </a>
-                  </div>
-                  <!-- //.portfolio-detail -->
-                </div>
-                <!-- //.portfolio-content -->
-
-                <img src="assets/img/portfolio/portfolio-image-3.jpg" alt="" class="img-responsive"/>
-              </div>
-              <!-- //.inner-content -->
-            </div>
-            <!-- //.portfolio-item -->
-
-            <div class="portfolio-item grow logo">
-              <div class="inner-content">
-                <div class="portfolio-content">
-                  <div class="portfolio-detail">
-                    <a href="assets/img/portfolio/portfolio-image-4.jpg" title="Project Title 4 - Lorem Ipsum">
-                      <div class="portfolio-text">
-                        <h4>Project Title 4</h4>
-
-                        <p>Lorem Ipsum</p>
-                      </div>
-                      <!-- //.portfolio-text -->
-                    </a>
-                  </div>
-                  <!-- //.portfolio-detail -->
-                </div>
-                <!-- //.portfolio-content -->
-
-                <img src="assets/img/portfolio/portfolio-image-4.jpg" alt="" class="img-responsive"/>
-              </div>
-              <!-- //.inner-content -->
-            </div>
-            <!-- //.portfolio-item -->
-
-            <div class="portfolio-item grow logo illustration">
-              <div class="inner-content">
-                <div class="portfolio-content">
-                  <div class="portfolio-detail">
-                    <a href="assets/img/portfolio/portfolio-image-5.jpg" title="Project Title 5 - Lorem Ipsum">
-                      <div class="portfolio-text">
-                        <h4>Project Title 5</h4>
-
-                        <p>Lorem Ipsum</p>
-                      </div>
-                      <!-- //.portfolio-text -->
-                    </a>
-                  </div>
-                  <!-- //.portfolio-detail -->
-                </div>
-                <!-- //.portfolio-content -->
-
-                <img src="assets/img/portfolio/portfolio-image-5.jpg" alt="" class="img-responsive"/>
-              </div>
-              <!-- //.inner-content -->
-            </div>
-            <!-- //.portfolio-item -->
-
+          <div/> <!--class="popup-portfolio"-->
+          <%--
             <div class="portfolio-item grow identity">
               <div class="inner-content">
                 <div class="portfolio-content">
@@ -338,7 +214,8 @@
               <!-- //.inner-content -->
             </div>
             <!-- //.portfolio-item -->
-            <offer-box></offer-box>
+--%>
+            <offer-box ng-repeat="dish in dishes track by $index | filter:categoryFilter" options="dish"></offer-box>
           </div>
           <!-- //.popup-portfolio -->
         </div>
