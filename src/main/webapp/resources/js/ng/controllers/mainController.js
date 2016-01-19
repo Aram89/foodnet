@@ -1,7 +1,7 @@
 /**
  * Created by pr on 01/02/2016.
  */
-app.controller('MainController',['$scope','translationService','ngDialog',function($scope,translationService,ngDialog){
+app.controller('MainController',['$scope','translationService','ngDialog','requestServices',function($scope,translationService,ngDialog,requestServices){
     $scope.setLang =function(lang){
         translationService.getTranslation($scope,lang);
     };
@@ -11,6 +11,7 @@ app.controller('MainController',['$scope','translationService','ngDialog',functi
             controller: 'BecomeChefController'
         });
     };
+
     $scope.navTop=false;
     angular.element(window).bind('scroll',function(evt){
         if(window.scrollY>65){

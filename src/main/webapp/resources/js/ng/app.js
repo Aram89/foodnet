@@ -4,7 +4,7 @@
 var app = angular.module('app',['ngResource','ngRoute','ngDialog']);
 
 
-app.config(function($routeProvider){
+app.config(function($routeProvider,$httpProvider){
     $routeProvider
         .when('/becomeChef',{
             templateUrl:'../resources/views/templates/becomeChief.tmpl.html',
@@ -17,4 +17,7 @@ app.config(function($routeProvider){
         .otherwise({
             redirectTo:'/home'
         });
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
 });

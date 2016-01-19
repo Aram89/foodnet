@@ -20,4 +20,13 @@ app.service('requestsService',['serverConnector',function(serverConnector){
             }
         )
     }
+    this.addCategories=function(data){
+        return serverConnector.send(
+            {
+                method:"post",
+                url:"add-categories",
+                data:data
+            }
+        )
+    }
 }]);

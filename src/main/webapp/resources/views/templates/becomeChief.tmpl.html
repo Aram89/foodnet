@@ -17,7 +17,7 @@
             </div>
             <div class="reg_phone">
                 <label>{{tr.phone}}</label>
-                <input required ng-remote-check="chef/check-phone" name="phone" type="number"
+                <input required ng-remote-check="check-phone" name="phone" type="number"
                        ng-model="regChef.phone"/>
                 <div class="has-error" ng-show="!registerForm.phone.$valid">
                     <div ng-show="registerForm.phone.$error.required">{{tr.phone_required}}</div>

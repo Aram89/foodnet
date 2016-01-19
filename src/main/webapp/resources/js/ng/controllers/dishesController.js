@@ -13,6 +13,20 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
         {name:"hotDishes",title:"Տաք ուտեստներ"},
         {name:"garnish",title:"Խավարտներ"}
     ];
+    var categories = [
+        {name:"all",desc:"edsc"},
+        {name:"lunch",desc:"desc"},
+        {name:"salads",desc:"dsc"},
+        {name:"cake",desc:"dedsc"},
+        {name:"soup",desc:"desc"},
+        {name:"hotDishes",desc:"desc"},
+        {name:"garnish",desc:"desc"}
+    ];
+    $scope.someReq =function(){
+        requestsService.addCategories(categories).success(function(){
+            alert("exav")
+        })
+    }
     $scope.selectCategory = function(c){
         console.log(c);
         $scope.category = c;

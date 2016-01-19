@@ -162,7 +162,7 @@
           <div class="section-title text-center">
             <h2 class="main-title" ng-click="loadDishes()">Ուտեստներ</h2>
 
-            <h3 class="sub-title">You Can Judge Us By The Work We Have Done</h3>
+            <h3 class="sub-title" ng-click="someReq()">You Can Judge Us By The Work We Have Done</h3>
 
             <span class="section-line"></span>
           </div>
