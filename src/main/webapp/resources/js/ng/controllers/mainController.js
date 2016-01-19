@@ -1,9 +1,15 @@
 /**
  * Created by pr on 01/02/2016.
  */
-app.controller('MainController',['$scope','translationService',function($scope,translationService){
+app.controller('MainController',['$scope','translationService','ngDialog',function($scope,translationService,ngDialog){
     $scope.setLang =function(lang){
         translationService.getTranslation($scope,lang);
+    };
+    $scope.becomeChef = function () {
+        ngDialog.open({
+            template: '/resources/views/templates/becomeChief.tmpl.html',
+            controller: 'BecomeChefController'
+        });
     };
     $scope.navTop=false;
     angular.element(window).bind('scroll',function(evt){

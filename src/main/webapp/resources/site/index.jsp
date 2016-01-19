@@ -49,7 +49,7 @@
 </head>
 
 <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
-<body ng-app="app" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="51">
+<body ng-app="app" ng-controller="MainController" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="51">
 
 <!--[if lt IE 8]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -72,7 +72,7 @@
       <div class="row">
         <div class="col-md-12 intro-content">
           <div class="logo">
-            <h1>R</h1>
+            <h1>N</h1>
           </div>
           <!-- //.logo -->
 
@@ -83,9 +83,10 @@
           </div>
           <!-- //.intro-text -->
 
-          <div class="page-scroll">
-            <a href="#dishes" class="btn btn-lg btn-rj">Learn More</a>
+          <div>
+            <a ng-click="becomeChef()" class="btn btn-lg btn-rj">Learn More</a>
           </div>
+
           <!-- //.page-scroll -->
         </div>
         <!-- //.intro-content -->
@@ -215,7 +216,7 @@
             </div>
             <!-- //.portfolio-item -->
 --%>
-            <offer-box ng-repeat="dish in dishes track by $index | filter:categoryFilter" options="dish"></offer-box>
+            <offer-box ng-repeat="dish in dishes | filter:categoryFilter" options="dish"></offer-box>
           </div>
           <!-- //.popup-portfolio -->
         </div>

@@ -23,3 +23,4 @@
 <script src="/resources/js/ng/controllers/homeController.js"></script>
 <script src="/resources/js/ng/controllers/becomeChiefController.js"></script>
 <script src="/resources/js/ng/controllers/dishesController.js"></script>
+<script src="/resources/bower_components/ng-dialog/js/ngDialog.js"></script>

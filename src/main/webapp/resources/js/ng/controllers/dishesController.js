@@ -3,22 +3,22 @@
  */
 app.controller('DishesController',['$scope','requestsService',function($scope,requestsService){
     $scope.dishes  = [];
-    $scope.category="logo";
+    $scope.category="all";
     $scope.categories = [
-        {name:"lunch",title:"????"},
-        {name:"salads",title:"????????"},
-        {name:"cake",title:"?????????"},
-        {name:"soup",title:"????????"},
-        {name:"hotDishes",title:"????????????"},
-        {name:"garnish",title:"??????"}
+        {name:"all",title:"Բոլորը"},
+        {name:"lunch",title:"Լանչ"},
+        {name:"salads",title:"Աղացններ"},
+        {name:"cake",title:"Թխվածք"},
+        {name:"soup",title:"Ապուր"},
+        {name:"hotDishes",title:"Տաք ուտեստներ"},
+        {name:"garnish",title:"Խավարտներ"}
     ];
     $scope.selectCategory = function(c){
         console.log(c);
         $scope.category = c;
     };
     $scope.categoryFilter = function(c){
-        console.log(c);
-        return c.indexOf($scope.category)!=-1;
+        return $scope.category=="all"||c.belongsTo.indexOf($scope.category)!=-1;
     };
     $scope.loadDishes = function(type){
         requestsService.loadDishes({type:type})

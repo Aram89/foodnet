@@ -1,7 +1,7 @@
 /**
  * Created by pr on 01/09/2016.
  */
-app.controller('BecomeChiefController',['$scope','requestsService',function($scope,requestsService){
+app.controller('BecomeChefController',['$scope','requestsService',function($scope,requestsService){
     $scope.regChef={};
     $scope.becomeChef = function(){
         requestsService.becomeChef($scope.regChef)

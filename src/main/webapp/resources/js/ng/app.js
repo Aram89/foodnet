@@ -1,7 +1,7 @@
 /**
  * Created by pr on 01/01/2016.
  */
-var app = angular.module('app',['ngResource','ngRoute']);
+var app = angular.module('app',['ngResource','ngRoute','ngDialog']);
 
 
 app.config(function($routeProvider){
@@ -16,5 +16,5 @@ app.config(function($routeProvider){
         })
         .otherwise({
             redirectTo:'/home'
-        })
+        });
 });
