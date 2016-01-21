@@ -58,7 +58,7 @@
 <!-- Begin Page Loader -->
 <div id="page-loader">
   <div class="preload">
-    <img src="assets/img/preloader.gif" alt="Loading"/>
+    <img src="assets/img/orange-preloader.gif" alt="Loading"/>
   </div>
   <!-- //.preload -->
 </div>
