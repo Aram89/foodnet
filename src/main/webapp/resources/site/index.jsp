@@ -176,10 +176,8 @@
         <div class="col-md-12">
           <div class="filter-portfolio">
             <ul class="list-unstyled">
-              <li ng-repeat="c in categories">
-                <label class="btn btn-primary">
-                  <input type="button" ng-click="selectCategory(c.name)">{{c.title}}
-                </label>
+              <li ng-repeat="category in categories">
+                  <button type="button" class="btn btn-rj" ng-click="selectCategory(category.name)">{{category.title}}</button>
               </li>
             </ul>
           </div>
