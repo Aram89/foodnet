@@ -1,7 +1,7 @@
 /**
  * Created by pr on 01/02/2016.
  */
-app.controller('MainController',['$scope','translationService','ngDialog','requestServices',function($scope,translationService,ngDialog,requestServices){
+app.controller('MainController',['$scope','translationService','ngDialog',function($scope,translationService,ngDialog){
     $scope.setLang =function(lang){
         translationService.getTranslation($scope,lang);
     };

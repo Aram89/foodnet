@@ -16,7 +16,7 @@ app.service('requestsService',['serverConnector',function(serverConnector){
             {
                 method : "get",
                 url : "get-dishes",
-                data : data
+                params : data
             }
         )
     };

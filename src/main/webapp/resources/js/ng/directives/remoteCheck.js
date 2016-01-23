@@ -18,7 +18,7 @@ app.directive('ngRemoteCheck',['serverConnector', function(serverConnector) {
                     serverConnector.send({
                         method: "GET",
                         url: checkUrl,
-                        data: params
+                        params: params
                     }).success(function (data) {
                         ctrl.$setValidity('remote', true);
                     })

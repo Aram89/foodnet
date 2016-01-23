@@ -5,8 +5,8 @@
 app.factory('serverConnector',['$http',function($http){
     'use strict';
 
-    //var host='/resources/api/';
-    var host='http://192.168.0.101:8084/';
+    var host='/resources/api/';
+    //var host='http://192.168.0.101:8084/';
     var req = {
         method: 'POST',
         url: '/' /*,
