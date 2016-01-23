@@ -15,11 +15,11 @@ app.service('requestsService',['serverConnector',function(serverConnector){
         return serverConnector.send(
             {
                 method : "get",
-                url : "dishes-load",
+                url : "get-dishes",
                 data : data
             }
         )
-    }
+    };
     this.addCategories=function(data){
         return serverConnector.send(
             {

@@ -30,12 +30,14 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
     $scope.selectCategory = function(c){
         console.log(c);
         $scope.category = c;
+        $scope.loadDishes(c);
     };
     $scope.categoryFilter = function(c){
         return $scope.category=="all"||c.belongsTo.indexOf($scope.category)!=-1;
     };
     $scope.loadDishes = function(type){
-        requestsService.loadDishes({type:type})
+        var dish={category:type,start:0,count:10};
+        requestsService.loadDishes(dish)
             .success(function(data){
                 console.log(data);
                 ///$scope.dishes.push(data);
