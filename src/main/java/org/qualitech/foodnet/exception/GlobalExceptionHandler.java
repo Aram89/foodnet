@@ -1,11 +1,14 @@
 package org.qualitech.foodnet.exception;
 
+import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
+
+import java.sql.SQLException;
 
 /**
  * Class for handling exceptions
@@ -25,6 +28,21 @@ public class GlobalExceptionHandler {
     public ResponseEntity exception(Exception e) {
         return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    /**
+     * Returning INTERNAL_SERVER_ERROR
+     * for all unhandled exceptions
+     *
+     * @param se sql Exception.
+     * @return
+     */
+    @ExceptionHandler(DataAccessException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseBody
+    public ErrorCodes sqlException(Exception se) {
+        return new ErrorCodes("wrong id");
+    }
+
 
     /**
      * Returning bad request status

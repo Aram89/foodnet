@@ -1,25 +1,48 @@
 package org.qualitech.foodnet.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author Aram Kirakosyan.
  */
 @Entity
 @Table(name = "dish")
-@Inheritance(strategy = InheritanceType.JOINED)
 public class Dish {
 
     private long dishId;
     private double price;
     private String name;
     private String description;
-    private int categoryId;
     private Chef chef;
     private Order order;
+    private List <Category> categories;
+    private List<File> files;
+
+    @OneToMany
+    @JoinColumn(name="dishId")
+    public List<File> getFiles() {
+        return files;
+    }
+
+    public void setFiles(List<File> files) {
+        this.files = files;
+    }
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinTable(name = "dishCategory", joinColumns = {
+            @JoinColumn(name = "dishId", insertable = false) },
+            inverseJoinColumns = { @JoinColumn(name = "categoryId", insertable = false) })
+    public List<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
+    }
 
     @ManyToOne
-    @JoinColumn(name="orderId")
+    @JoinColumn(name="ordersId")
     public Order getOrder() {
         return order;
     }
@@ -67,14 +90,6 @@ public class Dish {
         this.description = description;
     }
 
-    @Column
-    public int getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
-    }
 
     @ManyToOne
     @JoinColumn(name="chefId")

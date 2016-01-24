@@ -8,8 +8,7 @@ import java.util.List;
  * @author Aram Kirakosyan.
  */
 @Entity
-@Table(name = "order")
-@Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "orders")
 public class Order {
 
     private long orderId;
@@ -20,7 +19,7 @@ public class Order {
 
     @Id
     @GeneratedValue
-    @Column(name = "orderId")
+    @Column(name = "ordersId")
     public long getOrderId() {
         return orderId;
     }

@@ -8,7 +8,6 @@ import java.util.List;
  */
 @Entity
 @Table(name = "chef")
-@Inheritance(strategy = InheritanceType.JOINED)
 public class Chef {
 
     private int chefId;
@@ -18,6 +17,7 @@ public class Chef {
     private String surName;
     private String phone;
     private String status;
+    private String password;
     private List <Dish> dishes;
 
     @Id

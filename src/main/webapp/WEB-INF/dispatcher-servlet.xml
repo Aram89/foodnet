@@ -4,6 +4,7 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:aop="http://www.springframework.org/schema/aop" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xmlns:websocket="http://www.springframework.org/schema/websocket"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context 
@@ -13,7 +14,9 @@
                            http://www.springframework.org/schema/tx
                            http://www.springframework.org/schema/tx/spring-tx-3.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
                            http://www.springframework.org/schema/data/jpa
-     http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+     http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+      http://www.springframework.org/schema/websocket
+        http://www.springframework.org/schema/websocket/spring-websocket.xsd">
 
     <context:component-scan base-package="org.qualitech.foodnet.controller"/>
     <context:component-scan base-package="org.qualitech.foodnet.repositories"/>
@@ -21,8 +24,13 @@
     <context:component-scan base-package="org.qualitech.foodnet.service"/>
     <context:property-placeholder location="WEB-INF/jdbc.properties"/>
     <context:component-scan base-package="org.qualitech.foodnet.exception"/>
+    <context:component-scan base-package="org.qualitech.foodnet.websocket"/>
     <jpa:repositories base-package="org.qualitech.foodnet.repositories"/>
 
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="10000000000000000" />
+    </bean>
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource" />
@@ -33,7 +41,7 @@
         <property name="jpaProperties">
             <props>
                 <!--<prop key="hibernate.hbm2ddl.auto">create</prop>-->
-                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
             </props>
         </property>
     </bean>
@@ -48,8 +56,6 @@
         <property name="entityManagerFactory" ref="entityManagerFactory" />
     </bean>
     <tx:annotation-driven />
-
-
 
     <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
 

@@ -1,0 +1,140 @@
+/*-----------------------------------------------------------------------
+/*  BLUE
+/*  assets/less/colors/blue.less
+/*-----------------------------------------------------------------------
+
+1. NAVBAR
+
+2. QUOTE SECTION
+
+3. KEEP IN TOUCH SECTION
+
+4. CONTACT US SECTION
+
+5. FOOTER
+
+-----------------------------------------------------------------------*/
+
+
+/* IMPORT VARIABLES */
+@import "../variables";
+
+
+/*---------------------------------------------------------------------*/
+/*  1. NAVBAR
+/*---------------------------------------------------------------------*/
+.navbar.navbar-fixed-top {
+    .navbar-toggle {        
+        background-color: @orange;
+    }
+
+    .navbar-nav {
+        > li {
+            > a {
+                &:hover {
+                    color: @orange;
+                }
+            }
+        }
+
+        > li.active {
+            a, a:hover {
+                background-color: @orange;
+
+                @media(min-width:992px) {
+                    background-color: @orange;
+                }
+            }
+        }
+    }
+}
+
+.navbar-trigger-open {
+    a {
+        background-color: @orange;
+    }
+}
+
+
+/*---------------------------------------------------------------------*/
+/*  2. QUOTE SECTION
+/*---------------------------------------------------------------------*/
+#quote {
+    > .section-inner {
+        > .section-content {
+            .quote-text {
+                > .quote-icon {
+                    > i {
+                        color: @orange;
+                       
+                    }
+                }
+
+                > h2.quote-by {
+                    color: @orange;
+                }
+            }
+        }
+    }
+}
+
+
+/*---------------------------------------------------------------------*/
+/*  3. KEEP IN TOUCH SECTION
+/*---------------------------------------------------------------------*/
+#keep-in-touch {
+    .social-icon-item {    
+        > a {
+            &:hover {
+                color: @orange;
+                
+                .social-icon {
+                    > i {
+                        color: @orange;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*---------------------------------------------------------------------*/
+/*  4. CONTACT US SECTION
+/*---------------------------------------------------------------------*/
+#contact-us {
+    > .section-inner {
+        > .section-content {
+            .content-message {
+                background-color: @orange;
+            }
+
+            .form-group {
+                input, 
+                textarea {
+                    border-left-color: @orange;
+                }
+
+                span {
+                    background-color: @orange;
+                    border-color: @orange;
+                }
+            }
+
+            .social-icon-text {
+                > h2 {
+                    background-color: @orange;
+                    border: 1px solid darken(@orange, 10%);
+                }
+            }
+        }
+    }
+}
+
+
+/*---------------------------------------------------------------------*/
+/*  5. FOOTER
+/*---------------------------------------------------------------------*/
+footer.footer {
+    border-top: 2px solid @orange;
+}

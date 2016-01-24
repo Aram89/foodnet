@@ -6,12 +6,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * @author Aram Kirakosyan.
  */
 @Transactional
 @Service
 public class ChefServiceImpl implements ChefService {
+
+    private static List<String> onlineUsers;
+
+    public static List<String> getOnlineUsers() {
+        return onlineUsers;
+    }
+
+    public static void setOnlineUsers(List<String> onlineUsers) {
+        ChefServiceImpl.onlineUsers = onlineUsers;
+    }
+
 
     @Autowired
     ChefRepository repository;
