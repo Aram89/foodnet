@@ -15,7 +15,10 @@ public interface DishRepository extends PagingAndSortingRepository<Dish, Long> {
 
     Long findCategoryIdByName(String name);
 
-    //@Query("select dish from dish d where ")
-    Page<Dish> findByCategories(Long categoryId, org.springframework.data.domain.Pageable pageable);
+//    @Query("SELECT d FROM Dish AS d INNER JOIN dishCategory AS dp ON d.dishId = dp.dishId  INNER JOIN Category" +
+//            " AS c\n" +
+//            "    ON c.categoryId = dp.categoryId\n" +
+//            "WHERE dp.categoryId = :categoryId ")
+//    Page<Dish> findByCategories(Long categoryId, org.springframework.data.domain.Pageable pageable);
 
 }

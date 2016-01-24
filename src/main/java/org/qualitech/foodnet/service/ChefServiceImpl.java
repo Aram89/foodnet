@@ -11,8 +11,8 @@ import java.util.List;
 /**
  * @author Aram Kirakosyan.
  */
-@Transactional
 @Service
+@Transactional
 public class ChefServiceImpl implements ChefService {
 
     private static List<String> onlineUsers;

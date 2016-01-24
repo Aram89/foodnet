@@ -1,43 +1,32 @@
-package org.qualitech.foodnet.domain;
+package org.qualitech.foodnet.domain.json;
 
+import org.qualitech.foodnet.domain.Chef;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
-
-import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 /**
  * @author Aram Kirakosyan.
  */
-@Entity
-@Table(name = "chef")
-public class Chef implements Serializable {
+
+public class ChefRest {
 
     private int chefId;
-
-    @Column
-    public Short getRating() {
-        return rating;
-    }
-
-    public void setRating(Short rating) {
-        this.rating = rating;
-    }
-
     private Short rating;
     private String feedback;
     private String name;
     private String surName;
     private String phone;
     private String status;
-    private String password;
-    @JsonIgnore
-    private List <Dish> dishes;
 
-    @Id
-    @GeneratedValue
-    @Column(name = "chefId")
+    public ChefRest(Chef chef) {
+        this.chefId = chef.getChefId();
+        this.rating = chef.getRating();
+        this.feedback = chef.getFeedback();
+        this.surName = chef.getSurName();
+        this.phone = chef.getPhone();
+        this.status = chef.getStatus();
+    }
+
     public int getChefId() {
         return chefId;
     }
@@ -46,8 +35,14 @@ public class Chef implements Serializable {
         this.chefId = chefId;
     }
 
+    public Short getRating() {
+        return rating;
+    }
 
-    @Column
+    public void setRating(Short rating) {
+        this.rating = rating;
+    }
+
     public String getFeedback() {
         return feedback;
     }
@@ -56,7 +51,6 @@ public class Chef implements Serializable {
         this.feedback = feedback;
     }
 
-    @Column
     public String getName() {
         return name;
     }
@@ -65,7 +59,6 @@ public class Chef implements Serializable {
         this.name = name;
     }
 
-    @Column
     public String getSurName() {
         return surName;
     }
@@ -74,7 +67,6 @@ public class Chef implements Serializable {
         this.surName = surName;
     }
 
-    @Column
     public String getPhone() {
         return phone;
     }
@@ -83,7 +75,6 @@ public class Chef implements Serializable {
         this.phone = phone;
     }
 
-    @Column
     public String getStatus() {
         return status;
     }
@@ -92,14 +83,22 @@ public class Chef implements Serializable {
         this.status = status;
     }
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "chef")
-    public List<Dish> getDishes() {
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public List<DishRest> getDishes() {
         return dishes;
     }
 
-    public void setDishes(List<Dish> dishes) {
+    public void setDishes(List<DishRest> dishes) {
         this.dishes = dishes;
     }
 
+    private String password;
+    private List<DishRest> dishes;
 }

@@ -1,7 +1,10 @@
 package org.qualitech.foodnet.service;
 
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.qualitech.foodnet.domain.Category;
 import org.qualitech.foodnet.domain.Dish;
+import org.qualitech.foodnet.domain.json.DishRest;
 import org.qualitech.foodnet.repositories.Categoryrepository;
 import org.qualitech.foodnet.repositories.DishRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +13,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -31,11 +35,14 @@ public class DishServiceImpl implements DishService {
         dishRepository.save(dish);
     }
 
+
     @Override
-    public List<Dish> getDishes(String categoryName, int startIndex, int count) {
+    public String getDishes(String categoryName, int startIndex, int count) throws IOException {
         Category category = categoryrepository.findCategoryIdByName(categoryName).get(0);
-        List dishes = category.getDishes();
-        System.out.println(dishes);
-        return dishes; //dishRepository.findByCategories(id, new PageRequest(startIndex, count));
+        List<Dish> dishs = category.getDishes();
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonInString = mapper.writeValueAsString(dishs);
+        return jsonInString;
+         //dishRepository.findByCategories(id, new PageRequest(startIndex, count));
     }
 }

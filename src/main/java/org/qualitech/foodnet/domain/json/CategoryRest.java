@@ -1,37 +1,26 @@
-package org.qualitech.foodnet.domain;
+package org.qualitech.foodnet.domain.json;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import org.codehaus.jackson.annotate.JsonIgnore;
+
+import org.qualitech.foodnet.domain.Category;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 /**
  * @author Aram Kirakosyan.
  */
-@Entity
-public class Category implements Serializable {
+public class CategoryRest {
 
     private long categoryId;
     private String name;
     private String description;
-    @JsonIgnore
-    private List<Dish> dishes;
 
-    @JsonIgnore
-    @ManyToMany(mappedBy="categories", fetch = FetchType.EAGER)
-    public List<Dish> getDishes() {
-        return dishes;
+    public CategoryRest(Category category) {
+        this.categoryId = category.getCategoryId();
+        this.name = category.getName();
+        this.description = category.getDescription();
     }
 
-    public void setDishes(List<Dish> dishes) {
-        this.dishes = dishes;
-    }
-
-    @Id
-    @GeneratedValue
-    @Column(name = "categoryId")
     public long getCategoryId() {
         return categoryId;
     }
@@ -40,7 +29,6 @@ public class Category implements Serializable {
         this.categoryId = categoryId;
     }
 
-    @Column
     public String getName() {
         return name;
     }
@@ -49,7 +37,6 @@ public class Category implements Serializable {
         this.name = name;
     }
 
-    @Column
     public String getDescription() {
         return description;
     }
@@ -57,4 +44,16 @@ public class Category implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public List<DishRest> getDishes() {
+        return dishes;
+    }
+
+    public void setDishes(List<DishRest> dishes) {
+        this.dishes = dishes;
+    }
+
+    private List<DishRest> dishes;
+
+
 }

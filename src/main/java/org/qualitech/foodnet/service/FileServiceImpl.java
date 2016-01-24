@@ -27,9 +27,9 @@ public class FileServiceImpl implements FileService {
     private final Integer FILES_COUNT_PER_FOLDER = 2000;
 
     // Change it for production.
-    private final String ROOT_FOLDER = "C:\\uploads\\";
+    private final String ROOT_FOLDER = "C:/Users/Aram/Desktop/projects/foodnet/src/main/webapp/resources/site/assets/img/";
 
-    private final String DELIMITER = "\\";
+    private final String DELIMITER = "/";
 
     @Autowired
     private FileRepository repository;
@@ -81,7 +81,8 @@ public class FileServiceImpl implements FileService {
         String path = createDirs(type);
         if (!multipartFile.isEmpty()) {
             byte[] bytes = multipartFile.getBytes();
-            String fullPath = path + DELIMITER + (new Date().getTime()) + userId + multipartFile.getOriginalFilename();
+            //String fullPath = path + DELIMITER + (new Date().getTime()) + userId + multipartFile.getOriginalFilename();
+            String fullPath = ROOT_FOLDER + DELIMITER + multipartFile.getOriginalFilename();
             BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new java.io.File(fullPath)));
             stream.write(bytes);
             stream.close();

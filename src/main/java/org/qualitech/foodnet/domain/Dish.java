@@ -1,6 +1,7 @@
 package org.qualitech.foodnet.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -8,7 +9,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "dish")
-public class Dish {
+public class Dish implements Serializable  {
 
     private long dishId;
     private double price;
@@ -19,7 +20,7 @@ public class Dish {
     private List <Category> categories;
     private List<File> files;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name="dishId")
     public List<File> getFiles() {
         return files;
@@ -29,7 +30,7 @@ public class Dish {
         this.files = files;
     }
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable(name = "dishCategory", joinColumns = {
             @JoinColumn(name = "dishId", insertable = false) },
             inverseJoinColumns = { @JoinColumn(name = "categoryId", insertable = false) })
@@ -91,7 +92,7 @@ public class Dish {
     }
 
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="chefId")
     public Chef getChef() {
         return chef;

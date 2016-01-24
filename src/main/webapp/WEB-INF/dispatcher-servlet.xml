@@ -19,8 +19,6 @@
         http://www.springframework.org/schema/websocket/spring-websocket.xsd">
 
     <context:component-scan base-package="org.qualitech.foodnet.controller"/>
-    <context:component-scan base-package="org.qualitech.foodnet.repositories"/>
-
     <context:component-scan base-package="org.qualitech.foodnet.service"/>
     <context:property-placeholder location="WEB-INF/jdbc.properties"/>
     <context:component-scan base-package="org.qualitech.foodnet.exception"/>

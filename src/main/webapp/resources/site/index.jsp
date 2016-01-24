@@ -39,8 +39,8 @@
   <link href="assets/css/rinjani.css" rel="stylesheet" type="text/css">
 
   <!-- Color CSS -->
-  <!--<link href="assets/css/colors/blue.css" rel="stylesheet" type="text/css">-->
-  <!--<link href="assets/css/component/colors/blue.css" rel="stylesheet" type="text/css">-->
+  <link href="assets/css/colors/orange.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/component/colors/orange.css" rel="stylesheet" type="text/css">
 
   <!-- Modernizr JS for IE9 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -214,7 +214,7 @@
             </div>
             <!-- //.portfolio-item -->
 --%>
-            <offer-box ng-repeat="dish in dishes | filter:categoryFilter" options="dish"></offer-box>
+            <offer-box ng-repeat="dish in dishes" options="dish"></offer-box>
           </div>
           <!-- //.popup-portfolio -->
         </div>
@@ -965,14 +965,14 @@
 <!-- //End Contact Us Section -->
 
 
-<!-- Begin Map -->
-<div id="map">
-  <div id="cd-google-map">
-    <div id="google-container"></div>
-  </div>
-  <!-- //.cd-google-map -->
-</div>
-<!-- //End Map -->
+<%--<!-- Begin Map -->--%>
+<%--<div id="map">--%>
+  <%--<div id="cd-google-map">--%>
+    <%--<div id="google-container"></div>--%>
+  <%--</div>--%>
+  <%--<!-- //.cd-google-map -->--%>
+<%--</div>--%>
+<%--<!-- //End Map -->--%>
 
 
 <!-- Begin Footer -->

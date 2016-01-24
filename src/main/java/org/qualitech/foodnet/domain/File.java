@@ -1,6 +1,7 @@
 package org.qualitech.foodnet.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -10,7 +11,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "file")
-public class File {
+public class File implements Serializable{
 
     private long fileId;
     private String name;

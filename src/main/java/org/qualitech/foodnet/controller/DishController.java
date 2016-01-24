@@ -1,6 +1,5 @@
 package org.qualitech.foodnet.controller;
 
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.qualitech.foodnet.domain.Dish;
 import org.qualitech.foodnet.domain.File;
@@ -41,7 +40,7 @@ public class DishController {
 
         // create domain object and set fields for file.
         File file = new File();
-        file.setPath(path);
+        file.setPath(multipartFile.getOriginalFilename());
         file.setName(multipartFile.getOriginalFilename());
         file.setCreateDate(new Date());
         file.setMimeType(multipartFile.getContentType());
@@ -72,15 +71,8 @@ public class DishController {
     @RequestMapping(value = RequestMappings.GET_DISHES, method = RequestMethod.GET)
     public ResponseEntity getDishes(@RequestParam(value = "category") String category,
                                     @RequestParam(value = "start") int start,
-                                    @RequestParam(value = "count") int count) throws SQLException{
-        dishService.getDishes(category, start, count);
-        return new ResponseEntity(HttpStatus.OK);
+                                    @RequestParam(value = "count") int count) throws SQLException, IOException {
+        String dishes = dishService.getDishes(category, start, count);
+        return new ResponseEntity(dishes, HttpStatus.OK);
     }
-
-    @RequestMapping(value = "test", method = RequestMethod.POST)
-    public ResponseEntity test() {
-        System.out.println("Ekav");
-        return new ResponseEntity(HttpStatus.OK);
-    }
-
 }

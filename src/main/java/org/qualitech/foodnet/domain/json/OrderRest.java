@@ -1,29 +1,20 @@
-package org.qualitech.foodnet.domain;
+package org.qualitech.foodnet.domain.json;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 /**
  * @author Aram Kirakosyan.
  */
-@Entity
-@Table(name = "orders")
-public class Order implements Serializable{
+
+public class OrderRest {
 
     private long orderId;
     private Date time;
     private double price;
     private String location;
-    @JsonIgnore
-    private List <Dish> dishes;
+    private List<DishRest> dishes;
 
-    @Id
-    @GeneratedValue
-    @Column(name = "ordersId")
     public long getOrderId() {
         return orderId;
     }
@@ -32,7 +23,6 @@ public class Order implements Serializable{
         this.orderId = orderId;
     }
 
-    @Column
     public Date getTime() {
         return time;
     }
@@ -41,7 +31,6 @@ public class Order implements Serializable{
         this.time = time;
     }
 
-    @Column
     public double getPrice() {
         return price;
     }
@@ -50,7 +39,6 @@ public class Order implements Serializable{
         this.price = price;
     }
 
-    @Column
     public String getLocation() {
         return location;
     }
@@ -59,13 +47,11 @@ public class Order implements Serializable{
         this.location = location;
     }
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "order")
-    public List<Dish> getDishes() {
+    public List<DishRest> getDishes() {
         return dishes;
     }
 
-    public void setDishes(List<Dish> dishes) {
+    public void setDishes(List<DishRest> dishes) {
         this.dishes = dishes;
     }
 }

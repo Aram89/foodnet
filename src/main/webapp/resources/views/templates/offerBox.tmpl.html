@@ -2,11 +2,11 @@
     <div class="inner-content">
         <div class="portfolio-content">
             <div class="portfolio-detail">
-                <a href="{{opt.href}}" title="Project Title 1 - Lorem Ipsum">
+                <a href="assets/img/{{opt.files[0].path}}" title="Project Title 1 - Lorem Ipsum">
                     <div class="portfolio-text">
-                        <h4>{{opt.title}}</h4>
+                        <h4>{{opt.name}}</h4>
 
-                        <p>{{opt.desc}}</p>
+                        <p>{{opt.description}}</p>
                     </div>
                     <!-- //.portfolio-text -->
                 </a>
@@ -15,7 +15,7 @@
         </div>
         <!-- //.portfolio-content -->
 
-        <img src="{{opt.href}}" alt="" class="img-responsive"/>
+        <img src="assets/img/{{opt.files[0].path}}" alt="" class="img-responsive"/>
     </div>
     <!-- //.inner-content -->
 </div>

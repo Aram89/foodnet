@@ -3,7 +3,7 @@
 /*  Theme URI   : https://wrapbootstrap.com/theme/rinjani-multi-purpose-one-page-theme-WB035T192
 /*  Description : Multi-Purpose One Page Theme
 /*  Version     : 1.8
-/*  assets/css/rinjani.css
+/*  assets/less/rinjani.less
 /*-----------------------------------------------------------------------
 
 1. GLOBAL STYLES
@@ -41,8 +41,13 @@
 16. FOOTER
 
 -----------------------------------------------------------------------*/
-
-
+/* IMPORT VARIABLES */
+/*---------------------------------------*/
+/*  VARIABLES
+/*---------------------------------------*/
+/*---------------------------------------*/
+/*  COLORS
+/*---------------------------------------*/
 /*---------------------------------------------------------------------*/
 /*  1. GLOBAL STYLES
 /*---------------------------------------------------------------------*/
@@ -227,8 +232,6 @@ p {
     background-attachment: fixed;
   }
 }
-
-
 /*---------------------------------------------------------------------*/
 /*  2. ANIMATION DELAY
 /*---------------------------------------------------------------------*/
@@ -282,8 +285,6 @@ p {
   -moz-transition-delay: .5s;
   -o-transition-delay: .5s;
 }
-
-
 /*---------------------------------------------------------------------*/
 /*  3. PAGE LOADER
 /*---------------------------------------------------------------------*/
@@ -305,8 +306,6 @@ p {
   margin-top: -64px;
   margin-left: -64px;
 }
-
-
 /*---------------------------------------------------------------------*/
 /*  4. NAVBAR
 /*---------------------------------------------------------------------*/
@@ -341,7 +340,7 @@ p {
 }
 .navbar.navbar-fixed-top .navbar-toggle {
   margin-top: 12px;
-  background-color: #1abc9c;
+  background-color: #ff7932;
 }
 .navbar.navbar-fixed-top .navbar-nav > li > a {
   color: #fff;
@@ -357,7 +356,7 @@ p {
   }
 }
 .navbar.navbar-fixed-top .navbar-nav > li > a:hover {
-  color: #1abc9c;
+  color: #ff7932;
   background-color: #222;
 }
 .navbar.navbar-fixed-top .navbar-nav > li > a > i.fa-angle-down {
@@ -365,19 +364,17 @@ p {
 }
 .navbar.navbar-fixed-top .navbar-nav > li.active a,
 .navbar.navbar-fixed-top .navbar-nav > li.active a:hover {
-  background-color: #1abc9c;
+  background-color: #ff7932;
   color: #fff;
 }
 @media (min-width: 992px) {
   .navbar.navbar-fixed-top .navbar-nav > li.active a,
   .navbar.navbar-fixed-top .navbar-nav > li.active a:hover {
     color: #fff;
-    background-color: #1abc9c;
+    background-color: #ff7932;
     background-repeat: repeat;
   }
 }
-
-
 /*---------------------------------------------------------------------*/
 /*  4.1. NAVBAR - CENTER MENU
 /*---------------------------------------------------------------------*/
@@ -396,8 +393,6 @@ p {
     padding-left: 5px;
   }
 }
-
-
 /*---------------------------------------------------------------------*/
 /*  4.2. NAVBAR - SIDE MENU
 /*---------------------------------------------------------------------*/
@@ -502,7 +497,7 @@ p {
 .navbar-trigger-open a {
   color: #fff;
   font-size: 28px;
-  background-color: #1abc9c;
+  background-color: #ff7932;
   padding: 5px 15px;
   border-radius: 2px;
   opacity: 0.9;
@@ -529,8 +524,6 @@ span.navbar-trigger-close a {
 span.navbar-trigger-close a:hover {
   color: #fff;
 }
-
-
 /*---------------------------------------------------------------------*/
 /*  5. INTRO SECTION
 /*---------------------------------------------------------------------*/
@@ -579,7 +572,7 @@ span.navbar-trigger-close a:hover {
   width: 110px;
   height: 110px;
   line-height: 110px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 121, 50, 0.8);
   font-family: 'Raleway', sans-serif;
   font-size: 80px;
   font-weight: 700;
@@ -630,8 +623,6 @@ span.navbar-trigger-close a:hover {
     font-size: 22px;
   }
 }
-
-
 /*---------------------------------------------------------------------*/
 /*  6. WHO WE ARE SECTION
 /*---------------------------------------------------------------------*/
@@ -661,8 +652,6 @@ span.navbar-trigger-close a:hover {
 #who-we-are .who-we-are-text > .page-scroll {
   padding-top: 10px;
 }
-
-
 /*---------------------------------------------------------------------*/
 /*  7. FUN FACT SECTION
 /*---------------------------------------------------------------------*/
@@ -676,8 +665,6 @@ span.navbar-trigger-close a:hover {
 #fun-fact > .section-inner .section-content .section-title > .section-line {
   background-color: #b7ada4;
 }
-
-
 /*---------------------------------------------------------------------*/
 /*  8. OUR MAIN SKILLS SECTION
 /*---------------------------------------------------------------------*/
@@ -713,8 +700,6 @@ span.navbar-trigger-close a:hover {
     font-size: 21px;
   }
 }
-
-
 /*---------------------------------------------------------------------*/
 /*  9. QUOTE SECTION
 /*---------------------------------------------------------------------*/
@@ -728,17 +713,15 @@ span.navbar-trigger-close a:hover {
   color: #b7ada4;
 }
 #quote > .section-inner .section-content .quote-text > .quote-icon > i {
-  color: #1abc9c;
+  color: #ff7932;
   padding-bottom: 20px;
 }
 #quote > .section-inner .section-content .quote-text > h2 {
   font-size: 40px;
 }
 #quote > .section-inner .section-content .quote-text > h2.quote-by {
-  color: #1abc9c;
+  color: #ff7932;
 }
-
-
 /*---------------------------------------------------------------------*/
 /*  10. KEEP IN TOUCH SECTION
 /*---------------------------------------------------------------------*/
@@ -760,11 +743,11 @@ span.navbar-trigger-close a:hover {
   display: block;
 }
 #keep-in-touch .social-icon-item > a:hover {
-  color: #1abc9c;
+  color: #ff7932;
   cursor: pointer;
 }
 #keep-in-touch .social-icon-item > a:hover .social-icon > i {
-  color: #1abc9c;
+  color: #ff7932;
 }
 #keep-in-touch .social-icon-item > a .social-icon > i {
   color: #b7ada4;
@@ -791,8 +774,6 @@ span.navbar-trigger-close a:hover {
     margin-bottom: 0px;
   }
 }
-
-
 /*---------------------------------------------------------------------*/
 /*  11. MEET THE TEAM SECTION
 /*---------------------------------------------------------------------*/
@@ -870,8 +851,6 @@ span.navbar-trigger-close a:hover {
     margin-bottom: 0px;
   }
 }
-
-
 /*---------------------------------------------------------------------*/
 /*  12. TESTIMONIALS SECTION
 /*---------------------------------------------------------------------*/
@@ -885,8 +864,6 @@ span.navbar-trigger-close a:hover {
 #testimonials > .section-inner .section-content .section-title > .section-line {
   background-color: #b7ada4;
 }
-
-
 /*---------------------------------------------------------------------*/
 /*  13. COMING SOON SECTION
 /*---------------------------------------------------------------------*/
@@ -918,8 +895,6 @@ span.navbar-trigger-close a:hover {
 #coming-soon > .section-inner .section-content .countdown-text > p {
   color: #b7ada4;
 }
-
-
 /*---------------------------------------------------------------------*/
 /*  14. CONTACT US SECTION
 /*---------------------------------------------------------------------*/
@@ -935,7 +910,7 @@ span.navbar-trigger-close a:hover {
 }
 #contact-us > .section-inner .section-content .content-message {
   color: #fff;
-  background-color: #1abc9c;
+  background-color: #ff7932;
   margin-bottom: 50px;
   padding: 30px;
 }
@@ -963,7 +938,7 @@ span.navbar-trigger-close a:hover {
   font-weight: 300;
   letter-spacing: 0.1em;
   border-radius: 0px;
-  border-left-color: #1abc9c;
+  border-left-color: #ff7932;
 }
 #contact-us > .section-inner .section-content .form-group textarea {
   height: 137px;
@@ -975,9 +950,9 @@ span.navbar-trigger-close a:hover {
 }
 #contact-us > .section-inner .section-content .form-group span {
   color: #fff;
-  background-color: #1abc9c;
+  background-color: #ff7932;
   border-radius: 0px;
-  border-color: #1abc9c;
+  border-color: #ff7932;
 }
 #contact-us > .section-inner .section-content .form-group span > i {
   width: 20px;
@@ -988,12 +963,12 @@ span.navbar-trigger-close a:hover {
   font-size: 40px;
   font-weight: 300;
   text-transform: uppercase;
-  background-color: #1abc9c;
+  background-color: #ff7932;
   width: 100px;
   height: 100px;
   line-height: 100px;
   border-radius: 50%;
-  border: 1px solid #148f77;
+  border: 1px solid #fe5800;
   margin-top: 50px;
 }
 #contact-us > .section-inner .section-content .social-icon-text > h4 {
@@ -1024,8 +999,6 @@ span.navbar-trigger-close a:hover {
 #contact-us > .section-inner .section-content .social-icon-text > ul.social-icon-list > li a:hover {
   border-color: #ffffff;
 }
-
-
 /*---------------------------------------------------------------------*/
 /*  15. MAP
 /*---------------------------------------------------------------------*/
@@ -1043,15 +1016,13 @@ span.navbar-trigger-close a:hover {
   -webkit-transition: all ease 0.55s;
   transition: all ease 0.55s;
 }
-
-
 /*---------------------------------------------------------------------*/
 /*  16. FOOTER
 /*---------------------------------------------------------------------*/
 footer.footer {
   color: #888;
   background-color: #1c1c1c;
-  border-top: 2px solid #1abc9c;
+  border-top: 2px solid #ff7932;
 }
 footer.footer a {
   color: #c9c9c9;

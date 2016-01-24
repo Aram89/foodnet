@@ -13,15 +13,13 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
         {name:"hotDishes",title:"Տաք ուտեստներ"},
         {name:"garnish",title:"Խավարտներ"}
     ];
-    var categories = [
-        {name:"all",desc:"edsc"},
-        {name:"lunch",desc:"desc"},
-        {name:"salads",desc:"dsc"},
-        {name:"cake",desc:"dedsc"},
-        {name:"soup",desc:"desc"},
-        {name:"hotDishes",desc:"desc"},
-        {name:"garnish",desc:"desc"}
-    ];
+    var categories = {name:"lunch",description:"desc"};
+    //    {name:"salads",description:"dsc"},
+    //    {name:"cake",description:"dedsc"},
+    //    {name:"soup",description:"desc"},
+    //    {name:"hotDishes",description:"desc"},
+    //    {name:"garnish",description:"desc"}
+    //;
     $scope.someReq =function(){
         requestsService.addCategories(categories).success(function(){
             alert("exav")
@@ -33,16 +31,17 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
         $scope.loadDishes(c);
     };
     $scope.categoryFilter = function(c){
-        return $scope.category=="all"||c.belongsTo.indexOf($scope.category)!=-1;
+        return $scope.category=="all"||c.categories.indexOf($scope.category)!=-1;
     };
     $scope.loadDishes = function(type){
         var dish={category:type,start:0,count:10};
         requestsService.loadDishes(dish)
             .success(function(data){
                 console.log(data);
+               // var result = JSON.parse(data);
                 ///$scope.dishes.push(data);
-                data.forEach(function (d) {
-                    $scope.dishes.push(d)
+                data.forEach(function (r) {
+                    $scope.dishes.push(r)
                 });
             })
             .error(function(){
