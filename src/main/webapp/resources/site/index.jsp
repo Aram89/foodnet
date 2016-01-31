@@ -156,6 +156,8 @@
 <!-- Begin Dishes Section -->
 <section id="dishes" class="section">
   <div ng-controller="DishesController" class="section-inner">
+    <order-box order="order"></order-box>
+
     <div class="container section-content">
       <div class="row">
         <div class="col-md-12">
@@ -214,7 +216,10 @@
             </div>
             <!-- //.portfolio-item -->
 --%>
-            <offer-box ng-repeat="dish in dishes" options="dish"></offer-box>
+            <div ng-repeat="dish in dishes">
+              <offer-box options="dish"></offer-box>
+              <button ng-click="addToOrder(dish)">Add</button>
+            </div>
           </div>
           <!-- //.popup-portfolio -->
         </div>

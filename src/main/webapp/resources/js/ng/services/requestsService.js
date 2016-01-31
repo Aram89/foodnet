@@ -2,6 +2,15 @@
  * Created by pr on 01/10/2016.
  */
 app.service('requestsService',['serverConnector',function(serverConnector){
+    this.makeOrder = function(data){
+        return serverConnector.send(
+            {
+                method:"post",
+                url:"make-order",
+                data:data
+            }
+        )
+    };
     this.becomeChef = function(data){
         return serverConnector.send(
             {

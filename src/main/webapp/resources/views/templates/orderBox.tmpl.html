@@ -1,0 +1,13 @@
+<div class="orderBox">
+    ORDER
+    <form ng-submit="makeOrder()">
+        <ul>
+            <li ng-repeat="dish in order.dishes">
+                <span>{{dish.name}}</span><strong ng-click="removeDish($index)">  x</strong>
+            </li>
+        </ul>
+        <div><label>phone</label><input ng-model="order.phone"></div>
+        <div><label>name</label><input ng-model="order.name"></div>
+        <button>Submit</button>
+    </form>
+</div>

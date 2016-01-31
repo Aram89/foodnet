@@ -4,6 +4,10 @@
 app.controller('DishesController',['$scope','requestsService',function($scope,requestsService){
     $scope.dishes  = [];
     $scope.category="all";
+    $scope.order = {dishes:[],name:'',phone:''};
+    $scope.addToOrder = function (dish) {
+        $scope.order.dishes.push(dish)
+    };
     $scope.categories = [
         {name:"all",title:"Բոլորը"},
         {name:"lunch",title:"Լանչ"},
@@ -24,7 +28,7 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
         requestsService.addCategories(categories).success(function(){
             alert("exav")
         })
-    }
+    };
     $scope.selectCategory = function(c){
         console.log(c);
         $scope.category = c;
