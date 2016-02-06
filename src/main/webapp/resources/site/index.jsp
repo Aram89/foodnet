@@ -87,7 +87,7 @@
             <a href="#dishes" class="btn btn-lg btn-rj">Learn More</a>
           </div>
           <div>
-            <input type="button" value="Become Chef" ng-click="becomeChef()">
+            <input type="button" value="Become Chef"  class="btn btn-lg btn-rj" ng-click="becomeChef()">
           </div>
 
           <!-- //.page-scroll -->
