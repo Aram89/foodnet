@@ -1,30 +1,33 @@
 <div class="becomeChef">
     <div ng-hide="ok" class="regForm">
-        <form name="registerForm" ng-submit="becomeChef()" novalidate>
-            <div class="reg_name">
-                <label>Անուն</label>
-                <input required name="name" type="text" ng-model="regChef.name"/>
-                <div class="has-error" ng-show="!registerForm.name.$valid">
-                    <span>Գրեք անունը</span>
+        <form class="form-horizontal" name="registerForm" ng-submit="becomeChef()" novalidate>
+
+            <div class="form-group">
+                <label for="reg_chef_name" class="col-sm-2 control-label">Անուն</label>
+                <div class="col-sm-10">
+                    <input id="reg_chef_name" required name="name" type="text" ng-model="regChef.name"/>
+                    <span class="help-block has-error" ng-show="!registerForm.name.$valid">Գրեք անունը</span>
                 </div>
             </div>
-            <div class="reg_surName">
-                <label>Ազգանուն</label>
-                <input required name="surname" type="text" ng-model="regChef.surName"/>
-                <div class="has-error" ng-show="!registerForm.surname.$valid">
-                    <span>Գրեք ազգանունը</span>
+
+            <div class="form-group">
+                <label for="reg_chef_surname" class="col-sm-2 control-label">Ազգանուն</label>
+                <div class="col-sm-10">
+                    <input id="reg_chef_surname" required name="surname" type="text" ng-model="regChef.surName">
+                    <span class="help-block has-error" ng-show="!registerForm.surname.$valid">Գրեք ազգանունը</span>
                 </div>
             </div>
-            <div class="reg_phone">
-                <label>Հեռ.</label>
-                <input required ng-remote-check="check-phone" name="phone" type="tel"
-                       ng-model="regChef.phone"/>
-                <div class="has-error" ng-show="!registerForm.phone.$valid">
-                    <div ng-show="registerForm.phone.$error.required">Գրեք Հեռ.-ը</div>
-                    <div ng-show="registerForm.phone.$error.remote">Հեռը կա</div>
+
+            <div class="form-group">
+                <label for="reg_chef_phone" class="col-sm-2 control-label">Հեռ.</label>
+                <div class="col-sm-10">
+                    <input id="reg_chef_phone" required ng-remote-check="check-phone" name="phone" type="tel" ng-model="regChef.phone"/>
+                    <span class="help-block has-error" ng-show="registerForm.phone.$error.required">Գրեք Հեռ.-ը</span>
+                    <span class="help-block has-error" ng-show="registerForm.phone.$error.remote">Հեռը կա</span>
                 </div>
             </div>
-            <button>Ընդունել</button>
+
+            <button class="btn btn-rj">Ընդունել</button>
         </form>
     </div>
     <div ng-show="ok==1">
