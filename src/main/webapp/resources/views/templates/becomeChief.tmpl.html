@@ -1,33 +1,33 @@
-<div class="becomeChef">
+<div class="become-chief-popup-content">
     <div ng-hide="ok" class="regForm">
         <form class="form-horizontal" name="registerForm" ng-submit="becomeChef()" novalidate>
 
-            <div class="form-group">
-                <label for="reg_chef_name" class="col-sm-2 control-label">Անուն</label>
-                <div class="col-sm-10">
+            <div class="form-group" ng-class="{'has-error':!registerForm.name.$valid && registerForm.name.$touched}">
+                <label for="reg_chef_name" class="col-sm-3 control-label">Անուն</label>
+                <div class="col-sm-9">
                     <input id="reg_chef_name" class="form-control" required name="name" type="text" ng-model="regChef.name"/>
-                    <span class="help-block has-error" ng-show="!registerForm.name.$valid">Գրեք անունը</span>
+                    <span class="help-block" ng-show="registerForm.name.$touched && !registerForm.name.$valid">Գրեք անունը</span>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="reg_chef_surname" class="col-sm-2 control-label">Ազգանուն</label>
-                <div class="col-sm-10">
+            <div class="form-group" ng-class="{'has-error':!registerForm.surname.$valid && registerForm.surname.$touched}">
+                <label for="reg_chef_surname" class="col-sm-3 control-label" required>Ազգանուն</label>
+                <div class="col-sm-9">
                     <input id="reg_chef_surname" class="form-control" required name="surname" type="text" ng-model="regChef.surName">
-                    <span class="help-block has-error" ng-show="!registerForm.surname.$valid">Գրեք ազգանունը</span>
+                    <span class="help-block has-error" ng-show="registerForm.surname.$touched && !registerForm.surname.$valid">Գրեք ազգանունը</span>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="reg_chef_phone" class="col-sm-2 control-label">Հեռ.</label>
-                <div class="col-sm-10">
+            <div class="form-group" ng-class="{'has-error':!registerForm.phone.$valid && registerForm.phone.$touched}">
+                <label for="reg_chef_phone" class="col-sm-3 control-label">Հեռ.</label>
+                <div class="col-sm-9">
                     <input id="reg_chef_phone" class="form-control" required ng-remote-check="check-phone" name="phone" type="tel" ng-model="regChef.phone"/>
-                    <span class="help-block has-error" ng-show="registerForm.phone.$error.required">Գրեք Հեռ.-ը</span>
-                    <span class="help-block has-error" ng-show="registerForm.phone.$error.remote">Հեռը կա</span>
+                    <span class="help-block has-error" ng-show="registerForm.phone.$touched && registerForm.phone.$error.required">Գրեք Հեռ.-ը</span>
+                    <span class="help-block has-error" ng-show="regChef.phone.length && registerForm.phone.$touched && registerForm.phone.$error.remote">Հեռը կա</span>
                 </div>
             </div>
 
-            <button class="btn btn-rj">Ընդունել</button>
+            <button ng-disabled="registerForm.$invalid" class="btn btn-rj">Ընդունել</button>
         </form>
     </div>
     <div ng-show="ok==1">

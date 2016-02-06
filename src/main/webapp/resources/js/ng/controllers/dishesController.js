@@ -32,9 +32,11 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
     $scope.selectCategory = function(c){
         console.log(c);
         $scope.category = c;
-        $scope.loadDishes(c);
+//        $scope.loadDishes(c);
     };
     $scope.categoryFilter = function(c){
+//        console.log(c);
+
         return $scope.category=="all"||c.categories.indexOf($scope.category)!=-1;
     };
     $scope.loadDishes = function(type){

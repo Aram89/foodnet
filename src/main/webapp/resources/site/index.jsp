@@ -83,7 +83,7 @@
           </div>
           <!-- //.intro-text -->
 
-          <div>
+          <div class="page-scroll">
             <a href="#dishes" class="btn btn-lg btn-rj">Learn More</a>
           </div>
           <div>
@@ -157,68 +157,69 @@
 <!-- //End Navbar -->
 
 <!-- Begin Dishes Section -->
-<section id="dishes" class="section">
-  <div ng-controller="DishesController" class="section-inner">
-    <order-box order="order"></order-box>
+<div ng-controller="DishesController">
+  <div id="dishes" class="section">
+    <div class="section-inner">
+      <order-box order="order"></order-box>
 
-    <div class="container section-content">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-title text-center">
-            <h2 class="main-title" ng-click="loadDishes()">Ուտեստներ</h2>
+      <div class="container section-content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-title text-center">
+              <h2 class="main-title" ng-click="loadDishes()">Ուտեստներ</h2>
 
-            <h3 class="sub-title" ng-click="someReq()">You Can Judge Us By The Work We Have Done</h3>
+              <h3 class="sub-title" ng-click="someReq()">You Can Judge Us By The Work We Have Done</h3>
 
-            <span class="section-line"></span>
-          </div>
-          <!-- //.section-title -->
-        </div>
-        <!-- //.col-md-12 -->
-      </div>
-      <!-- //.row -->
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="filter-portfolio">
-            <ul class="list-unstyled">
-              <li ng-repeat="category in categories">
-                  <button type="button" class="btn btn-rj" ng-click="selectCategory(category.name)">{{category.title}}</button>
-              </li>
-            </ul>
-          </div>
-          <!-- //.filter-portfolio -->
-        </div>
-        <!-- //.col-md-12 -->
-      </div>
-      <!-- //.row -->
-
-      <div class="row">
-        <div class="col-md-12">
-          <div/> <!--class="popup-portfolio"-->
-          <%--
-            <div class="portfolio-item grow identity">
-              <div class="inner-content">
-                <div class="portfolio-content">
-                  <div class="portfolio-detail">
-                    <a href="assets/img/portfolio/portfolio-image-6.jpg" title="Project Title 6 - Lorem Ipsum">
-                      <div class="portfolio-text">
-                        <h4>Project Title 6</h4>
-
-                        <p>Lorem Ipsum</p>
-                      </div>
-                      <!-- //.portfolio-text -->
-                    </a>
-                  </div>
-                  <!-- //.portfolio-detail -->
-                </div>
-                <!-- //.portfolio-content -->
-
-                <img src="assets/img/portfolio/portfolio-image-6.jpg" alt="" class="img-responsive"/>
-              </div>
-              <!-- //.inner-content -->
+              <span class="section-line"></span>
             </div>
-            <!-- //.portfolio-item -->
---%>
+            <!-- //.section-title -->
+          </div>
+          <!-- //.col-md-12 -->
+        </div>
+        <!-- //.row -->
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="filter-portfolio">
+              <ul class="list-unstyled">
+                <li ng-repeat="category in categories">
+                  <button type="button" class="btn btn-rj" ng-click="selectCategory(category.name)">{{category.title}}</button>
+                </li>
+              </ul>
+            </div>
+            <!-- //.filter-portfolio -->
+          </div>
+          <!-- //.col-md-12 -->
+        </div>
+        <!-- //.row -->
+
+        <div class="row">
+          <div class="col-md-12">
+            <div/> <!--class="popup-portfolio"-->
+            <%--
+              <div class="portfolio-item grow identity">
+                <div class="inner-content">
+                  <div class="portfolio-content">
+                    <div class="portfolio-detail">
+                      <a href="assets/img/portfolio/portfolio-image-6.jpg" title="Project Title 6 - Lorem Ipsum">
+                        <div class="portfolio-text">
+                          <h4>Project Title 6</h4>
+
+                          <p>Lorem Ipsum</p>
+                        </div>
+                        <!-- //.portfolio-text -->
+                      </a>
+                    </div>
+                    <!-- //.portfolio-detail -->
+                  </div>
+                  <!-- //.portfolio-content -->
+
+                  <img src="assets/img/portfolio/portfolio-image-6.jpg" alt="" class="img-responsive"/>
+                </div>
+                <!-- //.inner-content -->
+              </div>
+              <!-- //.portfolio-item -->
+  --%>
             <div ng-repeat="dish in dishes">
               <offer-box options="dish"></offer-box>
               <button ng-click="addToOrder(dish)">Add</button>
@@ -233,119 +234,121 @@
     <!-- //.section-content -->
   </div>
   <!-- //.section-inner -->
-</section>
-<!-- //End Dishes Section -->
 
-<!-- Begin Chefs Section -->
-<section  id="chefs" class="section">
-  <div class="section-inner">
-    <div class="container section-content">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-title text-center">
-            <h3 class="main-title">Խոհարարներ</h3>
 
-            <h4 class="sub-title">We Are Here For You</h4>
+  <!-- //End Dishes Section -->
 
-            <span class="section-line"></span>
+  <!-- Begin Chefs Section -->
+  <div id="chefs" class="section">
+    <div class="section-inner">
+      <div class="container section-content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-title text-center">
+              <h3 class="main-title">Խոհարարներ</h3>
+
+              <h4 class="sub-title">We Are Here For You</h4>
+
+              <span class="section-line"></span>
+            </div>
+            <!-- //.section-title -->
           </div>
-          <!-- //.section-title -->
+          <!-- //.col-md-12 -->
         </div>
-        <!-- //.col-md-12 -->
+        <!-- //.row -->
+
+        <div class="row">
+          <div class="col-sm-6 col-md-3 team-item not-right-column top-column">
+            <div class="img-rounded team-element">
+              <div class="team-inner">
+                <div class="team-detail">
+                  <div class="team-content">
+                    <h4>Nick Carraway</h4>
+
+                    <p>ECD / Founder</p>
+                  </div>
+                  <!-- //.team-content -->
+                </div>
+                <!-- //.team-detail -->
+              </div>
+              <!-- //.team-inner -->
+
+              <img src="assets/img/meet-the-team-image-1.jpg" alt="" class="img-responsive img-rounded"/>
+            </div>
+            <!-- //.team-element -->
+          </div>
+          <!-- //.team-item -->
+
+          <div class="col-sm-6 col-md-3 team-item not-right-column top-column">
+            <div class="img-rounded team-element">
+              <div class="team-inner">
+                <div class="team-detail">
+                  <div class="team-content">
+                    <h4>Daisy Buchanan</h4>
+
+                    <p>CEO / Co-Founder</p>
+                  </div>
+                  <!-- //.team-content -->
+                </div>
+                <!-- //.team-detail -->
+              </div>
+              <!-- //.team-inner -->
+
+              <img src="assets/img/meet-the-team-image-2.jpg" alt="" class="img-responsive img-rounded"/>
+            </div>
+            <!-- //.team-element -->
+          </div>
+          <!-- //.team-item -->
+
+          <div class="col-sm-6 col-md-3 team-item not-right-column">
+            <div class="img-rounded team-element">
+              <div class="team-inner">
+                <div class="team-detail">
+                  <div class="team-content">
+                    <h4>Myrtle Wilson</h4>
+
+                    <p>Creative Director</p>
+                  </div>
+                  <!-- //.team-content -->
+                </div>
+                <!-- //.team-detail -->
+              </div>
+              <!-- //.team-inner -->
+
+              <img src="assets/img/meet-the-team-image-3.jpg" alt="" class="img-responsive img-rounded"/>
+            </div>
+            <!-- //.team-element -->
+          </div>
+          <!-- //.team-item -->
+
+          <div class="col-sm-6 col-md-3 team-item">
+            <div class="img-rounded team-element">
+              <div class="team-inner">
+                <div class="team-detail">
+                  <div class="team-content">
+                    <h4>Catherine</h4>
+
+                    <p>Public Relation</p>
+                  </div>
+                  <!-- //.team-content -->
+                </div>
+                <!-- //.team-detail -->
+              </div>
+              <!-- //.team-inner -->
+
+              <img src="assets/img/meet-the-team-image-4.jpg" alt="" class="img-responsive img-rounded"/>
+            </div>
+            <!-- //.team-element -->
+          </div>
+          <!-- //.team-item -->
+        </div>
+        <!-- //.row -->
       </div>
-      <!-- //.row -->
-
-      <div class="row">
-        <div class="col-sm-6 col-md-3 team-item not-right-column top-column">
-          <div class="img-rounded team-element">
-            <div class="team-inner">
-              <div class="team-detail">
-                <div class="team-content">
-                  <h4>Nick Carraway</h4>
-
-                  <p>ECD / Founder</p>
-                </div>
-                <!-- //.team-content -->
-              </div>
-              <!-- //.team-detail -->
-            </div>
-            <!-- //.team-inner -->
-
-            <img src="assets/img/meet-the-team-image-1.jpg" alt="" class="img-responsive img-rounded"/>
-          </div>
-          <!-- //.team-element -->
-        </div>
-        <!-- //.team-item -->
-
-        <div class="col-sm-6 col-md-3 team-item not-right-column top-column">
-          <div class="img-rounded team-element">
-            <div class="team-inner">
-              <div class="team-detail">
-                <div class="team-content">
-                  <h4>Daisy Buchanan</h4>
-
-                  <p>CEO / Co-Founder</p>
-                </div>
-                <!-- //.team-content -->
-              </div>
-              <!-- //.team-detail -->
-            </div>
-            <!-- //.team-inner -->
-
-            <img src="assets/img/meet-the-team-image-2.jpg" alt="" class="img-responsive img-rounded"/>
-          </div>
-          <!-- //.team-element -->
-        </div>
-        <!-- //.team-item -->
-
-        <div class="col-sm-6 col-md-3 team-item not-right-column">
-          <div class="img-rounded team-element">
-            <div class="team-inner">
-              <div class="team-detail">
-                <div class="team-content">
-                  <h4>Myrtle Wilson</h4>
-
-                  <p>Creative Director</p>
-                </div>
-                <!-- //.team-content -->
-              </div>
-              <!-- //.team-detail -->
-            </div>
-            <!-- //.team-inner -->
-
-            <img src="assets/img/meet-the-team-image-3.jpg" alt="" class="img-responsive img-rounded"/>
-          </div>
-          <!-- //.team-element -->
-        </div>
-        <!-- //.team-item -->
-
-        <div class="col-sm-6 col-md-3 team-item">
-          <div class="img-rounded team-element">
-            <div class="team-inner">
-              <div class="team-detail">
-                <div class="team-content">
-                  <h4>Catherine</h4>
-
-                  <p>Public Relation</p>
-                </div>
-                <!-- //.team-content -->
-              </div>
-              <!-- //.team-detail -->
-            </div>
-            <!-- //.team-inner -->
-
-            <img src="assets/img/meet-the-team-image-4.jpg" alt="" class="img-responsive img-rounded"/>
-          </div>
-          <!-- //.team-element -->
-        </div>
-        <!-- //.team-item -->
-      </div>
-      <!-- //.row -->
+      <!-- //.section-content -->
     </div>
-    <!-- //.section-content -->
+
   </div>
-  <!-- //.section-inner -->
-</section>
+</div>
 <!-- //End Dishes Section -->
 
 
