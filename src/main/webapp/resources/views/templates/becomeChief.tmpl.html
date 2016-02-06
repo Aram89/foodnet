@@ -1,30 +1,36 @@
 <div class="becomeChef">
-    <div class="regForm">
+    <div ng-hide="ok" class="regForm">
         <form name="registerForm" ng-submit="becomeChef()" novalidate>
             <div class="reg_name">
-                <label>{{tr.name}}</label>
+                <label>Անուն</label>
                 <input required name="name" type="text" ng-model="regChef.name"/>
                 <div class="has-error" ng-show="!registerForm.name.$valid">
-                    <span>{{tr.name_required}}</span>
+                    <span>Գրեք անունը</span>
                 </div>
             </div>
             <div class="reg_surName">
-                <label>{{tr.surname}}</label>
+                <label>Ազգանուն</label>
                 <input required name="surname" type="text" ng-model="regChef.surName"/>
                 <div class="has-error" ng-show="!registerForm.surname.$valid">
-                    <span>{{tr.surname_required}}</span>
+                    <span>Գրեք ազգանունը</span>
                 </div>
             </div>
             <div class="reg_phone">
-                <label>{{tr.phone}}</label>
-                <input required ng-remote-check="check-phone" name="phone" type="number"
+                <label>Հեռ.</label>
+                <input required ng-remote-check="check-phone" name="phone" type="tel"
                        ng-model="regChef.phone"/>
                 <div class="has-error" ng-show="!registerForm.phone.$valid">
-                    <div ng-show="registerForm.phone.$error.required">{{tr.phone_required}}</div>
-                    <div ng-show="registerForm.phone.$error.remote">{{tr.phone_exists}}</div>
+                    <div ng-show="registerForm.phone.$error.required">Գրեք Հեռ.-ը</div>
+                    <div ng-show="registerForm.phone.$error.remote">Հեռը կա</div>
                 </div>
             </div>
-            <button>{{tr.submit}}</button>
+            <button>Ընդունել</button>
         </form>
+    </div>
+    <div ng-show="ok==1">
+        <span>Շնոհակալություն</span>
+    </div>
+    <div ng-show="ok===0">
+        <span>Ներողություն</span>
     </div>
 </div>

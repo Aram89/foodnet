@@ -41,7 +41,7 @@
   <!-- Color CSS -->
   <link href="assets/css/colors/orange.css" rel="stylesheet" type="text/css">
   <link href="assets/css/component/colors/orange.css" rel="stylesheet" type="text/css">
-
+  <%@include file="/WEB-INF/widgets/styles.jsp" %>
   <!-- Modernizr JS for IE9 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
   <script src="assets/plugins/modernizr.min.js"></script>
@@ -84,7 +84,10 @@
           <!-- //.intro-text -->
 
           <div>
-            <a ng-click="becomeChef()" class="btn btn-lg btn-rj">Learn More</a>
+            <a href="#dishes" class="btn btn-lg btn-rj">Learn More</a>
+          </div>
+          <div>
+            <input type="button" value="Become Chef" ng-click="becomeChef()">
           </div>
 
           <!-- //.page-scroll -->
