@@ -16,6 +16,9 @@ public class RequestMappings {
     public static final String GET_DISHES = "get-dishes";
     public static final String ADD_DISH = "add-dish";
     public static final String ADD_CATEGORIES = "add-categories";
+    public static final String ACTIVATE_CHEF = "qwertyuiopasdfghjkl";
+    public static final String GET_CHEFS = "get-chefs";
+    public static final String GET_DISHES_BY_CHEF = "get-dishes-by-chef";
 
 
 }

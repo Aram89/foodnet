@@ -2,6 +2,7 @@ package org.qualitech.foodnet.service;
 
 import org.codehaus.jackson.JsonGenerationException;
 import org.qualitech.foodnet.domain.Dish;
+import org.qualitech.foodnet.exception.AppException;
 import org.springframework.data.domain.Page;
 
 import java.io.IOException;
@@ -14,6 +15,7 @@ import java.util.List;
 public interface DishService {
 
     public void addDish(Dish dish) throws SQLException;
-    public String getDishes (String categoryName, int startIndex, int count) throws IOException;
+    public List<Dish> getDishes (String categoryName, int page, int count) throws IOException, AppException;
 
+    public List<Dish> getDishesByChef (int chefId, int page, int count) throws IOException;
 }

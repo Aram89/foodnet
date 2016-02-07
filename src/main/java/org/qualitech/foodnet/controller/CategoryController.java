@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class CategoryController {
 
-    @Autowired
-    Categoryrepository repository;
-
-    @RequestMapping(value = RequestMappings.ADD_CATEGORIES, method = RequestMethod.POST)
-    public void addDish(@RequestBody Category category) {
-        repository.save(category);
-    }
+//    @Autowired
+//    Categoryrepository repository;
+//
+//    @RequestMapping(value = RequestMappings.ADD_CATEGORIES, method = RequestMethod.POST)
+//    public void addDish(@RequestBody Category category) {
+//        repository.save(category);
+//    }
 }

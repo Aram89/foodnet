@@ -17,6 +17,7 @@ import java.net.*;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Aram Kirakosyan.
@@ -70,9 +71,18 @@ public class DishController {
 
     @RequestMapping(value = RequestMappings.GET_DISHES, method = RequestMethod.GET)
     public ResponseEntity getDishes(@RequestParam(value = "category") String category,
-                                    @RequestParam(value = "start") int start,
-                                    @RequestParam(value = "count") int count) throws SQLException, IOException {
-        String dishes = dishService.getDishes(category, start, count);
+                                    @RequestParam(value = "page") int page,
+                                    @RequestParam(value = "count") int count) throws SQLException, IOException, AppException {
+        List<Dish> dishes = dishService.getDishes(category, page, count);
         return new ResponseEntity(dishes, HttpStatus.OK);
     }
+
+    @RequestMapping(value = RequestMappings.GET_DISHES_BY_CHEF, method = RequestMethod.GET)
+    public ResponseEntity getDishesByChef(@RequestParam(value = "chefId") int chefId,
+                                            @RequestParam(value = "page") int page,
+                                            @RequestParam(value = "count") int count) throws SQLException, IOException, AppException {
+        List<Dish> dishes = dishService.getDishesByChef(chefId, page, count);
+        return new ResponseEntity(dishes, HttpStatus.OK);
+    }
+
 }

@@ -1,7 +1,7 @@
 package org.qualitech.foodnet.domain;
 
-
-import org.codehaus.jackson.annotate.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,35 +14,61 @@ import java.util.List;
 @Table(name = "chef")
 public class Chef implements Serializable {
 
-    private int chefId;
-
-    @Column
-    public Short getRating() {
-        return rating;
+    public Chef() {
     }
 
-    public void setRating(Short rating) {
-        this.rating = rating;
+    public Chef(Integer chefId) {
+        this.chefId = chefId;
     }
 
+    private Integer chefId;
     private Short rating;
     private String feedback;
     private String name;
     private String surName;
     private String phone;
-    private String status;
     private String password;
+    private String accessToken;
+    private ChefStatus status;
+
+    @Column
+    public ChefStatus getStatus() {
+        return status;
+    }
+
     @JsonIgnore
-    private List <Dish> dishes;
+    public void setStatus(ChefStatus status) {
+        this.status = status;
+    }
+
+    @Column
+    public String getPassword() {
+        return password;
+    }
+
+    @JsonIgnore
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Column
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    @JsonIgnore
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
+    }
 
     @Id
     @GeneratedValue
     @Column(name = "chefId")
-    public int getChefId() {
+    public Integer getChefId() {
         return chefId;
     }
 
-    public void setChefId(int chefId) {
+    public void setChefId(Integer chefId) {
         this.chefId = chefId;
     }
 
@@ -84,22 +110,12 @@ public class Chef implements Serializable {
     }
 
     @Column
-    public String getStatus() {
-        return status;
+    public Short getRating() {
+        return rating;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "chef")
-    public List<Dish> getDishes() {
-        return dishes;
-    }
-
-    public void setDishes(List<Dish> dishes) {
-        this.dishes = dishes;
+    public void setRating(Short rating) {
+        this.rating = rating;
     }
 
 }

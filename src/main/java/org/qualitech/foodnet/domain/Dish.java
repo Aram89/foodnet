@@ -1,5 +1,7 @@
 package org.qualitech.foodnet.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -48,6 +50,7 @@ public class Dish implements Serializable  {
         return order;
     }
 
+    @JsonIgnore
     public void setOrder(Order order) {
         this.order = order;
     }
@@ -90,7 +93,6 @@ public class Dish implements Serializable  {
     public void setDescription(String description) {
         this.description = description;
     }
-
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="chefId")
