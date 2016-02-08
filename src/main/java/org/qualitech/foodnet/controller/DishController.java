@@ -61,10 +61,10 @@ public class DishController {
      * @param decodedString dish in json string.
      */
     @RequestMapping(value = RequestMappings.ADD_DISH, method = RequestMethod.POST)
-    public ResponseEntity addDish(@RequestBody String decodedString) throws SQLException, IOException {
-        String dishString = URLDecoder.decode(decodedString, "UTF-8").substring(5);
-        ObjectMapper mapper = new ObjectMapper();
-        Dish dish = mapper.readValue(dishString, Dish.class);
+    public ResponseEntity addDish(@RequestBody Dish dish) throws SQLException, IOException {
+//        String dishString = URLDecoder.decode(decodedString, "UTF-8").substring(5);
+//        ObjectMapper mapper = new ObjectMapper();
+//        Dish dish = mapper.readValue(dishString, Dish.class);
         dishService.addDish(dish);
         return new ResponseEntity(HttpStatus.OK);
     }
