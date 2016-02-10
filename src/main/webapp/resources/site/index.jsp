@@ -186,6 +186,10 @@
                   <button type="button" class="btn btn-rj" ng-click="selectCategory(category.name)">{{category.title}}</button>
                 </li>
               </ul>
+              <div>
+                <label for="filterByChef">Filter by chefs</label>
+                <input id="filterByChef" type="checkbox" ng-model="filterByChef"/>
+              </div>
             </div>
             <!-- //.filter-portfolio -->
           </div>
@@ -220,7 +224,7 @@
               </div>
               <!-- //.portfolio-item -->
   --%>
-            <div ng-repeat="dish in dishes">
+            <div ng-repeat="dish in dishes |filter:categoryFilter">
               <offer-box options="dish"></offer-box>
               <button ng-click="addToOrder(dish)">Add</button>
             </div>
@@ -239,6 +243,7 @@
   <!-- //End Dishes Section -->
 
   <!-- Begin Chefs Section -->
+
   <div id="chefs" class="section">
     <div class="section-inner">
       <div class="container section-content">
@@ -258,12 +263,12 @@
         <!-- //.row -->
 
         <div class="row">
-          <div class="col-sm-6 col-md-3 team-item not-right-column top-column">
+          <div ng-repeat="chef in chefs" class="col-sm-6 col-md-3 team-item not-right-column top-column">
             <div class="img-rounded team-element">
               <div class="team-inner">
                 <div class="team-detail">
                   <div class="team-content">
-                    <h4>Nick Carraway</h4>
+                    <h4>{{chef.name}} {{chef.surName}}</h4>
 
                     <p>ECD / Founder</p>
                   </div>
@@ -272,14 +277,15 @@
                 <!-- //.team-detail -->
               </div>
               <!-- //.team-inner -->
-
-              <img src="assets/img/meet-the-team-image-1.jpg" alt="" class="img-responsive img-rounded"/>
+              <div ng-class="{'selected-chef':chef.chefId==selectedCehfId}" class="chef-picture" ng-click="selectChef(chef.chefId)">
+                <img src="{{chef.files[0].path}}" alt="" class="img-responsive img-rounded"/>
+              </div>
             </div>
             <!-- //.team-element -->
           </div>
           <!-- //.team-item -->
 
-          <div class="col-sm-6 col-md-3 team-item not-right-column top-column">
+          <%--<div class="col-sm-6 col-md-3 team-item not-right-column top-column">
             <div class="img-rounded team-element">
               <div class="team-inner">
                 <div class="team-detail">
@@ -298,49 +304,7 @@
             </div>
             <!-- //.team-element -->
           </div>
-          <!-- //.team-item -->
-
-          <div class="col-sm-6 col-md-3 team-item not-right-column">
-            <div class="img-rounded team-element">
-              <div class="team-inner">
-                <div class="team-detail">
-                  <div class="team-content">
-                    <h4>Myrtle Wilson</h4>
-
-                    <p>Creative Director</p>
-                  </div>
-                  <!-- //.team-content -->
-                </div>
-                <!-- //.team-detail -->
-              </div>
-              <!-- //.team-inner -->
-
-              <img src="assets/img/meet-the-team-image-3.jpg" alt="" class="img-responsive img-rounded"/>
-            </div>
-            <!-- //.team-element -->
-          </div>
-          <!-- //.team-item -->
-
-          <div class="col-sm-6 col-md-3 team-item">
-            <div class="img-rounded team-element">
-              <div class="team-inner">
-                <div class="team-detail">
-                  <div class="team-content">
-                    <h4>Catherine</h4>
-
-                    <p>Public Relation</p>
-                  </div>
-                  <!-- //.team-content -->
-                </div>
-                <!-- //.team-detail -->
-              </div>
-              <!-- //.team-inner -->
-
-              <img src="assets/img/meet-the-team-image-4.jpg" alt="" class="img-responsive img-rounded"/>
-            </div>
-            <!-- //.team-element -->
-          </div>
-          <!-- //.team-item -->
+          --%><!-- //.team-item -->
         </div>
         <!-- //.row -->
       </div>

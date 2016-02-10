@@ -20,6 +20,16 @@ app.service('requestsService',['serverConnector',function(serverConnector){
             }
         )
     };
+    this.getChefs = function(data){
+        return serverConnector.send(
+            {
+                method : "get",
+                url : "get-chefs",
+                data : data
+            }
+
+        )
+    };
     this.loadDishes = function(data){
         return serverConnector.send(
             {

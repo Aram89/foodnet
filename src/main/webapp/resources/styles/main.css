@@ -27,6 +27,6 @@ body{
 .become-chief-popup-content {
     padding-top: 30px;
 }
-.has-error{
-    /*color: red;*/
+.selected-chef{
+    opacity: 0.5;
 }

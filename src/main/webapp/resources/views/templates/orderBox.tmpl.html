@@ -1,13 +1,42 @@
-<div class="orderBox">
-    ORDER
-    <form ng-submit="makeOrder()">
-        <ul>
-            <li ng-repeat="dish in order.dishes">
-                <span>{{dish.name}}</span><strong ng-click="removeDish($index)">  x</strong>
-            </li>
-        </ul>
-        <div><label>phone</label><input ng-model="order.phone"></div>
-        <div><label>name</label><input ng-model="order.name"></div>
-        <button>Submit</button>
-    </form>
+<div class="order-box">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Order</h1>
+        </div>
+    </div>
+    <div class="row" ng-repeat="dish in order.dishes">
+        <div class="col-xs-11" ng-bind="dish.name"></div>
+        <div class="col-xs-1">
+            <button class="btn btn-link"  ng-click="removeDish($index)">x</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+
+            <form class="form-horizontal" name="orderForm" ng-submit="makeOrder()" novalidate>
+
+                <div class="form-group" ng-class="{'has-error':!orderForm.name.$valid && orderForm.name.$touched}">
+                    <label for="reg_chef_name" class="col-xs-3 control-label">Անուն</label>
+                    <div class="col-xs-9">
+                        <input id="reg_chef_name" class="form-control" required name="name" type="text" ng-model="order.name"/>
+                        <span class="help-block" ng-show="orderForm.name.$touched && !orderForm.name.$valid">Գրեք անունը</span>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error':!orderForm.phone.$valid && orderForm.phone.$touched}">
+                    <label for="reg_chef_phone" class="col-sm-3 control-label">Հեռ.</label>
+                    <div class="col-sm-9">
+                        <input id="reg_chef_phone" class="form-control" required ng-remote-check="check-phone" name="phone" type="tel" ng-model="order.phone"/>
+                        <span class="help-block has-error" ng-show="orderForm.phone.$touched && orderForm.phone.$error.required">Գրեք Հեռ.-ը</span>
+                        <span class="help-block has-error" ng-show="order.phone.length && orderForm.phone.$touched && orderForm.phone.$error.remote">Հեռը կա</span>
+                    </div>
+                </div>
+
+                <button ng-disabled="orderForm.$invalid" class="btn btn-sm btn-rj">Order</button>
+            </form>
+
+        </div>
+    </div>
+
+
 </div>

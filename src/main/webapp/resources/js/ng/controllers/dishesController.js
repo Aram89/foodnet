@@ -5,17 +5,23 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
     $scope.dishes  = [];
     $scope.category="all";
     $scope.order = {dishes:[],name:'',phone:''};
+    $scope.filterByChef = false;
+    $scope.selectedCehfId=false;
+    $scope.nextChefs = 0;
+    $scope.chefs = [];
+    //$scope.nextDishes = 0
     $scope.addToOrder = function (dish) {
         $scope.order.dishes.push(dish)
     };
+
     $scope.categories = [
-        {name:"all",title:"Բոլորը"},
-        {name:"lunch",title:"Լանչ"},
-        {name:"salads",title:"Աղացններ"},
-        {name:"cake",title:"Թխվածք"},
-        {name:"soup",title:"Ապուր"},
-        {name:"hotDishes",title:"Տաք ուտեստներ"},
-        {name:"garnish",title:"Խավարտներ"}
+        {name:"all",title:"Բոլորը",next:0},
+        {name:"lunch",title:"Լանչ",next:0},
+        {name:"salads",title:"Աղացններ",next:0},
+        {name:"cake",title:"Թխվածք",next:0},
+        {name:"soup",title:"Ապուր",next:0},
+        {name:"hotDishes",title:"Տաք ուտեստներ",next:0},
+        {name:"garnish",title:"Խավարտներ",next:0}
     ];
     var categories = {name:"lunch",description:"desc"};
     //    {name:"salads",description:"dsc"},
@@ -34,11 +40,19 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
         $scope.category = c;
 //        $scope.loadDishes(c);
     };
+    /******************/
     $scope.categoryFilter = function(c){
-//        console.log(c);
-
-        return $scope.category=="all"||c.categories.indexOf($scope.category)!=-1;
+        var res=$scope.category=="all"|| c.categories.indexOf($scope.category)!=-1;
+        if($scope.filterByChef && $scope.selectedCehfId){
+            console.log(c);
+            res = res && c.chef.chefId==$scope.selectedCehfId
+        }
+        return res;
     };
+    $scope.selectChef = function(id){
+        $scope.selectedCehfId = id
+    };
+    /******************/
     $scope.loadDishes = function(type){
         var dish={category:type,start:0,count:10};
         requestsService.loadDishes(dish)
@@ -54,6 +68,17 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
                 console.log("failed load dishes");
             })
     };
-
+    $scope.getChefs = function(){
+        requestsService.getChefs($scope.nextChefs,4)
+            .success(function(data){
+                data.forEach(function(c){
+                    $scope.chefs.push(c)
+                })
+            })
+            .error(function(){
+                alert('something wrong')
+            })
+    };
+    $scope.getChefs();
     $scope.loadDishes("");
 }]);
