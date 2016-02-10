@@ -18,9 +18,22 @@ public class Dish implements Serializable  {
     private String name;
     private String description;
     private Chef chef;
-    private Order order;
     private List <Category> categories;
     private List<File> files;
+    private List<Order> orders;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @JoinTable(
+            name="dishOrder",
+            joinColumns={@JoinColumn(name="dishId", referencedColumnName="dishId")},
+            inverseJoinColumns={@JoinColumn(name="ordersId", referencedColumnName="ordersId")})
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
 
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name="dishId")
@@ -39,22 +52,6 @@ public class Dish implements Serializable  {
     public List<Category> getCategories() {
         return categories;
     }
-
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
-    }
-
-    @ManyToOne
-    @JoinColumn(name="ordersId")
-    public Order getOrder() {
-        return order;
-    }
-
-    @JsonIgnore
-    public void setOrder(Order order) {
-        this.order = order;
-    }
-
 
     @Id
     @GeneratedValue
@@ -88,6 +85,10 @@ public class Dish implements Serializable  {
     @Column(name = "id")
     public String getDescription() {
         return description;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
     }
 
     public void setDescription(String description) {

@@ -1,7 +1,5 @@
 package org.qualitech.foodnet.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -17,9 +15,17 @@ public class Order implements Serializable{
     private long orderId;
     private Date time;
     private double price;
-    private String location;
-    @JsonIgnore
-    private List <Dish> dishes;
+    private String phone;
+    private List<DishOrder> dishOrders;
+
+    @OneToMany (mappedBy = "order", cascade = CascadeType.PERSIST)
+    public List<DishOrder> getDishOrders() {
+        return dishOrders;
+    }
+
+    public void setDishOrders(List<DishOrder> dishOrders) {
+        this.dishOrders = dishOrders;
+    }
 
     @Id
     @GeneratedValue
@@ -51,21 +57,12 @@ public class Order implements Serializable{
     }
 
     @Column
-    public String getLocation() {
-        return location;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "order")
-    public List<Dish> getDishes() {
-        return dishes;
-    }
-
-    public void setDishes(List<Dish> dishes) {
-        this.dishes = dishes;
-    }
 }
