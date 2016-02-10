@@ -72,9 +72,9 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
         $scope.selectedCehfId = id
     };
     /******************/
-    $scope.loadDishes = function(type){
+    $scope.loadDishes = function(type,p,c){
         var dish={category:type,start:0,count:10};
-        requestsService.loadDishes(dish)
+        requestsService.loadDishes({category:type,page:p,count:c})
             .success(function(data){
                 console.log(data);
                // var result = JSON.parse(data);
@@ -88,7 +88,7 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
             })
     };
     $scope.getChefs = function(){
-        requestsService.getChefs($scope.nextChefs,4)
+        requestsService.getChefs({page:$scope.nextChefs,count:4})
             .success(function(data){
                 data.forEach(function(c){
                     $scope.chefs.push(c)
@@ -99,5 +99,5 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
             })
     };
     $scope.getChefs();
-    $scope.loadDishes("");
+    $scope.loadDishes($scope.category,0,10);
 }]);
