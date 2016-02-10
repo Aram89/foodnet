@@ -16,7 +16,7 @@ app.factory('serverConnector',['$http',function($http){
     };
     function send (request) {
         request.url = host+request.url;
-        var promise = $http(angular.merge(req, request));
+        var promise = $http(request);
         promise.then(
             function() {},
             function(error) {

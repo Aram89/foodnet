@@ -16,7 +16,7 @@ app.directive('ngRemoteCheck',['serverConnector', function(serverConnector) {
                 timeoutID = setTimeout(function () {
                     params[propName] = ctrl.$modelValue;
                     serverConnector.send({
-                        method: "GET",
+                        method: "get",
                         url: checkUrl,
                         params: params
                     }).success(function (data) {
