@@ -14,6 +14,15 @@ app.directive('orderBox',function(){
             };
             $scope.makeOrder = function(){
                 console.log($scope.order);
+                var res = {
+                    "phone":$scope.order.phone,
+                    "name":$scope.order.name,
+                    "dishOrders":[]
+                };
+                $scope.order.dishes.forEach(function(d){
+                    res.dishOrders.push({"count":d.count,"dish":{"dishId": d.dishId}})
+                });
+                console.log(res);
                 requestsService.makeOrder($scope.order).success(function(){
 
                     }).error(function(){

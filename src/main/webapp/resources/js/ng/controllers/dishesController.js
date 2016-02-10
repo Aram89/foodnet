@@ -4,7 +4,7 @@
 app.controller('DishesController',['$scope','requestsService',function($scope,requestsService){
     $scope.dishes  = [];
     $scope.category="all";
-    $scope.order = {dishes:[],name:'',phone:'',chefs:[]};
+    $scope.order = {dishes:[],name:'',phone:''};
     $scope.filterByChef = false;
     $scope.selectedCehfId=false;
     $scope.nextChefs = 0;
