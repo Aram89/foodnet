@@ -6,6 +6,7 @@
     </div>
     <div class="row" ng-repeat="dish in order.dishes">
         <div class="col-xs-11" ng-bind="dish.name"></div>
+        <span>{{dish.count}}</span>
         <div class="col-xs-1">
             <button class="btn btn-link"  ng-click="removeDish($index)">x</button>
         </div>

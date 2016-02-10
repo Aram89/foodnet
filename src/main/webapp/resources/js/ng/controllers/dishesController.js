@@ -4,14 +4,33 @@
 app.controller('DishesController',['$scope','requestsService',function($scope,requestsService){
     $scope.dishes  = [];
     $scope.category="all";
-    $scope.order = {dishes:[],name:'',phone:''};
+    $scope.order = {dishes:[],name:'',phone:'',chefs:[]};
     $scope.filterByChef = false;
     $scope.selectedCehfId=false;
     $scope.nextChefs = 0;
     $scope.chefs = [];
     //$scope.nextDishes = 0
     $scope.addToOrder = function (dish) {
-        $scope.order.dishes.push(dish)
+        if($scope.order.dishes.length==0){
+            dish.count=1;
+            $scope.order.dishes.push(dish)
+        }else{
+            if($scope.order.dishes.some(function(d){
+                    if(d.dishId===dish.dishId){
+                        d.count++;
+                    }
+                    return d.dishId===dish.dishId
+                })
+            ){
+                //console.log(dish)
+            }else{
+                if(!$scope.order.dishes.some(function(d){
+                        return d.chef.chefId==dish.chef.chefId
+                    })){alert("+400 mayet axpers/qurs")}
+                dish.count=1;
+                $scope.order.dishes.push(dish)
+            }
+        }
     };
 
     $scope.categories = [

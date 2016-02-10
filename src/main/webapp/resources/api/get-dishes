@@ -1,11 +1,11 @@
 [
-  {"name":"Dish 1","chef":{"chefId":1},"files":[{"path":"portfolio/portfolio-image-1.jpg"}],"categories":["salads","lunch"],"description":"dish1 is dish 1","href":"assets/img/portfolio/portfolio-image-1.jpg"},
-  {"name":"Dish 2","chef":{"chefId":1},"files":[{"path":"portfolio/portfolio-image-1.jpg"}],"categories":["soup"],"description":"dish2 is dish 2","href":"assets/img/portfolio/portfolio-image-2.jpg"},
-  {"name":"Dish 3","chef":{"chefId":1},"files":[{"path":"portfolio/portfolio-image-1.jpg"}],"categories":["soup"],"description":"dish3 is dish 3","href":"assets/img/portfolio/portfolio-image-3.jpg"},
-  {"name":"Dish 4","chef":{"chefId":1},"files":[{"path":"portfolio/portfolio-image-1.jpg"}],"categories":["hotDishes"],"description":"dish4 is dish 4","href":"assets/img/portfolio/portfolio-image-4.jpg"},
-  {"name":"Dish 5","chef":{"chefId":3},"files":[{"path":"portfolio/portfolio-image-1.jpg"}],"categories":["garnish","hotDishes"],"description":"dish5 is dish 5","href":"assets/img/portfolio/portfolio-image-5.jpg"},
-  {"name":"Dish 6","chef":{"chefId":1},"files":[{"path":"portfolio/portfolio-image-1.jpg"}],"categories":["hotDishes"],"description":"dish6 is dish 6","href":"assets/img/portfolio/portfolio-image-6.jpg"},
-  {"name":"Dish 7","chef":{"chefId":1},"files":[{"path":"portfolio/portfolio-image-1.jpg"}],"categories":["cake"],"description":"dish7 is dish 7","href":"assets/img/portfolio/portfolio-image-7.jpg"},
-  {"name":"Dish 8","chef":{"chefId":2},"files":[{"path":"portfolio/portfolio-image-1.jpg"}],"categories":["cake"],"description":"dish8 is dish 8","href":"assets/img/portfolio/portfolio-image-8.jpg"},
-  {"name":"Dish 9","chef":{"chefId":2},"files":[{"path":"portfolio/portfolio-image-1.jpg"}],"categories":["lunch","hotDishes"],"description":"dish9 is dish 9","href":"assets/img/portfolio/portfolio-image-9.jpg"}
+  {"name":"Dish 1","dishId":1,"chef":{"chefId":1},"files":[{"path":"portfolio/portfolio-image-1.jpg"}],"categories":["salads","lunch"],"description":"dish1 is dish 1","href":"assets/img/portfolio/portfolio-image-1.jpg"},
+  {"name":"Dish 2","dishId":2,"chef":{"chefId":1},"files":[{"path":"portfolio/portfolio-image-1.jpg"}],"categories":["soup"],"description":"dish2 is dish 2","href":"assets/img/portfolio/portfolio-image-2.jpg"},
+  {"name":"Dish 3","dishId":3,"chef":{"chefId":1},"files":[{"path":"portfolio/portfolio-image-1.jpg"}],"categories":["soup"],"description":"dish3 is dish 3","href":"assets/img/portfolio/portfolio-image-3.jpg"},
+  {"name":"Dish 4","dishId":4,"chef":{"chefId":1},"files":[{"path":"portfolio/portfolio-image-1.jpg"}],"categories":["hotDishes"],"description":"dish4 is dish 4","href":"assets/img/portfolio/portfolio-image-4.jpg"},
+  {"name":"Dish 5","dishId":5,"chef":{"chefId":3},"files":[{"path":"portfolio/portfolio-image-1.jpg"}],"categories":["garnish","hotDishes"],"description":"dish5 is dish 5","href":"assets/img/portfolio/portfolio-image-5.jpg"},
+  {"name":"Dish 6","dishId":6,"chef":{"chefId":1},"files":[{"path":"portfolio/portfolio-image-1.jpg"}],"categories":["hotDishes"],"description":"dish6 is dish 6","href":"assets/img/portfolio/portfolio-image-6.jpg"},
+  {"name":"Dish 7","dishId":7,"chef":{"chefId":1},"files":[{"path":"portfolio/portfolio-image-1.jpg"}],"categories":["cake"],"description":"dish7 is dish 7","href":"assets/img/portfolio/portfolio-image-7.jpg"},
+  {"name":"Dish 8","dishId":8,"chef":{"chefId":2},"files":[{"path":"portfolio/portfolio-image-1.jpg"}],"categories":["cake"],"description":"dish8 is dish 8","href":"assets/img/portfolio/portfolio-image-8.jpg"},
+  {"name":"Dish 9","dishId":9,"chef":{"chefId":2},"files":[{"path":"portfolio/portfolio-image-1.jpg"}],"categories":["lunch","hotDishes"],"description":"dish9 is dish 9","href":"assets/img/portfolio/portfolio-image-9.jpg"}
 ]
