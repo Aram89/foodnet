@@ -25,7 +25,7 @@ app.service('requestsService',['serverConnector',function(serverConnector){
             {
                 method : "get",
                 url : "get-chefs",
-                data : data
+                params : data
             }
 
         )

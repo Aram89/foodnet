@@ -23,7 +23,7 @@ app.directive('orderBox',function(){
                     res.dishOrders.push({"count":d.count,"dish":{"dishId": d.dishId}})
                 });
                 console.log(res);
-                requestsService.makeOrder($scope.order).success(function(){
+                requestsService.makeOrder(res).success(function(){
 
                     }).error(function(){
 
