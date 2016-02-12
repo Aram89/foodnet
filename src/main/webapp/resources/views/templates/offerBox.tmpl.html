@@ -1,15 +1,10 @@
-<div class="portfolio-item grow col-sm-4">
+<div class="portfolio-item grow dish-preview">
+    <h1><small>{{opt.chef.name}} {{opt.chef.surName}}</small></h1>
+
     <div  class="inner-content">
         <div class="portfolio-content">
             <div class="portfolio-detail">
-                <a ng-click="viewDish()" title="Project Title 1 - Lorem Ipsum">
-                    <div class="portfolio-text">
-                        <h4>{{opt.name}}</h4>
-
-                        <p>{{opt.description}}</p>
-                    </div>
-                    <!-- //.portfolio-text -->
-                </a>
+                <a ng-click="viewDish()" title="{{opt.name}}"></a>
             </div>
             <!-- //.portfolio-detail -->
         </div>
@@ -18,4 +13,7 @@
         <img src="assets/img/{{opt.files[0].path}}" alt="" class="img-responsive"/>
     </div>
     <!-- //.inner-content -->
+    <h4 class="dish-name">{{opt.name}}</h4>
+    <h2 class="dish-price">{{opt.price}} <small>դրամ</small></h2>
+    <button class="btn btn-rj" ng-click="addDish(opt)">Ավելացնել</button>
 </div>

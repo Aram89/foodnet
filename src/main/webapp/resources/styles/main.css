@@ -38,20 +38,34 @@ body {
     opacity: 0.5;
 }
 
-.popup-dish {
-
-}
-
+/* popup-dish */
 .popup-dish .ngdialog-content {
     width: 650px !important;
 }
+
 .popup-dish .dish-total-price {
     margin-top: 5px;
 }
+
 .popup-dish .dish-title {
     margin-top: 5px;
 }
+
 .popup-dish .small-hr {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+/* dish-preview */
+.dish-preview {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: white;
+    text-align: center;
+}
+.dish-preview .dish-name {
+    margin-top: 10px;
+}
+.dish-preview .dish-price {
+    margin-top: 10px;
 }

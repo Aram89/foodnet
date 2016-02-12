@@ -199,33 +199,10 @@
 
         <div class="row">
           <div class="col-md-12">
-            <div/> <!--class="popup-portfolio"-->
-            <%--
-              <div class="portfolio-item grow identity">
-                <div class="inner-content">
-                  <div class="portfolio-content">
-                    <div class="portfolio-detail">
-                      <a href="assets/img/portfolio/portfolio-image-6.jpg" title="Project Title 6 - Lorem Ipsum">
-                        <div class="portfolio-text">
-                          <h4>Project Title 6</h4>
-
-                          <p>Lorem Ipsum</p>
-                        </div>
-                        <!-- //.portfolio-text -->
-                      </a>
-                    </div>
-                    <!-- //.portfolio-detail -->
-                  </div>
-                  <!-- //.portfolio-content -->
-
-                  <img src="assets/img/portfolio/portfolio-image-6.jpg" alt="" class="img-responsive"/>
-                </div>
-                <!-- //.inner-content -->
+            <div class="row">
+              <div class="col-sm-4" ng-repeat="dish in dishes |filter:categoryFilter">
+                <offer-box options="dish" addToOrder="addToOrder"></offer-box>
               </div>
-              <!-- //.portfolio-item -->
-  --%>
-            <div ng-repeat="dish in dishes |filter:categoryFilter">
-              <offer-box options="dish" addToOrder="addToOrder"></offer-box>
             </div>
           </div>
           <!-- //.popup-portfolio -->
