@@ -5,12 +5,17 @@
 app.directive('offerBox',[function(){
     return{
         scope:{
-            opt:'=options'
+            opt:'=options',
+            addDish:'=addToOrder'
         },
         replace: true,
         controller:['$scope','ngDialog',function($scope,ngDialog){
             $scope.viewDish = function () {
+                $scope.opt.currentCount = $scope.opt.count?$scope.opt.count:1;
                 ngDialog.open({
+                    preCloseCallback:function(){
+                        $scope.opt.currentCount = $scope.opt.count;
+                    },
                     template: '/resources/views/templates/popupDish.tmpl.html',
                     className:"ngdialog-theme-default popup-dish",
                     scope:$scope

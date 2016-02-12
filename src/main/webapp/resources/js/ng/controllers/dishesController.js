@@ -11,13 +11,14 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
     $scope.chefs = [];
     //$scope.nextDishes = 0
     $scope.addToOrder = function (dish) {
+        var count=(dish.currentCount)?dish.currentCount:1;
         if($scope.order.dishes.length==0){
-            dish.count=1;
+            dish.count=count;
             $scope.order.dishes.push(dish)
         }else{
             if($scope.order.dishes.some(function(d){
                     if(d.dishId===dish.dishId){
-                        d.count++;
+                        d.count+=count;
                     }
                     return d.dishId===dish.dishId
                 })
@@ -27,7 +28,7 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
                 if(!$scope.order.dishes.some(function(d){
                         return d.chef.chefId==dish.chef.chefId
                     })){alert("+400 mayet axpers/qurs")}
-                dish.count=1;
+                dish.count=count;
                 $scope.order.dishes.push(dish)
             }
         }

@@ -225,8 +225,7 @@
               <!-- //.portfolio-item -->
   --%>
             <div ng-repeat="dish in dishes |filter:categoryFilter">
-              <offer-box options="dish"></offer-box>
-              <button ng-click="addToOrder(dish)">Add</button>
+              <offer-box options="dish" addToOrder="addToOrder"></offer-box>
             </div>
           </div>
           <!-- //.popup-portfolio -->
