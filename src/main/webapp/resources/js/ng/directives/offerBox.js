@@ -12,7 +12,7 @@ app.directive('offerBox',[function(){
             $scope.viewDish = function () {
                 ngDialog.open({
                     template: '/resources/views/templates/popupDish.tmpl.html',
-                    className:"popup-dish",
+                    className:"ngdialog-theme-default popup-dish",
                     scope:$scope
                 });
             };
