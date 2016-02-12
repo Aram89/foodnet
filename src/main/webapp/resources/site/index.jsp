@@ -83,9 +83,6 @@
           </div>
           <!-- //.intro-text -->
 
-          <div class="page-scroll">
-            <a href="#dishes" class="btn btn-lg btn-rj">Learn More</a>
-          </div>
           <div>
             <input type="button" value="Become Chef"  class="btn btn-lg btn-rj" ng-click="becomeChef()">
           </div>
@@ -97,6 +94,9 @@
       <!-- //.row -->
     </div>
     <!-- //.container -->
+  </div>
+  <div class="page-scroll">
+    <a href="#dishes" class='icon-scroll'></a>
   </div>
   <!-- //.intro-body -->
 </section>
