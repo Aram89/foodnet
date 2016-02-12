@@ -12,13 +12,36 @@ import java.util.List;
 @Table(name = "orders")
 public class Order implements Serializable{
 
-    private long orderId;
+    private long ordersId;
     private Date time;
     private double price;
     private String phone;
+    private String comment;
+    private OrderStatus status;
+
+    @Enumerated(EnumType.STRING)
+    @Column
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(OrderStatus status) {
+        this.status = status;
+    }
+
     private List<DishOrder> dishOrders;
 
-    @OneToMany (mappedBy = "order", cascade = CascadeType.PERSIST)
+    @Column
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+
+    @OneToMany (mappedBy = "order", cascade = CascadeType.ALL)
     public List<DishOrder> getDishOrders() {
         return dishOrders;
     }
@@ -30,12 +53,12 @@ public class Order implements Serializable{
     @Id
     @GeneratedValue
     @Column(name = "ordersId")
-    public long getOrderId() {
-        return orderId;
+    public long getOrdersId() {
+        return ordersId;
     }
 
-    public void setOrderId(long orderId) {
-        this.orderId = orderId;
+    public void setOrdersId(long ordersId) {
+        this.ordersId = ordersId;
     }
 
     @Column

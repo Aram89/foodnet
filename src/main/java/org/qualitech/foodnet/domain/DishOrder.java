@@ -45,7 +45,7 @@ public class DishOrder {
     }
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="orderId")
+    @JoinColumn(name="ordersId", insertable = true, updatable = true)
     public Order getOrder() {
         return order;
     }

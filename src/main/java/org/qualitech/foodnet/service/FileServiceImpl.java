@@ -27,7 +27,7 @@ public class FileServiceImpl implements FileService {
     private final Integer FILES_COUNT_PER_FOLDER = 2000;
 
     // Change it for production.
-    private final String ROOT_FOLDER = "C:/Users/Aram/Desktop/projects/foodnet/src/main/webapp/resources/site/assets/img/";
+    private final String ROOT_FOLDER = "C:/Users/Aram/Desktop/projects/narinj/narinj/src/main/webapp/resources/site/assets/img/";
 
     private final String DELIMITER = "/";
 

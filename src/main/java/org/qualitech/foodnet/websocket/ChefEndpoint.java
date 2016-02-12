@@ -2,7 +2,6 @@ package org.qualitech.foodnet.websocket;
 
 import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;
-import org.qualitech.foodnet.repositories.ChefRepository;
 import org.qualitech.foodnet.service.ChefService;
 import org.qualitech.foodnet.websocket.message.LoginMessage;
 import org.qualitech.foodnet.websocket.message.Message;

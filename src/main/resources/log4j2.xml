@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <File name="File" fileName="C:\Users\Aram\Desktop\logs\requests.log">
+
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.qualitech.foodnet.controller.Interceptor" level="info">
+            <AppenderRef ref="File"/>
+        </Logger>
+        <Root level="error">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>

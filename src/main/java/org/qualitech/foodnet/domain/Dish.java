@@ -22,6 +22,7 @@ public class Dish implements Serializable  {
     private List<File> files;
     private List<Order> orders;
 
+    @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinTable(
             name="dishOrder",

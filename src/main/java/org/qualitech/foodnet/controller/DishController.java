@@ -31,12 +31,18 @@ public class DishController {
     @Autowired
     private DishService dishService;
 
+    /**
+     * Endpoint for uploading file.
+     *
+     * @param multipartFile file.
+     * @return Saved file id and HTTP status OK.
+     * @throws IOException
+     * @throws AppException
+     * @throws SQLException
+     */
     @RequestMapping(value = RequestMappings.UPLOAD_FILE, method = RequestMethod.POST)
     public ResponseEntity UploadFile(@RequestParam("file") MultipartFile multipartFile)
             throws IOException, AppException, SQLException {
-        // Getting user form session.
-//        User user = UserServiceImpl.getUser();
-        // Upload file and get file path.
         String path  = fileService.uploadFile(multipartFile, 1l);
 
         // create domain object and set fields for file.
@@ -61,14 +67,25 @@ public class DishController {
      * @param decodedString dish in json string.
      */
     @RequestMapping(value = RequestMappings.ADD_DISH, method = RequestMethod.POST)
-    public ResponseEntity addDish(@RequestBody Dish dish) throws SQLException, IOException {
-//        String dishString = URLDecoder.decode(decodedString, "UTF-8").substring(5);
-//        ObjectMapper mapper = new ObjectMapper();
-//        Dish dish = mapper.readValue(dishString, Dish.class);
+    public ResponseEntity addDish(@RequestBody String decodedString) throws SQLException, IOException {
+        String dishString = URLDecoder.decode(decodedString, "UTF-8").substring(5);
+        ObjectMapper mapper = new ObjectMapper();
+        Dish dish = mapper.readValue(dishString, Dish.class);
         dishService.addDish(dish);
         return new ResponseEntity(HttpStatus.OK);
     }
 
+    /**
+     * Endpoint for getting dises.
+     *
+     * @param category category name (all if request all dishes).
+     * @param page page starting with 0.
+     * @param count dishes count per request.
+     * @return List of dishes.
+     * @throws SQLException
+     * @throws IOException
+     * @throws AppException
+     */
     @RequestMapping(value = RequestMappings.GET_DISHES, method = RequestMethod.GET)
     public ResponseEntity getDishes(@RequestParam(value = "category") String category,
                                     @RequestParam(value = "page") int page,
@@ -77,6 +94,17 @@ public class DishController {
         return new ResponseEntity(dishes, HttpStatus.OK);
     }
 
+    /**
+     * Endpoint for getting chef's dishes.
+     *
+     * @param chefId chef id.
+     * @param page page starting with 0.
+     * @param count count.
+     * @return list of dishes.
+     * @throws SQLException
+     * @throws IOException
+     * @throws AppException
+     */
     @RequestMapping(value = RequestMappings.GET_DISHES_BY_CHEF, method = RequestMethod.GET)
     public ResponseEntity getDishesByChef(@RequestParam(value = "chefId") int chefId,
                                             @RequestParam(value = "page") int page,

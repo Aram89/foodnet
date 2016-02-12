@@ -3,6 +3,7 @@ package org.qualitech.foodnet.controller;
 import org.qualitech.foodnet.domain.Chef;
 import org.qualitech.foodnet.exception.AppException;
 import org.qualitech.foodnet.exception.ErrorCodes;
+import org.qualitech.foodnet.logging.LogRequest;
 import org.qualitech.foodnet.service.ChefService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.web.PagedResourcesAssembler;
@@ -32,6 +33,7 @@ public class ChefController {
      * @throws IOException  IOException
      * @throws SQLException SQLException
      */
+    @LogRequest
     @RequestMapping(value = RequestMappings.CREATE_CHEF, method = RequestMethod.POST)
     public ResponseEntity create(@RequestBody Chef chef) throws IOException, SQLException {
         service.createChef(chef);
@@ -39,7 +41,7 @@ public class ChefController {
     }
 
     /**
-     * Endpoint for checking chef email
+     * Endpoint for checking chef phone
      * Throws AppException with code phoneExists if phone exists,
      * otherwise returns status OK
      *
@@ -55,6 +57,14 @@ public class ChefController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
+    /**
+     * Endpoint for activating chef.
+     *
+     * @param phone phone.
+     * @return
+     * @throws AppException
+     * @throws NoSuchAlgorithmException
+     */
     @RequestMapping(value = RequestMappings.ACTIVATE_CHEF, method = RequestMethod.GET)
     public ResponseEntity activateChef(@RequestParam(value = "phone") String phone) throws AppException, NoSuchAlgorithmException {
         if (!service.phoneExists(phone)) {

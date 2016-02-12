@@ -21,7 +21,7 @@ public class Chef implements Serializable {
         this.chefId = chefId;
     }
 
-    private Integer chefId;
+    private long chefId;
     private Short rating;
     private String feedback;
     private String name;
@@ -30,6 +30,17 @@ public class Chef implements Serializable {
     private String password;
     private String accessToken;
     private ChefStatus status;
+    private List<File> files;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name="chefId")
+    public List<File> getFiles() {
+        return files;
+    }
+
+    public void setFiles(List<File> files) {
+        this.files = files;
+    }
 
     @Column
     public ChefStatus getStatus() {
@@ -64,11 +75,11 @@ public class Chef implements Serializable {
     @Id
     @GeneratedValue
     @Column(name = "chefId")
-    public Integer getChefId() {
+    public Long getChefId() {
         return chefId;
     }
 
-    public void setChefId(Integer chefId) {
+    public void setChefId(long chefId) {
         this.chefId = chefId;
     }
 

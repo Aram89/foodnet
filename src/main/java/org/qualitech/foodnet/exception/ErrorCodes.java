@@ -13,6 +13,7 @@ public class ErrorCodes {
     public static final String EMPTY_FILE = "emptyFile";
     public static final String WRONG_CATEGORY = "wrong category : ";
     public static final String WRONG_PHONE = "wrong phone";
+    public static final String PERMISSION_DENIED = "permission denied";
 
 
     private String errorString;
