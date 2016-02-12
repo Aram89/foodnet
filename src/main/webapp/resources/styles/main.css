@@ -1,32 +1,57 @@
-body{
+body {
     /*
     padding-top: 70px;
     */
     overflow-x: hidden;
 }
-.navbar{
+
+.navbar {
 }
-.header{
+
+.header {
     height: 65px;
 }
-.mid{
+
+.mid {
     height: 550px;
     background-image: url("/resources/multimedia/images/1.jpg");
 }
-.foodBox{
+
+.foodBox {
     margin-top: 20px;
     max-width: 330px;
     height: 200px;
 }
+
 .right-inner-addon i {
     position: absolute;
     right: 10px;
     padding: 10px 12px;
     pointer-events: none;
 }
+
 .become-chief-popup-content {
     padding-top: 30px;
 }
-.selected-chef{
+
+.selected-chef {
     opacity: 0.5;
+}
+
+.popup-dish {
+
+}
+
+.popup-dish .ngdialog-content {
+    width: 650px !important;
+}
+.popup-dish .dish-total-price {
+    margin-top: 5px;
+}
+.popup-dish .dish-title {
+    margin-top: 5px;
+}
+.popup-dish .small-hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

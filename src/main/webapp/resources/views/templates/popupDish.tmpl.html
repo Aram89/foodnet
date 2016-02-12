@@ -1,10 +1,29 @@
 <div class="row">
     <div class="col-sm-5">
-        <h1>{{dish.chef.name}} {{dish.chef.surName}}</h1>
-        <img ng-src="dish." class="img-responsive img-thumbnail">
-        <h3>{{dish.name}}</h3>
+        <h1 class="dish-title"><small>{{opt.name}}</small></h1>
+        <img src="assets/img/{{opt.files[0].path}}" class="img-responsive img-thumbnail">
+        <p>{{opt.description}}</p>
+        <h2>{{opt.price}} <small>դրամ</small></h2>
     </div>
     <div class="col-sm-7">
-        <textarea></textarea>
+        <p>{{opt.chef.description}}</p>
+        <strong>Խոհարար՝ <em>{{opt.chef.name}} {{opt.chef.surName}}</em></strong>
+        <hr class="small-hr">
+        <div class="form-group">
+            <label for="optComment">Մեկնաբանություն</label>
+            <textarea id="optComment" class="form-control" rows="3" ng-model="opt.comment"></textarea>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xs-4">
+                <h3 class="dish-total-price">{{opt.price * opt.currentCount}} դր</h3>
+            </div>
+            <div class="col-xs-3">
+                <input class="form-control" type="number" min="1" step="1" ng-model="opt.currentCount">
+            </div>
+            <div class="col-xs-5">
+                <button class="btn btn-rj">Ավելացնել</button>
+            </div>
+        </div>
     </div>
 </div>
