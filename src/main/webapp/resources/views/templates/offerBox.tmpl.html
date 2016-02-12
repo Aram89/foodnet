@@ -3,17 +3,16 @@
 
     <div  class="inner-content">
         <div class="portfolio-content">
-            <div class="portfolio-detail">
-                <a ng-click="viewDish()" title="{{opt.name}}"></a>
+            <div ng-click="viewDish()" class="portfolio-detail">
             </div>
             <!-- //.portfolio-detail -->
         </div>
         <!-- //.portfolio-content -->
 
-        <img src="assets/img/{{opt.files[0].path}}" alt="" class="img-responsive"/>
+        <img src="assets/img/{{opt.files[0].path}}" alt="{{opt.name}}" class="img-responsive"/>
     </div>
     <!-- //.inner-content -->
     <h4 class="dish-name">{{opt.name}}</h4>
     <h2 class="dish-price">{{opt.price}} <small>դրամ</small></h2>
-    <button class="btn btn-rj" ng-click="addDish(opt)">Ավելացնել</button>
+    <button class="btn btn-rj" ng-click="addDish(opt,1)">Ավելացնել</button>
 </div>

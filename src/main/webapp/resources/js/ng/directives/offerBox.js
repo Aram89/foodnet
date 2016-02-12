@@ -14,7 +14,7 @@ app.directive('offerBox',[function(){
                 $scope.opt.currentCount = $scope.opt.count?$scope.opt.count:1;
                 ngDialog.open({
                     preCloseCallback:function(){
-                        $scope.opt.currentCount = $scope.opt.count;
+                        $scope.opt.currentCount = 1;
                     },
                     template: '/resources/views/templates/popupDish.tmpl.html',
                     className:"ngdialog-theme-default popup-dish",

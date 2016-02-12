@@ -201,7 +201,7 @@
           <div class="col-md-12">
             <div class="row">
               <div class="col-sm-4" ng-repeat="dish in dishes |filter:categoryFilter">
-                <offer-box options="dish" addToOrder="addToOrder"></offer-box>
+                <offer-box options="dish" add-to-order="addToOrder"></offer-box>
               </div>
             </div>
           </div>

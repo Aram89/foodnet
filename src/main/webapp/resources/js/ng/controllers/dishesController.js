@@ -10,8 +10,7 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
     $scope.nextChefs = 0;
     $scope.chefs = [];
     //$scope.nextDishes = 0
-    $scope.addToOrder = function (dish) {
-        var count=(dish.currentCount)?dish.currentCount:1;
+    $scope.addToOrder = function (dish,count) {
         if($scope.order.dishes.length==0){
             dish.count=count;
             $scope.order.dishes.push(dish)
