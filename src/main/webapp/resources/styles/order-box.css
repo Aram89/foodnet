@@ -1,0 +1,18 @@
+.order-box{
+    position: absolute;
+    right: 10px;
+    min-width: 350px;
+}
+.dish-section{
+    height: 200px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.order-window{
+    background-color: white;
+}
+.order-box-toggle{
+    position: absolute;
+    right: 10px;
+    z-index: 100;
+}

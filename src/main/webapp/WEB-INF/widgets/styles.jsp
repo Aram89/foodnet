@@ -6,3 +6,4 @@
 <!--end libs-->
 
 <link rel="stylesheet" href="/resources/styles/main.css">
+<link rel="stylesheet" href="/resources/styles/order-box.css">

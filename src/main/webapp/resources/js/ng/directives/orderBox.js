@@ -8,6 +8,21 @@ app.directive('orderBox',function(){
             order:"=order"
         },
         controller : ['$scope','requestsService',function($scope,requestsService){
+            $scope.order.price = function(){
+                var price=0;
+                var chefs=[];
+                $scope.order.dishes.forEach(function(d){
+                    if(chefs.indexOf(d.chef.chefId)==-1){
+                        chefs.push(d.chef.chefId)
+                    }
+                    price+= parseInt(d.price)* d.count;
+                });
+                console.log(chefs.length);
+                return price+chefs.length*400;
+            };
+            $scope.toggleBox = function(){
+                $scope.isBoxOpen=!$scope.isBoxOpen;
+            };
             $scope.removeDish =function(index){
                 console.log(index);
                 $scope.order.dishes.splice(index,1);

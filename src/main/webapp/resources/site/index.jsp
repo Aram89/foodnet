@@ -104,6 +104,7 @@
 
 
 <!-- Begin Navbar -->
+<div ng-controller="DishesController">
 <nav id="navigation" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header page-scroll">
@@ -149,6 +150,8 @@
           <a href="#contact-us">Կապ</a>
         </li>
       </ul>
+      <order-box order="order"></order-box>
+
     </div>
     <!-- //.navbar-collapse -->
   </div>
@@ -157,10 +160,9 @@
 <!-- //End Navbar -->
 
 <!-- Begin Dishes Section -->
-<div ng-controller="DishesController">
+<div>
   <div id="dishes" class="section">
     <div class="section-inner">
-      <order-box order="order"></order-box>
 
       <div class="container section-content">
         <div class="row">
@@ -288,6 +290,7 @@
     </div>
 
   </div>
+</div>
 </div>
 <!-- //End Dishes Section -->
 

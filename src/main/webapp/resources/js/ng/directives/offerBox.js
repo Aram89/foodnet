@@ -10,6 +10,10 @@ app.directive('offerBox',[function(){
         },
         replace: true,
         controller:['$scope','ngDialog',function($scope,ngDialog){
+            $scope.add = function(dish,count){
+                $scope.addDish(dish,count);
+                ngDialog.closeAll();
+            };
             $scope.viewDish = function () {
                 $scope.opt.currentCount = $scope.opt.count?$scope.opt.count:1;
                 ngDialog.open({
