@@ -4,13 +4,16 @@
 app.controller('DishesController',['$scope','requestsService',function($scope,requestsService){
     $scope.dishes  = [];
     $scope.category="all";
-    $scope.order = {dishes:[],name:'',phone:''};
+    $scope.order = {dishes:[],name:'',phone:'',comments:[]};
     $scope.filterByChef = false;
     $scope.selectedCehfId=false;
     $scope.nextChefs = 0;
     $scope.chefs = [];
     //$scope.nextDishes = 0
     $scope.addToOrder = function (dish,count) {
+        if(dish.comment){
+         //   $scope.order.comments.push.({name:dish.name,comment:dish.comment})
+        }
         if($scope.order.dishes.length==0){
             dish.count=count;
             $scope.order.dishes.push(dish)

@@ -8,17 +8,18 @@ app.directive('orderBox',function(){
             order:"=order"
         },
         controller : ['$scope','requestsService',function($scope,requestsService){
+            $scope.chefs=[];
+            console.log($scope.order);
             $scope.order.price = function(){
                 var price=0;
-                var chefs=[];
                 $scope.order.dishes.forEach(function(d){
-                    if(chefs.indexOf(d.chef.chefId)==-1){
-                        chefs.push(d.chef.chefId)
+                    if($scope.chefs.indexOf(d.chef.chefId)==-1){
+                        $scope.chefs.push(d.chef.chefId)
                     }
                     price+= parseInt(d.price)* d.count;
                 });
-                console.log(chefs.length);
-                return price+chefs.length*400;
+                console.log($scope.chefs.length);
+                return price+$scope.chefs.length*400;
             };
             $scope.toggleBox = function(){
                 $scope.isBoxOpen=!$scope.isBoxOpen;
@@ -28,21 +29,29 @@ app.directive('orderBox',function(){
                 $scope.order.dishes.splice(index,1);
             };
             $scope.makeOrder = function(){
+                /*var comment ='';
                 console.log($scope.order);
-                var res = {
-                    "phone":$scope.order.phone,
-                    "name":$scope.order.name,
-                    "dishOrders":[]
-                };
-                $scope.order.dishes.forEach(function(d){
-                    res.dishOrders.push({"count":d.count,"dish":{"dishId": d.dishId}})
-                });
-                console.log(res);
-                requestsService.makeOrder(res).success(function(){
+                $scope.order.comments.forEach(function(){
+
+                });*/
+                $scope.chefs.forEach(function(c){
+                    var res = {
+                        "phone":$scope.order.phone,
+                        "name":$scope.order.name,
+                        "dishOrders":[]
+                    };
+                    $scope.order.dishes.forEach(function(d){
+                        if(d.chef.chefId==c){
+                            res.dishOrders.push({"count":d.count,"dish":{"dishId": d.dishId}})
+                        }
+                    });
+                    console.log(res);
+                    requestsService.makeOrder(res).success(function(){
 
                     }).error(function(){
 
                     })
+                });
             }
         }],
         templateUrl : '/resources/views/templates/orderBox.tmpl.html'
