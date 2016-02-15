@@ -8,10 +8,11 @@ app.directive('orderBox',function(){
             order:"=order"
         },
         controller : ['$scope','requestsService',function($scope,requestsService){
-            $scope.chefs=[];
             console.log($scope.order);
+            $scope.chefs=[];
             $scope.order.price = function(){
                 var price=0;
+                $scope.chefs=[];
                 $scope.order.dishes.forEach(function(d){
                     if($scope.chefs.indexOf(d.chef.chefId)==-1){
                         $scope.chefs.push(d.chef.chefId)
@@ -25,7 +26,6 @@ app.directive('orderBox',function(){
                 $scope.isBoxOpen=!$scope.isBoxOpen;
             };
             $scope.removeDish =function(index){
-                console.log(index);
                 $scope.order.dishes.splice(index,1);
             };
             $scope.makeOrder = function(){
