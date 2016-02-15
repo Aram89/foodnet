@@ -63,12 +63,15 @@ body {
     background-color: white;
     text-align: center;
 }
+
 .dish-preview .dish-name {
     margin-top: 10px;
 }
+
 .dish-preview .dish-price {
     margin-top: 10px;
 }
+
 /*icon scroll*/
 .icon-scroll,
 .icon-scroll:before {
@@ -122,4 +125,32 @@ body {
         -webkit-transform: translateY(23px);
         transform: translateY(23px);
     }
+}
+
+.order-box .order-window {
+    top: -5px;
+    padding: 5px;
+
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.order-box li {
+    list-style: none;
+}
+.order-box .counter-item {
+    padding-top: 10px;
+}
+.order-box .counter-item .caret {
+    padding-bottom: 10px;
+    margin-left: 5px;
+}
+
+.order-box .counter-item .fa-shopping-cart {
+    font-size: 36px;
+}
+
+.order-box .order-box-form {
+    padding: 10px;
 }

@@ -1,49 +1,55 @@
 <div class="order-box">
-        <ul class="">
-            <li>
-                <a ng-click="toggleBox()" class="order-box-toggle" role="button"> <span class="glyphicon glyphicon-shopping-cart"></span><span class="caret"></span></a>
-                <div ng-show="isBoxOpen" class="order-window" role="menu">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h3>Order</h3>
-                        </div>
-                    </div>
-                    <div class="dish-section">
-                        <div class="row" ng-repeat="dish in order.dishes">
-                            <div class="col-xs-5" ng-bind="dish.name"></div>
-                            <span class="col-xs-3">{{dish.price*dish.count}}</span>
-                            <span class="col-xs-2"><input style="width: 45px" ng-model="dish.count" type="number"></span>
-                            <div class="col-xs-2">
-                                <button class="btn btn-link"  ng-click="removeDish($index)">x</button>
-                            </div>
-                        </div>
-                        <span>Գումար {{order.price()}}</span>
-                    </div>
-                    <div class="divider"></div>
-                    <div>
-                        <form class="form-horizontal" name="orderForm" ng-submit="makeOrder()" novalidate>
+    <ul class="">
+        <li>
 
-                            <div class="form-group" ng-class="{'has-error':!orderForm.name.$valid && orderForm.name.$touched}">
-                                <label for="reg_chef_name" class="col-xs-3 control-label">Անուն</label>
-                                <div class="col-xs-9">
-                                    <input id="reg_chef_name" class="form-control" required name="name" type="text" ng-model="order.name"/>
-                                    <span class="help-block" ng-show="orderForm.name.$touched && !orderForm.name.$valid">Գրեք անունը</span>
-                                </div>
-                            </div>
+            <a ng-click="toggleBox()" class="order-box-toggle counter-item" role="button">
+                <i class="fa fa-shopping-cart"></i><i class="caret"></i>
+            </a>
 
-                            <div class="form-group" ng-class="{'has-error':!orderForm.phone.$valid && orderForm.phone.$touched}">
-                                <label for="reg_chef_phone" class="col-sm-3 control-label">Հեռ.</label>
-                                <div class="col-sm-9">
-                                    <input id="reg_chef_phone" class="form-control" required  name="phone" type="tel" ng-model="order.phone"/>
-                                    <span class="help-block has-error" ng-show="orderForm.phone.$touched && orderForm.phone.$error.required">Գրեք Հեռ.-ը</span>
-                                    <span class="help-block has-error" ng-show="order.phone.length && orderForm.phone.$touched && orderForm.phone.$error.remote">Հեռը կա</span>
-                                </div>
-                            </div>
-
-                            <button ng-disabled="orderForm.$invalid" class="btn btn-sm btn-rj">Order</button>
-                        </form>
+            <div ng-show="isBoxOpen" class="order-window" role="menu">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>Գումար {{order.price()}} <small>դրամ</small></h3>
                     </div>
                 </div>
-            </li>
-        </ul>
-    </div>
+                <div class="dish-section">
+                    <div class="row" ng-repeat="dish in order.dishes">
+                        <div class="col-xs-5" ng-bind="dish.name"></div>
+                        <span class="col-xs-3">{{dish.price*dish.count}}</span>
+                        <span class="col-xs-2"><input style="width: 45px" ng-model="dish.count" type="number" step="1" min="1"></span>
+                        <div class="col-xs-2">
+                            <button class="btn btn-link" ng-click="removeDish($index)">x</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="divider"></div>
+                <div class="order-box-form">
+                    <form class="form-horizontal" name="orderForm" ng-submit="makeOrder()" novalidate>
+
+                        <!--
+                        <div class="form-group" ng-class="{'has-error':!orderForm.name.$valid && orderForm.name.$touched}">
+                            <label for="reg_chef_name" class="col-xs-3 control-label">Անուն</label>
+                            <div class="col-xs-9">
+                                <input id="reg_chef_name" class="form-control" required name="name" type="text" ng-model="order.name"/>
+                                <span class="help-block" ng-show="orderForm.name.$touched && !orderForm.name.$valid">Գրեք անունը</span>
+                            </div>
+                        </div>
+                        -->
+
+                        <div class="form-group" ng-class="{'has-error':!orderForm.phone.$valid && orderForm.phone.$touched}">
+                            <label for="reg_chef_phone" class="col-sm-3 control-label">Հեռ.</label>
+                            <div class="col-sm-9">
+                                <input id="reg_chef_phone" class="form-control" required name="phone" type="tel" ng-model="order.phone"/>
+                                <span class="help-block has-error" ng-show="orderForm.phone.$touched && orderForm.phone.$error.required">Գրեք Հեռ.-ը</span>
+                                <span class="help-block has-error" ng-show="order.phone.length && orderForm.phone.$touched && orderForm.phone.$error.remote">Հեռը կա</span>
+                            </div>
+                        </div>
+
+                        <button ng-disabled="orderForm.$invalid" class="btn btn-sm btn-rj">Order</button>
+                    </form>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
