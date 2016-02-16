@@ -68,6 +68,11 @@
 <!-- Begin Intro Section -->
 <section id="intro">
   <div class="intro-body text-center">
+    <div class="text-right" style="margin: 1% 6%">
+      <button type="button" class="btn btn-sm btn-rj" ng-click="becomeChef()">
+        Become Chef
+      </button>
+    </div>
     <div class="container">
       <div class="row">
         <div class="col-md-12 intro-content">
@@ -83,9 +88,6 @@
           </div>
           <!-- //.intro-text -->
 
-          <div>
-            <input type="button" value="Become Chef"  class="btn btn-lg btn-rj" ng-click="becomeChef()">
-          </div>
 
           <!-- //.page-scroll -->
         </div>
