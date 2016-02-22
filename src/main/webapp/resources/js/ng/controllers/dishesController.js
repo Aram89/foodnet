@@ -3,7 +3,7 @@
  */
 app.controller('DishesController',['$scope','requestsService',function($scope,requestsService){
     $scope.dishes  = [];
-    $scope.category="all";
+
     $scope.order = {dishes:[],name:'',phone:'',comments:[]};
     $scope.filterByChef = false;
     $scope.selectedCehfId=false;
@@ -35,7 +35,6 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
             }
         }
     };
-
     $scope.categories = [
         {name:"all",title:"Բոլորը",next:0},
         {name:"lunch",title:"Լանչ",next:0},
@@ -45,6 +44,7 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
         {name:"hotDishes",title:"Տաք ուտեստներ",next:0},
         {name:"garnish",title:"Խավարտներ",next:0}
     ];
+    $scope.category=$scope.categories[0];
     var categories = {name:"lunch",description:"desc"};
     //    {name:"salads",description:"dsc"},
     //    {name:"cake",description:"dedsc"},
@@ -57,14 +57,13 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
             alert("exav")
         })
     };
-    $scope.selectCategory = function(c){
-        console.log(c);
-        $scope.category = c;
+    $scope.selectCategory = function(index){
+        $scope.category = $scope.categories[index];
 //        $scope.loadDishes(c);
     };
     /******************/
     $scope.categoryFilter = function(c){
-        var res=$scope.category=="all"|| c.categories.indexOf($scope.category)!=-1;
+        var res=$scope.category.name=="all"|| c.categories.indexOf($scope.category.name)!=-1;
         if($scope.filterByChef && $scope.selectedCehfId){
             console.log(c);
             res = res && c.chef.chefId==$scope.selectedCehfId
@@ -75,13 +74,14 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
         $scope.selectedCehfId = id
     };
     /******************/
-    $scope.loadDishes = function(type,p,c){
-        var dish={category:type,start:0,count:10};
-        requestsService.loadDishes({category:type,page:p,count:c})
+    $scope.loadDishes = function(category){
+        //var dish={category:type,start:0,count:10};
+        requestsService.loadDishes({category:category.name,cate:category.next,count:10})
             .success(function(data){
-                console.log(data);
+                console.log(category);
                // var result = JSON.parse(data);
                 ///$scope.dishes.push(data);
+                category.next++;
                 data.forEach(function (r) {
                     $scope.dishes.push(r)
                 });
@@ -102,5 +102,5 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
             })
     };
     $scope.getChefs();
-    $scope.loadDishes($scope.category,0,10);
+    $scope.loadDishes($scope.category,10);
 }]);

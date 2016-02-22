@@ -14,7 +14,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Rinjani - Multi-Purpose One Page Theme</title>
+  <title>Narinj.am</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -68,7 +68,7 @@
 <!-- Begin Intro Section -->
 <section id="intro">
   <div class="intro-body text-center">
-    <div class="text-right" style="margin: 1% 6%">
+    <div class="text-right" style="position:absolute; top:15px;right:45px">
       <button type="button" class="btn btn-sm btn-rj" ng-click="becomeChef()">
         Become Chef
       </button>
@@ -170,7 +170,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="section-title text-center">
-              <h2 class="main-title" ng-click="loadDishes()">Ուտեստներ</h2>
+              <h2 class="main-title">Ուտեստներ</h2>
 
               <h3 class="sub-title" ng-click="someReq()">You Can Judge Us By The Work We Have Done</h3>
 
@@ -187,7 +187,7 @@
             <div class="filter-portfolio">
               <ul class="list-unstyled">
                 <li ng-repeat="category in categories">
-                  <button type="button" class="btn btn-rj" ng-click="selectCategory(category.name)">{{category.title}}</button>
+                  <button type="button" class="btn btn-rj" ng-click="selectCategory($index)">{{category.title}}</button>
                 </li>
               </ul>
               <div>
@@ -215,6 +215,7 @@
       </div>
       <!-- //.row -->
     </div>
+    <span ng-click="loadDishes(category)">Show more</span>
     <!-- //.section-content -->
   </div>
   <!-- //.section-inner -->
