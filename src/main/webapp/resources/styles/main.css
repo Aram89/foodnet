@@ -154,3 +154,7 @@ body {
 .order-box .order-box-form {
     padding: 10px;
 }
+
+body.ngdialog-open, html.ngdialog-open {
+    overflow: visible;
+}
