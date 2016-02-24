@@ -484,9 +484,6 @@
         <div class="col-md-12">
           <div class="section-title text-center">
             <h2 class="main-title">Ինչպե՞ս է աշխատում</h2>
-
-            <h3 class="sub-title">Travel Through Time With Us!</h3>
-
             <span class="section-line"></span>
           </div>
           <!-- //.section-title -->
@@ -601,7 +598,7 @@
 <!-- //End Our History Section -->
 
 <!-- Begin Testimonials Section -->
-<section id="testimonials" class="section section-bgimage-yes">
+<%--<section id="testimonials" class="section section-bgimage-yes">
   <div class="section-inner">
     <div class="section-overlay"></div>
 
@@ -786,7 +783,7 @@
     <!-- //.section-container -->
   </div>
   <!-- //.section-inner -->
-</section>
+</section>--%>
 <!-- //End Testimonials Section -->
 
 <!-- Begin Contact Us Section -->
@@ -885,23 +882,15 @@
 
             <ul class="social-icon-list list-unstyled list-inline text-center">
               <li>
-                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
               </li>
 
               <li>
-                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-twitter"></i></a>
               </li>
 
               <li>
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-              </li>
-
-              <li>
-                <a href="#"><i class="fa fa-youtube"></i></a>
-              </li>
-
-              <li>
-                <a href="#"><i class="fa fa-pinterest"></i></a>
+                <a href=""><i class="fa fa-youtube"></i></a>
               </li>
 
               <li class="hidden-xs">
@@ -973,17 +962,8 @@
               </li>
 
               <li>
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-              </li>
-
-              <li>
                 <a href="#"><i class="fa fa-youtube"></i></a>
               </li>
-
-              <li>
-                <a href="#"><i class="fa fa-pinterest"></i></a>
-              </li>
-
               <li class="hidden-xs">
                 <a href="#"><i class="fa fa-instagram"></i></a>
               </li>
