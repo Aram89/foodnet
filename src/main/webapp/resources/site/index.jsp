@@ -259,7 +259,7 @@
               </div>
               <!-- //.team-inner -->
               <div ng-class="{'selected-chef':chef.chefId==selectedCehfId}" class="chef-picture" ng-click="selectChef(chef.chefId)">
-                <img src="{{chef.files[0].path}}" alt="" class="img-responsive img-rounded"/>
+                <img src="assets/img/{{chef.files[0].path}}" alt="" class="img-responsive img-rounded"/>
               </div>
             </div>
             <!-- //.team-element -->
