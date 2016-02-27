@@ -158,3 +158,6 @@ body {
 body.ngdialog-open, html.ngdialog-open {
     overflow: visible;
 }
+.portfolio-item > .inner-content > .portfolio-content {
+    background-color: transparent !important;
+}
