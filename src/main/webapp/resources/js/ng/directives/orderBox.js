@@ -7,7 +7,7 @@ app.directive('orderBox',function(){
         scope:{
             order:"=order"
         },
-        controller : ['$scope','requestsService',function($scope,requestsService){
+        controller : ['$scope','requestsService','ngDialog','$timeout',function($scope,requestsService,ngDialog,$timeout){
             console.log($scope.order);
             $scope.chefs=[];
             $scope.order.price = function(){
@@ -19,7 +19,6 @@ app.directive('orderBox',function(){
                     }
                     price+= parseInt(d.price)* d.count;
                 });
-                console.log($scope.chefs.length);
                 return price+$scope.chefs.length*400;
             };
             $scope.toggleBox = function(){
@@ -28,6 +27,7 @@ app.directive('orderBox',function(){
             $scope.removeDish =function(index){
                 $scope.order.dishes.splice(index,1);
             };
+
             $scope.makeOrder = function(){
                 /*var comment ='';
                 console.log($scope.order);
@@ -47,12 +47,27 @@ app.directive('orderBox',function(){
                     });
                     console.log(res);
                     requestsService.makeOrder(res).success(function(){
-
+                        ngDialog.open({
+                             controller:['$scope',function($scope){
+                                 $timeout($scope.closeThisDialog,2000)
+                             }]
+                            }
+                        )
                     }).error(function(){
-
+                        ngDialog.open({
+                                controller:['$scope',function($scope){
+                                    $timeout($scope.closeThisDialog,5000)
+                                }],
+                                plain:true,
+                                template:'<div>Շնորհակալություն,պատվերն ընդունված է</div><div>Մենք կկապնվենք Ձեր հետ</div>'
+                            }
+                        )
                     })
                 });
-            }
+            };
+            $scope.$watch('order.dishes.length',function(n){
+                if(n){$scope.isBoxOpen = true}
+            })
         }],
         templateUrl : '/resources/views/templates/orderBox.tmpl.html'
     }

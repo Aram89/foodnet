@@ -1,7 +1,7 @@
 /**
  * Created by pr on 01/17/2016.
  */
-app.controller('DishesController',['$scope','requestsService',function($scope,requestsService){
+app.controller('DishesController',['$scope','requestsService','$interval','$timeout','ngDialog',function($scope,requestsService,$interval,$timeout,ngDialog){
     $scope.dishes  = [];
 
     $scope.order = {dishes:[],name:'',phone:'',comments:[]};
@@ -29,7 +29,13 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
             }else{
                 if(!$scope.order.dishes.some(function(d){
                         return d.chef.chefId==dish.chef.chefId
-                    })){alert("+400 mayet axpers/qurs")}
+                    })){
+                    ngDialog.open({
+                            plain:true,
+                            template:'<div>Ուշադրություն</div><div>Տարբեր խոհարարներից պատվիրելու դեպքում առաքման գումարը կավելանա՝ յուրաքանչյուրը 400 դրամ</div>'
+                        }
+                    )
+                }
                 dish.count=count;
                 $scope.order.dishes.push(dish)
             }
@@ -90,6 +96,12 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
                 console.log("failed load dishes");
             })
     };
+    $scope.getOnlineChefs = function(category){
+        requestsService.loadDishes({category:category.name,page:0,count:(category.next+1)*10})
+            .success(function(data){
+                $scope.dishes = data
+            })
+    };
     $scope.getChefs = function(){
         requestsService.getChefs({page:$scope.nextChefs,count:4})
             .success(function(data){
@@ -103,4 +115,5 @@ app.controller('DishesController',['$scope','requestsService',function($scope,re
     };
     $scope.getChefs();
     $scope.loadDishes($scope.category,10);
+    //$interval(function(){$scope.getOnlineChefs($scope.category,$scope.category)},10000)
 }]);
