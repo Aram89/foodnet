@@ -70,7 +70,7 @@
   <div class="intro-body text-center">
     <div class="text-right" style="position:absolute; top:15px;right:45px">
       <button type="button" class="btn btn-sm btn-rj" ng-click="becomeChef()">
-        Become Chef
+        Դառանալ խոհարար
       </button>
     </div>
     <div class="container">
@@ -82,9 +82,9 @@
           <!-- //.logo -->
 
           <div class="intro-text text-center">
-            <h2>Clean, Awesome and Multi-Purpose.</h2>
+            <h2>Նոր մոտեցում սննդի ոլորտում</h2>
 
-            <p class="lead">Responsive Multi-Purpose Theme For Running Serious Business</p>
+            <p class="lead">Համեղ ուտեստներ անմիջապես խոհարարից</p>
           </div>
           <!-- //.intro-text -->
 
@@ -145,7 +145,7 @@
         </li>
 
         <li class="page-scroll">
-          <a href="#how-works">Ինչպե՞ս է աշխատում</a>
+          <a href="#how-works">Պատրաստման տեվողությունը</a>
         </li>
 
         <li class="page-scroll">
@@ -172,7 +172,7 @@
             <div class="section-title text-center">
               <h2 class="main-title">Ուտեստներ</h2>
 
-              <h3 class="sub-title" ng-click="someReq()">You Can Judge Us By The Work We Have Done</h3>
+              <h3 class="sub-title" ng-click="someReq()">Ուտեստները պատրաստվում են միայն թարմ սննդամթերքից</h3>
 
               <span class="section-line"></span>
             </div>
@@ -215,7 +215,7 @@
       </div>
       <!-- //.row -->
     </div>
-    <span ng-click="loadDishes(category)">Show more</span>
+    <span ng-click="loadDishes(category)">Ավելին</span>
     <!-- //.section-content -->
   </div>
   <!-- //.section-inner -->
@@ -233,7 +233,7 @@
             <div class="section-title text-center">
               <h3 class="main-title">Խոհարարներ</h3>
 
-              <h4 class="sub-title">We Are Here For You</h4>
+              <h4 class="sub-title">Նրանք աշխատումենիրենց տանը</h4>
 
               <span class="section-line"></span>
             </div>
@@ -250,8 +250,6 @@
                 <div class="team-detail">
                   <div class="team-content">
                     <h4>{{chef.name}} {{chef.surName}}</h4>
-
-                    <p>ECD / Founder</p>
                   </div>
                   <!-- //.team-content -->
                 </div>
@@ -307,7 +305,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="section-title text-center">
-            <h2 class="main-title">Fun Facts</h2>
+            <h2 class="main-title">Փաստեր</h2>
 
             <h3 class="sub-title">Some Of The Cool Facts About Us That Will Blow Your Mind</h3>
 
@@ -320,72 +318,58 @@
       <!-- //.row -->
 
       <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-3 text-center">
+        <div class="col-xs-6 col-sm-6 col-md-4 text-center">
           <div class="counter-item not-right-column top-column">
             <i class="fa fa-thumbs-o-up"></i>
 
             <div class="inner-content">
-                                <span class="number" data-from="2200" data-to="2780" data-refresh-interval="10">
-                                    2200
+                                <span class="number" data-from="51" data-to="142" data-refresh-interval="10">
+                                    142
                                 </span>
             </div>
             <!-- //.inner-content -->
 
-            <p>Projects</p>
+            <p>Ուտեստ</p>
           </div>
           <!-- //.counter-item -->
         </div>
         <!-- //.col-xs-6 col-sm-6 col-md-3 -->
 
-        <div class="col-xs-6 col-sm-6 col-md-3 text-center">
+        <div class="col-xs-6 col-sm-6 col-md-4 text-center">
           <div class="counter-item not-right-column top-column">
             <i class="fa fa-smile-o"></i>
 
             <div class="inner-content">
-                                <span class="number" data-from="330" data-to="487" data-refresh-interval="10">
-                                    330
+                                <span class="number" data-from="650" data-to="747" data-refresh-interval="10">
+                                    747
                                 </span>
             </div>
             <!-- //.inner-content -->
 
-            <p>Clients</p>
+            <p>Պատվեր</p>
           </div>
           <!-- //.counter-item -->
         </div>
         <!-- //.col-xs-6 col-sm-6 col-md-3 -->
 
-        <div class="col-xs-6 col-sm-6 col-md-3 text-center">
+        <div class="col-xs-6 col-sm-6 col-md-4 text-center">
           <div class="counter-item not-right-column">
             <i class="fa fa-coffee"></i>
 
             <div class="inner-content">
-                                <span class="number" data-from="13300" data-to="13730" data-refresh-interval="10">
-                                    13300
+                                <span class="number" data-from="1" data-to="27" data-refresh-interval="10">
+                                    27
                                 </span>
             </div>
             <!-- //.inner-content -->
 
-            <p>Coffee</p>
+            <p>Խոհարար</p>
           </div>
           <!-- //.counter-item -->
         </div>
         <!-- //.col-xs-6 col-sm-6 col-md-3 -->
 
-        <div class="col-xs-6 col-sm-6 col-md-3 text-center">
-          <div class="counter-item">
-            <i class="fa fa-gift"></i>
 
-            <div class="inner-content">
-                                <span class="number" data-from="10" data-to="154" data-refresh-interval="10">
-                                    23
-                                </span>
-            </div>
-            <!-- //.inner-content -->
-
-            <p>Awards</p>
-          </div>
-          <!-- //.counter-item -->
-        </div>
         <!-- //.col-xs-6 col-sm-6 col-md-3 -->
       </div>
       <!-- //.row -->
@@ -405,7 +389,7 @@
           <div class="section-title text-center">
             <h3 class="main-title">Ի՞նչու օգտվել</h3>
 
-            <h4 class="sub-title">We Are Experts In Developing Your Business</h4>
+            <h4 class="sub-title">Մենք առաջարկում ենք նոր մոտեցում սննդի ոլորտում</h4>
 
             <span class="section-line"></span>
           </div>
@@ -423,9 +407,9 @@
                             </span>
 
             <div class="funny-boxes-text">
-              <h4>Web Design</h4>
+              <h4>Առողջ հումք</h4>
 
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+              <p>Ոտեստները պատրաստվում են թարմ ու տեղական սննդամթերքով, մաքուրպայմաններոմ</p>
             </div>
             <!-- //.funny-boxes-text -->
           </div>
@@ -440,9 +424,9 @@
                             </span>
 
             <div class="funny-boxes-text">
-              <h4>Graphic Design</h4>
+              <h4>ՀԱՄԵՂ</h4>
 
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+              <p>Խոհարարները պատրաստում են անպես ինչպես իրենցընտանիքի համար</p>
             </div>
             <!-- //.funny-boxes-text -->
           </div>
@@ -457,9 +441,9 @@
                             </span>
 
             <div class="funny-boxes-text">
-              <h4>Branding</h4>
+              <h4>Անմիջապես խոհարարից</h4>
 
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+              <p>Յուրաքանչյուր ոք,դառնալով խոհարար, գումար է վաստակում իր աշխատանքի շնորհիվ</p>
             </div>
             <!-- //.funny-boxes-text -->
           </div>
@@ -483,7 +467,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="section-title text-center">
-            <h2 class="main-title">Ինչպե՞ս է աշխատում</h2>
+            <h2 class="main-title">Պատրաստման տեվողությունը</h2>
             <span class="section-line"></span>
           </div>
           <!-- //.section-title -->
@@ -505,14 +489,13 @@
 
               <div class="timeline-panel">
                 <div class="timeline-heading">
-                  <h4 class="timeline-title">Timeline Event</h4>
+                  <h4 class="timeline-title">Մինչեւ 1 ժամ</h4>
 
                   <img src="assets/img/timeline-image-1.jpg" alt="" class="img-responsive">
                 </div>
                 <!-- //.timeline-heading -->
 
-                <div class="timeline-body">
-                  <p>Gunung Rinjani adalah gunung yang berlokasi di Pulau Lombok, Nusa Tenggara Barat. Gunung ini merupakan bagian dari Taman Nasional Gunung Rinjani yang memiliki luas sekitar 41.330 ha.</p>
+                <div class="timeline-body">Աղցանները,պավարտները,լանչերը հիմնականումպատարստվում են  1 ժամվա ընթացքում</p>
                 </div>
                 <!-- //.timeline-body -->
               </div>
@@ -527,14 +510,14 @@
 
               <div class="timeline-panel">
                 <div class="timeline-heading">
-                  <h4 class="timeline-title">Timeline Event</h4>
+                  <h4 class="timeline-title">4-5 ժամ</h4>
 
                   <img src="assets/img/timeline-image-2.jpg" alt="" class="img-responsive">
                 </div>
                 <!-- //.timeline-heading -->
 
                 <div class="timeline-body">
-                  <p>Gunung ini merupakan gunung favorit bagi pendaki Indonesia karena keindahan pemandangannya. Gunung ini merupakan bagian dari Taman Nasional Gunung Rinjani yang memiliki luas sekitar 41.330 ha.</p>
+                  <p>Այնպիսի ուտեստները,ինչպիսիք են տոլման,քյուֆթան պատրաստ կլինեն 4-5 ժամից</p>
                 </div>
                 <!-- //.timeline-body -->
               </div>
@@ -549,14 +532,14 @@
 
               <div class="timeline-panel">
                 <div class="timeline-heading">
-                  <h4 class="timeline-title">Timeline Event</h4>
+                  <h4 class="timeline-title">1 օր</h4>
 
                   <img src="assets/img/timeline-image-3.jpg" alt="" class="img-responsive">
                 </div>
                 <!-- //.timeline-heading -->
 
                 <div class="timeline-body">
-                  <p>Dan akan diusulkan penambahannya sehingga menjadi 76.000 ha ke arah barat dan timur. Secara administratif gunung ini berada dalam wilayah tiga kabupaten: Lombok Timur, Lombok Tengah dan Lombok Barat.</p>
+                  <p>Թխվածքներն ու  անուշեղենները պատվիրեք 1 օր առաջ</p>
                 </div>
                 <!-- //.timeline-body -->
               </div>
@@ -571,14 +554,14 @@
 
               <div class="timeline-panel">
                 <div class="timeline-heading">
-                  <h4 class="timeline-title">Timeline Event</h4>
+                  <h4 class="timeline-title">1-2 օր</h4>
 
                   <img src="assets/img/timeline-image-4.jpg" alt="" class="img-responsive">
                 </div>
                 <!-- //.timeline-heading -->
 
                 <div class="timeline-body">
-                  <p>Gunung Rinjani adalah gunung yang berlokasi di Pulau Lombok, Nusa Tenggara Barat. Gunung ini merupakan bagian dari Taman Nasional Gunung Rinjani yang memiliki luas sekitar 41.330 ha.</p>
+                  <p>Խոհարարները կպատրաստեն ձեր միջոցառումնների ուտեստները 1-2 օրվա ընթացքում</p>
                 </div>
                 <!-- //.timeline-body -->
               </div>
@@ -797,7 +780,7 @@
           <div class="section-title text-center">
             <h3 class="main-title">Կապ</h3>
 
-            <h4 class="sub-title">dont hasitate contact us</h4>
+            <h4 class="sub-title">Կիսվեք Ձեր կարծիքներով,առաջարկություններով</h4>
 
             <span class="section-line"></span>
           </div>
@@ -855,7 +838,7 @@
               <label for="message">Message*</label>
 
               <div class="input-group input-group-lg">
-                <textarea name="message" id="message" class="form-control required" placeholder="Enter Message"></textarea>
+                <textarea name="message" id="message" class="form-control required"></textarea>
               </div>
               <!-- //.input-group -->
             </div>
@@ -863,7 +846,7 @@
 
             <div class="form-group form-group-bottom">
               <button id="submit" type="submit" class="btn btn-lg btn-rj">
-                Send Message
+                Ուղարկեել
               </button>
             </div>
             <!-- //.form-group -->
@@ -876,9 +859,9 @@
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <div class="social-icon-text text-center">
-            <h2>OR</h2>
+            <h2>ԿԱՄ</h2>
 
-            <h4>Find Us On Social Media!</h4>
+            <h4>Գտեք սոցցանցերում!</h4>
 
             <ul class="social-icon-list list-unstyled list-inline text-center">
               <li>
@@ -928,11 +911,11 @@
   <section id="footer">
     <div class="container">
       <div class="row">
-        <div class="col-sm-4 col-md-4 footer-column not-right-column">
+        <div class="col-sm-6 col-md-6 footer-column not-right-column">
           <div class="footer-text">
-            <h4>Get In Touch</h4>
+            <h4>Եղեք կապի մեջ</h4>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla rebds vel pellentesqu</p>
+            <p>Մեր թիմի  համար  կարեւոր է ցանկացած կարծիք: Օգնեեք համակարգը դարձնելավելի լավը:</p>
 
             <ul class="icon-list list-unstyled">
               <li>
@@ -940,15 +923,7 @@
               </li>
 
               <li>
-                <i class="fa fa-envelope-o"></i> no-reply@rinjani.com
-              </li>
-
-              <li>
-                <i class="fa fa-map-marker"></i> 14374 Salemba Raya, Central Jakarta
-              </li>
-
-              <li>
-                <i class="fa fa-clock-o"></i> Monday to Friday - 8.30 PM to 17 PM
+                <i class="fa fa-envelope-o"></i> support@narinj.am
               </li>
             </ul>
 
@@ -973,7 +948,7 @@
         </div>
         <!-- //.footer-column -->
 
-        <div class="col-sm-4 col-md-4 footer-column not-right-column">
+        <div class="col-sm-6 col-md-6 footer-column not-right-column">
           <div class="footer-text">
             <h4>About Us</h4>
 
@@ -983,7 +958,7 @@
         </div>
         <!-- //.footer-column -->
 
-        <div class="col-sm-4 col-md-4 footer-column">
+        <%--<div class="col-sm-4 col-md-4 footer-column">
           <div class="footer-text">
             <h4>Newsletter</h4>
 
@@ -1004,7 +979,7 @@
             </form>
           </div>
           <!-- //.footer-text -->
-        </div>
+        </div>--%>
         <!-- //.footer-column -->
       </div>
       <!-- //.row -->
@@ -1018,7 +993,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <p>Copyright &copy; 2014 <a href="#">Rinjani.</a></p>
+          <p>Copyright &copy; 2016 <a href="#">narinj.am</a></p>
         </div>
         <!-- //.col-md-12 -->
       </div>
