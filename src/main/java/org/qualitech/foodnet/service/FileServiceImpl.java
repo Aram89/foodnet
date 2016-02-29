@@ -1,5 +1,8 @@
 package org.qualitech.foodnet.service;
 
+import org.apache.commons.fileupload.FileItemFactory;
+import org.apache.commons.fileupload.FileItemFactory;
+
 import org.qualitech.foodnet.domain.File;
 import org.qualitech.foodnet.exception.AppException;
 import org.qualitech.foodnet.exception.ErrorCodes;
@@ -10,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.ServletContext;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -27,7 +31,9 @@ public class FileServiceImpl implements FileService {
     private final Integer FILES_COUNT_PER_FOLDER = 2000;
 
     // Change it for production.
-    private final String ROOT_FOLDER = "C:/Users/Aram/Desktop/projects/narinj/narinj/src/main/webapp/resources/site/assets/img/";
+    //private final String ROOT_FOLDER = "C:/Users/Aram/Desktop/projects/narinj/narinj/src/main/webapp/resources/site/assets/img/";
+
+    private final String ROOT_FOLDER = "/home/narinjam/appservers/apache-tomcat-8x/webapps/ROOT/resources/site/assets/img/";
 
     private final String DELIMITER = "/";
 
@@ -73,7 +79,6 @@ public class FileServiceImpl implements FileService {
         return path;
     }
 
-
     @Override
     public String uploadFile(MultipartFile multipartFile, Long userId) throws SQLException, IOException, AppException {
         String mimeType = multipartFile.getContentType();
@@ -82,7 +87,7 @@ public class FileServiceImpl implements FileService {
         if (!multipartFile.isEmpty()) {
             byte[] bytes = multipartFile.getBytes();
             //String fullPath = path + DELIMITER + (new Date().getTime()) + userId + multipartFile.getOriginalFilename();
-            String fullPath = ROOT_FOLDER + DELIMITER + multipartFile.getOriginalFilename();
+            String fullPath = ROOT_FOLDER + multipartFile.getOriginalFilename();
             BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new java.io.File(fullPath)));
             stream.write(bytes);
             stream.close();

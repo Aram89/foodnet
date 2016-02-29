@@ -1,5 +1,7 @@
 package org.qualitech.foodnet.exception;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +19,9 @@ import java.sql.SQLException;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
+    private  static Logger logger = LogManager.getLogger(GlobalExceptionHandler.class);
+
+
     /**
      * Returning INTERNAL_SERVER_ERROR
      * for all unhandled exceptions
@@ -26,6 +31,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(value = Exception.class)
     public ResponseEntity exception(Exception e) {
+        logger.error(e);
         return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
@@ -40,6 +46,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     public ErrorCodes sqlException(Exception se) {
+        logger.error(se);
         return new ErrorCodes("wrong id");
     }
 
@@ -55,6 +62,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     public ErrorCodes userException (AppException ae) {
+        logger.error("App Exception : " + ae);
         return new ErrorCodes(ae.getMessage());
     }
 }

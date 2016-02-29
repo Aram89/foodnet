@@ -21,6 +21,7 @@ public class RequestMappings {
     public static final String GET_DISHES_BY_CHEF = "get-dishes-by-chef";
     public static final String MAKE_ORDER = "make-order";
     public static final String ACCEPT_ORDER = "accept-order";
+    public static final String LOGIN = "login";
 
 
 }

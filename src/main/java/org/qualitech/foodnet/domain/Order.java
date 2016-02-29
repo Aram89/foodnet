@@ -75,6 +75,8 @@ public class Order implements Serializable{
         return price;
     }
 
+
+
     public void setPrice(double price) {
         this.price = price;
     }
@@ -86,6 +88,15 @@ public class Order implements Serializable{
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "price=" + price +
+                ", comment='" + comment + '\'' +
+                ", dishOrders=" + dishOrders +
+                '}';
     }
 
 }

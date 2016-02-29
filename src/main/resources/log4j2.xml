@@ -1,16 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN">
+<Configuration status="INFO">
     <Appenders>
-        <File name="File" fileName="C:\Users\Aram\Desktop\logs\requests.log">
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
 
+        <File name="Controller" fileName="${log_file_path}/controller.log" append="false">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+
+        <File name="Exception" fileName="${log_file_path}/exception.log" append="false">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+
+        <File name="dao" fileName="${log_file_path}/dao.log" append="false">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+
+        <File name="dao" fileName="${log_file_path}/websocket.log" append="false">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </File>
     </Appenders>
     <Loggers>
-        <Logger name="org.qualitech.foodnet.controller.Interceptor" level="info">
-            <AppenderRef ref="File"/>
+        <Logger name="org.qualitech.foodnet.controller" level="info">
+            <AppenderRef ref="Controller"/>
         </Logger>
-        <Root level="error">
-            <AppenderRef ref="Console"/>
+
+        <Logger name="org.qualitech.foodnet.websocket" level="info">
+            <AppenderRef ref="Controller"/>
+        </Logger>
+
+        <Logger name="org.qualitech.foodnet.exception" level="error">
+            <AppenderRef ref="Exception"/>
+        </Logger>
+
+        <Root level="INFO">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="Narinj"/>
         </Root>
     </Loggers>
 </Configuration>

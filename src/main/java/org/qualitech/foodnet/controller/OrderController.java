@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.io.IOException;
+
 /**
  * @author Aram Kirakosyan.
  */
@@ -30,7 +32,7 @@ public class OrderController {
      * @throws AppException
      */
     @RequestMapping(value = RequestMappings.MAKE_ORDER, method = RequestMethod.POST)
-    public ResponseEntity makeOrder(@RequestBody Order order) throws AppException {
+    public ResponseEntity makeOrder(@RequestBody Order order) throws AppException, IOException {
         orderService.makeOrder(order);
         return new ResponseEntity(HttpStatus.OK);
     }
