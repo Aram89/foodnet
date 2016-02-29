@@ -1,9 +1,5 @@
 package org.qualitech.foodnet.service;
 
-import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.map.DeserializationConfig;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.SerializationConfig;
 import org.qualitech.foodnet.domain.Category;
 import org.qualitech.foodnet.domain.Chef;
 import org.qualitech.foodnet.domain.Dish;
@@ -27,6 +23,8 @@ import java.util.List;
 @Transactional
 public class DishServiceImpl implements DishService {
 
+    private final static double percent = 0.1;
+
     @Autowired
     DishRepository dishRepository;
 
@@ -35,9 +33,21 @@ public class DishServiceImpl implements DishService {
 
     @Override
     public void addDish(Dish dish) throws SQLException{
+        // Set view price
+        dish.setPrice(calculateViewPrice(dish.getChefPrice()));
         dishRepository.save(dish);
     }
 
+    private double calculateViewPrice(double price) {
+        double viewPrice;
+        double tmpPrice = price + percent*price;
+        if (tmpPrice % 10 == 0) {
+            viewPrice = tmpPrice;
+        } else {
+            viewPrice = (tmpPrice/10 + 1)*10;
+        }
+        return viewPrice;
+    }
 
     @Override
     public List<Dish> getDishes(String categoryName, int page, int count) throws IOException, AppException {

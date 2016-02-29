@@ -14,6 +14,9 @@ public class ErrorCodes {
     public static final String WRONG_CATEGORY = "wrong category : ";
     public static final String WRONG_PHONE = "wrong phone";
     public static final String PERMISSION_DENIED = "permission denied";
+    public static final String WRONG_ORDER_PRICE = "Gyada es inch muxlyojner es anum?";
+    public static final String MULTIPLE_CHEFS_IN_ORDER = "Multiple chefs in one order request";
+    public static final String INACTIVE_ACCOUNT = "Your account was not activated";
 
 
     private String errorString;

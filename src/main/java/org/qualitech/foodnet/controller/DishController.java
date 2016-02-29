@@ -1,6 +1,8 @@
 package org.qualitech.foodnet.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.qualitech.foodnet.domain.Dish;
 import org.qualitech.foodnet.domain.File;
 import org.qualitech.foodnet.exception.AppException;
@@ -25,6 +27,9 @@ import java.util.List;
 @Controller
 public class DishController {
 
+    // Logger.
+    private  static Logger logger = LogManager.getLogger(DishController.class);
+
     @Autowired
     private FileService fileService;
 
@@ -43,6 +48,7 @@ public class DishController {
     @RequestMapping(value = RequestMappings.UPLOAD_FILE, method = RequestMethod.POST)
     public ResponseEntity UploadFile(@RequestParam("file") MultipartFile multipartFile)
             throws IOException, AppException, SQLException {
+        logger.info("New file : " + multipartFile.getOriginalFilename());
         String path  = fileService.uploadFile(multipartFile, 1l);
 
         // create domain object and set fields for file.
@@ -54,6 +60,8 @@ public class DishController {
 
         // Insert into DB and get inserted entry id.
         long fileId = fileService.insertFileInDB(file);
+
+        logger.info("File successfully uploaded " + file.getPath());
         // Return uploaded file id and status OK.
         return new ResponseEntity(fileId, HttpStatus.OK);
     }
@@ -68,15 +76,18 @@ public class DishController {
      */
     @RequestMapping(value = RequestMappings.ADD_DISH, method = RequestMethod.POST)
     public ResponseEntity addDish(@RequestBody String decodedString) throws SQLException, IOException {
+        logger.info("New dish add request :" + decodedString);
         String dishString = URLDecoder.decode(decodedString, "UTF-8").substring(5);
         ObjectMapper mapper = new ObjectMapper();
         Dish dish = mapper.readValue(dishString, Dish.class);
+        logger.info("New dish: " + dish);
         dishService.addDish(dish);
+        logger.info("Dish successfully added :" + dish.getName());
         return new ResponseEntity(HttpStatus.OK);
     }
 
     /**
-     * Endpoint for getting dises.
+     * Endpoint for getting dishes.
      *
      * @param category category name (all if request all dishes).
      * @param page page starting with 0.

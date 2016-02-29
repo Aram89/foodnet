@@ -15,12 +15,32 @@ public class Dish implements Serializable  {
 
     private long dishId;
     private double price;
+    private Double prepareTime;
+    private Double chefPrice;
     private String name;
     private String description;
     private Chef chef;
     private List <Category> categories;
     private List<File> files;
     private List<Order> orders;
+
+    @Column
+    public Double getPrepareTime() {
+        return prepareTime;
+    }
+
+    public void setPrepareTime(Double prepareTime) {
+        this.prepareTime = prepareTime;
+    }
+
+    @Column
+    public Double getChefPrice() {
+        return chefPrice;
+    }
+
+    public void setChefPrice(Double chefPrice) {
+        this.chefPrice = chefPrice;
+    }
 
     @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
@@ -105,5 +125,11 @@ public class Dish implements Serializable  {
     public void setChef(Chef chef) {
         this.chef = chef;
     }
+
+    @Override
+    public String toString() {
+        return "'name='" + name;
+    }
+
 
 }

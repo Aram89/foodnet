@@ -22,6 +22,8 @@ public interface DishRepository extends CrudRepository<Dish, Long>, Repository<D
 
     List<Dish> findByChef(Chef chef, org.springframework.data.domain.Pageable pageable);
 
+    List<Dish> findChefByDishId(long dishId);
+
     @Query("SELECT d FROM Dish d")
     List<Dish> findWithLimit(org.springframework.data.domain.Pageable pageable);
 
