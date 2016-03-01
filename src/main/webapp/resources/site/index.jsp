@@ -26,6 +26,8 @@
   <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
   <!-- Plugins CSS -->
+  <link href="assets/plugins/kitchen-font/kitchen-icons.css" rel="stylesheet">
+  <link href="assets/plugins/dish-font/flaticon.css" rel="stylesheet">
   <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="assets/plugins/animate-css/animate.min.css" rel="stylesheet" type="text/css">
   <link href="assets/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css">
@@ -233,7 +235,7 @@
             <div class="section-title text-center">
               <h3 class="main-title">Խոհարարներ</h3>
 
-              <h4 class="sub-title">Նրանք աշխատումենիրենց տանը</h4>
+              <h4 class="sub-title">Նրանք աշխատում են իրենց տանը</h4>
 
               <span class="section-line"></span>
             </div>
@@ -262,28 +264,6 @@
             </div>
             <!-- //.team-element -->
           </div>
-          <!-- //.team-item -->
-
-          <%--<div class="col-sm-6 col-md-3 team-item not-right-column top-column">
-            <div class="img-rounded team-element">
-              <div class="team-inner">
-                <div class="team-detail">
-                  <div class="team-content">
-                    <h4>Daisy Buchanan</h4>
-
-                    <p>CEO / Co-Founder</p>
-                  </div>
-                  <!-- //.team-content -->
-                </div>
-                <!-- //.team-detail -->
-              </div>
-              <!-- //.team-inner -->
-
-              <img src="assets/img/meet-the-team-image-2.jpg" alt="" class="img-responsive img-rounded"/>
-            </div>
-            <!-- //.team-element -->
-          </div>
-          --%><!-- //.team-item -->
         </div>
         <!-- //.row -->
       </div>
@@ -307,7 +287,7 @@
           <div class="section-title text-center">
             <h2 class="main-title">Փաստեր</h2>
 
-            <h3 class="sub-title">Some Of The Cool Facts About Us That Will Blow Your Mind</h3>
+            <!--h3 class="sub-title">Some Of The Cool Facts About Us That Will Blow Your Mind</h3-->
 
             <span class="section-line"></span>
           </div>
@@ -320,7 +300,7 @@
       <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-4 text-center">
           <div class="counter-item not-right-column top-column">
-            <i class="fa fa-thumbs-o-up"></i>
+            <i class="flaticon-icon-dish"></i>
 
             <div class="inner-content">
                                 <span class="number" data-from="51" data-to="142" data-refresh-interval="10">
@@ -337,7 +317,7 @@
 
         <div class="col-xs-6 col-sm-6 col-md-4 text-center">
           <div class="counter-item not-right-column top-column">
-            <i class="fa fa-smile-o"></i>
+            <i class="flaticon-icon-order"></i>
 
             <div class="inner-content">
                                 <span class="number" data-from="650" data-to="747" data-refresh-interval="10">
@@ -354,7 +334,7 @@
 
         <div class="col-xs-6 col-sm-6 col-md-4 text-center">
           <div class="counter-item not-right-column">
-            <i class="fa fa-coffee"></i>
+            <i class="fa flaticon-chef"></i>
 
             <div class="inner-content">
                                 <span class="number" data-from="1" data-to="27" data-refresh-interval="10">
@@ -403,13 +383,13 @@
         <div class="col-sm-4 col-md-4">
           <div class="funny-boxes float-shadow not-right-column text-center">
                             <span class="funny-boxes-icon">
-                                <i class="fa fa-lightbulb-o"></i>
+                                <i class="flaticon-fruits"></i>
                             </span>
 
             <div class="funny-boxes-text">
               <h4>Առողջ հումք</h4>
 
-              <p>Ոտեստները պատրաստվում են թարմ ու տեղական սննդամթերքով, մաքուրպայմաններոմ</p>
+              <p>Ոտեստները պատրաստվում են թարմ ու տեղական սննդամթերքով, մաքուր պայմաններոմ</p>
             </div>
             <!-- //.funny-boxes-text -->
           </div>
@@ -420,13 +400,13 @@
         <div class="col-sm-4 col-md-4">
           <div class="funny-boxes float-shadow not-right-column text-center">
                             <span class="funny-boxes-icon">
-                                <i class="fa fa-heart-o"></i>
+                                <i class="flaticon-tasty"></i>
                             </span>
 
             <div class="funny-boxes-text">
               <h4>ՀԱՄԵՂ</h4>
 
-              <p>Խոհարարները պատրաստում են անպես ինչպես իրենցընտանիքի համար</p>
+              <p>Խոհարարները պատրաստում են այնպես ինչպես իրենց ընտանիքի համար</p>
             </div>
             <!-- //.funny-boxes-text -->
           </div>
@@ -437,7 +417,7 @@
         <div class="col-sm-4 col-md-4">
           <div class="funny-boxes float-shadow text-center">
                             <span class="funny-boxes-icon">
-                                <i class="fa fa-flask"></i>
+                                <i class="fa flaticon-icon-chef-hat"></i>
                             </span>
 
             <div class="funny-boxes-text">
@@ -495,7 +475,7 @@
                 </div>
                 <!-- //.timeline-heading -->
 
-                <div class="timeline-body">Աղցանները,պավարտները,լանչերը հիմնականումպատարստվում են  1 ժամվա ընթացքում</p>
+                <div class="timeline-body">Աղցանները,խավարտները,լանչերը հիմնականում պատարստվում են  1 ժամվա ընթացքում</p>
                 </div>
                 <!-- //.timeline-body -->
               </div>
@@ -780,7 +760,7 @@
           <div class="section-title text-center">
             <h3 class="main-title">Կապ</h3>
 
-            <h4 class="sub-title">Կիսվեք Ձեր կարծիքներով,առաջարկություններով</h4>
+            <h4 class="sub-title">Կիսվեք Ձեր կարծիքներով,առաջարկներով</h4>
 
             <span class="section-line"></span>
           </div>
@@ -993,7 +973,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <p>Copyright &copy; 2016 <a href="#">narinj.am</a></p>
+          <p>Copyright &copy; 2016 <a href="">narinj.am</a></p>
         </div>
         <!-- //.col-md-12 -->
       </div>

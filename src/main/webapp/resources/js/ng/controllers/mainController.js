@@ -1,10 +1,10 @@
 /**
  * Created by pr on 01/02/2016.
  */
-app.controller('MainController',['$scope','translationService','ngDialog',function($scope,translationService,ngDialog){
-    $scope.setLang =function(lang){
+app.controller('MainController',['$scope','ngDialog',function($scope,ngDialog){
+   /* $scope.setLang =function(lang){
         translationService.getTranslation($scope,lang);
-    };
+    };*/
     $scope.becomeChef = function () {
         ngDialog.open({
             template: '/resources/views/templates/becomeChief.tmpl.html',
@@ -23,7 +23,7 @@ app.controller('MainController',['$scope','translationService','ngDialog',functi
         }
     });
     $scope.test="test";
-    $scope.setLang('en');
+    //$scope.setLang('en');
     $scope.sections = [
         {title:'Home',href:'#home'},
         {title:'About_us',href:'#aboutus'},
