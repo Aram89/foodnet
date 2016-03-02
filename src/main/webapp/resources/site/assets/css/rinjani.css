@@ -960,7 +960,7 @@ span.navbar-trigger-close a:hover {
 #contact-us > .section-inner .section-content .social-icon-text > h2 {
   display: inline-block;
   color: #fff;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 300;
   text-transform: uppercase;
   background-color: #ff7932;
@@ -987,10 +987,11 @@ span.navbar-trigger-close a:hover {
   width: 40px;
   height: 40px;
   line-height: 40px;
+  padding: 10px;
   color: #c9c9c9;
   font-size: 16px;
   text-align: center;
-  border: 1px solid #c9c9c9;
+  border: 2px solid #c9c9c9;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -1075,9 +1076,10 @@ footer.footer #footer ul.social-icon-list > li a {
   width: 40px;
   height: 40px;
   line-height: 40px;
+  padding: 10px;
   font-size: 16px;
   text-align: center;
-  border: 1px solid #c9c9c9;
+  border: 2px solid #c9c9c9;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   -ms-border-radius: 50%;

@@ -372,9 +372,9 @@
       <div class="row">
         <div class="col-sm-4 col-md-4">
           <div class="funny-boxes float-shadow not-right-column text-center">
-                            <span class="funny-boxes-icon">
+                            <div class="funny-boxes-icon">
                                 <i class="flaticon-fruits"></i>
-                            </span>
+                            </div>
 
             <div class="funny-boxes-text">
               <h4>Առողջ հումք</h4>
@@ -389,9 +389,9 @@
 
         <div class="col-sm-4 col-md-4">
           <div class="funny-boxes float-shadow not-right-column text-center">
-                            <span class="funny-boxes-icon">
+                            <div class="funny-boxes-icon">
                                 <i class="flaticon-tasty"></i>
-                            </span>
+                            </div>
 
             <div class="funny-boxes-text">
               <h4>ՀԱՄԵՂ</h4>
@@ -406,9 +406,9 @@
 
         <div class="col-sm-4 col-md-4">
           <div class="funny-boxes float-shadow text-center">
-                            <span class="funny-boxes-icon">
+                            <div class="funny-boxes-icon">
                                 <i class="fa flaticon-icon-chef-hat"></i>
-                            </span>
+                            </div>
 
             <div class="funny-boxes-text">
               <h4>Անմիջապես խոհարարից</h4>
@@ -465,7 +465,7 @@
                 </div>
                 <!-- //.timeline-heading -->
 
-                <div class="timeline-body">Աղցանները,խավարտները,լանչերը հիմնականում պատարստվում են  1 ժամվա ընթացքում</p>
+                <div class="timeline-body"><p>Աղցանները,խավարտները,լանչերը հիմնականում պատարստվում են  1 ժամվա ընթացքում</p>
                 </div>
                 <!-- //.timeline-body -->
               </div>
@@ -963,7 +963,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <p>Copyright &copy; 2016 <a href="">narinj.am</a></p>
+          <p> Copyright &copy; 2016  <a href="">www.narinj.am</a></p>
         </div>
         <!-- //.col-md-12 -->
       </div>

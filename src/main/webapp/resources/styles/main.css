@@ -160,6 +160,7 @@ body.ngdialog-open, html.ngdialog-open {
     margin: 0 auto;
     padding-left: 30px;
 }
+
 /*media query*/
 @media screen and (max-width : 760px){
     .xs-left-menu{
@@ -175,5 +176,11 @@ body.ngdialog-open, html.ngdialog-open {
     }
     .ngdialog.ngdialog-theme-default {
         overflow-x: hidden;
+    }
+    #contact-us > .section-inner .section-content .social-icon-text > h4 {
+        font-size: 24px;
+    }
+    .section > .section-inner .section-content .section-title > .sub-title {
+        font-size: 16px;
     }
 }

@@ -584,13 +584,13 @@
   margin-bottom: 30px;
   width: 75px;
   height: 75px;
-  line-height: 90px;
+  line-height: 75px;
   border: 1px solid #1abc9c;
   border-radius: 50%;
   color: #1abc9c;
 }
 .funny-boxes > .funny-boxes-icon > i {
-  font-size: 35px;
+  padding: 10px;
 }
 .funny-boxes > .funny-boxes-text > h4 {
   position: relative;
