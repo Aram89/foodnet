@@ -106,35 +106,21 @@
 </section>
 <!-- //End Intro Section -->
 
-
 <!-- Begin Navbar -->
 <div ng-controller="DishesController">
 <nav id="navigation" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header page-scroll">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-rj-collapse">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-rj-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-
-      <!--a class="navbar-brand" href="#page-top">Rinjani</a-->
-
     </div>
-    <!-- //.navbar-header -->
 
     <div class="navbar-collapse collapse navbar-rj-collapse">
-      <ul class="nav navbar-nav navbar-left">
-        <%--<li class="page-scroll">
-          <a href="#who-we-are">About</a>
-        </li>
---%>
-<%--        <li class="page-scroll">
-          <a href="#our-main-skills">Skills</a>
-        </li>--%>
-
-
+      <ul class="nav navbar-nav">
         <li class="page-scroll">
           <a href="#dishes">Ուտեստներ</a>
         </li>
@@ -154,7 +140,11 @@
           <a href="#contact-us">Կապ</a>
         </li>
       </ul>
-      <order-box order="order"></order-box>
+      <ul class="nav navbar-nav navbar-right xs-left-menu">
+        <li class="page-scroll">
+          <a href="#"><order-box order="order"></order-box></a>
+        </li>
+      </ul>
 
     </div>
     <!-- //.navbar-collapse -->
@@ -217,7 +207,7 @@
       </div>
       <!-- //.row -->
     </div>
-    <span ng-click="loadDishes(category)">Ավելին</span>
+    <div ng-click="loadDishes(category)" class="more"> <a href="">Ավելին</a></div>
     <!-- //.section-content -->
   </div>
   <!-- //.section-inner -->

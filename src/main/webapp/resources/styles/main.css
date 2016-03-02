@@ -1,11 +1,5 @@
 body {
-    /*
-    padding-top: 70px;
-    */
-    overflow-x: hidden;
-}
-
-.navbar {
+    overflow-x: hidden !important;
 }
 
 .header {
@@ -160,4 +154,26 @@ body.ngdialog-open, html.ngdialog-open {
 }
 .portfolio-item > .inner-content > .portfolio-content {
     background-color: transparent !important;
+}
+.more{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 30px;
+}
+/*media query*/
+@media screen and (max-width : 760px){
+    .xs-left-menu{
+        float: left;
+        margin-left: 25px;
+        margin-top: -10px;
+    }
+    .order-window {
+        position: absolute;
+        left: 80%;
+        width: 100%;
+        padding: 20px;
+    }
+    .ngdialog.ngdialog-theme-default {
+        overflow-x: hidden;
+    }
 }
