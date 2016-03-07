@@ -38,15 +38,14 @@
                         -->
 
                         <div class="form-group" ng-class="{'has-error':!orderForm.phone.$valid && orderForm.phone.$touched}">
-                            <label for="reg_chef_phone" class="col-sm-3 control-label">Հեռ.</label>
+                            <label for="reg_chef_phone"  ng-click="aaa()" class="col-sm-3 control-label">Հեռ.</label>
                             <div class="col-sm-9">
                                 <input id="reg_chef_phone" class="form-control" required name="phone" type="tel" ng-model="order.phone"/>
                                 <span class="help-block has-error" ng-show="orderForm.phone.$touched && orderForm.phone.$error.required">Գրեք Հեռ.-ը</span>
                                 <span class="help-block has-error" ng-show="order.phone.length && orderForm.phone.$touched && orderForm.phone.$error.remote">Հեռը կա</span>
                             </div>
                         </div>
-
-                        <button ng-disabled="orderForm.$invalid" class="btn btn-sm btn-rj">Order</button>
+                        <button ng-click="makeOrder()" ng-disabled="orderForm.$invalid" class="btn btn-sm btn-rj">Order</button>
                     </form>
                 </div>
             </div>
