@@ -1,6 +1,6 @@
 [
-  {"chefId":1,"files":[{"path":"assets/img/meet-the-team-image-1.jpg"}],"rating":null,"feedback":null,"name":"John","surName":"Doe","phone":null},
-  {"chefId":2,"files":[{"path":"assets/img/meet-the-team-image-2.jpg"}],"rating":null,"feedback":null,"name":"Jane","surName":"Smith","phone":null},
-  {"chefId":3,"files":[{"path":"assets/img/meet-the-team-image-3.jpg"}],"rating":null,"feedback":null,"name":"Bob","surName":"Doe","phone":null},
-  {"chefId":4,"files":[{"path":"assets/img/meet-the-team-image-4.jpg"}],"rating":null,"feedback":null,"name":"Cloe","surName":"Smith","phone":null}
+  {"chefId":1,"files":[{"path":"meet-the-team-image-1.jpg"},{"path":"meet-the-team-image-1.jpg"},{"path":"meet-the-team-image-1.jpg"}],"rating":null,"feedback":null,"name":"John","surName":"Doe","phone":null},
+  {"chefId":2,"files":[{"path":"meet-the-team-image-2.jpg"},{"path":"meet-the-team-image-2.jpg"},{"path":"meet-the-team-image-2.jpg"}],"rating":null,"feedback":null,"name":"Jane","surName":"Smith","phone":null},
+  {"chefId":3,"files":[{"path":"meet-the-team-image-3.jpg"},{"path":"meet-the-team-image-3.jpg"}],"rating":null,"feedback":null,"name":"Bob","surName":"Doe","phone":null},
+  {"chefId":4,"files":[{"path":"meet-the-team-image-4.jpg"}],"rating":null,"feedback":null,"name":"Cloe","surName":"Smith","phone":null}
 ]

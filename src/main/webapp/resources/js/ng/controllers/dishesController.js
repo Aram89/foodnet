@@ -10,6 +10,27 @@ app.controller('DishesController',['$scope','requestsService','$interval','$time
     $scope.nextChefs = 0;
     $scope.chefs = [];
     //$scope.nextDishes = 0
+    $scope.showChefImages = function(chef){
+        ngDialog.open({
+            template: '/resources/views/templates/chefImages.tmpl.html',
+            controller :["$scope","chef",function($scope,chef){
+                $scope.chefCurrentImg=0;
+                $scope.chef=chef;
+                $scope.changeChefImg = function(t){
+                    $scope.chefCurrentImg = $scope.chefCurrentImg+t;
+                };
+            }],
+            resolve:{chef:function(){return chef}}
+        })
+    };
+    $scope.scrollToSection = function(id){
+        var scrl=$(id).position().top;
+        window.scrollTo(0,scrl)
+    };
+    $scope.filterByChefChange = function(t){
+        $scope.selectedCehfId=false;
+        if(t){$scope.scrollToSection('#chefs')}
+    };
     $scope.addToOrder = function (dish,count) {
         if(dish.comment){
          //   $scope.order.comments.push.({name:dish.name,comment:dish.comment})
@@ -71,13 +92,19 @@ app.controller('DishesController',['$scope','requestsService','$interval','$time
     $scope.categoryFilter = function(c){
         var res=$scope.category.name=="all"|| c.categories.indexOf($scope.category.name)!=-1;
         if($scope.filterByChef && $scope.selectedCehfId){
-            console.log(c);
             res = res && c.chef.chefId==$scope.selectedCehfId
         }
         return res;
     };
     $scope.selectChef = function(id){
-        $scope.selectedCehfId = id
+        if($scope.selectedCehfId == id){
+            $scope.selectedCehfId=false;
+            $scope.filterByChef=false;
+        }else{
+            $scope.selectedCehfId = id;
+            $scope.filterByChef=true;
+        }
+        $scope.scrollToSection("#dishes")
     };
     /******************/
     $scope.loadDishes = function(category){

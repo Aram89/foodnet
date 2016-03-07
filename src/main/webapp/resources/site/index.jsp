@@ -164,7 +164,7 @@
             <div class="section-title text-center">
               <h2 class="main-title">Ուտեստներ</h2>
 
-              <h3 class="sub-title" ng-click="someReq()">Ուտեստները պատրաստվում են միայն թարմ սննդամթերքից</h3>
+              <h3 class="sub-title">Ուտեստները պատրաստվում են միայն թարմ սննդամթերքից</h3>
 
               <span class="section-line"></span>
             </div>
@@ -184,7 +184,7 @@
               </ul>
               <div>
                 <label for="filterByChef">Filter by chefs</label>
-                <input id="filterByChef" type="checkbox" ng-model="filterByChef"/>
+                <input id="filterByChef" type="checkbox" ng-change="filterByChefChange(filterByChef)" ng-model="filterByChef"/>
               </div>
             </div>
             <!-- //.filter-portfolio -->
@@ -248,8 +248,9 @@
                 <!-- //.team-detail -->
               </div>
               <!-- //.team-inner -->
-              <div ng-class="{'selected-chef':chef.chefId==selectedCehfId}" class="chef-picture" ng-click="selectChef(chef.chefId)">
-                <img src="assets/img/{{chef.files[0].path}}" alt="" class="img-responsive img-rounded"/>
+              <div  class="chef-picture">
+                <img ng-click="showChefImages(chef)" src="assets/img/{{chef.files[0].path}}" alt="" class="img-responsive img-rounded"/>
+                <button ng-click="selectChef(chef.chefId)">Նայել ուտեստները</button>
               </div>
             </div>
             <!-- //.team-element -->
@@ -918,14 +919,14 @@
         </div>
         <!-- //.footer-column -->
 
-        <div class="col-sm-6 col-md-6 footer-column not-right-column">
+<%--        <div class="col-sm-6 col-md-6 footer-column not-right-column">
           <div class="footer-text">
             <h4>About Us</h4>
 
             <p>Gunung Rinjani adalah gunung yang berlokasi di Pulau Lombok, Nusa Tenggara Barat. Gunung ini merupakan gunung favorit bagi pendaki Indonesia karena keindahan pemandangannya. Gunung ini merupakan bagian dari Taman Nasional Gunung Rinjani yang memiliki luas sekitar 41.330 ha dan ini akan diusulkan penambahannya sehingga menjadi 76.000 ha ke arah barat dan timur. Secara administratif gunung ini berada dalam wilayah tiga kabupaten: Lombok Timur, Lombok Tengah dan Lombok Barat.</p>
           </div>
           <!-- //.footer-text -->
-        </div>
+        </div>--%>
         <!-- //.footer-column -->
 
         <%--<div class="col-sm-4 col-md-4 footer-column">
