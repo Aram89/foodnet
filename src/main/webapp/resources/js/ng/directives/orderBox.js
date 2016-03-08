@@ -37,14 +37,13 @@ app.directive('orderBox',function(){
                 $scope.chefs.forEach(function(c){
                     var res = {
                         "phone":$scope.order.phone,
-                        "name":$scope.order.name,
                         comment:"",
                         "dishOrders":[]
                     };
                     $scope.order.dishes.forEach(function(d){
                         if(d.chef.chefId==c){
-                            res.dishOrders.push({"count":d.count,"dish":{"dishId": d.dishId}});
-                            res.comment+= d.name+'-'+d.comment+"  ";
+                            res.dishOrders.push({"count":d.count,"dish":{"name": d.name,"dishId": d.dishId}});
+                            if(d.comment){res.comment+= d.name+'-'+d.comment+"  "};
                         }
                     });
                     console.log(res);
