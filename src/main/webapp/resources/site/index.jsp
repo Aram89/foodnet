@@ -183,7 +183,7 @@
                 </li>
               </ul>
               <div>
-                <label for="filterByChef">Filter by chefs</label>
+                <label for="filterByChef">Որոնել ըստ խոհարարի</label>
                 <input id="filterByChef" type="checkbox" ng-change="filterByChefChange(filterByChef)" ng-model="filterByChef"/>
               </div>
             </div>

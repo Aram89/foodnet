@@ -109,11 +109,8 @@ app.controller('DishesController',['$scope','requestsService','$interval','$time
     /******************/
     $scope.loadDishes = function(category){
         //var dish={category:type,start:0,count:10};
-        requestsService.loadDishes({category:category.name,cate:category.next,count:10})
+        requestsService.loadDishes({category:category.name,cate:category.next,count:9})
             .success(function(data){
-                console.log(category);
-               // var result = JSON.parse(data);
-                ///$scope.dishes.push(data);
                 category.next++;
                 data.forEach(function (r) {
                     $scope.dishes.push(r)
@@ -124,7 +121,7 @@ app.controller('DishesController',['$scope','requestsService','$interval','$time
             })
     };
     $scope.getOnlineChefs = function(category){
-        requestsService.loadDishes({category:category.name,page:0,count:(category.next+1)*10})
+        requestsService.loadDishes({category:category.name,page:0,count:(category.next+1)*9})
             .success(function(data){
                 $scope.dishes = data
             })
