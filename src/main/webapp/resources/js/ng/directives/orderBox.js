@@ -38,12 +38,14 @@ app.directive('orderBox',function(){
                     var res = {
                         "phone":$scope.order.phone,
                         comment:"",
+                        "price":400,
                         "dishOrders":[]
                     };
                     $scope.order.dishes.forEach(function(d){
                         if(d.chef.chefId==c){
+                            res.price += d.count*d.price;
                             res.dishOrders.push({"count":d.count,"dish":{"name": d.name,"dishId": d.dishId}});
-                            if(d.comment){res.comment+= d.name+'-'+d.comment+"  "};
+                            if(d.comment){res.comment+= d.name+'-'+d.comment+"  "}
                         }
                     });
                     console.log(res);
