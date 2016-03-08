@@ -109,7 +109,7 @@ app.controller('DishesController',['$scope','requestsService','$interval','$time
     /******************/
     $scope.loadDishes = function(category){
         //var dish={category:type,start:0,count:10};
-        requestsService.loadDishes({category:category.name,cate:category.next,count:9})
+        requestsService.loadDishes({category:category.name,page:category.next,count:9})
             .success(function(data){
                 category.next++;
                 data.forEach(function (r) {
