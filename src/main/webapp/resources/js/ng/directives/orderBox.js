@@ -61,7 +61,7 @@ app.directive('orderBox',function(){
                                     $timeout($scope.closeThisDialog,5000)
                                 }],
                                 plain:true,
-                                template:'<div>Շնորհակալություն,պատվերն ընդունված է</div><div>Մենք կկապնվենք Ձեր հետ</div>'
+                                template:'<div>Շնորհակալություն,պատվերն ընդունված է</div><div>Մենք կկապվենք Ձեր հետ</div>'
                             }
                         )
                     })

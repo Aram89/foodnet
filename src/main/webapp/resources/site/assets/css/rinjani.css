@@ -656,7 +656,7 @@ span.navbar-trigger-close a:hover {
 /*  7. FUN FACT SECTION
 /*---------------------------------------------------------------------*/
 #fun-fact {
-  background-image: url("../img/bg-fun-fact.jpg");
+ /* background-image: url("../img/bg-fun-fact.jpg");*/
   background-attachment: scroll;
 }
 #fun-fact > .section-inner .section-content .section-title {
@@ -899,7 +899,7 @@ span.navbar-trigger-close a:hover {
 /*  14. CONTACT US SECTION
 /*---------------------------------------------------------------------*/
 #contact-us {
-  background-image: url("../img/bg-contact-us.jpg");
+  /*background-image: url("../img/bg-contact-us.jpg");*/
   background-attachment: scroll;
 }
 #contact-us > .section-inner .section-content .section-title {

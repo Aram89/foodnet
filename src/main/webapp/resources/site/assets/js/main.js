@@ -82,8 +82,8 @@ $(function() {
         $('#intro').vide({
             mp4: 'assets/video/video-bg',
             webm: 'assets/video/video-bg',
-            ogv: 'assets/video/video-bg',
-            poster: 'assets/img/video-poster'
+            ogv: 'assets/video/video-bg'/*,
+            poster: 'assets/img/video-poster'*/
         });
     });
     
