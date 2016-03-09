@@ -53,46 +53,43 @@
 <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
 <body ng-app="app" ng-controller="MainController" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="51">
 
-<!--[if lt IE 8]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]-->
+  <!--[if lt IE 8]>
+     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
 
-<!-- Begin Page Loader -->
-<div id="page-loader">
-  <div class="preload">
-    <img src="assets/img/orange-preloader.gif" alt="Loading"/>
-  </div>
-  <!-- //.preload -->
-</div>
-<!-- //End Page Loader -->
-
-
-<!-- Begin Intro Section -->
-<section id="intro">
-  <div class="intro-body text-center">
-    <div class="text-right" style="position:absolute; top:15px;right:45px">
-      <button type="button" class="btn btn-sm btn-rj" ng-click="becomeChef()">
-        Դառանալ խոհարար
-      </button>
+  <!-- Begin Page Loader -->
+  <div id="page-loader">
+    <div class="preload">
+      <img src="assets/img/orange-preloader.gif" alt="Loading"/>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 intro-content">
-          <div class="logo">
-            <h1>N</h1>
-          </div>
+    <!-- //.preload -->
+  </div>
+  <!-- //End Page Loader -->
+
+
+  <!-- Begin Intro Section -->
+  <section id="intro">
+    <div class="intro-body text-center">
+      <div class="text-right" style="position:absolute; top:15px;right:45px">
+        <button type="button" class="btn btn-sm btn-rj" ng-click="becomeChef()">
+          Դառանալ խոհարար
+        </button>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 intro-content">
+            <div class="logo">
+              <h1>N</h1>
+            </div>
           <!-- //.logo -->
-
-          <div class="intro-text text-center">
-            <h2>Նոր մոտեցում սննդի ոլորտում</h2>
-
-            <p class="lead">Համեղ ուտեստներ անմիջապես խոհարարից</p>
-          </div>
+            <div class="intro-text text-center">
+              <h2>Նոր մոտեցում սննդի ոլորտում</h2>
+              <p class="lead">Համեղ ուտեստներ անմիջապես խոհարարից</p>
+            </div>
           <!-- //.intro-text -->
-
-
           <!-- //.page-scroll -->
-        </div>
+          </div>
         <!-- //.intro-content -->
       </div>
       <!-- //.row -->
@@ -102,6 +99,7 @@
   <div class="page-scroll">
     <a href="#dishes" class='icon-scroll'></a>
   </div>
+
   <!-- //.intro-body -->
 </section>
 <!-- //End Intro Section -->
@@ -145,7 +143,6 @@
           <a href="#"><order-box order="order"></order-box></a>
         </li>
       </ul>
-
     </div>
     <!-- //.navbar-collapse -->
   </div>
@@ -207,7 +204,9 @@
       </div>
       <!-- //.row -->
     </div>
-    <div ng-click="loadDishes(category)" class="more"> <a href="">Ավելին</a></div>
+    <div ng-click="loadDishes(category)" class="more">
+      <button type="button" class="btn btn-rj">Ավելին</button>
+    </div>
     <!-- //.section-content -->
   </div>
   <!-- //.section-inner -->
@@ -250,7 +249,7 @@
               <!-- //.team-inner -->
               <div  class="chef-picture">
                 <img ng-click="showChefImages(chef)" src="assets/img/{{chef.files[0].path}}" alt="" class="img-responsive img-rounded"/>
-                <button ng-click="selectChef(chef.chefId)">Նայել ուտեստները</button>
+                <button ng-click="selectChef(chef.chefId)" class="btn btn-rj rj">Նայել ուտեստները</button>
               </div>
             </div>
             <!-- //.team-element -->

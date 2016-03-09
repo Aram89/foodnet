@@ -16,7 +16,7 @@
                     <div class="row" ng-repeat="dish in order.dishes">
                         <div class="col-xs-5" ng-bind="dish.name"></div>
                         <span class="col-xs-3">{{dish.price*dish.count}}</span>
-                        <span class="col-xs-2"><input style="width: 45px" ng-model="dish.count" type="number" step="1" min="1"></span>
+                        <span class="col-xs-2"><input ng-model="dish.count" type="number" step="1" min="1" class="input-number"></span>
                         <div class="col-xs-2">
                             <button class="btn btn-link" ng-click="removeDish($index)">x</button>
                         </div>
@@ -38,7 +38,7 @@
                         -->
 
                         <div class="form-group" ng-class="{'has-error':!orderForm.phone.$valid && orderForm.phone.$touched}">
-                            <label for="reg_chef_phone"  ng-click="aaa()" class="col-sm-3 control-label">Հեռ.</label>
+                            <label for="reg_chef_phone"  ng-click="aaa()" class="col-sm-2 control-label phone-lable">Հեռ.</label>
                             <div class="col-sm-9">
                                 <input id="reg_chef_phone" class="form-control" required name="phone" type="tel" ng-model="order.phone"/>
                                 <span class="help-block has-error" ng-show="orderForm.phone.$touched && orderForm.phone.$error.required">Գրեք Հեռ.-ը</span>

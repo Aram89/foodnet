@@ -52,10 +52,13 @@
 .btn.btn-rj {
   background-color: #ff7932;
   border-color: #ff8a4c;
+  padding: 10px 15px;
 }
 .btn.btn-rj:hover,
 .btn.btn-rj:focus {
   background-color: #ff6818;
+  border: none;
+  box-shadow: 2px 2px 2px rgb(70, 67, 67);
 }
 /*---------------------------------------------------------------------*/
 /*  2. ACCORDION

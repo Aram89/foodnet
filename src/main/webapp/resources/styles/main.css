@@ -124,7 +124,7 @@ body {
 .order-box .order-window {
     top: -5px;
     padding: 5px;
-
+    color: #000;
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
@@ -148,7 +148,12 @@ body {
 .order-box .order-box-form {
     padding: 10px;
 }
-
+.input-number{
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    padding-left: 5px;
+}
 body.ngdialog-open, html.ngdialog-open {
     overflow: visible;
 }
@@ -158,11 +163,20 @@ body.ngdialog-open, html.ngdialog-open {
 .more{
     max-width: 1200px;
     margin: 0 auto;
-    padding-left: 30px;
-}
+    text-align: center;
 
+}
+.phone-lable{
+    margin-top: -20px;
+}
 #fun-fact{
     background-color: black;
+}
+.ngdialog.ngdialog-theme-default {
+   overflow-y: hidden;
+}
+.rj{
+    margin-top:5px ;
 }
 /*media query*/
 @media screen and (max-width : 760px){
