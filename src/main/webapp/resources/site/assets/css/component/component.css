@@ -595,7 +595,7 @@
 .funny-boxes > .funny-boxes-text > h4 {
   position: relative;
   padding-bottom: 25px;
-  font-size: 25px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
@@ -612,13 +612,9 @@
   bottom: -1px;
 }
 .funny-boxes > .funny-boxes-text > p {
-  font-size: 18px;
+  font-size: 14px;
 }
-@media (min-width: 768px) {
-  .funny-boxes > .funny-boxes-text > p {
-    font-size: 15px;
-  }
-}
+
 .funny-boxes.not-right-column {
   padding-bottom: 40px;
 }
