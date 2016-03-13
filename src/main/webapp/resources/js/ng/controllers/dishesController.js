@@ -63,13 +63,13 @@ app.controller('DishesController',['$scope','requestsService','$interval','$time
         }
     };
     $scope.categories = [
-        {name:"all",title:"Բոլորը",next:0},
-        {name:"lunch",title:"Լանչ",next:0},
-        {name:"salads",title:"Աղացններ",next:0},
-        {name:"cake",title:"Թխվածք",next:0},
-        {name:"soup",title:"Ապուր",next:0},
-        {name:"hotDishes",title:"Տաք ուտեստներ",next:0},
-        {name:"garnish",title:"Խավարտներ",next:0}
+        {name:"all",title:"Բոլորը",next:0,dishes:[]},
+        {name:"lunch",title:"Լանչ",next:0,dishes:[]},
+        {name:"salads",title:"Աղացններ",next:0,dishes:[]},
+        {name:"cake",title:"Թխվածք",next:0,dishes:[]},
+        {name:"soup",title:"Ապուր",next:0,dishes:[]},
+        {name:"hotDishes",title:"Տաք ուտեստներ",next:0,dishes:[]},
+        {name:"garnish",title:"Խավարտներ",next:0,dishes:[]}
     ];
     $scope.category=$scope.categories[0];
     var categories = {name:"lunch",description:"desc"};
@@ -86,6 +86,11 @@ app.controller('DishesController',['$scope','requestsService','$interval','$time
     };
     $scope.selectCategory = function(index){
         $scope.category = $scope.categories[index];
+        //console.log($scope.categories[index].next);
+        $scope.dishes = $scope.categories[index].dishes;
+        if(!$scope.categories[index].next){
+            $scope.loadDishes($scope.category);
+        }
 //        $scope.loadDishes(c);
     };
     /******************/
@@ -113,7 +118,7 @@ app.controller('DishesController',['$scope','requestsService','$interval','$time
             .success(function(data){
                 category.next++;
                 data.forEach(function (r) {
-                    $scope.dishes.push(r)
+                    category.dishes.push(r)
                 });
             })
             .error(function(){
@@ -138,6 +143,7 @@ app.controller('DishesController',['$scope','requestsService','$interval','$time
             })
     };
     $scope.getChefs();
-    $scope.loadDishes($scope.category,10);
+    //$scope.loadDishes($scope.category,9);
+    $scope.selectCategory(0);
     //$interval(function(){$scope.getOnlineChefs($scope.category,$scope.category)},10000)
 }]);

@@ -15,7 +15,16 @@ app.service('requestsService',['serverConnector',function(serverConnector){
         return serverConnector.send(
             {
                 method:'post',
-                url:'create-chef',
+                url:'become-chef',
+                data: data
+            }
+        )
+    };
+    this.becomeCourier = function(data){
+        return serverConnector.send(
+            {
+                method:'post',
+                url:'become-courier',
                 data: data
             }
         )

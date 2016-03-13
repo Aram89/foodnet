@@ -15,5 +15,17 @@ app.controller('BecomeChefController',['$scope','requestsService',function($scop
                 $scope.ok=0;
                 alert('something wrong')
             })
+    };
+    $scope.becomeCourier = function(){
+        $scope.ok = false;
+        requestsService.becomeCourier($scope.regChef)
+            .success(function(data){
+                console.log(data);
+                $scope.ok= 1
+            })
+            .error(function(){
+                $scope.ok=0;
+                alert('something wrong')
+            })
     }
 }]);
