@@ -67,17 +67,6 @@
         </property>
     </bean>
 
-
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix">
-            <value>/WEB-INF/view/</value>
-        </property>
-        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-        <property name="suffix">
-            <value>.jsp</value>
-        </property>
-    </bean>
-
     <context:annotation-config />
 
     <mvc:annotation-driven/>

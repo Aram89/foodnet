@@ -22,6 +22,8 @@ public class RequestMappings {
     public static final String MAKE_ORDER = "make-order";
     public static final String ACCEPT_ORDER = "accept-order";
     public static final String LOGIN = "login";
+    public static final String PARTNER_CHEF = "partner-chef";
+    public static final String PARTNER_COURIER = "partner-courier";
 
 
 }

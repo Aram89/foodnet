@@ -99,4 +99,14 @@ public class ChefController {
         loggedChef.setAccessToken(chef.getAccessToken());
         return new ResponseEntity(loggedChef, HttpStatus.OK);
     }
+
+    @RequestMapping(value = RequestMappings.PARTNER_CHEF, method = RequestMethod.GET)
+    public String partnerChefPage() {
+        return "partner-chef";
+    }
+
+    @RequestMapping(value = RequestMappings.PARTNER_COURIER, method = RequestMethod.GET)
+    public String partnerCourierPage() {
+        return "partner-courier";
+    }
 }
