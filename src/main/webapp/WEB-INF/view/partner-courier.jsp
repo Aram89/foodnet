@@ -175,7 +175,7 @@
                 <div class="form-group" ng-class="{'has-error':!registerForm.phone.$valid && registerForm.phone.$touched}">
                   <label for="reg_chef_phone" class="col-sm-3 control-label">Հեռ.</label>
                   <div class="col-sm-9">
-                    <input id="reg_chef_phone" class="form-control" required ng-remote-check="check-phone" name="phone" type="tel" ng-model="regChef.phone"/>
+                    <input id="reg_chef_phone" class="form-control" required ng-remote-check="check-courier-phone" name="phone" type="tel" ng-model="regChef.phone"/>
                     <span class="help-block has-error" ng-show="registerForm.phone.$touched && registerForm.phone.$error.required">Գրեք Հեռ.-ը</span>
                     <span class="help-block has-error" ng-show="regChef.phone.length && registerForm.phone.$touched && registerForm.phone.$error.remote">Հեռը կա</span>
                   </div>
