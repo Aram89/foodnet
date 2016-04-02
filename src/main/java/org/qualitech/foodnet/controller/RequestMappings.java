@@ -24,6 +24,7 @@ public class RequestMappings {
     public static final String LOGIN = "login";
     public static final String PARTNER_CHEF = "partner-chef";
     public static final String PARTNER_COURIER = "partner-courier";
+    public static final String ADMIN = "admin";
 
 
 }

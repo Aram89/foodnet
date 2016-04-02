@@ -42,4 +42,10 @@ public class OrderController {
         orderService.acceptOrder(acceptOrder);
         return new ResponseEntity(HttpStatus.OK);
     }
+
+    @RequestMapping(value = RequestMappings.ADMIN, method = RequestMethod.GET)
+    public String admin() {
+        return "admin";
+    }
+
 }
