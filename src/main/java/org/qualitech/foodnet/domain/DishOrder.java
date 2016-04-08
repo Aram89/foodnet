@@ -1,5 +1,7 @@
 package org.qualitech.foodnet.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 /**
@@ -44,12 +46,14 @@ public class DishOrder {
         this.dish = dish;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonIgnore
+    @ManyToOne
     @JoinColumn(name="ordersId", insertable = true, updatable = true)
     public Order getOrder() {
         return order;
     }
 
+    @JsonIgnore
     public void setOrder(Order order) {
         this.order = order;
     }

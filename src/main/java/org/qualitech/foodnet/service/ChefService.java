@@ -11,13 +11,8 @@ import java.util.List;
 /**
  * @author Aram Kirakosyan.
  */
-public interface ChefService {
+public interface ChefService extends PartnerService {
 
-    void createChef(Chef chef);
-    boolean phoneExists(String phone);
-    boolean checkAccessToken(Long chefId, String accessToken);
-    void activateChef(String phone) throws AppException, NoSuchAlgorithmException, TwilioRestException;
     List<Chef> getChefs(int start, int end);
-    void login(String phone, String password) throws NoSuchAlgorithmException, AppException;
 
 }

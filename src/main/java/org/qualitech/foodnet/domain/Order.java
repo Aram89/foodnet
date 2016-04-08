@@ -17,17 +17,61 @@ public class Order implements Serializable{
     private double price;
     private String phone;
     private String comment;
-    private OrderStatus status;
+    private OrderStatus orderStatus;
+    private Long chefId;
+    private OrderStatus PartnerStatus;
+    private OrderStatus courierStatus;
+    private OrderStatus clientStatus;
 
     @Enumerated(EnumType.STRING)
     @Column
-    public OrderStatus getStatus() {
-        return status;
+    public OrderStatus getOrderStatus() {
+        return orderStatus;
     }
 
-    public void setStatus(OrderStatus status) {
-        this.status = status;
+    public void setOrderStatus(OrderStatus orderStatus) {
+        this.orderStatus = orderStatus;
     }
+
+    @Enumerated(EnumType.STRING)
+    @Column
+    public OrderStatus getPartnerStatus() {
+        return PartnerStatus;
+    }
+
+    public void setPartnerStatus(OrderStatus PartnerStatus) {
+        this.PartnerStatus = PartnerStatus;
+    }
+
+    @Enumerated(EnumType.STRING)
+    @Column
+    public OrderStatus getCourierStatus() {
+        return courierStatus;
+    }
+
+    public void setCourierStatus(OrderStatus courierStatus) {
+        this.courierStatus = courierStatus;
+    }
+
+    @Enumerated(EnumType.STRING)
+    @Column
+    public OrderStatus getClientStatus() {
+        return clientStatus;
+    }
+
+    public void setClientStatus(OrderStatus clientStatus) {
+        this.clientStatus = clientStatus;
+    }
+
+    @Column
+    public Long getChefId() {
+        return chefId;
+    }
+
+    public void setChefId(Long chefId) {
+        this.chefId = chefId;
+    }
+
 
     private List<DishOrder> dishOrders;
 

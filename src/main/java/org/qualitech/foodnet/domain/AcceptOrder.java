@@ -7,12 +7,21 @@ import javax.persistence.Column;
  */
 public class AcceptOrder {
 
-    private long orderId;
-    private int chefId;
+    private long ordersId;
+
+    public long getOrdersId() {
+        return ordersId;
+    }
+
+    public void setOrdersId(long ordersId) {
+        this.ordersId = ordersId;
+    }
+
+    private Long chefId;
     private String accessToken;
+
     private long duration;
 
-    @Column
     public long getDuration() {
         return duration;
     }
@@ -21,20 +30,12 @@ public class AcceptOrder {
         this.duration = duration;
     }
 
-    public int getChefId() {
+    public Long getPartnerId() {
         return chefId;
     }
 
-    public void setChefId(int chefId) {
+    public void setChefId(Long chefId) {
         this.chefId = chefId;
-    }
-
-    public long getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(long orderId) {
-        this.orderId = orderId;
     }
 
     public String getAccessToken() {

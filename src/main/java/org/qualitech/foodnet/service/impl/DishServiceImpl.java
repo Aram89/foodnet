@@ -1,4 +1,4 @@
-package org.qualitech.foodnet.service;
+package org.qualitech.foodnet.service.impl;
 
 import org.qualitech.foodnet.domain.Category;
 import org.qualitech.foodnet.domain.Chef;
@@ -7,6 +7,7 @@ import org.qualitech.foodnet.exception.AppException;
 import org.qualitech.foodnet.exception.ErrorCodes;
 import org.qualitech.foodnet.repositories.Categoryrepository;
 import org.qualitech.foodnet.repositories.DishRepository;
+import org.qualitech.foodnet.service.DishService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -65,7 +66,7 @@ public class DishServiceImpl implements DishService {
     }
 
     @Override
-    public List<Dish> getDishesByChef(int chefId, int page, int count) throws IOException {
+    public List<Dish> getDishesByChef(Long chefId, int page, int count) throws IOException {
         Chef chef = new Chef(chefId);
         List<Dish> dishes = dishRepository.findByChef(chef, new PageRequest(page, count));
         return dishes;

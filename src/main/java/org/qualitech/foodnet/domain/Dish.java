@@ -20,6 +20,7 @@ public class Dish implements Serializable  {
     private String name;
     private String description;
     private Chef chef;
+
     private List <Category> categories;
     private List<File> files;
     private List<Order> orders;
@@ -66,6 +67,7 @@ public class Dish implements Serializable  {
         this.files = files;
     }
 
+    @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable(name = "dishCategory", joinColumns = {
             @JoinColumn(name = "dishId", insertable = false) },
@@ -108,6 +110,7 @@ public class Dish implements Serializable  {
         return description;
     }
 
+    @JsonIgnore
     public void setCategories(List<Category> categories) {
         this.categories = categories;
     }

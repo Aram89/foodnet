@@ -34,7 +34,7 @@ public class ChefEndpoint {
     private Map <Long, Session> sessions = new HashMap<Long, Session>();
 
     private void login(LoginMessage loginMessage, Session session) throws IOException, EncodeException {
-        long id = loginMessage.getChefId();
+        long id = loginMessage.getPartnerId();
         String accessToken = loginMessage.getAccessToken();
         Response response = new Response(MessageTypes.LOGIN);
         ObjectMapper mapper = new ObjectMapper();

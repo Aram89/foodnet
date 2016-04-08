@@ -5,10 +5,12 @@ import com.twilio.sdk.TwilioRestException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.qualitech.foodnet.domain.Chef;
+import org.qualitech.foodnet.domain.Partner;
+import org.qualitech.foodnet.domain.WorkStatus;
 import org.qualitech.foodnet.exception.AppException;
 import org.qualitech.foodnet.exception.ErrorCodes;
 import org.qualitech.foodnet.service.ChefService;
-import org.qualitech.foodnet.util.SmsSender;
+import org.qualitech.foodnet.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +21,7 @@ import java.io.IOException;
 import java.net.URLDecoder;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
+import java.util.Date;
 
 /**
  * @author Aram Kirakosyan.
@@ -33,6 +36,9 @@ public class ChefController {
     @Autowired
     ChefService service;
 
+    @Autowired
+    OrderService orderService;
+
     /**
      * Endpoint for becoming chef
      *
@@ -44,8 +50,8 @@ public class ChefController {
     @RequestMapping(value = RequestMappings.CREATE_CHEF, method = RequestMethod.POST)
     public ResponseEntity create(@RequestBody Chef chef) throws IOException, SQLException {
         logger.info("new chef :" + chef);
-        service.createChef(chef);
-        logger.info("Chef registered with id: " + chef.getChefId());
+        service.create(chef);
+        logger.info("Chef registered with id: " + chef.getPartnerId());
         return new ResponseEntity(HttpStatus.OK);
     }
 
@@ -67,19 +73,19 @@ public class ChefController {
     }
 
     /**
-     * Endpoint for activating chef.
+     * Endpoint for activating partner.
      *
      * @param phone phone.
      * @return
      * @throws AppException
      * @throws NoSuchAlgorithmException
      */
-    @RequestMapping(value = RequestMappings.ACTIVATE_CHEF, method = RequestMethod.GET)
+    @RequestMapping(value = RequestMappings.ACTIVATE_PARTNER, method = RequestMethod.GET)
     public ResponseEntity activateChef(@RequestParam(value = "phone") String phone) throws AppException, NoSuchAlgorithmException, TwilioRestException {
         if (!service.phoneExists(phone)) {
             throw new AppException(ErrorCodes.WRONG_PHONE);
         }
-        service.activateChef(phone);
+        service.activate(phone);
         return new ResponseEntity(HttpStatus.OK);
     }
 
@@ -88,15 +94,13 @@ public class ChefController {
         return new ResponseEntity(service.getChefs(page, count), HttpStatus.OK);
     }
 
-    @RequestMapping(value = RequestMappings.LOGIN, method = RequestMethod.POST)
+    @RequestMapping(value = RequestMappings.CHEF_LOGIN, method = RequestMethod.POST)
     public ResponseEntity addDish(@RequestBody String decodedString) throws SQLException, IOException, AppException, NoSuchAlgorithmException {
         String chefString = URLDecoder.decode(decodedString, "UTF-8").substring(5);
         ObjectMapper mapper = new ObjectMapper();
         Chef chef = mapper.readValue(chefString, Chef.class);
-        service.login(chef.getPhone(), chef.getPassword());
-        Chef loggedChef = new Chef();
-        loggedChef.setChefId(chef.getChefId());
-        loggedChef.setAccessToken(chef.getAccessToken());
+        Partner loggedChef = service.login(chef.getPhone(), chef.getPassword());
+
         return new ResponseEntity(loggedChef, HttpStatus.OK);
     }
 
@@ -105,8 +109,47 @@ public class ChefController {
         return "partner-chef";
     }
 
-    @RequestMapping(value = RequestMappings.PARTNER_COURIER, method = RequestMethod.GET)
-    public String partnerCourierPage() {
-        return "partner-courier";
+    @RequestMapping(value = RequestMappings.CHEF_CONNECT, method = RequestMethod.POST)
+    public ResponseEntity connect(@RequestBody String decodedString) throws IOException, AppException {
+        Chef chef = convert(decodedString);
+        if(!service.checkAccessToken(chef.getPartnerId(), chef.getAccessToken())) {
+            throw new AppException(ErrorCodes.WRONG_ACCESS_TOKEN);
+        }
+        // Update work status.
+        chef.setWorkStatus(WorkStatus.ONLINE);
+        return new ResponseEntity(HttpStatus.OK);
     }
+
+    @RequestMapping(value = RequestMappings.CHEF_DISCONNECT, method = RequestMethod.POST)
+    public ResponseEntity disConnect(@RequestBody String decodedString) throws IOException, AppException {
+        Chef chef = convert(decodedString);
+        if(!service.checkAccessToken(chef.getPartnerId(), chef.getAccessToken())) {
+            throw new AppException(ErrorCodes.WRONG_ACCESS_TOKEN);
+        }
+        // Update work status.
+        chef.setWorkStatus(WorkStatus.OFFLINE);
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
+
+    @RequestMapping(value = RequestMappings.GET_ORDERS, method = RequestMethod.POST)
+    public ResponseEntity getOrders(@RequestBody String decodedString) throws IOException, AppException {
+        Chef chef = convert(decodedString);
+        // Check credentials
+        if(!service.checkAccessToken(chef.getPartnerId(), chef.getAccessToken())) {
+            throw new AppException(ErrorCodes.WRONG_ACCESS_TOKEN);
+        }
+        // Update work status update time.
+        String orders = orderService.getOrders(chef.getPartnerId());
+        chef.setWorkStatusUpdateTime(new Date());
+        return new ResponseEntity(orders, HttpStatus.OK);
+    }
+
+    private Chef convert(String decodedString) throws IOException {
+        String chefString = URLDecoder.decode(decodedString, "UTF-8").substring(5);
+        ObjectMapper mapper = new ObjectMapper();
+        Chef chef = mapper.readValue(chefString, Chef.class);
+        return chef;
+    }
+
 }

@@ -17,6 +17,7 @@ public class ErrorCodes {
     public static final String WRONG_ORDER_PRICE = "Gyada es inch muxlyojner es anum?";
     public static final String MULTIPLE_CHEFS_IN_ORDER = "Multiple chefs in one order request";
     public static final String INACTIVE_ACCOUNT = "Your account was not activated";
+    public static final String WRONG_ACCESS_TOKEN = "Wrong access token";
 
 
     private String errorString;

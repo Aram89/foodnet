@@ -3,7 +3,7 @@ package org.qualitech.foodnet.domain;
 /**
  * @author Aram Kirakosyan.
  */
-public enum ChefStatus {
+public enum PartnerStatus {
 
     INACTIVE,
     ACTIVE;

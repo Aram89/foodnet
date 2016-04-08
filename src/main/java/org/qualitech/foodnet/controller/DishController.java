@@ -117,7 +117,7 @@ public class DishController {
      * @throws AppException
      */
     @RequestMapping(value = RequestMappings.GET_DISHES_BY_CHEF, method = RequestMethod.GET)
-    public ResponseEntity getDishesByChef(@RequestParam(value = "chefId") int chefId,
+    public ResponseEntity getDishesByChef(@RequestParam(value = "chefId") Long chefId,
                                             @RequestParam(value = "page") int page,
                                             @RequestParam(value = "count") int count) throws SQLException, IOException, AppException {
         List<Dish> dishes = dishService.getDishesByChef(chefId, page, count);

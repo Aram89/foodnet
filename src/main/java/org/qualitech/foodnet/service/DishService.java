@@ -17,5 +17,5 @@ public interface DishService {
     public void addDish(Dish dish) throws SQLException;
     public List<Dish> getDishes (String categoryName, int page, int count) throws IOException, AppException;
 
-    public List<Dish> getDishesByChef (int chefId, int page, int count) throws IOException;
+    public List<Dish> getDishesByChef (Long chefId, int page, int count) throws IOException;
 }

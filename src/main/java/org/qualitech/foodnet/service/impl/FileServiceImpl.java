@@ -1,4 +1,4 @@
-package org.qualitech.foodnet.service;
+package org.qualitech.foodnet.service.impl;
 
 import org.apache.commons.fileupload.FileItemFactory;
 import org.apache.commons.fileupload.FileItemFactory;
@@ -7,6 +7,7 @@ import org.qualitech.foodnet.domain.File;
 import org.qualitech.foodnet.exception.AppException;
 import org.qualitech.foodnet.exception.ErrorCodes;
 import org.qualitech.foodnet.repositories.FileRepository;
+import org.qualitech.foodnet.service.FileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;

@@ -15,6 +15,7 @@ public class Category implements Serializable {
     private long categoryId;
     private String name;
     private String description;
+
     @JsonIgnore
     private List<Dish> dishes;
 

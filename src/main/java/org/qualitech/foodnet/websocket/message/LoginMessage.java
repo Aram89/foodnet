@@ -7,7 +7,7 @@ public class LoginMessage extends Message {
 
     Long chefId;
 
-    public Long getChefId() {
+    public Long getPartnerId() {
         return chefId;
     }
 

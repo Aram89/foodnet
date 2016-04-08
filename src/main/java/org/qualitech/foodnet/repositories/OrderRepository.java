@@ -7,12 +7,16 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
+
 /**
  * @author Aram Kirakosyan.
  */
-public interface OrderRepository extends CrudRepository<Order, Long>{
+public interface OrderRepository extends CrudRepository<Order, Long> {
 
     @Modifying
-    @Query("update Order o set o.status = :status where o.ordersId = :orderId")
-    void updateOrderStatus(@Param("orderId") long orderId, @Param("status")OrderStatus status);
+    @Query("update Order o set o.orderStatus = :orderStatus where o.ordersId = :orderId")
+    void updateOrderStatus(@Param("orderId") long orderId, @Param("orderStatus")OrderStatus orderStatus);
+
+    List<Order> findByChefIdAndOrderStatus(Long chefId, OrderStatus orderStatus);
 }
