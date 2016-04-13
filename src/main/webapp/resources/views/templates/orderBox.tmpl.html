@@ -14,7 +14,7 @@
                 </div>
                 <div class="dish-section">
                     <div class="row" ng-repeat="dish in order.dishes">
-                        <div class="col-xs-6" ng-bind="dish.name" class="dishname"></div>
+                        <div class="col-xs-6 dishname" ng-bind="dish.name"></div>
                         <span class="col-xs-2 dishname">{{dish.price*dish.count}}</span>
                         <span class="col-xs-2"><input ng-model="dish.count" type="number" step="1" min="1" class="input-number"></span>
                         <div class="col-xs-2">

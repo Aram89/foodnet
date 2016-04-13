@@ -986,7 +986,6 @@ span.navbar-trigger-close a:hover {
   display: block;
   width: 40px;
   height: 40px;
-  line-height: 40px;
   padding: 10px;
   color: #c9c9c9;
   font-size: 16px;
@@ -1075,7 +1074,6 @@ footer.footer #footer ul.social-icon-list > li a {
   display: block;
   width: 40px;
   height: 40px;
-  line-height: 40px;
   padding: 10px;
   font-size: 16px;
   text-align: center;
