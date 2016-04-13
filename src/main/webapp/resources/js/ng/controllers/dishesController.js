@@ -3,7 +3,6 @@
  */
 app.controller('DishesController',['$scope','requestsService','$interval','$timeout','ngDialog',function($scope,requestsService,$interval,$timeout,ngDialog){
     $scope.dishes  = [];
-
     $scope.order = {dishes:[],name:'',phone:'',comments:[]};
     $scope.filterByChef = false;
     $scope.selectedCehfId=false;
@@ -49,7 +48,7 @@ app.controller('DishesController',['$scope','requestsService','$interval','$time
                 //console.log(dish)
             }else{
                 if(!$scope.order.dishes.some(function(d){
-                        return d.chef.chefId==dish.chef.chefId
+                        return d.chef.partnerId==dish.chef.partnerId
                     })){
                     ngDialog.open({
                             plain:true,
@@ -97,7 +96,7 @@ app.controller('DishesController',['$scope','requestsService','$interval','$time
     $scope.categoryFilter = function(c){
         var res=$scope.category.name=="all"|| c.categories.indexOf($scope.category.name)!=-1;
         if($scope.filterByChef && $scope.selectedCehfId){
-            res = res && c.chef.chefId==$scope.selectedCehfId
+            res = res && c.chef.partnerId==$scope.selectedCehfId
         }
         return res;
     };

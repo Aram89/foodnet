@@ -14,8 +14,8 @@ app.directive('orderBox',function(){
                 var price=0;
                 $scope.chefs=[];
                 $scope.order.dishes.forEach(function(d){
-                    if($scope.chefs.indexOf(d.chef.chefId)==-1){
-                        $scope.chefs.push(d.chef.chefId)
+                    if($scope.chefs.indexOf(d.chef.partnerId)==-1){
+                        $scope.chefs.push(d.chef.partnerId)
                     }
                     price+= parseInt(d.price)* d.count;
                 });
@@ -42,7 +42,7 @@ app.directive('orderBox',function(){
                         "dishOrders":[]
                     };
                     $scope.order.dishes.forEach(function(d){
-                        if(d.chef.chefId==c){
+                        if(d.chef.partnerId==c){
                             res.price += d.count*d.price;
                             res.dishOrders.push({"count":d.count,"dish":{"name": d.name,"dishId": d.dishId}});
                             if(d.comment){res.comment+= d.name+'-'+d.comment+"  "}
