@@ -1,7 +1,7 @@
 <div>
-    <div ng-show="chefCurrentImg>0" ng-click="changeChefImg(-1)">prev</div>
-    <div style="height: 400px" class="chefImage">
-        <img src="assets/img/{{chef.files[chefCurrentImg].path}}" alt="" class="img-responsive img-rounded"/>
+ <div ng-show="chefCurrentImg>0" ng-click="changeChefImg(-1)" class="btn-popup">pre</div>
+    <div class="chefImage">
+        <img src="assets/img/{{chef.files[chefCurrentImg].path}}" alt="" class="img-responsive img-size"/>
     </div>
-    <div ng-show="chef.files.length>chefCurrentImg+1" ng-click="changeChefImg(1)">next</div>
+    <div ng-show="chef.files.length>chefCurrentImg+1" ng-click="changeChefImg(1)" class="btn-popup">next</div>
 </div>
