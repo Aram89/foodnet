@@ -250,7 +250,7 @@
         </div>
         <!-- //.row -->
       </div>
-      <div ng-click="getChefs(4)" class="more">
+      <div ng-click="getChefs(4)" class="more moretwo">
         <button type="button" class="btn btn-rj">Ավելին</button>
       </div>
       <!-- //.section-content -->
