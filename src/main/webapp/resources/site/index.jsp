@@ -241,7 +241,7 @@
               </div>
               <!-- //.team-inner -->
               <div  class="chef-picture">
-                <img ng-click="showChefImages(chef)" src="assets/img/{{chef.files[0].path}}" alt="" class="img-responsive img-rounded"/>
+                <img ng-click="showChefImages(chef)" src="assets/img/{{chef.files[0].path}}" alt="" class="img-responsive"/>
                 <button ng-click="selectChef(chef.partnerId)" class="btn btn-rj rj">Նայել ուտեստները</button>
               </div>
             </div>
