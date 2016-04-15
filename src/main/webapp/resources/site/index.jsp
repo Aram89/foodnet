@@ -250,6 +250,9 @@
         </div>
         <!-- //.row -->
       </div>
+      <div ng-click="getChefs(4)" class="more">
+        <button type="button" class="btn btn-rj">Ավելին</button>
+      </div>
       <!-- //.section-content -->
     </div>
 
