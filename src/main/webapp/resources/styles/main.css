@@ -165,7 +165,9 @@ body.ngdialog-open, html.ngdialog-open {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
-
+}
+.moretwo{
+    padding-bottom: 80px;
 }
 .phone-lable{
     margin-top: -20px;
@@ -228,9 +230,20 @@ body.ngdialog-open, html.ngdialog-open {
         font-size: 24px;
     }
     .section > .section-inner .section-content .section-title > .sub-title {
-        font-size: 16px;
+        font-size: 14px;
     }
     .chefImage{
         height: 300px;
+    }
+    .timeline-panel > .timeline-body > p {
+        font-size: 16px !important;
+        word-break: break-all;
+    }
+    #intro .intro-body .intro-text h2 {
+        font-size: 40px;
+    }
+    .section-title > .main-title {
+        font-size: 25px !important;
+        font-weight: 300;
     }
 }

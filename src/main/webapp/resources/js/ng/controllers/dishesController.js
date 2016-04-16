@@ -130,18 +130,19 @@ app.controller('DishesController',['$scope','requestsService','$interval','$time
                 $scope.dishes = data
             })
     };
-    $scope.getChefs = function(){
-        requestsService.getChefs({page:$scope.nextChefs,count:4})
+    $scope.getChefs = function(count){
+        requestsService.getChefs({page:$scope.nextChefs,count:count})
             .success(function(data){
                 data.forEach(function(c){
                     $scope.chefs.push(c)
-                })
+                });
+                $scope.nextChefs = $scope.nextChefs + count/4;
             })
             .error(function(){
                 alert('something wrong')
             })
     };
-    $scope.getChefs();
+    $scope.getChefs(8);
     //$scope.loadDishes($scope.category,9);
     $scope.selectCategory(0);
     //$interval(function(){$scope.getOnlineChefs($scope.category,$scope.category)},10000)
