@@ -1,0 +1,8 @@
+.fast{
+    z-index: 1;
+    color: white;
+    font-size: initial;
+    padding-left: 65px;
+    padding-top: 100px;
+    position: absolute;
+}

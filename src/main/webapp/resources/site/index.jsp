@@ -41,6 +41,19 @@
   <!--[if lt IE 9]>
   <script src="assets/plugins/modernizr.min.js"></script>
   <![endif]-->
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74249815-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
 </head>
 
 <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
@@ -65,7 +78,7 @@
     <div class="intro-body text-center">
       <div class="text-right" style="position:absolute; top:15px;right:45px">
         <a type="button" class="btn btn-sm btn-rj" href="/partner-chef" target="_blank">
-          Դառանալ խոհարար
+          Դառնալ խոհարար
         </a>
       </div>
 
@@ -173,14 +186,16 @@
                 </li>
               </ul>
               <div>
+              <div style="display: inline">
                 <label for="filterByChef">Որոնել ըստ խոհարարի</label>
                 <input id="filterByChef" type="checkbox" ng-change="filterByChefChange(filterByChef)" ng-model="filterByChef"/>
               </div>
-              <div>
-                <label for="filterByChef">Արագ պատրաստվող</label>
+              <div style="display: inline; margin-left:50px">
+                <label for="showOnlines">Արագ պատրաստվող</label>
                 <input id="showOnlines" type="checkbox" ng-model="showOnlines"/>
               </div>
             </div>
+              </div>
             <!-- //.filter-portfolio -->
           </div>
           <!-- //.col-md-12 -->
@@ -191,6 +206,7 @@
           <div class="col-md-12">
             <div class="row">
               <div class="col-sm-4" ng-repeat="dish in dishes |filter:categoryFilter">
+                <div class="fast" ng-if="dish.prepareTime < 60"><span style="background-color: greenyellow">&nbsp; Արագ պատրաստվող  </span></div>
                 <offer-box ng-class="{online:dish.prepareTime < 60}" options="dish" add-to-order="addToOrder"></offer-box>
               </div>
             </div>
@@ -293,8 +309,8 @@
             <i class="flaticon-icon-dish"></i>
 
             <div class="inner-content">
-                                <span class="number" data-from="51" data-to="142" data-refresh-interval="10">
-                                    142
+                                <span class="number" data-from="30" data-to="70" data-refresh-interval="10">
+                                    70
                                 </span>
             </div>
             <!-- //.inner-content -->
@@ -310,8 +326,8 @@
             <i class="flaticon-icon-order"></i>
 
             <div class="inner-content">
-                                <span class="number" data-from="650" data-to="747" data-refresh-interval="10">
-                                    747
+                                <span class="number" data-from="0" data-to="0" data-refresh-interval="10">
+                                    0
                                 </span>
             </div>
             <!-- //.inner-content -->
@@ -327,8 +343,8 @@
             <i class="fa flaticon-chef" style="padding-top: 30px;"></i>
 
             <div class="inner-content">
-                                <span class="number" data-from="1" data-to="27" data-refresh-interval="10">
-                                    27
+                                <span class="number" data-from="1" data-to="6" data-refresh-interval="10">
+                                    6
                                 </span>
             </div>
             <!-- //.inner-content -->
@@ -379,7 +395,7 @@
             <div class="funny-boxes-text">
               <h4>Առողջ հումք</h4>
 
-              <p>Ոտեստները պատրաստվում են թարմ ու տեղական սննդամթերքով, մաքուր պայմաններոմ</p>
+              <p>Ուտեստները պատրաստվում են թարմ ու տեղական սննդամթերքով, մաքուր պայմաններոմ</p>
             </div>
             <!-- //.funny-boxes-text -->
           </div>
@@ -482,7 +498,7 @@
                 <div class="timeline-heading">
                   <h4 class="timeline-title">4-5 ժամ</h4>
 
-                  <img src="assets/img/timeline-image-2.jpg" alt="" class="img-responsive">
+                  <img src="assets/img/izabella-tolma.jpg" alt="" class="img-responsive">
                 </div>
                 <!-- //.timeline-heading -->
 
