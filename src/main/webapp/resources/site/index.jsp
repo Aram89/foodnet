@@ -254,7 +254,7 @@
         </div>
         <!-- //.row -->
       </div>
-      <div ng-click="getChefs(4)" class="more">
+      <div ng-click="getChefs(4)" class="more moretwo">
         <button type="button" class="btn btn-rj">Ավելին</button>
       </div>
       <!-- //.section-content -->
@@ -324,7 +324,7 @@
 
         <div class="col-xs-6 col-sm-6 col-md-4 text-center">
           <div class="counter-item not-right-column">
-            <i class="fa flaticon-chef"></i>
+            <i class="fa flaticon-chef" style="padding-top: 30px;"></i>
 
             <div class="inner-content">
                                 <span class="number" data-from="1" data-to="27" data-refresh-interval="10">

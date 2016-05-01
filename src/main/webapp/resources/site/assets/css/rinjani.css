@@ -600,6 +600,7 @@ span.navbar-trigger-close a:hover {
   color: #fff;
   font-size: 22px;
   font-weight: 400;
+  margin-bottom: 50px;
 }
 @media (min-width: 768px) {
   #intro .intro-body .intro-text p.lead {
