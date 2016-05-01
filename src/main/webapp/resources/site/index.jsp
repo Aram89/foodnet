@@ -176,6 +176,10 @@
                 <label for="filterByChef">Որոնել ըստ խոհարարի</label>
                 <input id="filterByChef" type="checkbox" ng-change="filterByChefChange(filterByChef)" ng-model="filterByChef"/>
               </div>
+              <div>
+                <label for="filterByChef">Արագ պատրաստվող</label>
+                <input id="showOnlines" type="checkbox" ng-model="showOnlines"/>
+              </div>
             </div>
             <!-- //.filter-portfolio -->
           </div>
@@ -187,7 +191,7 @@
           <div class="col-md-12">
             <div class="row">
               <div class="col-sm-4" ng-repeat="dish in dishes |filter:categoryFilter">
-                <offer-box options="dish" add-to-order="addToOrder"></offer-box>
+                <offer-box ng-class="{online:dish.prepareTime < 60}" options="dish" add-to-order="addToOrder"></offer-box>
               </div>
             </div>
           </div>

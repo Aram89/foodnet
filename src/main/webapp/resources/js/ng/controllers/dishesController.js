@@ -6,8 +6,10 @@ app.controller('DishesController',['$scope','requestsService','$interval','$time
     $scope.order = {dishes:[],name:'',phone:'',comments:[]};
     $scope.filterByChef = false;
     $scope.selectedCehfId=false;
+    $scope.showOnlines = true;
     $scope.nextChefs = 0;
     $scope.chefs = [];
+
     //$scope.nextDishes = 0
     $scope.showChefImages = function(chef){
         ngDialog.open({
@@ -94,9 +96,15 @@ app.controller('DishesController',['$scope','requestsService','$interval','$time
     };
     /******************/
     $scope.categoryFilter = function(c){
-        var res=$scope.category.name=="all"|| c.categories.indexOf($scope.category.name)!=-1;
+  //      var res=$scope.category.name=="all"|| c.categories.indexOf($scope.category.name)!=-1;
+        //c.categories.
+        var res=true;
+
         if($scope.filterByChef && $scope.selectedCehfId){
-            res = res && c.chef.partnerId==$scope.selectedCehfId
+            res = res && c.chef.partnerId==$scope.selectedCehfId;
+        }
+        if($scope.showOnlines){
+            res = res && c.prepareTime<60;
         }
         return res;
     };
