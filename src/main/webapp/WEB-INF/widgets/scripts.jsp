@@ -17,6 +17,7 @@
 <!--directives--->
 <script src="/resources/js/ng/directives/offerBox.js"></script>
 <script src="/resources/js/ng/directives/remoteCheck.js"></script>
+<script src="/resources/js/ng/directives/regExp.js"></script>
 <script src="/resources/js/ng/directives/orderBox.js"></script>
 <!--end directives--->
 <!--controllers-->

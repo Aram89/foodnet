@@ -8,7 +8,6 @@ app.directive('orderBox',function(){
             order:"=order"
         },
         controller : ['$scope','requestsService','ngDialog','$timeout',function($scope,requestsService,ngDialog,$timeout){
-            console.log($scope.order);
             $scope.chefs=[];
             $scope.order.price = function(){
                 var price=0;
@@ -34,6 +33,7 @@ app.directive('orderBox',function(){
                 $scope.order.comments.forEach(function(){
 
                 });*/
+                var successed=0;
                 $scope.chefs.forEach(function(c){
                     var res = {
                         "phone":$scope.order.phone,
@@ -48,12 +48,15 @@ app.directive('orderBox',function(){
                             if(d.comment){res.comment+= d.name+'-'+d.comment+"  "}
                         }
                     });
-                    console.log(res);
                     requestsService.makeOrder(res).success(function(){
+                        successed++;
+                        if(successed==$scope.chefs.length)
                         ngDialog.open({
                              controller:['$scope',function($scope){
                                  $timeout($scope.closeThisDialog,2000)
-                             }]
+                             }],
+                             plain:true,
+                             template:'<div>Շնորհակալություն:Պատվերն ընդունված է</div><div>Մենք շուտով կկապվենք Ձեզ հետ</div>'
                             }
                         )
                     }).error(function(){
@@ -62,7 +65,7 @@ app.directive('orderBox',function(){
                                     $timeout($scope.closeThisDialog,5000)
                                 }],
                                 plain:true,
-                                template:'<div>Շնորհակալություն,պատվերն ընդունված է</div><div>Մենք կկապվենք Ձեր հետ</div>'
+                                template:'<div>Ներողություն:Պատվերն ընդւոնված չէ</div><div>Խնդրում ենք փորձել նորից</div>'
                             }
                         )
                     })
