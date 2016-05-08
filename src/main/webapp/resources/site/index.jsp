@@ -863,7 +863,7 @@
               </li>
 
               <li class="hidden-xs">
-                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="/#dishview:12"><i class="fa fa-instagram"></i></a>
               </li>
             </ul>
           </div>

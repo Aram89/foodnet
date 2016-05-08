@@ -2,13 +2,12 @@
     <h1><small>{{opt.chef.name}} {{opt.chef.surName}}</small></h1>
 
     <div  class="inner-content">
-        <div class="portfolio-content">
-            <div ng-click="viewDish()" class="portfolio-detail">
+        <div ng-click="go(opt.dishId)" class="portfolio-content">
+             <div   class="portfolio-detail">
             </div>
             <!-- //.portfolio-detail -->
         </div>
         <!-- //.portfolio-content -->
-
         <img src="assets/img/{{opt.files[0].path}}" alt="{{opt.name}}" class="img-responsive"/>
     </div>
     <!-- //.inner-content -->

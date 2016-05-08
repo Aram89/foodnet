@@ -9,7 +9,7 @@ app.directive('offerBox',[function(){
             addDish:'=addToOrder'
         },
         replace: true,
-        controller:['$scope','ngDialog',function($scope,ngDialog){
+        controller:['$scope','ngDialog','$location',function($scope,ngDialog,$location){
             $scope.add = function(dish,count){
                 $scope.addDish(dish,count);
                 ngDialog.closeAll();
@@ -24,6 +24,9 @@ app.directive('offerBox',[function(){
                     className:"ngdialog-theme-default popup-dish",
                     scope:$scope
                 });
+            };
+            $scope.go=function(id){
+                $location.path('dishview:'+id);
             };
             $scope.img='/resources/multimedia/images/1.jpg';
             $scope.belongsTo = ["logo","identity"];
