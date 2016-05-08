@@ -14,7 +14,7 @@
                 </div>
                 <div class="dish-section">
                     <div class="row" ng-repeat="dish in order.dishes">
-                        <div class="col-xs-6 dishname" ng-bind="dish.name"></div>
+                        <div class="col-xs-6 dishname orderBoxDishName" title="{{dish.name}}" ng-bind="dish.name"></div>
                         <span class="col-xs-2 dishname">{{dish.price*dish.count}}</span>
                         <span class="col-xs-2"><input ng-model="dish.count" type="number" step="1" min="1" class="input-number"></span>
                         <div class="col-xs-2">
@@ -41,12 +41,12 @@
                         <div class="form-group" ng-class="{'has-error':!orderForm.phone.$valid && orderForm.phone.$touched}">
                             <label for="reg_chef_phone"  ng-click="aaa()" class="col-sm-2 control-label phone-lable">Հեռ.</label>
                             <div class="col-sm-9">
-                                <input id="reg_chef_phone" class="form-control" required name="phone" type="tel" ng-model="order.phone"/>
+                                <input id="reg_chef_phone" class="form-control" reg-exp-check="^374(91|92|93|94|95|96|97|98|99)[0-9]{6}$" required name="phone" type="tel" ng-model="order.phone"/>
                                 <span class="help-block has-error" ng-show="orderForm.phone.$touched && orderForm.phone.$error.required">Գրեք Հեռ.-ը</span>
-                                <span class="help-block has-error" ng-show="order.phone.length && orderForm.phone.$touched && orderForm.phone.$error.remote">Հեռը կա</span>
+                                <span class="help-block has-error" ng-show="order.phone.length && orderForm.phone.$touched && orderForm.phone.$error.regexp">Խնդրում ենք ներմուծել 37455123456 ֆորմատով</span>
                             </div>
                         </div>
-                        <button ng-click="makeOrder()" ng-disabled="orderForm.$invalid" class="btn btn-sm btn-rj">Order</button>
+                        <button ng-disabled="orderForm.$invalid" ng-click="makeOrder()"  class="btn btn-sm btn-rj">Order</button>
                     </form>
                 </div>
             </div>
