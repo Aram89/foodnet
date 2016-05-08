@@ -1,7 +1,26 @@
 /**
  * Created by pr on 01/17/2016.
  */
-app.controller('DishesController',['$scope','requestsService','$interval','$timeout','ngDialog',function($scope,requestsService,$interval,$timeout,ngDialog){
+app.controller('DishesController',['$scope','$rootScope','requestsService','$interval','$timeout','ngDialog',function($scope,$rootScope,requestsService,$interval,$timeout,ngDialog){
+    $rootScope.$on("$routeChangeSuccess", function(e, c,p) {
+        console.log(e,c,p);
+        function openPopup(dish){
+            $scope.opt=dish;
+            ngDialog.open({
+                preCloseCallback:function(){
+                    $scope.opt.currentCount = 1;
+                },
+                template: '/resources/views/templates/popupDish.tmpl.html',
+                className:"ngdialog-theme-default popup-dish",
+                scope:$scope
+            });
+        }
+        if($location.$$url.indexOf('dishview')!=-1){
+            requestsService.getDish({dishId:c.params.id}).success(openPopup).error(function(){alert('error')});
+        }
+    });
+
+
     $scope.dishes  = [];
     $scope.order = {dishes:[],name:'',phone:'',comments:[]};
     $scope.filterByChef = false;

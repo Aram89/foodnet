@@ -56,5 +56,15 @@ app.service('requestsService',['serverConnector',function(serverConnector){
                 data:data
             }
         )
+    };
+    this.getDish = function(data){
+        return serverConnector.send(
+            {
+                method:"get",
+                url:"get-dish",
+                params :data
+            }
+        )
     }
+
 }]);
