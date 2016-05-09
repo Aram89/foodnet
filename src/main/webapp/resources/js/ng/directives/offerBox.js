@@ -26,7 +26,7 @@ app.directive('offerBox',[function(){
                 });
             };
             $scope.go=function(id){
-                $location.path('dishview:'+id);
+                $location.path('dishview'+id);
             };
             $scope.img='/resources/multimedia/images/1.jpg';
             $scope.belongsTo = ["logo","identity"];

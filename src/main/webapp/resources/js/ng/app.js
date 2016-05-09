@@ -6,8 +6,9 @@ var app = angular.module('app',['ngResource','ngRoute','ngDialog']);
 
 app.config(function($routeProvider,$httpProvider){
     $routeProvider
-        .when('/dishview:id',{
-        })
+        .when('/',{})
+        .when('/dishview:id',{})
+        .otherwise({redirectTo:'/'})
 
     ;
     $httpProvider.defaults.useXDomain = true;
