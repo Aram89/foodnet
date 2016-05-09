@@ -7,6 +7,7 @@ app.controller('DishesController',['$scope','$rootScope','requestsService','$int
         function openPopup(dish){
             $scope.opt=dish;
             $scope.opt.currentCount=1;
+            $scope.scrollToSection("#dishes");
             ngDialog.open({
                 preCloseCallback:function(){
                     console.log($scope.opt);
