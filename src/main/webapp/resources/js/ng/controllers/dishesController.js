@@ -1,14 +1,18 @@
 /**
  * Created by pr on 01/17/2016.
  */
-app.controller('DishesController',['$scope','$rootScope','requestsService','$interval','$timeout','ngDialog',function($scope,$rootScope,requestsService,$interval,$timeout,ngDialog){
-    $rootScope.$on("$routeChangeSuccess", function(e, c,p) {
-        console.log(e,c,p);
+app.controller('DishesController',['$scope','$rootScope','requestsService','$interval','$timeout','ngDialog','$location',function($scope,$rootScope,requestsService,$interval,$timeout,ngDialog,$location){
+    $rootScope.$on("$routeChangeSuccess", function(e, c) {
+        var dishId = c.params.id;
         function openPopup(dish){
             $scope.opt=dish;
+            $scope.opt.currentCount=1;
             ngDialog.open({
                 preCloseCallback:function(){
+                    console.log($scope.opt);
                     $scope.opt.currentCount = 1;
+                    $location.path('');
+                    $scope.$apply();
                 },
                 template: '/resources/views/templates/popupDish.tmpl.html',
                 className:"ngdialog-theme-default popup-dish",
@@ -16,7 +20,7 @@ app.controller('DishesController',['$scope','$rootScope','requestsService','$int
             });
         }
         if($location.$$url.indexOf('dishview')!=-1){
-            requestsService.getDish({dishId:c.params.id}).success(openPopup).error(function(){alert('error')});
+            requestsService.getDish({dishId:dishId}).success(openPopup).error(function(){$location.path('')});
         }
     });
 
