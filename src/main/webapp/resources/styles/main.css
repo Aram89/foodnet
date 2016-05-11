@@ -210,6 +210,19 @@ body.ngdialog-open, html.ngdialog-open {
 .ngdialog.ngdialog-theme-default .ngdialog-content {
     margin-top: -50px !important;
 }
+.btn-top{
+    position:absolute;
+    top:15px;
+    right:45px;
+    display:inline-flex;
+}
+.btn-top p{
+    margin: 6px 10px;
+}
+.top-fb{
+    margin:7px 10px 7px 0;
+    color:#B7ADA4;
+}
 /*media query*/
 @media screen and (max-width : 760px){
     .xs-left-menu{
@@ -245,5 +258,18 @@ body.ngdialog-open, html.ngdialog-open {
     .section-title > .main-title {
         font-size: 25px !important;
         font-weight: 300;
+    }
+    .btn-top {
+        position: absolute;
+        top: 15px;
+        right: 0;
+        left: 0;
+        display: inline-flex;
+    }
+    .bcm{
+        background-color: #ff7932;
+        border: none;
+        padding: 8px 6px !important;
+
     }
 }

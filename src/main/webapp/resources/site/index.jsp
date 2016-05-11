@@ -29,7 +29,8 @@
 
   <!-- Component CSS -->
   <link href="assets/css/component/component.css" rel="stylesheet" type="text/css">
-
+  <!--font awesome-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   <!-- Main CSS -->
   <link href="assets/css/rinjani.css" rel="stylesheet" type="text/css">
 
@@ -75,9 +76,11 @@
 
   <!-- Begin Intro Section -->
   <section id="intro">
-    <div class="intro-body text-center">
-      <div class="text-right" style="position:absolute; top:15px;right:45px">
-        <a type="button" class="btn btn-sm btn-rj" href="/partner-chef" target="_blank">
+    <div class="col-xs-12 intro-body text-center">
+      <div class="text-right btn-top">
+        <p> <i class="fa fa-phone" aria-hidden="true"></i> +374 55 263065 </p>
+        <a href="https://www.facebook.com/Narinj-201737816853861" class="top-fb"><i class="fa fa-facebook"></i></a>
+        <a type="button" class="btn btn-sm btn-rj bcm" href="/partner-chef" target="_blank">
           Դառնալ խոհարար
         </a>
       </div>
