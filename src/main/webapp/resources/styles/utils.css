@@ -10,3 +10,12 @@
     width: 200px;
     text-align: center;
 }
+
+.orderBoxDishName{
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.order-popup .ngdialog-content{
+    width: 800px !important;
+}
