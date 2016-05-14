@@ -1,8 +1,23 @@
-.fast{
+
+.fast {
     z-index: 1;
-    color: white;
     font-size: initial;
-    padding-left: 65px;
-    padding-top: 100px;
     position: absolute;
+    color: #fff;
+    background: green;
+    top: 20%;
+    right: 0%;
+    left: 25%;
+    width: 200px;
+    text-align: center;
+}
+
+
+.orderBoxDishName{
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.order-popup .ngdialog-content{
+    width: 800px !important;
 }

@@ -15,7 +15,7 @@ app.service('requestsService',['serverConnector',function(serverConnector){
         return serverConnector.send(
             {
                 method:'post',
-                url:'become-chef',
+                url:'create-chef',
                 data: data
             }
         )
@@ -24,7 +24,7 @@ app.service('requestsService',['serverConnector',function(serverConnector){
         return serverConnector.send(
             {
                 method:'post',
-                url:'become-courier',
+                url:'create-courier',
                 data: data
             }
         )

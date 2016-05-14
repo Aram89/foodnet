@@ -1,7 +1,7 @@
 /**
  * Created by pr on 01/02/2016.
  */
-app.controller('MainController',['$scope','ngDialog',function($scope,ngDialog){
+app.controller('MainController',['$scope','ngDialog','$rootScope','$location','requestsService',function($scope,ngDialog,$rootScope,$location,requestsService){
    /* $scope.setLang =function(lang){
         translationService.getTranslation($scope,lang);
     };*/

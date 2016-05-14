@@ -18,7 +18,7 @@ app.directive('orderBox',function(){
                     }
                     price+= parseInt(d.price)* d.count;
                 });
-                return price+$scope.chefs.length*400;
+                return price;
             };
             $scope.toggleBox = function(){
                 $scope.isBoxOpen=!$scope.isBoxOpen;
@@ -26,7 +26,14 @@ app.directive('orderBox',function(){
             $scope.removeDish =function(index){
                 $scope.order.dishes.splice(index,1);
             };
-
+            $scope.openOrderWindow = function(){
+                ngDialog.open({
+                        template:'/resources/views/templates/order-popup.tmpl.html',
+                        className:'ngdialog-theme-default order-popup',
+                        scope:$scope
+                    }
+                )
+            };
             $scope.makeOrder = function(){
                 /*var comment ='';
                 console.log($scope.order);
@@ -34,12 +41,16 @@ app.directive('orderBox',function(){
 
                 });*/
                 var successed=0;
+                console.log($scope.order);
                 $scope.chefs.forEach(function(c){
                     var res = {
                         "phone":$scope.order.phone,
                         comment:"",
                         "price":400,
-                        "dishOrders":[]
+                        "dishOrders":[],
+                        "deliveryDateTime":$scope.order.deliveryDateTime,
+                        "orderDateTime":new Date(),
+                        "location":$scope.order.location
                     };
                     $scope.order.dishes.forEach(function(d){
                         if(d.chef.partnerId==c){
