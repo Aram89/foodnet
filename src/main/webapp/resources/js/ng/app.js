@@ -8,9 +8,7 @@ app.config(function($routeProvider,$httpProvider){
     $routeProvider
         .when('/',{})
         .when('/dishview:id',{})
-        .otherwise({redirectTo:'/'})
-
-    ;
+        .otherwise({redirectTo:'/'});
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 

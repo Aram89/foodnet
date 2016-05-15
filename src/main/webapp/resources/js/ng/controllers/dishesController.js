@@ -30,7 +30,7 @@ app.controller('DishesController',['$scope','$rootScope','requestsService','$int
     $scope.order = {dishes:[],name:'',phone:'',comments:[]};
     $scope.filterByChef = false;
     $scope.selectedCehfId=false;
-    $scope.showOnlines = true;
+    $scope.showOnlines = false;
     $scope.nextChefs = 0;
     $scope.chefs = [];
     //$scope.nextDishes = 0

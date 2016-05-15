@@ -9,7 +9,8 @@
             <div ng-show="isBoxOpen" class="order-window" role="menu">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h3>Գումար {{order.price()}} <small>դրամ</small></h3>
+                        <h4>Գումար {{order.price()+chefs.length*400}} <small>դրամ</small></h4>
+                        <span>{{order.price()}} + {{chefs.length*400}} (առաքման գումար)</span>
                     </div>
                 </div>
                 <div class="dish-section">
@@ -27,9 +28,9 @@
 
                 <div class="divider"></div>
                 <div class="order-box-form">
-                    <form class="form-horizontal" name="orderForm" ng-submit="makeOrder()" novalidate>
+<!--                    <form class="form-horizontal" name="orderForm"  novalidate>
 
-                        <!--
+                        &lt;!&ndash;
                         <div class="form-group" ng-class="{'has-error':!orderForm.name.$valid && orderForm.name.$touched}">
                             <label for="reg_chef_name" class="col-xs-3 control-label">Անուն</label>
                             <div class="col-xs-9">
@@ -37,9 +38,8 @@
                                 <span class="help-block" ng-show="orderForm.name.$touched && !orderForm.name.$valid">Գրեք անունը</span>
                             </div>
                         </div>
-                        -->
-                        <a href="#dish">aaaa</a>
-                        <div class="form-group" ng-class="{'has-error':!orderForm.phone.$valid && orderForm.phone.$touched}">
+                        &ndash;&gt;
+                        &lt;!&ndash;<div class="form-group" ng-class="{'has-error':!orderForm.phone.$valid && orderForm.phone.$touched}">
                             <label for="reg_chef_phone" class="col-sm-2 control-label phone-lable">Հեռ.</label>
                             <div class="col-sm-9">
                                 <input id="reg_chef_phone" class="form-control" reg-exp-check="^374(10|11|12|41|43|55|60|77|91|92|93|94|95|96|97|98|99)[0-9]{6}$" required name="phone" type="tel" ng-model="order.phone"/>|
@@ -47,8 +47,9 @@
                                 <span class="help-block has-error" ng-show="order.phone.length && orderForm.phone.$touched && orderForm.phone.$error.regexp">Խնդրում ենք ներմուծել 37455123456 ֆորմատով</span>
                             </div>
                         </div>
-                        <button ng-disabled="orderForm.$invalid" ng-click="makeOrder()"  class="btn btn-sm btn-rj">Order</button>
-                    </form>
+                        &ndash;&gt;
+                    </form>-->
+                    <button  ng-click="openOrderWindow()"  class="btn btn-sm btn-rj">Order</button>
                 </div>
             </div>
         </li>
