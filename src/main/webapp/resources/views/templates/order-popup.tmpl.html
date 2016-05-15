@@ -4,21 +4,24 @@
                 <div class="order-box-form">
                     <form class="form-horizontal" name="orderForm"  novalidate>
                         <div class="form-groupv row">
-                            <div class="col-sm-4">
+                            <div class="col-sm-2">
                                 <label for="preliminary-order">Նախնական պատվեր</label>
                                 <input type="checkbox" id="preliminary-order" ng-model="order.preliminary">
                             </div>
-                            <div class="col-sm-8">
-                                <label for="order_date_time">Առաքման ժամանակը</label>
-                                <input type="datetime-local" id="order_date_time" ng-model="order.deliveryDateTime" ng-disabled="!order.preliminary">
+                            <div class="col-sm-6">
+                                <label for="order_date">Առաքման օրը</label>
+                                <input type="date" id="order_date" ng-model="order.deliveryDate" ng-disabled="!order.preliminary">
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="order_time">Առաքման ժամը</label>
+                                <input type="time" id="order_time" ng-model="order.deliveryTime" ng-disabled="!order.preliminary">
                             </div>
                         </div>
                         <div class="form-group row" ng-class="{'has-error':!orderForm.phone.$valid && orderForm.phone.$touched}">
-                            <label for="reg_chef_phone" class="col-sm-2">Հեռ. *</label>
+                            <label for="reg_chef_phone" class="col-sm-2">Հեռախոս *</label>
                             <div class="col-sm-9">
                                 <input id="reg_chef_phone"  reg-exp-check="^374(10|11|12|41|43|55|60|77|91|92|93|94|95|96|97|98|99)[0-9]{6}$" required name="phone" type="tel" ng-model="order.phone"/>
-                                <span class="help-block has-error" ng-show="orderForm.phone.$touched && orderForm.phone.$error.required">Գրեք Հեռ.-ը</span>
-                                <span class="help-block has-error" ng-show="order.phone.length && orderForm.phone.$touched && orderForm.phone.$error.regexp">Խնդրում ենք ներմուծել 37455123456 ֆորմատով</span>
+                                <span class="help-block has-error" ng-show="order.phone.length && orderForm.phone.$touched && orderForm.phone.$error.regexp">Խնդրում ենք ներմուծել 37412345678 ֆորմատով</span>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -35,7 +38,17 @@
                         </div>
                         <div class="row col-md-10">
                             <div class="col-xs-12">
-                                <h3>Գումար {{order.price()}} + {{chefs.length*400}}(առաքում)<small>դրամ</small></h3>
+                                <h3>Պատվեր {{order.price()}} <small>դրամ</small></h3>
+                            </div>
+                        </div>
+                        <div class="row col-md-10">
+                            <div class="col-xs-12">
+                                <h3>Առաքում {{chefs.length*400}}<small>դրամ</small></h3>
+                            </div>
+                        </div>
+                        <div class="row col-md-10">
+                            <div class="col-xs-12">
+                                <h3>Ըննդհանուր {{order.price() + chefs.length*400}}<small>դրամ</small></h3>
                             </div>
                         </div>
                         <div class="col-md-2">
