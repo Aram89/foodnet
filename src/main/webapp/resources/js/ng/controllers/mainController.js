@@ -7,7 +7,7 @@ app.controller('MainController',['$scope','ngDialog','$rootScope','$location','r
     };*/
     $scope.mail={};
     $scope.sendMail = function(){
-        requestsService.send($scope.mail).success(function(){
+        requestsService.sendMail($scope.mail).success(function(){
             console.log('sent')
         })
     };
