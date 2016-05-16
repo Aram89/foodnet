@@ -78,8 +78,6 @@
   <section id="intro">
     <div class="col-xs-12 intro-body text-center">
       <div class="text-right btn-top">
-        <p> <i class="fa fa-phone" aria-hidden="true"></i> +374 55 263065 </p>
-        <a href="https://www.facebook.com/Narinj-201737816853861" class="top-fb"><i class="fa fa-facebook"></i></a>
         <a type="button" class="btn btn-sm btn-rj bcm" href="/partner-chef" target="_blank">
           Դառնալ խոհարար
         </a>
@@ -148,6 +146,8 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right xs-left-menu">
+        <li class="page-scroll ph-number"> <i class="fa fa-phone" aria-hidden="true"></i> +374 55 263065 </li>
+        <li class="page-scroll"> <a href="https://www.facebook.com/Narinj-201737816853861" class="top-fb"><i class="fa fa-facebook"></i></a></li>
         <li class="page-scroll">
           <a href="#"><order-box order="order"></order-box></a>
         </li>
