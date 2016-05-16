@@ -1,4 +1,4 @@
-package org.qualitech.foodnet.domain;
+package org.qualitech.foodnet.domain.json;
 
 /**
  * @author Aram Kirakosyan.

@@ -1,4 +1,4 @@
-package org.qualitech.foodnet.domain;
+package org.qualitech.foodnet.domain.json;
 
 /**
  * Created by Aram on 4/3/2016.

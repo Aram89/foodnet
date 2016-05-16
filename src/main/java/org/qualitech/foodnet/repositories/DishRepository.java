@@ -3,6 +3,7 @@ package org.qualitech.foodnet.repositories;
 import org.qualitech.foodnet.domain.Category;
 import org.qualitech.foodnet.domain.Chef;
 import org.qualitech.foodnet.domain.Dish;
+import org.qualitech.foodnet.domain.json.DishStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -24,9 +25,12 @@ public interface DishRepository extends CrudRepository<Dish, Long>, Repository<D
 
     List<Dish> findChefByDishId(long dishId);
 
-    @Query("SELECT d FROM Dish d")
-    List<Dish> findWithLimit(org.springframework.data.domain.Pageable pageable);
+    @Override
+    Dish findOne(Long dishId);
 
-    @Query("SELECT d FROM Dish d join d.categories c WHERE c.categoryId = :categoryId")
-    List<Dish> findByCategory(@Param ("categoryId") long categoryId, org.springframework.data.domain.Pageable pageable);
+    @Query("SELECT d FROM Dish d WHERE d.dishStatus= :dishStatus")
+    List<Dish> findWithLimit(@Param ("dishStatus")DishStatus dishStatus, org.springframework.data.domain.Pageable pageable);
+
+    @Query("SELECT d FROM Dish d join d.categories c WHERE c.categoryId = :categoryId and d.dishStatus= :dishStatus")
+    List<Dish> findByCategory(@Param ("categoryId") long categoryId, @Param ("dishStatus")DishStatus dishStatus, org.springframework.data.domain.Pageable pageable);
 }

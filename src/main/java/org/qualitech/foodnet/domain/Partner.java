@@ -1,10 +1,12 @@
 package org.qualitech.foodnet.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.qualitech.foodnet.domain.json.PartnerStatus;
+import org.qualitech.foodnet.domain.json.WorkSchedule;
+import org.qualitech.foodnet.domain.json.WorkStatus;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 /**
  * @author Aram Kirakosyan.
@@ -34,6 +36,7 @@ public class Partner {
     private WorkStatus workStatus;
     private Date workStatusUpdateTime;
     private WorkSchedule workSchedule;
+    private String location;
 
     @Id
     @GeneratedValue
@@ -149,5 +152,14 @@ public class Partner {
 
     public void setWorkSchedule(WorkSchedule workSchedule) {
         this.workSchedule = workSchedule;
+    }
+
+    @Column
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

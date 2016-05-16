@@ -5,11 +5,13 @@ import com.twilio.sdk.TwilioRestException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.qualitech.foodnet.domain.Chef;
+import org.qualitech.foodnet.domain.Message;
 import org.qualitech.foodnet.domain.Partner;
-import org.qualitech.foodnet.domain.WorkStatus;
+import org.qualitech.foodnet.domain.json.WorkStatus;
 import org.qualitech.foodnet.exception.AppException;
 import org.qualitech.foodnet.exception.ErrorCodes;
 import org.qualitech.foodnet.service.ChefService;
+import org.qualitech.foodnet.service.MailService;
 import org.qualitech.foodnet.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,14 +32,17 @@ import java.util.Date;
 public class ChefController {
 
     // Logger.
-    private  static Logger logger = LogManager.getLogger(ChefController.class);
+    private static Logger logger = LogManager.getLogger(ChefController.class);
 
     // Service.
     @Autowired
-    ChefService service;
+    private ChefService service;
 
     @Autowired
-    OrderService orderService;
+    private OrderService orderService;
+
+    @Autowired
+    private MailService mailService;
 
     /**
      * Endpoint for becoming chef
@@ -47,9 +52,11 @@ public class ChefController {
      * @throws IOException  IOException
      * @throws SQLException SQLException
      */
-    @RequestMapping(value = RequestMappings.CREATE_CHEF, method = RequestMethod.POST)
+    @RequestMapping(value = RequestMappings.CREATE_CHEF, method = RequestMethod.POST,
+            consumes = "application/json;charset=UTF-8", produces = "application/json;charset=UTF-8")
     public ResponseEntity create(@RequestBody Chef chef) throws IOException, SQLException {
-        logger.info("new chef :" + chef);
+        logger.info("new chef :" + chef.getName());
+
         service.create(chef);
         logger.info("Chef registered with id: " + chef.getPartnerId());
         return new ResponseEntity(HttpStatus.OK);
@@ -112,22 +119,22 @@ public class ChefController {
     @RequestMapping(value = RequestMappings.CHEF_CONNECT, method = RequestMethod.POST)
     public ResponseEntity connect(@RequestBody String decodedString) throws IOException, AppException {
         Chef chef = convert(decodedString);
-        if(!service.checkAccessToken(chef.getPartnerId(), chef.getAccessToken())) {
+        if (!service.checkAccessToken(chef.getPartnerId(), chef.getAccessToken())) {
             throw new AppException(ErrorCodes.WRONG_ACCESS_TOKEN);
         }
         // Update work status.
-        chef.setWorkStatus(WorkStatus.ONLINE);
+        service.updateWorkStatus(chef.getPartnerId(), WorkStatus.ONLINE);
         return new ResponseEntity(HttpStatus.OK);
     }
 
     @RequestMapping(value = RequestMappings.CHEF_DISCONNECT, method = RequestMethod.POST)
     public ResponseEntity disConnect(@RequestBody String decodedString) throws IOException, AppException {
         Chef chef = convert(decodedString);
-        if(!service.checkAccessToken(chef.getPartnerId(), chef.getAccessToken())) {
+        if (!service.checkAccessToken(chef.getPartnerId(), chef.getAccessToken())) {
             throw new AppException(ErrorCodes.WRONG_ACCESS_TOKEN);
         }
         // Update work status.
-        chef.setWorkStatus(WorkStatus.OFFLINE);
+        service.updateWorkStatus(chef.getPartnerId(), WorkStatus.OFFLINE);
         return new ResponseEntity(HttpStatus.OK);
     }
 
@@ -136,12 +143,15 @@ public class ChefController {
     public ResponseEntity getOrders(@RequestBody String decodedString) throws IOException, AppException {
         Chef chef = convert(decodedString);
         // Check credentials
-        if(!service.checkAccessToken(chef.getPartnerId(), chef.getAccessToken())) {
+        if (!service.checkAccessToken(chef.getPartnerId(), chef.getAccessToken())) {
             throw new AppException(ErrorCodes.WRONG_ACCESS_TOKEN);
         }
         // Update work status update time.
         String orders = orderService.getOrders(chef.getPartnerId());
-        chef.setWorkStatusUpdateTime(new Date());
+        ObjectMapper mapper = new ObjectMapper();
+
+        service.updateWorkStatusUpdateTime(chef.getPartnerId(), new Date());
+
         return new ResponseEntity(orders, HttpStatus.OK);
     }
 
@@ -152,4 +162,9 @@ public class ChefController {
         return chef;
     }
 
+    @RequestMapping(value = RequestMappings.SEND_EMAIL, method = RequestMethod.POST)
+    public ResponseEntity sendEmail(@RequestBody Message message) throws IOException, AppException {
+        mailService.send(message);
+        return new ResponseEntity(HttpStatus.OK);
+    }
 }

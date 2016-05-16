@@ -15,7 +15,7 @@ import java.util.List;
 public class Chef  extends Partner {
 
     private List<File> files;
-    private String location;
+
 
     public Chef() {
     }
@@ -25,7 +25,7 @@ public class Chef  extends Partner {
     }
 
     @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name="chefId")
+    @JoinColumn(name="partnerId")
     public List<File> getFiles() {
         return files;
     }
@@ -34,12 +34,5 @@ public class Chef  extends Partner {
         this.files = files;
     }
 
-    @Column
-    public String getLocation() {
-        return location;
-    }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
 }

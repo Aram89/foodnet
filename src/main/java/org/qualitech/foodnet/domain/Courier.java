@@ -7,8 +7,11 @@ import javax.persistence.Entity;
  * @author Aram Kirakosyan.
  */
 @Entity
-@DiscriminatorValue("partner")
+@DiscriminatorValue("courier")
 public class Courier extends Partner {
+
+    public Courier() {
+    }
 
     public Courier(Long courierId) {
         super(courierId);

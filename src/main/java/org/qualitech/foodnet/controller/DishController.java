@@ -124,4 +124,9 @@ public class DishController {
         return new ResponseEntity(dishes, HttpStatus.OK);
     }
 
+    @RequestMapping(value = RequestMappings.GET_DISH, method = RequestMethod.GET)
+    public ResponseEntity getDish(@RequestParam(value = "dishId") Long dishId) {
+        Dish dish = dishService.getDish(dishId);
+        return new ResponseEntity(dish, HttpStatus.OK);
+    }
 }

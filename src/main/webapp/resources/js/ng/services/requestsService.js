@@ -69,7 +69,7 @@ app.service('requestsService',['serverConnector',function(serverConnector){
 
 
     this.sendMail = function(data){
-        return serverConnector(
+        return serverConnector.send(
             {
                 method:'post',
                 url:"send-email",

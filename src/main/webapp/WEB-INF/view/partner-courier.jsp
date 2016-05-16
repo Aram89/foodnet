@@ -67,7 +67,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="section-title text-center">
-            <h2 class="main-title">Ինչու՞ դառնալ խոհարար</h2>
+            <h2 class="main-title">Ինչու՞ դառնալ Առաքիչ</h2>
 
             <span class="section-line"></span>
           </div>
@@ -92,7 +92,7 @@
                   <h4>Ազատ գրաֆիկ</h4>
 
                   <p>
-                    Խոհարարն ինքն է որոշում իր աշխատանքային ժամերը և պատվերներ է ընդունում միայն այդ ժամերին։
+                    Առաքիչն ինքն է որոշում իր աշխատանքային ժամերը և պատվերներ է ընդունում միայն այդ ժամերին։
                   </p>
                 </div>
                 <!-- //.content-boxes-text -->
@@ -111,8 +111,7 @@
                   <h4>Եկամտի աղբյուր</h4>
 
                   <p>
-                    Խոհարարը գումար է վաստակում պատրաստելով ուտեստներ իր տանը
-                    և ինքն է սահմանում ուտեստների գները:
+                    Առաքիչը ստանում է 400 դրամ յուրաքանչյուր պատվերի համար, հնարավոր է նաև մեկ առաքման ժամանակ կատարել մի քանի պատվեր:
                   </p>
                 </div>
                 <!-- //.content-boxes-text -->
@@ -131,8 +130,7 @@
                   <h4>Հարմարավետություն</h4>
 
                   <p>
-                    Խոհարարը կարող է պատվերներ ընդունել մեր տրամադրած հեռախոսային հավելվածի
-                    կամ sms հաղորդագրությունների միջոցով։ Մեր առաքիչները կառաքեն պատվերները հենց խոհարարի տնից։
+                    Առաքիչը պատվերներ է ընդունում մեր տրամադրած հեռախոսային հավելվածի միջոցով։։
                   </p>
                 </div>
                 <!-- //.content-boxes-text -->
@@ -148,13 +146,13 @@
           <div class="content-boxes style-two top-column clearfix"  ng-controller="BecomeChefController">
 
             <div class="section-title text-center">
-              <h3 class="sub-title">Դառնալ խոհարար</h3>
+              <h3 class="sub-title">Դառնալ Առաքիչ</h3>
 
               <span class="section-line"></span>
             </div>
 
             <div ng-hide="ok" class="regForm">
-              <form class="form-horizontal" name="registerForm" ng-submit="becomeChef()" novalidate>
+              <form class="form-horizontal" name="registerForm" ng-submit="becomeCourier()" novalidate>
 
                 <div class="form-group" ng-class="{'has-error':!registerForm.name.$valid && registerForm.name.$touched}">
                   <label for="reg_chef_name" class="col-sm-3 control-label">Անուն</label>

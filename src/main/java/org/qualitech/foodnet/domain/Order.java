@@ -1,5 +1,7 @@
 package org.qualitech.foodnet.domain;
 
+import org.qualitech.foodnet.domain.json.OrderStatus;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -13,8 +15,40 @@ import java.util.List;
 public class Order implements Serializable{
 
     private long ordersId;
-    private Date time;
-    private double price;
+    private Integer price;
+    private Integer chefPrice;
+    private Date completedByChefTime;
+    private Date acceptedByChefTime;
+
+    @Column
+    public Date getAcceptedByCourierTime() {
+        return acceptedByCourierTime;
+    }
+
+    public void setAcceptedByCourierTime(Date acceptedByCourierTime) {
+        this.acceptedByCourierTime = acceptedByCourierTime;
+    }
+
+    @Column
+    public Date getAcceptedByChefTime() {
+        return acceptedByChefTime;
+    }
+
+    public void setAcceptedByChefTime(Date acceptedByChefTime) {
+        this.acceptedByChefTime = acceptedByChefTime;
+    }
+
+    private Date acceptedByCourierTime;
+
+    @Column
+    public Date getCompletedByChefTime() {
+        return completedByChefTime;
+    }
+
+    public void setCompletedByChefTime(Date completedByChefTime) {
+        this.completedByChefTime = completedByChefTime;
+    }
+
     private String phone;
     private String comment;
     private OrderStatus orderStatus;
@@ -22,6 +56,36 @@ public class Order implements Serializable{
     private OrderStatus PartnerStatus;
     private OrderStatus courierStatus;
     private OrderStatus clientStatus;
+    private String location;
+    private String orderDeliveryDate;
+    private String orderDate;
+
+    @Column
+    public String getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    @Column
+    public String getOrderDeliveryDate() {
+        return orderDeliveryDate;
+    }
+
+    public void setOrderDeliveryDate(String orderDeliveryDate) {
+        this.orderDeliveryDate = orderDeliveryDate;
+    }
+
+    @Column
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
     @Enumerated(EnumType.STRING)
     @Column
@@ -85,7 +149,7 @@ public class Order implements Serializable{
     }
 
 
-    @OneToMany (mappedBy = "order", cascade = CascadeType.ALL)
+    @OneToMany (mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     public List<DishOrder> getDishOrders() {
         return dishOrders;
     }
@@ -106,22 +170,20 @@ public class Order implements Serializable{
     }
 
     @Column
-    public Date getTime() {
-        return time;
-    }
-
-    public void setTime(Date time) {
-        this.time = time;
-    }
-
-    @Column
-    public double getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
+    @Column
+    public Integer getChefPrice() {
+        return chefPrice;
+    }
 
+    public void setChefPrice(Integer chefPrice) {
+        this.chefPrice = chefPrice;
+    }
 
-    public void setPrice(double price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 

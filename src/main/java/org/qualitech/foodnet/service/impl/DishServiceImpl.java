@@ -3,6 +3,7 @@ package org.qualitech.foodnet.service.impl;
 import org.qualitech.foodnet.domain.Category;
 import org.qualitech.foodnet.domain.Chef;
 import org.qualitech.foodnet.domain.Dish;
+import org.qualitech.foodnet.domain.json.DishStatus;
 import org.qualitech.foodnet.exception.AppException;
 import org.qualitech.foodnet.exception.ErrorCodes;
 import org.qualitech.foodnet.repositories.Categoryrepository;
@@ -39,9 +40,9 @@ public class DishServiceImpl implements DishService {
         dishRepository.save(dish);
     }
 
-    private double calculateViewPrice(double price) {
-        double viewPrice;
-        double tmpPrice = price + percent*price;
+    private int calculateViewPrice(int price) {
+        int viewPrice;
+        int tmpPrice = (int) (price + percent*price);
         if (tmpPrice % 10 == 0) {
             viewPrice = tmpPrice;
         } else {
@@ -54,13 +55,13 @@ public class DishServiceImpl implements DishService {
     public List<Dish> getDishes(String categoryName, int page, int count) throws IOException, AppException {
         List <Dish> dishes;
         if (categoryName.equalsIgnoreCase("all")) {
-            dishes = (List<Dish>) dishRepository.findWithLimit(new PageRequest(page, count));
+            dishes = (List<Dish>) dishRepository.findWithLimit( DishStatus.ACTIVE, new PageRequest(page, count));
         } else {
             if (categoryrepository.findCategoryIdByName(categoryName).isEmpty()) {
                 throw new AppException(ErrorCodes.WRONG_CATEGORY + categoryName);
             }
             Category category = categoryrepository.findCategoryIdByName(categoryName).get(0);
-            dishes = dishRepository.findByCategory(category.getCategoryId(), new PageRequest(page, count));
+            dishes = dishRepository.findByCategory(category.getCategoryId(),DishStatus.ACTIVE, new PageRequest(page, count));
         }
         return dishes;
     }
@@ -70,5 +71,10 @@ public class DishServiceImpl implements DishService {
         Chef chef = new Chef(chefId);
         List<Dish> dishes = dishRepository.findByChef(chef, new PageRequest(page, count));
         return dishes;
+    }
+
+    @Override
+    public Dish getDish(Long dishId) {
+        return dishRepository.findOne(dishId);
     }
 }

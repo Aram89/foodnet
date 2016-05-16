@@ -1,11 +1,12 @@
 package org.qualitech.foodnet.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.twilio.sdk.TwilioRestException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.qualitech.foodnet.domain.Chef;
 import org.qualitech.foodnet.domain.Courier;
-import org.qualitech.foodnet.domain.WorkStatus;
+import org.qualitech.foodnet.domain.Partner;
+import org.qualitech.foodnet.domain.json.WorkStatus;
 import org.qualitech.foodnet.exception.AppException;
 import org.qualitech.foodnet.exception.ErrorCodes;
 import org.qualitech.foodnet.service.CourierService;
@@ -13,6 +14,7 @@ import org.qualitech.foodnet.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,6 +29,7 @@ import java.util.Date;
 /**
  * @author Aram Kirakosyan.
  */
+@Controller
 public class CourierController {
 
     // Logger.
@@ -38,6 +41,17 @@ public class CourierController {
 
     @Autowired
     OrderService orderService;
+
+    @RequestMapping(value = RequestMappings.COURIER_LOGIN, method = RequestMethod.POST)
+    public ResponseEntity addDish(@RequestBody String decodedString) throws SQLException, IOException, AppException, NoSuchAlgorithmException {
+        String chefString = URLDecoder.decode(decodedString, "UTF-8").substring(5);
+        ObjectMapper mapper = new ObjectMapper();
+        Courier courier = mapper.readValue(chefString, Courier.class);
+        Partner loggedChef = service.login(courier.getPhone(), courier.getPassword());
+
+        return new ResponseEntity(loggedChef, HttpStatus.OK);
+    }
+
 
     /**
      * Endpoint for becoming courier
@@ -62,7 +76,7 @@ public class CourierController {
      *
      * @param phone chef phone
      * @return status OK
-     * @throws AppException AppException
+     * @throws AppException AppException.
      */
     @RequestMapping(value = RequestMappings.CHECK_COURIER_PHONE, method = RequestMethod.GET)
     public ResponseEntity checkPhone(@RequestParam(value = "phone") String phone) throws AppException {
@@ -75,7 +89,7 @@ public class CourierController {
 
     @RequestMapping(value = RequestMappings.PARTNER_COURIER, method = RequestMethod.GET)
     public String partnerCourierPage() {
-        return "partner-courier";
+        return RequestMappings.PARTNER_COURIER;
     }
 
     @RequestMapping(value = RequestMappings.COURIER_CONNECT, method = RequestMethod.POST)
@@ -85,7 +99,8 @@ public class CourierController {
             throw new AppException(ErrorCodes.WRONG_ACCESS_TOKEN);
         }
         // Update work status.
-        courier.setWorkStatus(WorkStatus.ONLINE);
+        service.updateWorkStatus(courier.getPartnerId(), WorkStatus.ONLINE);
+
         return new ResponseEntity(HttpStatus.OK);
     }
 
@@ -96,21 +111,22 @@ public class CourierController {
             throw new AppException(ErrorCodes.WRONG_ACCESS_TOKEN);
         }
         // Update work status.
-        courier.setWorkStatus(WorkStatus.OFFLINE);
+        service.updateWorkStatus(courier.getPartnerId(), WorkStatus.OFFLINE);
         return new ResponseEntity(HttpStatus.OK);
     }
 
 
-    @RequestMapping(value = RequestMappings.GET_ORDERS, method = RequestMethod.POST)
+    @RequestMapping(value = RequestMappings.GET_COURIER_ORDERS, method = RequestMethod.POST)
     public ResponseEntity getOrders(@RequestBody String decodedString) throws IOException, AppException {
+        logger.info("Courier get orders request :" + decodedString);
         Courier courier = convert(decodedString);
         // Check credentials
         if(!service.checkAccessToken(courier.getPartnerId(), courier.getAccessToken())) {
             throw new AppException(ErrorCodes.WRONG_ACCESS_TOKEN);
         }
         // Update work status update time.
-        String orders = orderService.getOrders(courier.getPartnerId());
-        courier.setWorkStatusUpdateTime(new Date());
+        String orders = orderService.getCourierOrders(courier.getPartnerId());
+        service.updateWorkStatusUpdateTime(courier.getPartnerId(), new Date());
         return new ResponseEntity(orders, HttpStatus.OK);
     }
 
@@ -120,6 +136,4 @@ public class CourierController {
         Courier courier = mapper.readValue(courierString, Courier.class);
         return courier;
     }
-
-
-    }
+}

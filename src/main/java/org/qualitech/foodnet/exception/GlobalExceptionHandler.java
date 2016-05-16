@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.sql.SQLException;
 
 /**
@@ -31,7 +33,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(value = Exception.class)
     public ResponseEntity exception(Exception e) {
-        logger.error(e);
+        logger.error("Error: ", e);
         return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
@@ -46,7 +48,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     public ErrorCodes sqlException(Exception se) {
-        logger.error(se);
+        logger.error("Error: ", se);
         return new ErrorCodes("wrong id");
     }
 
@@ -62,7 +64,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     public ErrorCodes userException (AppException ae) {
-        logger.error("App Exception : " + ae);
+        logger.error("Error: ", ae);
         return new ErrorCodes(ae.getMessage());
     }
 }

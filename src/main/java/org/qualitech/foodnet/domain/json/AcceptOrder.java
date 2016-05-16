@@ -1,4 +1,4 @@
-package org.qualitech.foodnet.domain;
+package org.qualitech.foodnet.domain.json;
 
 import javax.persistence.Column;
 
@@ -6,6 +6,24 @@ import javax.persistence.Column;
  * @author Aram Kirakosyan.
  */
 public class AcceptOrder {
+
+    public Long getPartnerId() {
+        return partnerId;
+    }
+
+    @Override
+    public String toString() {
+        return "AcceptOrder{" +
+                "ordersId=" + ordersId +
+                ", partnerId=" + partnerId +
+                ", accessToken='" + accessToken + '\'' +
+                ", duration=" + duration +
+                '}';
+    }
+
+    public void setPartnerId(Long partnerId) {
+        this.partnerId = partnerId;
+    }
 
     private long ordersId;
 
@@ -17,7 +35,7 @@ public class AcceptOrder {
         this.ordersId = ordersId;
     }
 
-    private Long chefId;
+    private Long partnerId;
     private String accessToken;
 
     private long duration;
@@ -28,14 +46,6 @@ public class AcceptOrder {
 
     public void setDuration(long duration) {
         this.duration = duration;
-    }
-
-    public Long getPartnerId() {
-        return chefId;
-    }
-
-    public void setChefId(Long chefId) {
-        this.chefId = chefId;
     }
 
     public String getAccessToken() {

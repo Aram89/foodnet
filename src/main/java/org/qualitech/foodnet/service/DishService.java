@@ -14,8 +14,10 @@ import java.util.List;
  */
 public interface DishService {
 
-    public void addDish(Dish dish) throws SQLException;
-    public List<Dish> getDishes (String categoryName, int page, int count) throws IOException, AppException;
+    void addDish(Dish dish) throws SQLException;
+    List<Dish> getDishes (String categoryName, int page, int count) throws IOException, AppException;
 
-    public List<Dish> getDishesByChef (Long chefId, int page, int count) throws IOException;
+    List<Dish> getDishesByChef (Long chefId, int page, int count) throws IOException;
+
+    Dish getDish (Long dishId);
 }

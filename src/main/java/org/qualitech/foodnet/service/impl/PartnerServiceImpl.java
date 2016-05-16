@@ -3,9 +3,9 @@ package org.qualitech.foodnet.service.impl;
 import com.twilio.sdk.TwilioRestException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.qualitech.foodnet.domain.Chef;
 import org.qualitech.foodnet.domain.Partner;
-import org.qualitech.foodnet.domain.PartnerStatus;
+import org.qualitech.foodnet.domain.json.PartnerStatus;
+import org.qualitech.foodnet.domain.json.WorkStatus;
 import org.qualitech.foodnet.exception.AppException;
 import org.qualitech.foodnet.exception.ErrorCodes;
 import org.qualitech.foodnet.repositories.PartnerRepository;
@@ -13,13 +13,18 @@ import org.qualitech.foodnet.service.PartnerService;
 import org.qualitech.foodnet.util.HashUtil;
 import org.qualitech.foodnet.util.SmsSender;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.security.NoSuchAlgorithmException;
+import java.util.Date;
 import java.util.List;
 
 /**
  * @author Aram Kirakosyan.
  */
+@Service
+@Transactional
 public class PartnerServiceImpl implements PartnerService {
 
     Logger logger = LogManager.getLogger(PartnerServiceImpl.class);
@@ -50,6 +55,7 @@ public class PartnerServiceImpl implements PartnerService {
         partner.setPassword(HashUtil.hash(password));
         String accessToken = HashUtil.generateRandomString(9) + partner.getPartnerId().toString();
         partner.setAccessToken(accessToken);
+        repository.save(partner);
         SmsSender.send(phone, " Your account activated!, Password : " + password +
                 ". You can login using your phone and password");
         logger.info("Sms was sent to : " + phone);
@@ -73,6 +79,16 @@ public class PartnerServiceImpl implements PartnerService {
         loggedPartner.setPartnerId(partner.getPartnerId());
         loggedPartner.setAccessToken(partner.getAccessToken());
         return loggedPartner;
+    }
+
+    @Override
+    public void updateWorkStatus(Long partnerId, WorkStatus workStatus) {
+        repository.updateWorkStatus(partnerId, workStatus);
+    }
+
+    @Override
+    public void updateWorkStatusUpdateTime(Long partnerId, Date date) {
+        repository.updateWorkStatusUpdateTime(partnerId, date);
     }
 
     @Override

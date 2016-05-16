@@ -1,6 +1,8 @@
 package org.qualitech.foodnet.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.qualitech.foodnet.domain.json.DishStatus;
+
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,12 +16,23 @@ import java.util.List;
 public class Dish implements Serializable  {
 
     private long dishId;
-    private double price;
+    private Integer price;
     private Double prepareTime;
-    private Double chefPrice;
+    private Integer chefPrice;
     private String name;
     private String description;
     private Chef chef;
+    private DishStatus dishStatus;
+
+    @Enumerated(EnumType.STRING)
+    @Column
+    public DishStatus getDishStatus() {
+        return dishStatus;
+    }
+
+    public void setDishStatus(DishStatus dishStatus) {
+        this.dishStatus = dishStatus;
+    }
 
     private List <Category> categories;
     private List<File> files;
@@ -35,16 +48,16 @@ public class Dish implements Serializable  {
     }
 
     @Column
-    public Double getChefPrice() {
+    public Integer getChefPrice() {
         return chefPrice;
     }
 
-    public void setChefPrice(Double chefPrice) {
+    public void setChefPrice(Integer chefPrice) {
         this.chefPrice = chefPrice;
     }
 
     @JsonIgnore
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable(
             name="dishOrder",
             joinColumns={@JoinColumn(name="dishId", referencedColumnName="dishId")},
@@ -67,11 +80,10 @@ public class Dish implements Serializable  {
         this.files = files;
     }
 
-    @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable(name = "dishCategory", joinColumns = {
-            @JoinColumn(name = "dishId", insertable = false) },
-            inverseJoinColumns = { @JoinColumn(name = "categoryId", insertable = false) })
+            @JoinColumn(name = "dishId", insertable = true) },
+            inverseJoinColumns = { @JoinColumn(name = "categoryId", insertable = true) })
     public List<Category> getCategories() {
         return categories;
     }
@@ -88,11 +100,11 @@ public class Dish implements Serializable  {
     }
 
     @Column
-    public double getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
@@ -110,7 +122,7 @@ public class Dish implements Serializable  {
         return description;
     }
 
-    @JsonIgnore
+
     public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
@@ -119,8 +131,8 @@ public class Dish implements Serializable  {
         this.description = description;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="chefId")
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @JoinColumn(name="partnerId")
     public Chef getChef() {
         return chef;
     }
