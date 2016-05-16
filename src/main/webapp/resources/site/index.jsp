@@ -794,7 +794,7 @@
               <label for="name">Name*</label>
 
               <div class="input-group input-group-lg">
-                <input type="text"  ng-model="name" name="name" id="name" class="form-control required" placeholder="Enter name">
+                <input type="text"  ng-model="mail.name" name="name" id="name" class="form-control required" placeholder="Enter name">
               </div>
               <!-- //.input-group -->
             </div>
@@ -804,7 +804,7 @@
               <label for="email">Email*</label>
 
               <div class="input-group input-group-lg">
-                <input type="email" name="email" ng-model="sender" id="email" class="form-control required email" placeholder="Enter email">
+                <input type="email" name="email" ng-model="mail.sender" id="email" class="form-control required email" placeholder="Enter email">
               </div>
               <!-- //.input-group -->
             </div>
@@ -814,7 +814,7 @@
               <label for="subject">Subject*</label>
 
               <div class="input-group input-group-lg">
-                <input type="text" name="subject" ng-model="subject" id="subject" class="form-control required" placeholder="Enter subject">
+                <input type="text" name="subject" ng-model="mail.subject" id="subject" class="form-control required" placeholder="Enter subject">
               </div>
               <!-- //.input-group -->
             </div>
@@ -827,7 +827,7 @@
               <label for="message">Message*</label>
 
               <div class="input-group input-group-lg">
-                <textarea name="message" ng-model="body" id="message" class="form-control required"></textarea>
+                <textarea name="message" ng-model="mail.body" id="message" class="form-control required"></textarea>
               </div>
               <!-- //.input-group -->
             </div>
