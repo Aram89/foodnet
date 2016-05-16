@@ -67,4 +67,15 @@ app.service('requestsService',['serverConnector',function(serverConnector){
         )
     }
 
+
+    this.sendMail = function(data){
+        return serverConnector(
+            {
+                method:'post',
+                url:"send-email",
+                data:data
+            }
+        )
+    }
+
 }]);
