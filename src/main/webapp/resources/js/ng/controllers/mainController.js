@@ -5,6 +5,13 @@ app.controller('MainController',['$scope','ngDialog','$rootScope','$location','r
    /* $scope.setLang =function(lang){
         translationService.getTranslation($scope,lang);
     };*/
+    $scope.mail={};
+    $scope.sendMail = function(){
+        requestsService.send($scope.mail).success(function(){
+            console.log('sent')
+        })
+    };
+
     $scope.becomeChef = function () {
         ngDialog.open({
             template: '/resources/views/templates/becomeChief.tmpl.html',
