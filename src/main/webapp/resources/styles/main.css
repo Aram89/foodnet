@@ -216,12 +216,12 @@ body.ngdialog-open, html.ngdialog-open {
     right:45px;
     display:inline-flex;
 }
-.btn-top p{
-    margin: 6px 10px;
-}
 .top-fb{
-    margin:7px 10px 7px 0;
-    color:#B7ADA4;
+    margin: 0px 30px 0px 10px;
+}
+.ph-number{
+    padding-top: 20px;
+    color: #fff;
 }
 /*media query*/
 @media screen and (max-width : 760px){
