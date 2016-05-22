@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="/resources/bower_components/ng-dialog/css/ngDialog.min.css">
 <link rel="stylesheet" href="/resources/bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
 <link rel="stylesheet" href="/resources/bower_components/font-awesome-animation/dist/font-awesome-animation.css">
+<link rel="stylesheet" href="/resources/bower_components/angular-bootstrap/ui-bootstrap-csp.css">
 
 <!--end libs-->
 

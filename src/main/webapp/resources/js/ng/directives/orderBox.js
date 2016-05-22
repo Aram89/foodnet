@@ -9,6 +9,8 @@ app.directive('orderBox',function(){
         },
         controller : ['$scope','requestsService','ngDialog','$timeout',function($scope,requestsService,ngDialog,$timeout){
             $scope.chefs=[];
+            $scope.datePicker={open:false};
+            $scope.order.preliminary=false;
             $scope.order.price = function(){
                 var price=0;
                 $scope.chefs=[];
@@ -34,6 +36,20 @@ app.directive('orderBox',function(){
                     }
                 )
             };
+            $scope.openDatePicker =function(){
+                $scope.datePicker.open=true;
+            };
+            $scope.changePreliminary =function(){
+                if($scope.order.preliminary){
+                    $scope.order.deliveryDate = new Date();
+                    var d=new Date();
+                    $scope.order.deliveryTime = d;
+                    $scope.order.deliveryTime.setHours(d.getHours()+2)
+                }else{
+                    $scope.order.deliveryTime = null;
+                    $scope.order.deliveryDate = null
+                }
+            };
             $scope.makeOrder = function(){
                 /*var comment ='';
                 console.log($scope.order);
@@ -41,14 +57,14 @@ app.directive('orderBox',function(){
 
                 });*/
                 var successed=0;
-                console.log($scope.order);
+                var orderDT=''+$scope.order.deliveryDate.getFullYear()+'/'+($scope.order.deliveryDate.getMonth()+1)+'/'+$scope.order.deliveryDate.getDate() + '-'+$scope.order.deliveryTime.getHours()+':'+$scope.order.deliveryTime.getMinutes();
                 $scope.chefs.forEach(function(c){
                     var res = {
                         "phone":$scope.order.phone,
                         comment:"",
                         "price":400,
                         "dishOrders":[],
-                        "deliveryDateTime":$scope.order.deliveryDateTime,
+                        "deliveryDateTime":orderDT,
                         "orderDateTime":new Date(),
                         "location":$scope.order.location
                     };
