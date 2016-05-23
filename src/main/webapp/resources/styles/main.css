@@ -223,6 +223,26 @@ body.ngdialog-open, html.ngdialog-open {
     padding-top: 20px;
     color: #fff;
 }
+.ast{
+    color:#ff7932;
+    font-size: 9px;
+}
+.calendar{
+    color:#ff7932;
+}
+.int-f{
+    padding: 0 5px;
+}
+.orders h3{
+    font-size: 16px;
+    font-weight: bold;
+}
+.order-popup{
+    padding: 20px;
+}
+.intro-content{
+    margin-top: 20%;
+}
 /*media query*/
 @media screen and (max-width : 760px){
     .xs-left-menu{
@@ -270,6 +290,10 @@ body.ngdialog-open, html.ngdialog-open {
         background-color: #ff7932;
         border: none;
         padding: 8px 6px !important;
+        margin: 5px 20px;
 
+    }
+    .order-popup{
+        padding: 10px;
     }
 }
