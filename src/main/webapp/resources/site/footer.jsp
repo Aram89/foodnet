@@ -9,11 +9,11 @@
                     <div class="footer-text">
                         <h4>Եղեք կապի մեջ</h4>
 
-                        <p>Մեր թիմի  համար  կարեւոր է ցանկացած կարծիք: Օգնեեք համակարգը դարձնելավելի լավը:</p>
+                        <p>Մեր թիմի  համար  կարեւոր է ցանկացած կարծիք: Օգնեք համակարգը դարձնել ավելի լավը:</p>
 
                         <ul class="icon-list list-unstyled">
                             <li>
-                                <i class="fa fa-phone"></i> +622176811
+                                <i class="fa fa-phone"></i> +37455263065
                             </li>
 
                             <li>
@@ -23,10 +23,10 @@
 
                         <ul class="social-icon-list list-unstyled list-inline">
                             <li>
-                                <a href="https://www.facebook.com/Narinj-201737816853861"><i class="fa fa-facebook"></i></a>
+                                <a target="_blank" href="https://www.facebook.com/Narinj-201737816853861"><i class="fa fa-facebook"></i></a>
                             </li>
 
-                            <li>
+                            <!-- li>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                             </li>
 
@@ -35,7 +35,7 @@
                             </li>
                             <li class="hidden-xs">
                                 <a href="#"><i class="fa fa-instagram"></i></a>
-                            </li>
+                            </li -->
                         </ul>
                     </div>
                     <!-- //.footer-text -->
