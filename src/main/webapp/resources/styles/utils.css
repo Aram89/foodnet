@@ -4,18 +4,31 @@
     position: absolute;
     color: #fff;
     background: green;
-    top: 18.5%;
+    border-radius: 6px;
+    top: 20%;
     right: 0%;
     left: 25%;
     width: 200px;
     text-align: center;
 }
 
+.slow {
+    z-index: 1;
+    font-size: initial;
+    position: absolute;
+    color: #fff;
+    border-radius: 6px;
+    background: goldenrod;
+    top: 20%;
+    right: 0%;
+    left: 25%;
+    width: 200px;
+    text-align: center;
+}
 .orderBoxDishName{
     white-space: nowrap;
-    overflow: auto;
+    overflow: hidden;
 }
-
 .order-popup .ngdialog-content{
     width: 800px !important;
 }

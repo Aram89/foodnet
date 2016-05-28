@@ -141,9 +141,9 @@
           <a href="#how-works">Պատրաստման տեվողությունը</a>
         </li>
 
-        <li class="page-scroll">
+        <!--li class="page-scroll">
           <a href="#contact-us">Կապ</a>
-        </li>
+        </li-->
       </ul>
       <ul class="nav navbar-nav navbar-right xs-left-menu">
         <li class="page-scroll ph-number"> <i class="fa fa-phone" aria-hidden="true"></i> +374 55 263065 </li>
@@ -209,7 +209,7 @@
           <div class="col-md-12">
             <div class="row">
               <div class="col-sm-4" ng-repeat="dish in dishes |filter:categoryFilter">
-                <div class="fast" ng-if="dish.prepareTime < 60"><span style="background-color: greenyellow">&nbsp; Արագ պատրաստվող  </span></div>
+                <div class="fast" ng-if="dish.prepareTime < 60"><span>&nbsp; Արագ պատրաստվող  </span></div>
                 <offer-box ng-class="{online:dish.prepareTime < 60}" options="dish" add-to-order="addToOrder"></offer-box>
               </div>
             </div>
@@ -759,6 +759,7 @@
 <!-- //End Testimonials Section -->
 
 <!-- Begin Contact Us Section -->
+<%--
 <section id="contact-us" class="section section-bgimage-yes">
   <div class="section-inner">
     <div class="section-overlay"></div>
@@ -881,6 +882,7 @@
   <!-- //.section-inner -->
 </section>
 <!-- //End Contact Us Section -->
+--%>
 
 
 <%--<!-- Begin Map -->--%>
