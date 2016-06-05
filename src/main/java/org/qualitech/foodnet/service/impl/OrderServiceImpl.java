@@ -67,8 +67,11 @@ public class OrderServiceImpl implements OrderService {
         order.setChefId(chefId);
         orderRepository.save(order);
         try {
-            SmsSender.send("37455263065", order.toString());
-            SmsSender.send("37495011842", order.toString());
+            String text = "new order! " + order.toString();
+            SmsSender.send("37455263065", text);
+            SmsSender.send("37495011842", text);
+            SmsSender.send("37491277879", text);
+            SmsSender.send("37455186018", text);
         } catch (Exception e) {
             e.printStackTrace();
         }

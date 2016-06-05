@@ -19,6 +19,16 @@ public class Order implements Serializable{
     private Integer chefPrice;
     private Date completedByChefTime;
     private Date acceptedByChefTime;
+    private String phone;
+    private String comment;
+    private OrderStatus orderStatus;
+    private Long chefId;
+    private OrderStatus PartnerStatus;
+    private OrderStatus courierStatus;
+    private OrderStatus clientStatus;
+    private String location;
+    private String deliveryDateTime;
+    private String orderDate;
 
     @Column
     public Date getAcceptedByCourierTime() {
@@ -27,6 +37,15 @@ public class Order implements Serializable{
 
     public void setAcceptedByCourierTime(Date acceptedByCourierTime) {
         this.acceptedByCourierTime = acceptedByCourierTime;
+    }
+
+    @Column
+    public String getDeliveryDateTime() {
+        return deliveryDateTime;
+    }
+
+    public void setDeliveryDateTime(String deliveryDateTime) {
+        this.deliveryDateTime = deliveryDateTime;
     }
 
     @Column
@@ -49,16 +68,6 @@ public class Order implements Serializable{
         this.completedByChefTime = completedByChefTime;
     }
 
-    private String phone;
-    private String comment;
-    private OrderStatus orderStatus;
-    private Long chefId;
-    private OrderStatus PartnerStatus;
-    private OrderStatus courierStatus;
-    private OrderStatus clientStatus;
-    private String location;
-    private String orderDeliveryDate;
-    private String orderDate;
 
     @Column
     public String getOrderDate() {
@@ -69,14 +78,6 @@ public class Order implements Serializable{
         this.orderDate = orderDate;
     }
 
-    @Column
-    public String getOrderDeliveryDate() {
-        return orderDeliveryDate;
-    }
-
-    public void setOrderDeliveryDate(String orderDeliveryDate) {
-        this.orderDeliveryDate = orderDeliveryDate;
-    }
 
     @Column
     public String getLocation() {
@@ -198,11 +199,21 @@ public class Order implements Serializable{
 
     @Override
     public String toString() {
-        return "Order{" +
-                "price=" + price +
-                ", comment='" + comment + '\'' +
-                ", dishOrders=" + dishOrders +
-                '}';
+        StringBuilder order = new StringBuilder();
+        order.append(", dishes :").append(dishOrders)
+                .append(" chefPrice =  ").append(chefPrice)
+                .append(",  price = ").append(price)
+                .append(",  price = ").append(phone);
+        if (location != null) {
+            order.append(", Location : ").append(location);
+        }
+        if (comment != null) {
+            order.append(", comment : ").append(comment);
+        }
+        if (deliveryDateTime != null) {
+            order.append(", date : ").append(deliveryDateTime);
+        }
+        return order.toString();
     }
 
 }

@@ -60,9 +60,6 @@ public class DishOrder {
 
     @Override
     public String toString() {
-        return "DishOrder{" +
-                "dish=" + dish +
-                ", count=" + count +
-                '}';
+        return dish + ", count = " + count;
     }
 }
