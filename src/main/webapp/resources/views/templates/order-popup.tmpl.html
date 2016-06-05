@@ -68,7 +68,7 @@
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <button ng-disabled="orderForm.$invalid" ng-click="makeOrder()" class="btn btn-sm btn-rj">Order
+                            <button ng-disabled="orderForm.$invalid || ordering" id="makeOrderButton" ng-click="makeOrder()" class="btn btn-sm btn-rj">Պտվիրել
                             </button>
                         </div>
                     </div>

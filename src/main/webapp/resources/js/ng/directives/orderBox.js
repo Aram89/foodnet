@@ -56,8 +56,12 @@ app.directive('orderBox',function(){
                 $scope.order.comments.forEach(function(){
 
                 });*/
+                $scope.ordering = true;
                 var successed=0;
-                var orderDT=''+$scope.order.deliveryDate.getFullYear()+'/'+($scope.order.deliveryDate.getMonth()+1)+'/'+$scope.order.deliveryDate.getDate() + '-'+$scope.order.deliveryTime.getHours()+':'+$scope.order.deliveryTime.getMinutes();
+                var orderDT='';
+                if($scope.preliminary){
+                    orderDT=$scope.order.deliveryDate.getFullYear()+'/'+($scope.order.deliveryDate.getMonth()+1)+'/'+$scope.order.deliveryDate.getDate() + '-'+$scope.order.deliveryTime.getHours()+':'+$scope.order.deliveryTime.getMinutes();
+                }
                 $scope.chefs.forEach(function(c){
                     var res = {
                         "phone":$scope.order.phone,
@@ -77,16 +81,18 @@ app.directive('orderBox',function(){
                     });
                     requestsService.makeOrder(res).success(function(){
                         successed++;
+                        $scope.ordering = false;
                         if(successed==$scope.chefs.length)
                         ngDialog.open({
                              controller:['$scope',function($scope){
-                                 $timeout($scope.closeThisDialog,2000)
+                                 $timeout($scope.closeThisDialog,5000)
                              }],
                              plain:true,
                              template:'<div>Շնորհակալություն:Պատվերն ընդունված է</div><div>Մենք շուտով կկապվենք Ձեզ հետ</div>'
                             }
                         )
                     }).error(function(){
+                        $scope.ordering = false;
                         ngDialog.open({
                                 controller:['$scope',function($scope){
                                     $timeout($scope.closeThisDialog,5000)
