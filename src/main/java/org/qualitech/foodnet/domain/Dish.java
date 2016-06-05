@@ -3,7 +3,6 @@ package org.qualitech.foodnet.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.qualitech.foodnet.domain.json.DishStatus;
 
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
