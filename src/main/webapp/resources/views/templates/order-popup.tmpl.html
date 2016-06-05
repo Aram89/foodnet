@@ -29,10 +29,10 @@
 
                             <div class="col-sm-9">
                                 <input id="reg_chef_phone" class="inp-f"
-                                       reg-exp-check="^(10|11|12|41|43|55|60|77|91|92|93|94|95|96|97|98|99)[0-9]{6}$"
+                                       reg-exp-check="^374(10|11|12|41|43|55|60|77|91|92|93|94|95|96|97|98|99)[0-9]{6}$"
                                        required name="phone" type="tel" ng-model="order.phone"/>
                         <span class="help-block has-error"
-                              ng-show="order.phone.length && orderForm.phone.$touched && orderForm.phone.$error.regexp">Խնդրում ենք համարը մուտքագրել ճիշտ ֆորմատով՝ 12345678</span>
+                              ng-show="order.phone.length && orderForm.phone.$touched && orderForm.phone.$error.regexp">Խնդրում ենք ներմուծել 37412345678 ֆորմատով</span>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -62,13 +62,13 @@
                             </div>
 
                             <div class="col-lg-4 col-xs-12">
-                                <h3>Ընդհանուր {{order.price() + chefs.length*400}}
+                                <h3>Ըննդհանուր {{order.price() + chefs.length*400}}
                                     <small>դրամ</small>
                                 </h3>
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <button ng-disabled="orderForm.$invalid" ng-click="makeOrder()" class="btn btn-sm btn-rj">Պատվիրել
+                            <button ng-disabled="orderForm.$invalid || ordering" id="makeOrderButton" ng-click="makeOrder()" class="btn btn-sm btn-rj">Պտվիրել
                             </button>
                         </div>
                     </div>
