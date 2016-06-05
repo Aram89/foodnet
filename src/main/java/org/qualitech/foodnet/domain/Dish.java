@@ -23,6 +23,16 @@ public class Dish implements Serializable  {
     private String description;
     private Chef chef;
     private DishStatus dishStatus;
+    private Integer rating;
+
+    @Column
+    public Integer getRating() {
+        return rating;
+    }
+
+    public void setRating(Integer rating) {
+        this.rating = rating;
+    }
 
     @Enumerated(EnumType.STRING)
     @Column

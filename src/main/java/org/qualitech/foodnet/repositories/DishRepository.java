@@ -28,7 +28,7 @@ public interface DishRepository extends CrudRepository<Dish, Long>, Repository<D
     @Override
     Dish findOne(Long dishId);
 
-    @Query("SELECT d FROM Dish d WHERE d.dishStatus= :dishStatus")
+    @Query("SELECT d FROM Dish d WHERE d.dishStatus= :dishStatus order by d.rating")
     List<Dish> findWithLimit(@Param ("dishStatus")DishStatus dishStatus, org.springframework.data.domain.Pageable pageable);
 
     @Query("SELECT d FROM Dish d join d.categories c WHERE c.categoryId = :categoryId and d.dishStatus= :dishStatus")
