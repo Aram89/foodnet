@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <h4>Գումար {{order.price()+chefs.length*400}} <small>դրամ</small></h4>
-                        <span>{{order.price()}} + {{chefs.length*400}} (առաքման գումար)</span>
+                        <span ng-show="chefs.length">{{order.price()}} + {{chefs.length*400}} (առաքման գումար)</span>
                     </div>
                 </div>
                 <div class="dish-section">
@@ -49,7 +49,7 @@
                         </div>
                         &ndash;&gt;
                     </form>-->
-                    <button  ng-click="openOrderWindow()"  class="btn btn-sm btn-rj">Order</button>
+                    <button ng-disabled="chefs.length==0"  ng-click="openOrderWindow()"  class="btn btn-sm btn-rj">Պատվիրել</button>
                 </div>
             </div>
         </li>
