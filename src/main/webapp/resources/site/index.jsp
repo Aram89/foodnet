@@ -136,6 +136,9 @@
         <li class="page-scroll">
           <a href="#why-us">Ի՞նչու օգտվել</a>
         </li>
+        <li class="page-scroll">
+          <a href="#delivery">Առաքում</a>
+        </li>
 
         <li class="page-scroll">
           <a href="#how-works">Պատրաստման տեվողությունը</a>
@@ -146,8 +149,8 @@
         </li-->
       </ul>
       <ul class="nav navbar-nav navbar-right xs-left-menu">
-        <li class="page-scroll ph-number"> <i class="fa fa-phone" aria-hidden="true"></i> +374 55 263065 </li>
-        <li class="page-scroll"> <a href="https://www.facebook.com/Narinj-201737816853861" class="top-fb"><i class="fa fa-facebook"></i></a></li>
+        <li class="page-scroll ph-number"> <i class="fa fa-phone" aria-hidden="true"></i> +374 91 277879 </li>
+        <li class="page-scroll"> <a style="opacity:0;cursor:default" href="https://www.facebook.com/Narinj-201737816853861" class="top-fb"><i class="fa fa-facebook"></i></a></li>
         <li class="page-scroll">
           <a href="#"><order-box order="order"></order-box></a>
         </li>
@@ -312,8 +315,8 @@
             <i class="flaticon-icon-dish"></i>
 
             <div class="inner-content">
-                                <span class="number" data-from="30" data-to="70" data-refresh-interval="10">
-                                    70
+                                <span class="number" data-from="15" data-to="30" data-refresh-interval="10">
+                                    30
                                 </span>
             </div>
             <!-- //.inner-content -->
@@ -329,8 +332,8 @@
             <i class="flaticon-icon-order"></i>
 
             <div class="inner-content">
-                                <span class="number" data-from="0" data-to="0" data-refresh-interval="10">
-                                    0
+                                <span class="number" data-from="70" data-to="124" data-refresh-interval="10">
+                                    124
                                 </span>
             </div>
             <!-- //.inner-content -->
@@ -447,6 +450,35 @@
   <!-- //.section-inner -->
 </section>
 <!-- //End Our Services Section -->
+
+  <!-- Begin delivery Section -->
+  <section id="delivery" class="section section-bgimage-yes">
+    <div class="section-inner">
+      <div class="section-overlay"></div>
+
+      <div class="container section-content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="quote-text text-center">
+                            <span class="quote-icon">
+                                <i class="fa fa-motorcycle fa-4x"></i>
+                            </span>
+
+              <h2>Առաքումը կատարվում է 20-30 րոպեի ընթացքում</h2>
+
+              <h2 class="lead quote-by">(Warren Buffet)</h2>
+            </div>
+            <!-- //.quote-text -->
+          </div>
+          <!-- //.col-md-12 -->
+        </div>
+        <!-- //.row -->
+      </div>
+      <!-- //.section-content -->
+    </div>
+    <!-- //.section-inner -->
+  </section>
+  <!-- //End delivery Section -->
 
 
 <!-- Begin how-works Section -->

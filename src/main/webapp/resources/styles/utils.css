@@ -32,3 +32,9 @@
 .order-popup .ngdialog-content{
     width: 800px !important;
 }
+
+
+
+ #delivery .section-overlay{
+    background-color: rgb(222,222,222);
+}
