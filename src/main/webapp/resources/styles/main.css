@@ -296,4 +296,7 @@ body.ngdialog-open, html.ngdialog-open {
     .order-popup{
         padding: 10px;
     }
+    .ngdialog-close{
+        visibility:hidden !important;
+    }
 }
