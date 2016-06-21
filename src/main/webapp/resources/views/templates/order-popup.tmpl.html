@@ -62,7 +62,7 @@
                             </div>
 
                             <div class="col-lg-4 col-xs-12">
-                                <h3>Ըննդհանուր {{order.price() + chefs.length*400}}
+                                <h3>Ըննդհանուր <span ng-style="order.preliminary?{'text-decoration': 'line-through'}:''">{{order.price() + chefs.length*400}} </span><span ng-show="order.preliminary">&nbsp;&nbsp;&nbsp;{{(order.price()+chefs.length*400)*90/100}}</span>
                                     <small>դրամ</small>
                                 </h3>
                             </div>
@@ -72,7 +72,6 @@
                             </button>
                         </div>
                     </div>
-
                 </div>
             </div>
             </li>
