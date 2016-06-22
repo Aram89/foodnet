@@ -243,6 +243,12 @@ body.ngdialog-open, html.ngdialog-open {
 .intro-content{
     margin-top: 20%;
 }
+.orderBox{
+    position: fixed;
+    top: 50%;
+    right:80%;
+    z-index:50000000000000000;
+}
 /*media query*/
 @media screen and (max-width : 760px){
     .xs-left-menu{

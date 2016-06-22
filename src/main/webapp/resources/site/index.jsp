@@ -155,15 +155,19 @@
           <a href="#"><order-box order="order"></order-box></a>
         </li>
       </ul>
+
     </div>
     <!-- //.navbar-collapse -->
   </div>
   <!-- //.container -->
 </nav>
 <!-- //End Navbar -->
-
 <!-- Begin Dishes Section -->
 <div>
+  <div class="col-xs-12 orderBox hidden-lg">
+    <a href="#"><order-box order="order"></order-box></a>
+  </div>
+
   <div id="dishes" class="section">
     <div class="section-inner">
 
