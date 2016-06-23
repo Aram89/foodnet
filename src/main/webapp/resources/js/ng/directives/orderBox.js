@@ -75,6 +75,9 @@ app.directive('orderBox',function(){
                     $scope.order.dishes.forEach(function(d){
                         if(d.chef.partnerId==c){
                             res.price += d.count*d.price;
+                            if($scope.order.preliminary){
+                                res.price = res.price*90/100;
+                            }
                             res.dishOrders.push({"count":d.count,"dish":{"name": d.name,"dishId": d.dishId}});
                             if(d.comment){res.comment+= d.name+'-'+d.comment+"  "}
                         }
