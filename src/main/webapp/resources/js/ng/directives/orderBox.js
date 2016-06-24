@@ -7,7 +7,7 @@ app.directive('orderBox',function(){
         scope:{
             order:"=order"
         },
-        controller : ['$scope','requestsService','ngDialog','$timeout',function($scope,requestsService,ngDialog,$timeout){
+        controller : ['$scope','$rootScope','requestsService','ngDialog','$timeout',function($scope,$rootScope,requestsService,ngDialog,$timeout){
             $scope.chefs=[];
             $scope.datePicker={open:false};
             $scope.order.preliminary=false;
@@ -107,6 +107,11 @@ app.directive('orderBox',function(){
                     })
                 });
             };
+            $scope.$watch(function() {
+                return $rootScope.tr;
+            }, function() {
+                $scope.tr = $rootScope.tr;
+            }, true);
             $scope.$watch('order.dishes.length',function(n){
                 if(n){$scope.isBoxOpen = true}
             })

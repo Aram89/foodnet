@@ -154,7 +154,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right xs-left-menu hidden-xs">
         <li class="page-scroll ph-number"> <i class="fa fa-phone" aria-hidden="true"></i> +374 91 277879 </li>
-        <li class="page-scroll"> <a style="opacity:0;cursor:default" href="https://www.facebook.com/Narinj-201737816853861" class="top-fb"><i class="fa fa-facebook"></i></a></li>
+        <li class="page-scroll"><span ng-click="setLang('hy')">Հայ</span><span ng-click="setLang('en')">En</span><span>Ру</span></li>
         <li class="page-scroll">
           <a href="#"><order-box order="order"></order-box></a>
         </li>

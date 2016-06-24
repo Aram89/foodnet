@@ -9,7 +9,7 @@ app.directive('offerBox',[function(){
             addDish:'=addToOrder'
         },
         replace: true,
-        controller:['$scope','ngDialog','$location',function($scope,ngDialog,$location){
+        controller:['$scope','$rootScope','ngDialog','$location',function($scope,$rootScope,ngDialog,$location){
             $scope.add = function(dish,count){
                 $scope.addDish(dish,count);
                 ngDialog.closeAll();
@@ -32,6 +32,15 @@ app.directive('offerBox',[function(){
             $scope.belongsTo = ["logo","identity"];
             $scope.title = "dish 1";
             $scope.name = "dish 1";
+            $scope.$watch(function() {
+                return $rootScope.tr;
+            }, function() {
+                $scope.tr = $rootScope.tr;
+                console.log(4);
+            }, true);
+            $scope.$watch('order.dishes.length',function(n){
+                if(n){$scope.isBoxOpen = true}
+            })
         }],
         link: function (scope) {
         },

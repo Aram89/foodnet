@@ -1,10 +1,11 @@
 /**
  * Created by pr on 01/02/2016.
  */
-app.controller('MainController',['$scope','ngDialog','$rootScope','$location','requestsService',function($scope,ngDialog,$rootScope,$location,requestsService){
-   /* $scope.setLang =function(lang){
-        translationService.getTranslation($scope,lang);
-    };*/
+app.controller('MainController',['$scope','ngDialog','translationService','$rootScope','$location','requestsService',function($scope,ngDialog,translationService,$rootScope,$location,requestsService){
+    $scope.setLang =function(lang){
+        translationService.getTranslation($rootScope,lang);
+    };
+    $rootScope.test1='ttest1';
     $scope.mail={};
     $scope.sendMail = function(){
         requestsService.sendMail($scope.mail).success(function(){
@@ -30,7 +31,7 @@ app.controller('MainController',['$scope','ngDialog','$rootScope','$location','r
         }
     });
     $scope.test="test";
-    //$scope.setLang('en');
+    $scope.setLang('hy');
     $scope.sections = [
         {title:'Home',href:'#home'},
         {title:'About_us',href:'#aboutus'},
