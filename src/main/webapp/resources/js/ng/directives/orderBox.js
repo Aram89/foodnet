@@ -110,6 +110,7 @@ app.directive('orderBox',function(){
             $scope.$watch(function() {
                 return $rootScope.tr;
             }, function() {
+                $scope.lang = $rootScope.lang;
                 $scope.tr = $rootScope.tr;
             }, true);
             $scope.$watch('order.dishes.length',function(n){

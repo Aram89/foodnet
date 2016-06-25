@@ -35,6 +35,7 @@ app.directive('offerBox',[function(){
             $scope.$watch(function() {
                 return $rootScope.tr;
             }, function() {
+                $scope.lang = $rootScope.lang;
                 $scope.tr = $rootScope.tr;
                 console.log(4);
             }, true);

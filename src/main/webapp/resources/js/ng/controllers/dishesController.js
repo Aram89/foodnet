@@ -88,13 +88,13 @@ app.controller('DishesController',['$scope','$rootScope','requestsService','$int
         }
     };
     $scope.categories = [
-        {name:"all",title:"Բոլորը",next:0,dishes:[]},
-        {name:"lunch",title:"Լանչ",next:0,dishes:[]},
-        {name:"salads",title:"Աղցաններ",next:0,dishes:[]},
-        {name:"cake",title:"Թխվածք",next:0,dishes:[]},
-        {name:"soup",title:"Ապուր",next:0,dishes:[]},
-        {name:"hotDishes",title:"Տաք ուտեստներ",next:0,dishes:[]},
-        {name:"garnish",title:"Խավարտներ",next:0,dishes:[]}
+        {name:"all",title:{hy:"Բոլորը",en:"All"},next:0,dishes:[]},
+        {name:"lunch",title:{hy:"Լանչ",en:"Lunch"},next:0,dishes:[]},
+        {name:"salads",title:{hy:"Աղցաններ",en:"Salads"},next:0,dishes:[]},
+        {name:"cake",title:{hy:"Թխվածք",en:"Cake"},next:0,dishes:[]},
+        {name:"soup",title:{hy:"Ապուր",en:"Soup"},next:0,dishes:[]},
+        {name:"hotDishes",title:{hy:"Տաք ուտեստներ",en:"Hot dishes"},next:0,dishes:[]},
+        {name:"garnish",title:{hy:"Խավարտներ",en:"Garnishes"},next:0,dishes:[]}
     ];
     $scope.category=$scope.categories[0];
     var categories = {name:"lunch",description:"desc"};

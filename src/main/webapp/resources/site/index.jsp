@@ -79,7 +79,7 @@
     <div class="col-xs-12 intro-body text-center">
       <div class="text-right btn-top">
         <a type="button" class="btn btn-sm btn-rj bcm" href="/partner-chef" target="_blank">
-          Դառնալ խոհարար
+          {{tr.become_chef}}
         </a>
       </div>
 
@@ -91,8 +91,8 @@
             </div>
           <!-- //.logo -->
             <div class="intro-text text-center">
-              <h2>Նոր մոտեցում սննդի ոլորտում</h2>
-              <p class="lead">Համեղ ուտեստներ անմիջապես խոհարարից</p>
+              <h2>{{tr.become_chef}}</h2>
+              <p class="lead">{{tr.tasty_food}}</p>
             </div>
           <!-- //.intro-text -->
           <!-- //.page-scroll -->
@@ -131,21 +131,21 @@
     <div class="navbar-collapse collapse navbar-rj-collapse">
       <ul class="nav navbar-nav">
         <li class="page-scroll">
-          <a href="#dishes">Ուտեստներ</a>
+          <a href="#dishes">{{tr.dishes}}</a>
         </li>
         <li class="page-scroll">
-          <a href="#chefs">Խոհարարներ</a>
-        </li>
-
-        <li class="page-scroll">
-          <a href="#why-us">Ի՞նչու օգտվել</a>
-        </li>
-        <li class="page-scroll">
-          <a href="#delivery">Առաքում</a>
+          <a href="#chefs">{{tr.cooks}}</a>
         </li>
 
         <li class="page-scroll">
-          <a href="#how-works">Պատրաստման տեվողությունը</a>
+          <a href="#why-us">{{tr.why_use}}</a>
+        </li>
+        <li class="page-scroll">
+          <a href="#delivery">{{tr.delivery}}</a>
+        </li>
+
+        <li class="page-scroll">
+          <a href="#how-works">{{tr.make_time}}</a>
         </li>
 
         <!--li class="page-scroll">
@@ -177,9 +177,9 @@
         <div class="row">
           <div class="col-md-12">
             <div class="section-title text-center">
-              <h2 class="main-title">Ուտեստներ</h2>
+              <h2 class="main-title">{{tr.dishes}}</h2>
 
-              <h3 class="sub-title">Ուտեստները պատրաստվում են միայն թարմ սննդամթերքից</h3>
+              <h3 class="sub-title">{{tr.making_conditions}}</h3>
 
               <span class="section-line"></span>
             </div>
@@ -194,7 +194,7 @@
             <div class="filter-portfolio">
               <ul class="list-unstyled">
                 <li ng-repeat="category in categories">
-                  <button type="button" class="btn btn-rj" ng-click="selectCategory($index)">{{category.title}}</button>
+                  <button type="button" class="btn btn-rj" ng-click="selectCategory($index)">{{category.title[lang]}}</button>
                 </li>
               </ul>
               <div>
