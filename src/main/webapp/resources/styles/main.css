@@ -244,8 +244,8 @@ body.ngdialog-open, html.ngdialog-open {
     margin-top: 20%;
 }
 .orderBox{
-    position: fixed;
-    top: 50%;
+    position: absolute;
+    top: 0;
     right:80%;
     z-index:50000000000000000;
 }
@@ -304,5 +304,8 @@ body.ngdialog-open, html.ngdialog-open {
     }
     .ngdialog-close{
         visibility:hidden !important;
+    }
+    .order-box .order-window {
+        top: 45px;
     }
 }

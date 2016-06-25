@@ -116,12 +116,16 @@
 <nav id="navigation" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header page-scroll">
+
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-rj-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <div class="col-xs-12 orderBox hidden-lg">
+        <a href="#"><order-box order="order"></order-box></a>
+      </div>
     </div>
 
     <div class="navbar-collapse collapse navbar-rj-collapse">
@@ -164,9 +168,7 @@
 <!-- //End Navbar -->
 <!-- Begin Dishes Section -->
 <div>
-  <div class="col-xs-12 orderBox hidden-lg">
-    <a href="#"><order-box order="order"></order-box></a>
-  </div>
+
 
   <div id="dishes" class="section">
     <div class="section-inner">
