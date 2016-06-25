@@ -6,7 +6,7 @@
                     <form class="form-horizontal" name="orderForm" novalidate>
                         <div class="form-groupv row">
                             <div class="col-sm-4">
-                                <label for="preliminary-order">Նախնական պատվեր</label>
+                                <label for="preliminary-order">Նախնական պատվեր </label>
                                 <input type="checkbox" ng-change="changePreliminary()" id="preliminary-order" ng-model="order.preliminary">
                             </div>
                             <div class="col-sm-4">
@@ -25,7 +25,7 @@
                         </div>
                         <div class="form-group row"
                              ng-class="{'has-error':!orderForm.phone.$valid && orderForm.phone.$touched}">
-                            <label for="reg_chef_phone" class="col-sm-2">Հեռախոս <i class="fa fa-asterisk ast" aria-hidden="true"></i></label>
+                            <label for="reg_chef_phone" class="col-sm-2">{{tr.phone}} <i class="fa fa-asterisk ast" aria-hidden="true"></i></label>
 
                             <div class="col-sm-9">
                                 <input id="reg_chef_phone" class="inp-f"
@@ -36,12 +36,20 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="order_location" class="col-sm-2">Հասցե <i class="fa fa-asterisk ast" aria-hidden="true"></i></label>
+                            <label for="order_location" class="col-sm-2">Հասցե </label>
 
                             <div class="col-sm-9">
                                 <input id="order_location" class="inp-f" ng-model="order.location">
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="bonus_code" class="col-sm-2">Կոդ </label>
+
+                            <div class="col-sm-9">
+                                <input id="bonus_code" class="inp-f" ng-model="order.bonusCode">
+                            </div>
+                        </div>
+
 
                     </form>
                     <div class="row">
@@ -55,15 +63,20 @@
                                 </h3>
                             </div>
 
-                            <div class="col-lg-4 col-xs-12">
+                            <div class="col-lg-3 col-xs-12">
                                 <h3>Առաքում {{chefs.length*400}}
                                     <small>դրամ</small>
                                 </h3>
                             </div>
 
-                            <div class="col-lg-4 col-xs-12">
-                                <h3>Ըննդհանուր <span ng-style="order.preliminary?{'text-decoration': 'line-through'}:''">{{order.price() + chefs.length*400}} </span><span ng-show="order.preliminary">&nbsp;&nbsp;&nbsp;{{(order.price()+chefs.length*400)*90/100}}</span>
-                                    <small>դրամ</small>
+                            <div class="col-lg-5 col-xs-12">
+                                <h3>Ընդհանուր
+                                    <span ng-style="order.preliminary?{'text-decoration': 'line-through'}:''">
+                                        {{order.price() + chefs.length*400}}
+                                    </span>
+                                    <span ng-show="order.preliminary">
+                                        &nbsp;&nbsp;&nbsp;{{(order.price()+chefs.length*400)*90/100}}
+                                    </span><small>դրամ</small>
                                 </h3>
                             </div>
                         </div>
