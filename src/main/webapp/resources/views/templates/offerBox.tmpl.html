@@ -1,5 +1,5 @@
 <div class="portfolio-item grow dish-preview">
-    <h1><small>{{opt.chef.name}} {{opt.chef.surName}}</small></h1>
+    <h1><small>{{opt.chef.name[lang]}} {{opt.chef.surName[lang]}}</small></h1>
 
     <div  class="inner-content">
         <div ng-click="go(opt.dishId)" class="portfolio-content">
@@ -8,10 +8,10 @@
             <!-- //.portfolio-detail -->
         </div>
         <!-- //.portfolio-content -->
-        <img src="assets/img/{{opt.files[0].path}}" alt="{{opt.name}}" class="img-responsive"/>
+        <img src="assets/img/{{opt.files[0].path}}" alt="{{opt.name[lang]}}" class="img-responsive"/>
     </div>
     <!-- //.inner-content -->
-    <h4 class="dish-name">{{opt.name}}</h4>
+    <h4 class="dish-name">{{opt.name[lang]}}</h4>
     <h2 class="dish-price">{{opt.price}} <small>դրամ</small></h2>
     <button class="btn btn-rj" ng-click="addDish(opt,1)">Ավելացնել</button>
     <!-- button class="btn btn-rj" ng-click="notAdd()">Ավելացնել</button -->

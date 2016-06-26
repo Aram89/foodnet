@@ -91,7 +91,7 @@
             </div>
           <!-- //.logo -->
             <div class="intro-text text-center">
-              <h2>{{tr.become_chef}}</h2>
+              <h2>{{tr.new_approach}}</h2>
               <p class="lead">{{tr.tasty_food}}</p>
             </div>
           <!-- //.intro-text -->
@@ -265,7 +265,7 @@
               <div class="team-inner">
                 <div class="team-detail">
                   <div class="team-content">
-                    <h4>{{chef.name}} {{chef.surName}}</h4>
+                    <h4>{{chef.name[lang]}} {{chef.surName[lang]}}</h4>
                   </div>
                   <!-- //.team-content -->
                 </div>
