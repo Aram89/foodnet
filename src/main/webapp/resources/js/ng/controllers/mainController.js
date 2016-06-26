@@ -4,6 +4,7 @@
 app.controller('MainController',['$scope','ngDialog','translationService','$rootScope','$location','requestsService',function($scope,ngDialog,translationService,$rootScope,$location,requestsService){
     $scope.setLang =function(lang){
         translationService.getTranslation($rootScope,lang);
+        $rootScope.lang = lang;
     };
     $rootScope.test1='ttest1';
     $scope.mail={};
