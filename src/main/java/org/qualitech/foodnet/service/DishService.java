@@ -15,6 +15,7 @@ import java.util.List;
 public interface DishService {
 
     void addDish(Dish dish) throws SQLException;
+
     List<Dish> getDishes (String categoryName, int page, int count) throws IOException, AppException;
 
     List<Dish> getDishesByChef (Long chefId, int page, int count) throws IOException;

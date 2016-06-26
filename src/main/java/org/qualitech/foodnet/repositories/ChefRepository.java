@@ -19,9 +19,4 @@ public interface ChefRepository extends CrudRepository<Chef, Long>, Repository<C
     List<Chef> findChefs(@Param("start")int start,@Param("end") int end);
 
     List<Chef> findByStatus(PartnerStatus status, Pageable pageable);
-
-//    @Query(value = "SELECT c.chefId FROM Chef c JOIN Dish d ON d.chefId = c.chefId JOIN DishOrder ds ON ds.dishId = d.dishId WHERE ds.ordersId = :orderId")
-//    List<Chef> findChefByOrder(@Param("orderId")String orderId);
-
-
 }

@@ -1,7 +1,7 @@
 package org.qualitech.foodnet.domain.json;
 
 /**
- * Created by Aram on 4/3/2016.
+ * @author Aram Kirakosyan.
  */
 public enum  WorkSchedule {
 

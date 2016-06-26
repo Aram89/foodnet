@@ -82,7 +82,7 @@ public class DishController {
         Dish dish = mapper.readValue(dishString, Dish.class);
         logger.info("New dish: " + dish);
         dishService.addDish(dish);
-        logger.info("Dish successfully added :" + dish.getName());
+        //logger.info("Dish successfully added :" + dish.getName());
         return new ResponseEntity(HttpStatus.OK);
     }
 

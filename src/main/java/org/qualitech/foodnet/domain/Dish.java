@@ -1,6 +1,10 @@
 package org.qualitech.foodnet.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.qualitech.foodnet.domain.json.DishStatus;
 
 import javax.persistence.*;
@@ -18,11 +22,14 @@ public class Dish implements Serializable  {
     private Integer price;
     private Double prepareTime;
     private Integer chefPrice;
-    private String name;
-    private String description;
+    private Name name;
+    private Description description;
     private Chef chef;
     private DishStatus dishStatus;
     private Integer rating;
+    private List <Category> categories;
+    private List<File> files;
+    private List<Order> orders;
 
     @Column
     public Integer getRating() {
@@ -42,10 +49,6 @@ public class Dish implements Serializable  {
     public void setDishStatus(DishStatus dishStatus) {
         this.dishStatus = dishStatus;
     }
-
-    private List <Category> categories;
-    private List<File> files;
-    private List<Order> orders;
 
     @Column
     public Double getPrepareTime() {
@@ -117,26 +120,27 @@ public class Dish implements Serializable  {
         this.price = price;
     }
 
-    @Column
-    public String getName() {
+    @OneToOne
+    @JoinColumn(name="nameId")
+    public Name getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(Name name) {
         this.name = name;
     }
 
-    @Column(name = "id")
-    public String getDescription() {
+    @OneToOne
+    @JoinColumn(name="descriptionId")
+    public Description getDescription() {
         return description;
     }
-
 
     public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(Description description) {
         this.description = description;
     }
 

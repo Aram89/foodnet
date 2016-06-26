@@ -16,8 +16,12 @@ import java.util.List;
 public class SmsSender {
 
     // Find your Account Sid and Token at twilio.com/user/account
-    public static final String ACCOUNT_SID = "AC7b0fb73c3e52385906eaca5139405b2c";
-    public static final String AUTH_TOKEN = "ecbfd6afd6a8fd940c1f2a59659b40ba";
+//    public static final String ACCOUNT_SID = "AC734554c9ab34c9830d5e58750a1121c7";
+//    public static final String AUTH_TOKEN = "3617c6be279f7a901c7183a2514b1253";
+
+    public static final String ACCOUNT_SID = "AC734554c9ab34c9830d5e58750a1121c7";
+    public static final String AUTH_TOKEN = "3617c6be279f7a901c7183a2514b1253";
+
 
     public static void send(String phone, String text) {
 
@@ -27,7 +31,7 @@ public class SmsSender {
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("Body", text));
         boolean to = params.add(new BasicNameValuePair("To", "+" + phone));
-        params.add(new BasicNameValuePair("From", "+12019926890"));
+        params.add(new BasicNameValuePair("From", "+17075496112"));
 
         MessageFactory messageFactory = client.getAccount().getMessageFactory();
         Message message = null;
