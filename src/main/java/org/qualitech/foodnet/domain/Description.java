@@ -16,17 +16,17 @@ public class Description {
     /**
      * Description in armenian.
      */
-    private String descriptionAM;
+    private String am;
 
     /**
      * Description in russian.
      */
-    private String descriptionRU;
+    private String ru;
 
     /**
      * Description in english.
      */
-    private String descriptionENG;
+    private String en;
 
     @Id
     @GeneratedValue
@@ -40,30 +40,29 @@ public class Description {
     }
 
     @Column
-    public String getDescriptionAM() {
-        return descriptionAM;
+    public String getAm() {
+        return am;
     }
 
-    public void setDescriptionAM(String descriptionAM) {
-        this.descriptionAM = descriptionAM;
-    }
-
-    @Column
-    public String getDescriptionRU() {
-        return descriptionRU;
-    }
-
-    public void setDescriptionRU(String descriptionRU) {
-        this.descriptionRU = descriptionRU;
+    public void setAm(String am) {
+        this.am = am;
     }
 
     @Column
-    public String getDescriptionENG() {
-        return descriptionENG;
+    public String getRu() {
+        return ru;
     }
 
-    public void setDescriptionENG(String descriptionENG) {
-        this.descriptionENG = descriptionENG;
+    public void setRu(String ru) {
+        this.ru = ru;
     }
 
+    @Column
+    public String getEn() {
+        return en;
+    }
+
+    public void setEn(String en) {
+        this.en = en;
+    }
 }

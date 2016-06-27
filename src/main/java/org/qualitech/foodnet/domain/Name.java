@@ -19,17 +19,17 @@ public class Name {
     /**
      * Name in armenian.
      */
-    private String nameAM;
+    private String hy;
 
     /**
      * Name in russian.
      */
-    private String nameRU;
+    private String ru;
 
     /**
      * Name in english.
      */
-    private String nameENG;
+    private String en;
 
     @Id
     @GeneratedValue
@@ -43,30 +43,29 @@ public class Name {
     }
 
     @Column
-    public String getNameRU() {
-        return nameRU;
+    public String getHy() {
+        return hy;
     }
 
-    public void setNameRU(String nameRU) {
-        this.nameRU = nameRU;
-    }
-
-    @Column
-    public String getNameAM() {
-        return nameAM;
-    }
-
-    public void setNameAM(String nameAM) {
-        this.nameAM = nameAM;
+    public void setHy(String hy) {
+        this.hy = hy;
     }
 
     @Column
-    public String getNameENG() {
-        return nameENG;
+    public String getRu() {
+        return ru;
     }
 
-    public void setNameENG(String nameENG) {
-        this.nameENG = nameENG;
+    public void setRu(String ru) {
+        this.ru = ru;
     }
 
+    @Column
+    public String getEn() {
+        return en;
+    }
+
+    public void setEn(String en) {
+        this.en = en;
+    }
 }
