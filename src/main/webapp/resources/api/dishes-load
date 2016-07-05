@@ -1,11 +1,4 @@
 [
-  {"name":"Dish 1","files":[{"path":"portfolio/portfolio-image-1.jpg"}],"belongsTo":["salads","lunch"],"description":"dish1 is dish 1","href":"assets/img/portfolio/portfolio-image-1.jpg"},
-  {"name":"Dish 2","files":[{"path":"portfolio/portfolio-image-1.jpg"}],"belongsTo":["soup"],"description":"dish2 is dish 2","href":"assets/img/portfolio/portfolio-image-2.jpg"},
-  {"name":"Dish 3","files":[{"path":"portfolio/portfolio-image-1.jpg"}],"belongsTo":["soup"],"description":"dish3 is dish 3","href":"assets/img/portfolio/portfolio-image-3.jpg"},
-  {"name":"Dish 4","files":[{"path":"portfolio/portfolio-image-1.jpg"}],"belongsTo":["hotDishes"],"description":"dish4 is dish 4","href":"assets/img/portfolio/portfolio-image-4.jpg"},
-  {"name":"Dish 5","files":[{"path":"portfolio/portfolio-image-1.jpg"}],"belongsTo":["garnish","hotDishes"],"description":"dish5 is dish 5","href":"assets/img/portfolio/portfolio-image-5.jpg"},
-  {"name":"Dish 6","files":[{"path":"portfolio/portfolio-image-1.jpg"}],"belongsTo":["hotDishes"],"description":"dish6 is dish 6","href":"assets/img/portfolio/portfolio-image-6.jpg"},
-  {"name":"Dish 7","files":[{"path":"portfolio/portfolio-image-1.jpg"}],"belongsTo":["cake"],"description":"dish7 is dish 7","href":"assets/img/portfolio/portfolio-image-7.jpg"},
-  {"name":"Dish 8","files":[{"path":"portfolio/portfolio-image-1.jpg"}],"belongsTo":["cake"],"description":"dish8 is dish 8","href":"assets/img/portfolio/portfolio-image-8.jpg"},
+  {"name":"Dish 1","files":[{"path":"C:\Users\Karine\Projects\foodnet\src\main\webapp\resources\site\asset\img\lilit-lunch-langetov-spagetiov.JPG"}],"belongsTo":["salads","lunch"],"description":"dish1 is dish 1","href":"assets/img/lilit-lunch-langetov-spagetiov.JPG"},
   {"name":"Dish 9","files":[{"path":"portfolio/portfolio-image-1.jpg"}],"belongsTo":[1,3],"description":"dish9 is dish 9","href":"assets/img/portfolio/portfolio-image-9.jpg"}
 ]

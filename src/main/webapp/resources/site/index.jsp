@@ -152,10 +152,14 @@
           <a href="#contact-us">Կապ</a>
         </li-->
       </ul>
-      <ul class="nav navbar-nav navbar-right xs-left-menu hidden-xs">
-        <li class="page-scroll ph-number"> <i class="fa fa-phone" aria-hidden="true"></i> +374 91 277879 </li>
-        <li class="page-scroll"><span ng-click="setLang('hy')">Հայ</span><span ng-click="setLang('en')">En</span><span>Ру</span></li>
-        <li class="page-scroll">
+      <ul class="nav navbar-nav navbar-right xs-left-menu hidden-xs col-lg-4">
+        <li class=" col-lg-5 page-scroll ph-number"> <i class="fa fa-phone" aria-hidden="true"></i> +374 91 277879 </li>
+        <li class="col-lg-5 page-scroll lang">
+          <span ng-click="setLang('hy')">Հայ</span>
+          <span ng-click="setLang('en')">En</span>
+          <span>Ру</span>
+        </li>
+        <li class="col-lg-2 page-scroll">
           <a href="#"><order-box order="order"></order-box></a>
         </li>
       </ul>
@@ -466,8 +470,10 @@
         <div class="row">
           <div class="col-md-12">
             <div class="quote-text text-center">
+              <h2 class="delivery-title">Առաքում</h2>
+              <div class="line-border"></div>
                             <span class="quote-icon">
-                                <i class="fa fa-motorcycle fa-4x"></i>
+                                <i class="fa fa-motorcycle"></i>
                             </span>
 
               <h2>Առաքումը կատարվում է 20-30 րոպեի ընթացքում</h2>

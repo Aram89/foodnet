@@ -11,7 +11,6 @@ import org.qualitech.foodnet.domain.json.WorkStatus;
 import org.qualitech.foodnet.exception.AppException;
 import org.qualitech.foodnet.exception.ErrorCodes;
 import org.qualitech.foodnet.service.ChefService;
-import org.qualitech.foodnet.service.MailService;
 import org.qualitech.foodnet.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -41,10 +40,7 @@ public class ChefController {
     @Autowired
     private OrderService orderService;
 
-    @Autowired
-    private MailService mailService;
-
-    /**
+        /**
      * Endpoint for becoming chef
      *
      * @param chef chef
@@ -161,10 +157,10 @@ public class ChefController {
         Chef chef = mapper.readValue(chefString, Chef.class);
         return chef;
     }
-
-    @RequestMapping(value = RequestMappings.SEND_EMAIL, method = RequestMethod.POST)
-    public ResponseEntity sendEmail(@RequestBody Message message) throws IOException, AppException {
-        mailService.send(message);
-        return new ResponseEntity(HttpStatus.OK);
-    }
+//
+//    @RequestMapping(value = RequestMappings.SEND_EMAIL, method = RequestMethod.POST)
+//    public ResponseEntity sendEmail(@RequestBody Message message) throws IOException, AppException {
+//        mailService.send(message);
+//        return new ResponseEntity(HttpStatus.OK);
+//    }
 }
