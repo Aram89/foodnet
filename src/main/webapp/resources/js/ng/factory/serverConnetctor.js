@@ -4,8 +4,8 @@
 
 app.factory('serverConnector',['$http',function($http){
     'use strict';
-     var host  = '/';
-    //var host='/resources/api/';
+    //var host  = '/';
+    var host='/resources/api/';
     var req = {
         method: 'POST',
         url: '/' /*,
@@ -15,8 +15,6 @@ app.factory('serverConnector',['$http',function($http){
     };
     function send (request) {
         request.url = host+request.url;
-        console.log(request.url)
-
         var promise = $http(request);
         promise.then(
             function() {},
