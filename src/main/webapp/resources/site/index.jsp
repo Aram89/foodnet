@@ -276,8 +276,8 @@
                 <!-- //.team-detail -->
               </div>
               <!-- //.team-inner -->
-              <div  class="chef-picture">
-                <img ng-click="showChefImages(chef)" src="assets/img/{{chef.files[0].path}}" alt="" class="img-responsive"/>
+              <div class="chef-picture">
+                <img ng-click="showChefImages(chef)" src="assets/img/{{chef.files[0].path}}" alt="" class="img-responsive "/>
                 <button ng-click="selectChef(chef.partnerId)" class="btn btn-rj rj">Նայել ուտեստները</button>
               </div>
             </div>
@@ -476,7 +476,7 @@
                                 <i class="fa fa-motorcycle"></i>
                             </span>
 
-              <h2>Առաքումը կատարվում է 20-30 րոպեի ընթացքում</h2>
+              <p>Առաքումը կատարվում է 20-30 րոպեի ընթացքում</p>
 
               <h2 class="lead quote-by">(Warren Buffet)</h2>
             </div>

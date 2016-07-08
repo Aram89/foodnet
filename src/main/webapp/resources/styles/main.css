@@ -319,4 +319,19 @@ body.ngdialog-open, html.ngdialog-open {
     .order-box .order-window {
         top: 45px;
     }
+    .delivery-title{
+        font-size: 25px !important;
+    }
+    .quote-icon{
+        font-size: 40px !important;
+        display: inline-block;
+        margin-top: 20px;
+    }
+    .line-border{
+        margin-top: 10px !important;
+        margin-bottom: 20px;
+        margin-left: 0px !important;
+
+    }
+
 }
