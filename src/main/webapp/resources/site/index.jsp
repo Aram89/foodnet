@@ -75,7 +75,7 @@
 
 
   <!-- Begin Intro Section -->
-  <section id="intro">
+ <%-- <section id="intro">
     <div class="col-xs-12 intro-body text-center">
       <div class="text-right btn-top">
         <a type="button" class="btn btn-sm btn-rj bcm" href="/partner-chef" target="_blank">
@@ -108,7 +108,7 @@
   </div>
 
   <!-- //.intro-body -->
-</section>
+</section>--%>
 <!-- //End Intro Section -->
 
 <!-- Begin Navbar -->
