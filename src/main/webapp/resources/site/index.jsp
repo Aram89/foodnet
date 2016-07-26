@@ -113,7 +113,7 @@
 
 <!-- Begin Navbar -->
 <div ng-controller="DishesController">
-<nav id="navigation" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav id="navigation" class="navbar navbar-inverse navbar-fixed-top " role="navigation">
   <div class="container">
     <div class="navbar-header page-scroll">
 
@@ -129,7 +129,10 @@
     </div>
 
     <div class="navbar-collapse collapse navbar-rj-collapse">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav" style="font-size: 12px">
+        <li class="page-scroll">
+          <img class="logo_n" src="assets/img/narinj_logo.png"/>
+        </li>
         <li class="page-scroll">
           <a href="#dishes">{{tr.dishes}}</a>
         </li>
@@ -152,7 +155,7 @@
           <a href="#contact-us">Կապ</a>
         </li-->
       </ul>
-      <ul class="nav navbar-nav navbar-right xs-left-menu hidden-xs col-lg-4">
+      <ul class="nav navbar-nav navbar-right xs-left-menu hidden-xs col-lg-4" style="font-size: 12px">
         <li class=" col-lg-5 page-scroll ph-number"> <i class="fa fa-phone" aria-hidden="true"></i> +374 91 277879 </li>
         <li class="col-lg-5 page-scroll lang">
           <span ng-click="setLang('hy')">Հայ</span>

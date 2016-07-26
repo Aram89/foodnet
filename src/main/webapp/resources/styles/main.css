@@ -260,6 +260,9 @@ body.ngdialog-open, html.ngdialog-open {
 .lang span{
     padding: 0 5px;
 }
+.logo_n{
+    width:100px;
+}
 /*media query*/
 @media screen and (max-width : 760px){
     .xs-left-menu{
