@@ -126,13 +126,12 @@
       <div class="col-xs-12 orderBox hidden-lg">
         <a href="#"><order-box order="order"></order-box></a>
       </div>
+      <img style="position: absolute;left: 18px" class="logo_n" src="assets/img/narinj_logo.png"/>
+
     </div>
 
     <div class="navbar-collapse collapse navbar-rj-collapse">
       <ul class="nav navbar-nav" style="font-size: 12px">
-        <li class="page-scroll">
-          <img class="logo_n" src="assets/img/narinj_logo.png"/>
-        </li>
         <li class="page-scroll">
           <a href="#dishes">{{tr.dishes}}</a>
         </li>
