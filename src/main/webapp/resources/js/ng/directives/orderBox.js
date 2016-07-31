@@ -14,11 +14,13 @@ app.directive('orderBox',function(){
             $scope.order.price = function(){
                 var price=0;
                 $scope.chefs=[];
+                $scope.order.count = 0;
                 $scope.order.dishes.forEach(function(d){
                     if($scope.chefs.indexOf(d.chef.partnerId)==-1){
                         $scope.chefs.push(d.chef.partnerId)
                     }
                     price+= parseInt(d.price)* d.count;
+                    $scope.order.count += d.count;
                 });
                 return price;
             };

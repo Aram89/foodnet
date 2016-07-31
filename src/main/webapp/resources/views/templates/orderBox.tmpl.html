@@ -3,7 +3,7 @@
         <li>
 
             <a ng-click="toggleBox()" class="order-box-toggle counter-item" role="button">
-                <i class="fa fa-shopping-cart"></i><i class="caret"></i>
+                {{order.count}}<i class="fa fa-shopping-cart"></i><i class="caret"></i>
             </a>
 
             <div ng-show="isBoxOpen" class="order-window" role="menu">
