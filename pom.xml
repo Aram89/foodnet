@@ -5,6 +5,9 @@
   <artifactId>foodnet</artifactId>
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>narinj-authorization</module>
+    </modules>
 
     <name>foodnet Maven Webapp</name>
   <url>http://maven.apache.org</url>
@@ -214,6 +217,14 @@
             <version>1.0</version>
             <scope>provided</scope>
         </dependency>
+
+        <!--Auth0-->
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>auth0-spring-security-api</artifactId>
+            <version>0.0.2</version>
+        </dependency>
+
 
     </dependencies>
 
