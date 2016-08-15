@@ -15,10 +15,18 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SignatureException;
 
 /**
+ * Filter for checking and verifying jwt for proetected paths.
+ * JWT is set in Authorization header, if jwt is valid chain will e continued.
+ * If jwt is not present or is not valid, error response will be send to client,
+ * with 401 (UNAUTHORIZED) status. 
+ * 
  * @author Aram Kirakosyan.
  */
 public class AuthorizationFilter implements Filter {
 
+   	/**
+	 * JWT secret key, value injected from auth0.properties file.
+	 */
     @Value("${auth0.clientSecret}")
     private String secret;
 
@@ -38,8 +46,8 @@ public class AuthorizationFilter implements Filter {
         if (token == null) {
             // No jwt token, throw runtime exception
             response.setContentType("application/json");
+            //send error response to client.
             ((HttpServletResponse) response).sendError(HttpServletResponse.SC_UNAUTHORIZED, "No JWT token");
-            //throw new UnAuthorizedException("No jwt token");
         }
 
         // Create jwt verifier with secret value.
@@ -49,10 +57,8 @@ public class AuthorizationFilter implements Filter {
             // Verify jwt.
             jwtVerifier.verify(token);
         } catch (NoSuchAlgorithmException | JWTVerifyException | InvalidKeyException | SignatureException e) {
-            // jwt is not valid
+            // jwt is not valid, send error response to client.
             ((HttpServletResponse) response).sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
-
-            //throw new UnAuthorizedException("JWT is not valid :" + e.getMessage());
         }
         // JWT validation passed, continue filter.
         filterChain.doFilter(request, response);
