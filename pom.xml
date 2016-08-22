@@ -224,7 +224,20 @@
             <artifactId>auth0-spring-security-api</artifactId>
             <version>0.0.2</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
 
+        <!--HSQ DB for tests-->
+        <dependency>
+            <groupId>hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>1.8.0.10</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 

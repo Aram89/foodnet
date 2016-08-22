@@ -41,6 +41,8 @@ public class RequestMappings {
 
     public static final String SEND_EMAIL = "send-email";
 
+    public static final String USER_TEST = "user/test";
+
 }
 
 

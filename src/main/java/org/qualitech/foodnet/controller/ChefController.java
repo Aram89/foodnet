@@ -1,11 +1,11 @@
 package org.qualitech.foodnet.controller;
 
+import com.auth0.jwt.JWTVerifyException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.twilio.sdk.TwilioRestException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.qualitech.foodnet.domain.Chef;
-import org.qualitech.foodnet.domain.Message;
 import org.qualitech.foodnet.domain.Partner;
 import org.qualitech.foodnet.domain.json.WorkStatus;
 import org.qualitech.foodnet.exception.AppException;
@@ -20,7 +20,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.net.URLDecoder;
+import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.security.SignatureException;
 import java.sql.SQLException;
 import java.util.Date;
 
@@ -40,8 +42,8 @@ public class ChefController {
     @Autowired
     private OrderService orderService;
 
-        /**
-     * Endpoint for becoming chef
+    /**
+     * Endpoint for becoming chef.
      *
      * @param chef chef
      * @return status OK
@@ -51,15 +53,16 @@ public class ChefController {
     @RequestMapping(value = RequestMappings.CREATE_CHEF, method = RequestMethod.POST,
             consumes = "application/json;charset=UTF-8", produces = "application/json;charset=UTF-8")
     public ResponseEntity create(@RequestBody Chef chef) throws IOException, SQLException {
-        logger.info("new chef :" + chef.getName());
+        logger.info("New chef register request : " + chef.getName());
 
         service.create(chef);
+        // Chef registered successfully.
         logger.info("Chef registered with id: " + chef.getPartnerId());
         return new ResponseEntity(HttpStatus.OK);
     }
 
     /**
-     * Endpoint for checking chef phone
+     * Endpoint for checking chef phone.
      * Throws AppException with code phoneExists if phone exists,
      * otherwise returns status OK
      *
@@ -79,8 +82,8 @@ public class ChefController {
      * Endpoint for activating partner.
      *
      * @param phone phone.
-     * @return
-     * @throws AppException
+     * @return status ok.
+     * @throws AppException if there is no chef with given phone.
      * @throws NoSuchAlgorithmException
      */
     @RequestMapping(value = RequestMappings.ACTIVATE_PARTNER, method = RequestMethod.GET)
@@ -93,7 +96,7 @@ public class ChefController {
     }
 
     @RequestMapping(value = RequestMappings.GET_CHEFS, method = RequestMethod.GET)
-    public ResponseEntity getChefs(@RequestParam(value = "page") int page, @RequestParam(value = "count") int count) throws AppException {
+    public ResponseEntity getChefs(@RequestParam(value = "page") int page, @RequestParam(value = "count") int count) throws AppException, SignatureException, NoSuchAlgorithmException, JWTVerifyException, InvalidKeyException, IOException {
         return new ResponseEntity(service.getChefs(page, count), HttpStatus.OK);
     }
 

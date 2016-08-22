@@ -92,7 +92,7 @@
     <secutiy:global-method-security pre-post-annotations="enabled"/>
 
     <!--Define filter chain applied to all requests (session creation is stateless-->
-    <secutiy:http create-session="stateless" pattern="/get-chefs" entry-point-ref="auth0AuthenticationEntryPoint">
+    <secutiy:http create-session="stateless" pattern="/user/*" entry-point-ref="auth0AuthenticationEntryPoint">
         <secutiy:csrf disabled="true"/>
         <secutiy:custom-filter before="FIRST" ref="authorizationFilter"/>
     </secutiy:http>
@@ -116,6 +116,11 @@
     <!--Auth0 authentication entry point-->
     <bean id="auth0AuthenticationEntryPoint"
           class="com.auth0.spring.security.api.Auth0AuthenticationEntryPoint"/>
+
+    <bean id="springSecurityFilterChain"
+          class="org.springframework.security.web.FilterChainProxy">
+        <!-- properties -->
+    </bean>
 
     <context:annotation-config/>
     <mvc:annotation-driven/>

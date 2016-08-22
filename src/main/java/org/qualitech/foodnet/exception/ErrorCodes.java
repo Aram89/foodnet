@@ -20,6 +20,13 @@ public class ErrorCodes {
     public static final String WRONG_ACCESS_TOKEN = "Wrong access token";
     public static final String WRONG_CHEF_IN_ORDER = "Wrong chef in order";
 
+    public String getErrorString() {
+        return errorString;
+    }
+
+    public void setErrorString(String errorString) {
+        this.errorString = errorString;
+    }
 
     private String errorString;
 
