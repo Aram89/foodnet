@@ -7,6 +7,7 @@ import org.qualitech.foodnet.domain.json.DishStatus;
 import org.qualitech.foodnet.exception.AppException;
 import org.qualitech.foodnet.exception.ErrorCodes;
 import org.qualitech.foodnet.repositories.Categoryrepository;
+import org.qualitech.foodnet.repositories.ChefRepository;
 import org.qualitech.foodnet.repositories.DishRepository;
 import org.qualitech.foodnet.service.DishService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ import java.util.List;
 public class DishServiceImpl implements DishService {
 
     private final static double percent = 0.1;
+
+    @Autowired
+    ChefRepository chefRepository;
 
     @Autowired
     DishRepository dishRepository;
@@ -67,7 +71,11 @@ public class DishServiceImpl implements DishService {
     }
 
     @Override
-    public List<Dish> getDishesByChef(Long chefId, int page, int count) throws IOException {
+    public List<Dish> getDishesByChef(Long chefId, int page, int count) throws IOException, AppException {
+        // Check chef existance.
+        if (chefRepository.findOne(chefId) == null) {
+            throw new AppException("Wrong chef!");
+        }
         Chef chef = new Chef(chefId);
         List<Dish> dishes = dishRepository.findByChef(chef, new PageRequest(page, count));
         return dishes;

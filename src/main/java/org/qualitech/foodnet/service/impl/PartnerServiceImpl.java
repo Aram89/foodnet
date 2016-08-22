@@ -56,8 +56,8 @@ public class PartnerServiceImpl implements PartnerService {
         String accessToken = HashUtil.generateRandomString(9) + partner.getPartnerId().toString();
         partner.setAccessToken(accessToken);
         repository.save(partner);
-        SmsSender.send(phone, " Your account activated!, Password : " + password +
-                ". You can login using your phone and password");
+        //SmsSender.send(phone, " Your account activated!, Password : " + password +
+                //". You can login using your phone and password");
         logger.info("Sms was sent to : " + phone);
     }
 

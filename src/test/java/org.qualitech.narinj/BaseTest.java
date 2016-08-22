@@ -1,5 +1,6 @@
 package org.qualitech.narinj;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
@@ -56,6 +57,11 @@ public class BaseTest {
         final JavaType listOfT = factory.constructCollectionType(List.class, clazz);
         List <?> objects = mapper.readValue(jsonString, listOfT);
         return objects;
+    }
+
+    protected String convertObjectToJsonString (Object object) throws JsonProcessingException {
+        final ObjectMapper mapper = new ObjectMapper();
+        return mapper.writeValueAsString(object);
     }
 
 }

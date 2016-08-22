@@ -18,7 +18,7 @@ public interface DishService {
 
     List<Dish> getDishes (String categoryName, int page, int count) throws IOException, AppException;
 
-    List<Dish> getDishesByChef (Long chefId, int page, int count) throws IOException;
+    List<Dish> getDishesByChef (Long chefId, int page, int count) throws IOException, AppException;
 
     Dish getDish (Long dishId);
 }
