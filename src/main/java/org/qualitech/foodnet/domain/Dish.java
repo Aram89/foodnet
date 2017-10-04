@@ -30,6 +30,7 @@ public class Dish implements Serializable  {
     private List <Category> categories;
     private List<File> files;
     private List<Order> orders;
+    private String dishName;
 
     @Column
     public Integer getRating() {
